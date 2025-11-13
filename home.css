@@ -1,0 +1,409 @@
+/* 首页样式 */
+:root {
+    /* 间距变量 */
+    --spacing-xs: 2px;
+    --spacing-sm: 5px;
+    --spacing-md: 8px;
+    --spacing-lg: 15px;
+    --spacing-xl: 20px;
+    --spacing-xxl: 30px;
+    
+    /* 字体大小 */
+    --text-xs: 8px;
+    --text-sm: 11px;
+    --text-md: 13px;
+    --text-lg: 14px;
+    --text-xl: 24px;
+    --text-xxl: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Futura', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    line-height: 1.0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #000000;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* 首页布局 */
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.home-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+    height: 100vh;
+}
+
+.home-left-column,
+.home-right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.home-left-column {
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+/* 首页内容样式 */
+.home-page-body {
+    background: #000000;
+    color: #ffffff;
+}
+
+.home-logo {
+    font-size: var(--text-xxl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 1px;
+    line-height: 1.0;
+}
+
+.home-name {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+    color: #ffffff;
+}
+
+.home-location {
+    font-size: var(--text-lg);
+    color: #cccccc;
+    font-weight: 400;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.2;
+}
+
+.home-contact-icons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+.home-contact-icon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: transparent;
+    transition: all 0.3s ease;
+    font-size: var(--text-md);
+    color: #ffffff;
+}
+
+.home-contact-icon:hover {
+    background: #000000;
+    color: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* 太阳logo样式 */
+.home-logo {
+    margin-bottom: var(--spacing-md);
+}
+
+.ashtanga-text {
+    font-size: 4rem;
+    display: inline-block;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.ashtanga-text:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* 通用section样式 */
+.home-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.home-section-title {
+    font-size: var(--text-md);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.0;
+}
+
+.home-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.home-item {
+    display: block;
+    font-size: var(--text-sm);
+    line-height: 1.0;
+    font-weight: 400;
+    text-decoration: none;
+    color: inherit;
+    padding: 6px 0;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.home-item:hover {
+    color: #cccccc;
+    padding-left: 15px;
+}
+
+.home-item:hover::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    opacity: 1;
+}
+
+.home-item::before {
+    content: "→";
+    position: absolute;
+    left: -10px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* 语言切换器 */
+.language-switcher-single {
+    margin-top: var(--spacing-lg);
+    text-align: center;
+    width: 100%;
+}
+
+.lang-btn-single {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    padding: var(--spacing-sm) 9px;
+    cursor: pointer;
+    border-radius: 9px;
+    font-size: var(--text-xs);
+    transition: all 0.3s ease;
+    text-transform: lowercase;
+}
+
+.lang-btn-single:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 二维码弹窗 */
+.qr-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.qr-modal-content {
+    background-color: #ffffff;
+    margin: 15% auto;
+    padding: var(--spacing-xxl);
+    border-radius: 10px;
+    width: 280px;
+    text-align: center;
+    position: relative;
+    color: #000000;
+}
+
+.qr-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: var(--spacing-lg);
+    top: 10px;
+    cursor: pointer;
+}
+
+.qr-close:hover {
+    color: #000000;
+}
+
+.qr-image {
+    width: 200px;
+    height: 200px;
+    margin: var(--spacing-lg) 0;
+    border: 1px solid #ddd;
+}
+
+.qr-username {
+    color: #666666;
+    font-size: var(--text-lg);
+    margin-top: 10px;
+}
+
+/* 简化版全屏闪光效果 */
+.home-page-body {
+    position: relative;
+    overflow: hidden;
+    background: #000000;
+}
+
+/* 静态星光背景 */
+.home-page-body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(2px 2px at 20% 30%, #ffffff 50%, transparent 100%),
+        radial-gradient(2px 2px at 40% 70%, #ffffff 50%, transparent 100%),
+        radial-gradient(1px 1px at 60% 20%, #ffffff 50%, transparent 100%),
+        radial-gradient(1px 1px at 80% 50%, #ffffff 50%, transparent 100%),
+        radial-gradient(2px 2px at 30% 80%, #ffffff 50%, transparent 100%),
+        radial-gradient(1px 1px at 70% 10%, #ffffff 50%, transparent 100%),
+        radial-gradient(2px 2px at 90% 40%, #ffffff 50%, transparent 100%),
+        radial-gradient(1px 1px at 10% 60%, #ffffff 50%, transparent 100%),
+        radial-gradient(2px 2px at 50% 90%, #ffffff 50%, transparent 100%);
+    background-repeat: repeat;
+    animation: sparkle 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.3;
+}
+
+/* 星光闪烁动画 */
+@keyframes sparkle {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.6; }
+}
+
+/* 鼠标光晕效果 */
+.home-page-body::after {
+    content: '';
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 30%,
+        transparent 70%
+    );
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transform: translate(-50%, -50%);
+}
+
+.home-page-body:hover::after {
+    opacity: 1;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .home-container {
+        padding: var(--spacing-xl) var(--spacing-lg);
+        min-height: 100vh;
+        height: auto;
+        display: block;
+    }
+    
+    .home-layout {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+        height: auto;
+        width: 100%;
+    }
+    
+    .home-left-column {
+        height: auto;
+        padding: 50px 0 var(--spacing-xxl) 0;
+        order: 1;
+        text-align: center;
+        position: relative;
+    }
+    
+    .home-right-column {
+        height: auto;
+        order: 2;
+        text-align: left;
+        padding-left: 40px;
+        padding-right: var(--spacing-xl);
+    }
+    
+    .language-switcher {
+        position: absolute;
+        top: var(--spacing-lg);
+        right: var(--spacing-lg);
+        margin-bottom: 0;
+        justify-content: flex-end;
+    }
+    
+    .home-logo {
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
+    
+    .home-name {
+        font-size: 20px;
+    }
+    
+    .home-section {
+        margin-bottom: 25px;
+    }
+    
+    .home-contact-icons {
+        margin-top: var(--spacing-xl);
+    }
+    
+    .qr-modal-content {
+        width: 90%;
+        margin: 20% auto;
+        padding: var(--spacing-xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .home-container {
+        padding: var(--spacing-lg) 10px;
+    }
+    
+    .home-logo {
+        font-size: 42px;
+    }
+    
+    .home-name {
+        font-size: 18px;
+    }
+    
+    .qr-image {
+        width: 150px;
+        height: 150px;
+    }
+}

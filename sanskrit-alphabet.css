@@ -1,0 +1,485 @@
+/* sanskrit-alphabet.css */
+
+.article-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.article-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #000000, transparent);
+}
+
+.article-header h1 {
+    font-size: 1.2rem;
+    color: #000000;
+    margin: 0 0 0.5rem 0;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    color: #888888;
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.content-wrapper h2 {
+    font-size: 0.9rem;
+    color: #4B0082;
+    margin: 2rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    font-weight: 400;
+}
+
+.content-wrapper h3 {
+    font-size: 0.8rem;
+    color: #8B0000;
+    margin: 1.5rem 0 0.8rem 0;
+    font-weight: 400;
+}
+
+.content-wrapper p {
+    line-height: 1.5;
+    color: #333333;
+    margin-bottom: 0.8rem;
+    font-size: 0.7rem;
+}
+
+.content-wrapper ul {
+    margin: 1rem 0;
+    padding-left: 1rem;
+}
+
+.content-wrapper li {
+    line-height: 1.5;
+    color: #333333;
+    margin-bottom: 0.5rem;
+    font-size: 0.7rem;
+}
+
+.sanskrit-text {
+    font-family: 'Arial Unicode MS', 'Devanagari', sans-serif;
+    font-size: 0.75rem;
+    color: #4B0082;
+    font-weight: 500;
+}
+
+.transliteration {
+    color: #666666;
+    font-style: italic;
+    font-size: 0.65rem;
+}
+
+.example-card {
+    padding: 1rem;
+    border: 1px solid #f0f0f0;
+    text-align: center;
+    transition: all 0.3s ease;
+    background: #ffffff;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+
+.example-card:hover {
+    border-color: #e0e0e0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.example-sanskrit {
+    font-size: 0.75rem;
+    color: #4B0082;
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.example-transliteration {
+    color: #666666;
+    margin-bottom: 0.4rem;
+    font-size: 0.65rem;
+    line-height: 1.2;
+}
+
+.example-explanation {
+    color: #000000;
+    line-height: 1.2;
+    font-size: 0.65rem;
+}
+
+.back-section {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f0f0f0;
+    text-align: center;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.5rem 1rem;
+    color: #4B0082;
+    text-decoration: none;
+    border: 1px solid #4B0082;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 0.7rem;
+}
+
+.back-link:hover {
+    background: #4B0082;
+    color: white;
+}
+
+.example-card {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+/* 梵语字母表格 */
+.sanskrit-table table {
+    width: auto;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-family: Futura, sans-serif;
+}
+
+.sanskrit-table td {
+    padding: 6px 16px;
+    text-align: center;
+    border: none;
+    position: relative;
+}
+
+/* 字母基础样式 */
+.devanagari {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    min-width: 24px;
+}
+
+.iast {
+    font-size: 0.8rem;
+    color: #666;
+    transition: all 0.3s ease;
+    display: inline-block;
+    min-width: 24px;
+    font-weight: normal;
+}
+
+/* 行间距 */
+.vowel-row td,
+.consonant-row td {
+    padding-bottom: 2px;
+}
+
+.transcript-row td {
+    padding-top: 2px;
+}
+
+.empty-row {
+    height: 20px;
+}
+
+/* 颜色定义 */
+.devanagari.color-root { color: #e74c3c; }     /* 根轮 - 红色 */
+.devanagari.color-sacral { color: #e67e22; }   /* 腹轮 - 橙色 */
+.devanagari.color-solar { color: #f1c40f; }    /* 脐轮 - 黄色 */
+.devanagari.color-heart { color: #2ecc71; }    /* 心轮 - 绿色 */
+.devanagari.color-throat { color: #3498db; }   /* 喉轮 - 蓝色 */
+.devanagari.color-brow { color: #4A6FA5; }     /* 额轮 - 靛色 */
+.devanagari.color-crown { color: #8e44ad; }    /* 顶轮 - 紫色 */
+
+/* 悬停效果 */
+.devanagari:hover {
+    font-weight: bold;
+    transform: scale(1.15) translateY(-3px);
+    z-index: 10;
+    position: relative;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    background: rgba(255,255,255,0.9);
+    padding: 2px 4px;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* 轮脉圆形设计 */
+.chakra-section {
+    margin: 3rem 0;
+}
+
+/* 轮脉特殊布局 */
+.chakra-grid-special {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.crown-solo {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.other-chakras {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+    justify-items: center;
+}
+
+.chakra-wheel {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    border: 3px solid transparent;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .chakra-wheel {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chakra-wheel {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.chakra-wheel:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.chakra-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+}
+
+.chakra-name {
+    font-size: 0.5rem;
+    font-weight: 600;
+    margin: 0.3rem 0 0.5rem 0 !important;
+    color: #333;
+    line-height: 1.1;
+}
+
+.seed-mantra {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem !important;
+    font-family: 'Arial Unicode MS', 'Devanagari', sans-serif;
+    line-height: 1;
+}
+
+.chakra-petals {
+    font-size: 0.35rem;
+    color: #666;
+    margin: 0.2rem 0 0 0 !important;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.letters-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: rotate 20s linear infinite;
+}
+
+.letter-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0;
+    font-size: 0.7rem !important;
+    font-family: 'Arial Unicode MS', 'Devanagari', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.letter-item:hover {
+    font-weight: bold;
+    transform: scale(1.2);
+    z-index: 3;
+}
+
+/* 轮脉颜色 */
+.chakra-wheel.color-crown {
+    border-color: #8e44ad;
+    background: linear-gradient(135deg, #f8f4ff, #fff);
+}
+.chakra-wheel.color-crown .seed-mantra { color: #8e44ad; }
+.chakra-wheel.color-crown .letter-item { color: #8e44ad; }
+
+.chakra-wheel.color-brow {
+    border-color: #4A6FA5;
+    background: linear-gradient(135deg, #f5f0ff, #fff);
+}
+.chakra-wheel.color-brow .seed-mantra { color: #4A6FA5; }
+.chakra-wheel.color-brow .letter-item { color: #4A6FA5; }
+
+.chakra-wheel.color-throat {
+    border-color: #3498db;
+    background: linear-gradient(135deg, #f0f8ff, #fff);
+}
+.chakra-wheel.color-throat .seed-mantra { color: #3498db; }
+.chakra-wheel.color-throat .letter-item { color: #3498db; }
+
+.chakra-wheel.color-heart {
+    border-color: #2ecc71;
+    background: linear-gradient(135deg, #f0fff4, #fff);
+}
+.chakra-wheel.color-heart .seed-mantra { color: #2ecc71; }
+.chakra-wheel.color-heart .letter-item { color: #2ecc71; }
+
+.chakra-wheel.color-solar {
+    border-color: #f1c40f;
+    background: linear-gradient(135deg, #fffef0, #fff);
+}
+.chakra-wheel.color-solar .seed-mantra { color: #f1c40f; }
+.chakra-wheel.color-solar .letter-item { color: #f1c40f; }
+
+.chakra-wheel.color-sacral {
+    border-color: #e67e22;
+    background: linear-gradient(135deg, #fff8f0, #fff);
+}
+.chakra-wheel.color-sacral .seed-mantra { color: #e67e22; }
+.chakra-wheel.color-sacral .letter-item { color: #e67e22; }
+
+.chakra-wheel.color-root {
+    border-color: #e74c3c;
+    background: linear-gradient(135deg, #fff0f0, #fff);
+}
+.chakra-wheel.color-root .seed-mantra { color: #e74c3c; }
+.chakra-wheel.color-root .letter-item { color: #e74c3c; }
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* 手机端响应式 */
+@media (max-width: 768px) {
+    /* 表格优化 */
+    .sanskrit-table {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        overflow-x: auto;
+    }
+    
+    .sanskrit-table table {
+        transform: scale(0.9);
+        margin: 15px auto;
+    }
+    
+    .sanskrit-table td {
+        padding: 4px 8px;
+    }
+    
+    .devanagari {
+        font-size: 1rem;
+    }
+    
+    .iast {
+        font-size: 0.7rem;
+    }
+    
+    /* 轮脉优化 */
+    .chakra-grid-special {
+        gap: 1.5rem;
+    }
+    
+    .other-chakras {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    .chakra-wheel {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .seed-mantra {
+        font-size: 1.8rem;
+    }
+    
+    .letter-item {
+        font-size: 0.7rem;
+    }
+    
+    /* 内容优化 */
+    .article-content {
+        padding: 1rem;
+    }
+    
+    .content-wrapper h2 {
+        font-size: 1rem;
+        margin: 1.5rem 0 0.8rem 0;
+    }
+    
+    .content-wrapper p {
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 480px) {
+    .sanskrit-table table {
+        transform: scale(0.85);
+    }
+    
+    .sanskrit-table td {
+        padding: 3px 6px;
+    }
+    
+    .other-chakras {
+        grid-template-columns: 1fr;
+    }
+    
+    .chakra-wheel {
+        width: 160px;
+        height: 160px;
+    }
+}

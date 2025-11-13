@@ -1,0 +1,538 @@
+/* ashtanga.css - mysore课程页面专用样式 */
+
+:root {
+    --primary-color: #000000;
+    --secondary-color: #666666;
+    --light-color: #888888;
+    --border-color: #f0f0f0;
+    --accent-color: #2c5530; /* 深绿色强调色 */
+    --accent-light: #4a7c59; /* 浅绿色 */
+    --white: #ffffff;
+}
+
+/* 背景渐变 */
+.classes-section {
+    padding: 90px 0 40px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, var(--white) 50%, #f8f9fa 100%);
+}
+
+.classes-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* 页面头部 */
+.page-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.page-header h1 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 0.75rem;
+    color: var(--accent-color); /* 深绿色 */
+    font-weight: 300;
+    letter-spacing: 1.2px;
+}
+
+/* 章节标题 */
+.classes-section h2 {
+    font-size: 1.1rem;
+    font-weight: 350;
+    margin-bottom: 10px;
+    letter-spacing: 1.2px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.section-subtitle {
+    color: var(--light-color);
+    margin-bottom: 30px;
+    font-size: 0.7rem;
+    letter-spacing: 0.8px;
+    text-align: center;
+    font-weight: 300;
+}
+
+/* 简介部分 */
+.intro-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.intro-text {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--secondary-color);
+    letter-spacing: 0.2px;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* 练习方式对比 - 增强圆角和阴影 */
+.comparison-section {
+    margin-bottom: 80px;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.comparison-card {
+    padding: 32px 24px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: var(--white);
+    border-radius: 12px; /* 增强圆角 */
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); /* 添加阴影 */
+}
+
+.comparison-card:hover {
+    border-color: var(--accent-color); /* 深绿色边框 */
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    margin-bottom: 20px;
+}
+
+.card-header i {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: var(--accent-color); /* 深绿色图标 */
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.comparison-card:hover .card-header i {
+    opacity: 1;
+    transform: scale(1.15) rotate(8deg); /* 图标旋转效果 */
+}
+
+.comparison-card h3 {
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+    color: var(--primary-color);
+}
+
+.card-subtitle {
+    color: var(--accent-color); /* 深绿色副标题 */
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 0.3px;
+}
+
+/* 特性列表 */
+.feature-list {
+    text-align: left;
+}
+
+.feature-list li {
+    padding: 8px 0;
+    color: var(--secondary-color);
+    font-size: 0.7rem;
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+.feature-list li:before {
+    content: "•";
+    position: absolute;
+    left: 8px;
+    color: var(--accent-color); /* 深绿色圆点 */
+    font-weight: 500;
+}
+
+/* 教学特色网格 */
+.features-section {
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.feature-item {
+    padding: 28px 20px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: var(--white);
+    border-radius: 12px; /* 增强圆角 */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); /* 添加阴影 */
+}
+
+.feature-item:hover {
+    border-color: var(--accent-color); /* 深绿色边框 */
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.feature-item i {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: var(--accent-color); /* 深绿色图标 */
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover i {
+    opacity: 1;
+    transform: scale(1.15) rotate(10deg); /* 图标旋转效果 */
+}
+
+.feature-item h4 {
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+    color: var(--primary-color);
+    line-height: 1.3;
+}
+
+.feature-item p {
+    color: var(--secondary-color);
+    font-size: 0.7rem;
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+/* 课程安排网格 */
+.private-section {
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.private-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.private-card {
+    padding: 24px 20px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: var(--white);
+    border-radius: 12px; /* 增强圆角 */
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); /* 添加阴影 */
+}
+
+.private-card:hover {
+    border-color: var(--accent-color); /* 深绿色边框 */
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.private-card i {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: var(--accent-color); /* 深绿色图标 */
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.private-card:hover i {
+    opacity: 1;
+    transform: scale(1.15) rotate(-5deg); /* 图标反向旋转 */
+}
+
+.private-card h3 {
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+    color: var(--primary-color);
+    line-height: 1.3;
+}
+
+.private-card p {
+    color: var(--secondary-color);
+    font-size: 0.7rem;
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+/* 休息信息 */
+.private-section > div:last-child {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--accent-color); /* 深绿色分隔线 */
+}
+
+.private-section > div:last-child p {
+    color: var(--accent-color); /* 深绿色文字 */
+    font-size: 0.8rem;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin: 0;
+}
+
+.moon-link {
+    color: var(--accent-color); /* 深绿色链接 */
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+    font-weight: 400;
+}
+
+.moon-link:hover {
+    border-bottom-color: var(--accent-color);
+}
+
+/* 导师介绍部分 */
+.profile-section {
+    padding: 60px 0;
+    border-top: 1px solid var(--border-color);
+    margin-top: 40px;
+    text-align: center;
+}
+
+.profile-section .features-grid {
+    display: flex;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.feature-item.profile-card {
+    padding: 28px 20px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: var(--white);
+    border-radius: 12px; /* 增强圆角 */
+    position: relative;
+    overflow: hidden;
+    max-width: 520px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); /* 添加阴影 */
+}
+
+.feature-item.profile-card:hover {
+    border-color: var(--accent-color); /* 深绿色边框 */
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* 导师头像样式 */
+.profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--accent-color); /* 深绿色边框 */
+    margin: 0 auto 16px;
+    transition: all 0.3s ease;
+}
+
+.feature-item.profile-card:hover .profile-image {
+    border-color: var(--accent-light); /* 悬停时浅绿色 */
+    transform: scale(1.05);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 导师信息 */
+.profile-info h4 {
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+    color: var(--primary-color);
+    line-height: 1.3;
+}
+
+.profile-info .subtitle {
+    color: var(--accent-color); /* 深绿色副标题 */
+    font-size: 0.7rem;
+    line-height: 1.4;
+    font-weight: 300;
+    margin-bottom: 16px;
+}
+
+/* 介绍文字 */
+.feature-item.profile-card .intro-text {
+    font-size: 0.7rem;
+    line-height: 1.4;
+    color: var(--secondary-color);
+    font-weight: 300;
+    text-align: center;
+    margin: 0;
+}
+
+/* 加载动画 */
+.feature-item,
+.comparison-card,
+.private-card {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 延迟动画 */
+.feature-item:nth-child(1) { animation-delay: 0.1s; }
+.feature-item:nth-child(2) { animation-delay: 0.2s; }
+.feature-item:nth-child(3) { animation-delay: 0.3s; }
+
+.comparison-card:nth-child(1) { animation-delay: 0.2s; }
+.comparison-card:nth-child(2) { animation-delay: 0.3s; }
+
+.private-card:nth-child(1) { animation-delay: 0.1s; }
+.private-card:nth-child(2) { animation-delay: 0.2s; }
+.private-card:nth-child(3) { animation-delay: 0.3s; }
+.private-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .classes-section {
+        padding: 80px 0 30px;
+    }
+    
+    .classes-section .container {
+        padding: 0 28px;
+    }
+    
+    .page-header {
+        margin-bottom: 50px;
+    }
+    
+    .page-header h1 {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+    
+    .subtitle {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .classes-section h2 {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+    
+    .section-subtitle {
+        font-size: 0.75rem;
+        margin-bottom: 30px;
+    }
+    
+    .intro-text {
+        font-size: 0.85rem;
+    }
+    
+    .features-grid,
+    .comparison-grid,
+    .private-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .feature-item,
+    .comparison-card,
+    .private-card {
+        padding: 20px 16px;
+    }
+    
+    .feature-item i,
+    .comparison-card i,
+    .private-card i {
+        font-size: 1.4rem;
+    }
+    
+    .profile-section {
+        padding: 40px 0;
+        margin-top: 30px;
+    }
+    
+    .profile-section .features-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .feature-item.profile-card {
+        padding: 20px 16px;
+        max-width: 100%;
+    }
+    
+    .profile-image {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .classes-section .container {
+        padding: 0 24px;
+    }
+    
+    .page-header h1 {
+        font-size: 1.3rem;
+        letter-spacing: 1.5px;
+    }
+    
+    .feature-item:hover,
+    .comparison-card:hover,
+    .private-card:hover {
+        transform: translateY(-3px);
+    }
+}
+
+/* 大屏幕优化 */
+@media (min-width: 1200px) {
+    .classes-section .container {
+        max-width: 1100px;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .comparison-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .private-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

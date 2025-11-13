@@ -1,0 +1,160 @@
+/* sanskrit-mantra.css */
+
+.categories-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.category-section {
+    padding: 0;
+}
+
+.category-header {
+    display: block;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.2rem;
+    text-align: center;
+    position: relative;
+}
+
+.category-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg,
+    transparent 0%,
+    #000000 30%,
+    #000000 70%,
+    transparent 100%);
+}
+
+.category-title {
+    font-size: 1rem;
+    color: #000000;
+    margin: 0 0 0.3rem 0;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.category-subtitle {
+    color: #888888;
+    margin: 0;
+    font-size: 0.65rem;
+    letter-spacing: 0.8px;
+    font-weight: 300;
+}
+
+.mantras-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mantra-card {
+    padding: 1.5rem;
+    border: 1px solid #f0f0f0;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: #ffffff;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.mantra-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #000000, transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.mantra-card:hover {
+    border-color: #e0e0e0;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.mantra-card:hover::before {
+    opacity: 1;
+}
+
+.mantra-sanskrit {
+    font-size: 0.8rem;
+    color: #000000;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+.mantra-transliteration {
+    color: #666666;
+    margin-bottom: 0.5rem;
+    font-size: 0.7rem;
+    line-height: 1.2;
+}
+
+.mantra-translation {
+    color: #000000;
+    line-height: 1.2;
+    font-size: 0.7rem;
+}
+
+.category-seed .category-title { color: #4B0082; }
+.category-vedic .category-title { color: #8B0000; }
+.category-mantra .category-title { color: #2E8B57; }
+.category-shloka .category-title { color: #8B4513; }
+.category-mahavakya .category-title { color: #4B0082; }
+.category-ritual .category-title { color: #D2691E; }
+.category-peace .category-title { color: #2F4F4F; }
+.category-guru .category-title { color: #8B4513; }
+
+@media (max-width: 768px) {
+    .categories-container {
+        gap: 2.5rem;
+    }
+    
+    .category-header {
+        margin-bottom: 2rem;
+    }
+    
+    .mantras-grid {
+        gap: 1.2rem;
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .mantra-card {
+        padding: 1.2rem;
+    }
+}
+
+.mantra-card {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mantra-card:nth-child(1) { animation-delay: 0.1s; }
+.mantra-card:nth-child(2) { animation-delay: 0.2s; }
+.mantra-card:nth-child(3) { animation-delay: 0.3s; }

@@ -1,0 +1,857 @@
+/* yoga-philosophy.css */
+
+:root {
+    --primary-color: #000000;
+    --secondary-color: #666666;
+    --light-color: #888888;
+    --border-color: #f0f0f0;
+    --accent-color: #2c5530;
+    --accent-light: #4a7c59;
+    --white: #ffffff;
+}
+
+/* ===== 基础布局 ===== */
+.article-section {
+    padding: 90px 0 40px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, var(--white) 50%, #f8f9fa 100%);
+}
+
+.article-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+}
+
+/* ===== 页面头部 ===== */
+.article-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.article-header h1 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    color: var(--primary-color);
+    line-height: 1.3;
+}
+
+.article-header .subtitle {
+    font-size: 0.75rem;
+    color: var(--accent-color);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* ===== 章节样式 ===== */
+.content-section {
+    margin-bottom: 60px;
+    padding: 30px;
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.content-section:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+    font-size: 1.1rem;
+    font-weight: 350;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+}
+
+.content-section h3 {
+    font-size: 0.9rem;
+    font-weight: 350;
+    margin: 24px 0 16px 0;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.content-section h4 {
+    font-size: 0.85rem;
+    font-weight: 350;
+    margin: 1.2rem 0 0.5rem;
+    color: var(--primary-color);
+}
+
+.content-section p {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: var(--secondary-color);
+    margin-bottom: 16px;
+    font-weight: 300;
+}
+
+/* ===== 网格布局系统 ===== */
+.concept-grid,
+.pain-causes,
+.gunas-grid,
+.bodies-grid,
+.sheaths-container,
+.nadis-grid,
+.chakras-container,
+.practice-points,
+.transformation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+}
+
+.concept-item,
+.pain-item,
+.guna-item,
+.body-item,
+.sheath-item,
+.nadi-item,
+.chakra-item,
+.practice-item,
+.transformation-item {
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+.concept-item:hover,
+.pain-item:hover,
+.guna-item:hover,
+.body-item:hover,
+.sheath-item:hover,
+.nadi-item:hover,
+.chakra-item:hover,
+.practice-item:hover,
+.transformation-item:hover {
+    border-color: var(--accent-light);
+    transform: translateY(-2px);
+}
+
+.concept-item h3,
+.pain-item h3,
+.guna-item h3,
+.body-item h3,
+.sheath-item h3,
+.nadi-item h3,
+.chakra-item h3 {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: var(--primary-color);
+    letter-spacing: 0.3px;
+}
+
+.concept-title,
+.pain-title,
+.guna-title,
+.body-title,
+.sheath-title,
+.nadi-title,
+.chakra-title {
+    font-weight: 350;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.concept-item p,
+.pain-item p,
+.guna-item p,
+.body-item p,
+.sheath-item p,
+.nadi-item p,
+.chakra-item p,
+.practice-item p,
+.transformation-item p {
+    font-size: 0.7rem;
+    color: var(--secondary-color);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* ===== 经文引用样式 ===== */
+.sanskrit-quote {
+    background: #f8f9fa;
+    border-radius: 4px;
+    padding: 0.4rem 0.6rem;
+    margin: 0.6rem 0;
+    transition: all 0.3s ease;
+    line-height: 1 !important;
+}
+
+.sanskrit-text {
+    font-family: "Sanskrit Text", "Noto Sans Devanagari", serif;
+    font-size: 0.6rem !important;
+    color: var(--primary-color);
+    margin-bottom: 0.05rem !important;
+    line-height: 1 !important;
+    font-weight: 400;
+}
+
+.transliteration {
+    font-style: italic;
+    color: var(--light-color);
+    margin-bottom: 0.05rem !important;
+    font-size: 0.6rem !important;
+    line-height: 1 !important;
+    font-weight: 300;
+}
+
+.translation {
+    color: var(--secondary-color);
+    font-weight: 350;
+    font-size: 0.6rem !important;
+    line-height: 1 !important;
+    margin-bottom: 0.02rem !important;
+}
+
+.source {
+    text-align: right;
+    color: var(--light-color);
+    font-size: 0.55rem !important;
+    margin-top: 0.02rem !important;
+    font-weight: 300;
+    line-height: 1 !important;
+}
+
+/* ===== 八支修行样式 ===== */
+.limb-section {
+    margin-bottom: 2rem;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+.limb-section h3 {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+
+.limb-subtitle {
+    font-style: italic;
+    color: var(--light-color);
+    font-size: 0.7rem;
+    margin-bottom: 0.8rem;
+}
+
+.limb-details {
+    margin-top: 1rem;
+}
+
+.limb-item {
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.limb-item:hover {
+    background: #f0f4f8;
+    border-color: var(--accent-color);
+}
+
+.limb-item h4 {
+    font-size: 0.75rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.1;
+    color: var(--accent-color);
+}
+
+.limb-title {
+    font-weight: 350;
+    color: var(--primary-color);
+    margin-bottom: 0.4rem;
+    font-size: 0.7rem;
+    line-height: 1.1;
+}
+
+.limb-item p {
+    font-size: 0.65rem;
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+}
+
+.limb-quote {
+    background: #fcfcfc;
+    border-radius: 2px;
+    padding: 0.3rem 0.5rem;
+    margin-top: 0.4rem;
+    line-height: 1 !important;
+}
+
+.limb-quote .sanskrit-text {
+    font-size: 0.6rem;
+    line-height: 1 !important;
+    margin-bottom: 0.05rem !important;
+}
+
+.limb-quote .transliteration,
+.limb-quote .translation {
+    font-size: 0.55rem;
+    line-height: 1 !important;
+    margin-bottom: 0.05rem !important;
+}
+
+.limb-quote .source {
+    font-size: 0.5rem;
+    line-height: 1 !important;
+    margin-top: 0.02rem !important;
+}
+
+/* ===== 七脉轮系统 ===== */
+.chakra-section {
+    margin: 3rem 0;
+}
+
+.chakra-grid-special {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.crown-solo {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.other-chakras {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+    justify-items: center;
+}
+
+.chakra-wheel {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    border: 3px solid transparent;
+    aspect-ratio: 1 / 1;
+}
+
+.chakra-wheel:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.chakra-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+}
+
+.chakra-name {
+    font-size: 0.5rem;
+    font-weight: 600;
+    margin: 0.3rem 0 0.5rem 0;
+    color: #333;
+    line-height: 1.1;
+}
+
+.seed-mantra {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-family: 'Arial Unicode MS', 'Devanagari', sans-serif;
+    line-height: 1;
+}
+
+.chakra-petals {
+    font-size: 0.35rem;
+    color: #666;
+    margin: 0.2rem 0 0 0;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.letters-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: rotate 20s linear infinite;
+}
+
+.letter-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0;
+    font-size: 0.7rem;
+    font-family: 'Arial Unicode MS', 'Devanagari', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.letter-item:hover {
+    font-weight: bold;
+    transform: scale(1.2);
+    z-index: 3;
+}
+
+/* 轮脉颜色 */
+.chakra-wheel.color-crown {
+    border-color: #8e44ad;
+    background: linear-gradient(135deg, #f8f4ff, #fff);
+}
+.chakra-wheel.color-crown .seed-mantra,
+.chakra-wheel.color-crown .letter-item { color: #8e44ad; }
+
+.chakra-wheel.color-brow {
+    border-color: #4A6FA5;
+    background: linear-gradient(135deg, #f5f0ff, #fff);
+}
+.chakra-wheel.color-brow .seed-mantra,
+.chakra-wheel.color-brow .letter-item { color: #4A6FA5; }
+
+.chakra-wheel.color-throat {
+    border-color: #3498db;
+    background: linear-gradient(135deg, #f0f8ff, #fff);
+}
+.chakra-wheel.color-throat .seed-mantra,
+.chakra-wheel.color-throat .letter-item { color: #3498db; }
+
+.chakra-wheel.color-heart {
+    border-color: #2ecc71;
+    background: linear-gradient(135deg, #f0fff4, #fff);
+}
+.chakra-wheel.color-heart .seed-mantra,
+.chakra-wheel.color-heart .letter-item { color: #2ecc71; }
+
+.chakra-wheel.color-solar {
+    border-color: #f1c40f;
+    background: linear-gradient(135deg, #fffef0, #fff);
+}
+.chakra-wheel.color-solar .seed-mantra,
+.chakra-wheel.color-solar .letter-item { color: #f1c40f; }
+
+.chakra-wheel.color-sacral {
+    border-color: #e67e22;
+    background: linear-gradient(135deg, #fff8f0, #fff);
+}
+.chakra-wheel.color-sacral .seed-mantra,
+.chakra-wheel.color-sacral .letter-item { color: #e67e22; }
+
+.chakra-wheel.color-root {
+    border-color: #e74c3c;
+    background: linear-gradient(135deg, #fff0f0, #fff);
+}
+.chakra-wheel.color-root .seed-mantra,
+.chakra-wheel.color-root .letter-item { color: #e74c3c; }
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ===== 其他组件 ===== */
+.warning-box {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 6px;
+    padding: 0.6rem 0.8rem;
+    margin: 1rem 0;
+    color: #856404;
+    font-size: 0.65rem;
+    line-height: 1.2;
+}
+
+.conclusion {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.back-section {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid var(--accent-color);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 300;
+}
+
+.back-link:hover {
+    background: var(--accent-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* ===== 动画效果 ===== */
+.content-section,
+.concept-item,
+.pain-item,
+.guna-item,
+.body-item,
+.sheath-item,
+.nadi-item,
+.chakra-item,
+.practice-item,
+.transformation-item,
+.limb-section {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== 响应式设计 ===== */
+@media (max-width: 768px) {
+    .article-section {
+        padding: 80px 0 30px;
+    }
+    
+    .article-section .container {
+        padding: 0 28px;
+    }
+    
+    .content-section {
+        padding: 24px 20px;
+        margin-bottom: 40px;
+    }
+    
+    .concept-grid,
+    .pain-causes,
+    .gunas-grid,
+    .bodies-grid,
+    .sheaths-container,
+    .nadis-grid,
+    .chakras-container,
+    .practice-points,
+    .transformation-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    /* 七脉轮平板布局 */
+    .chakra-grid-special {
+        gap: 1.5rem;
+    }
+    
+    .other-chakras {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        max-width: 100%;
+        padding: 0;
+        justify-items: center;
+    }
+    
+    .chakra-wheel {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto;
+    }
+    
+    .seed-mantra {
+        font-size: 1.8rem;
+    }
+    
+    .letter-item {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-section .container {
+        padding: 0 24px;
+    }
+    
+    .article-header h1 {
+        font-size: 1.2rem;
+    }
+    
+    .content-section {
+        padding: 20px 16px;
+    }
+    
+    /* 七脉轮手机布局 - 单列居中 */
+    .chakra-grid-special {
+        gap: 2rem;
+        width: 100%;
+    }
+    
+    .other-chakras {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        width: 100%;
+    }
+    
+    .chakra-wheel {
+        width: 160px !important;
+        height: 160px !important;
+        margin: 0 auto;
+        aspect-ratio: 1 / 1;
+        flex-shrink: 0;
+    }
+    
+    .crown-solo,
+    .other-chakras > div {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        min-height: auto;
+    }
+}
+
+/* ===== 大屏幕优化 ===== */
+@media (min-width: 1200px) {
+    .article-section .container {
+        max-width: 1100px;
+    }
+    
+    .concept-grid,
+    .practice-points,
+    .transformation-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .pain-causes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gunas-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ===== 打印样式 ===== */
+@media print {
+    .article-section {
+        background: white;
+        padding: 20px 0;
+    }
+    
+    .content-section {
+        border: 1px solid #ccc;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+.asana-system {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.asana-group {
+  border: 2px solid #e0e0e0;
+  border-radius: 15px;
+  padding: 2rem;
+  background: white;
+}
+
+.asana-main-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #8B7355;
+}
+
+.asana-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 0.5rem;
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* 变体容器 */
+.variants-container {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.variants-container.multi-variant {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* 变体卡片 */
+.variant-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.5rem;
+  background: #fafafa;
+  position: relative;
+}
+
+.variant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.variant-label {
+  font-weight: bold;
+  color: #8B7355;
+}
+
+.variant-symbol {
+  font-size: 1.2em;
+}
+
+/* 紧凑版对称布局 */
+.symmetric-flow.compact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9em;
+}
+
+.flow-center, .flow-right, .flow-left {
+  padding: 0.8rem;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%;
+  max-width: 250px;
+}
+
+.flow-center {
+  background: #f0f0f0;
+  border: 1px dashed #ccc;
+}
+
+.flow-right {
+  background: #e3f2fd;
+  border: 1px solid #bbdefb;
+  margin-left: 2rem;
+}
+
+.flow-left {
+  background: #fce4ec;
+  border: 1px solid #f8bbd9;
+  margin-right: 2rem;
+}
+
+.side-step em {
+  font-size: 0.8em;
+  color: #666;
+  display: block;
+  margin-top: 0.3rem;
+}
+
+/* 顺序流程 */
+.sequential-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.step {
+  padding: 0.8rem;
+  background: white;
+  border-radius: 6px;
+  border-left: 3px solid #8B7355;
+}
+
+.step.highlight {
+  background: #fff8e1;
+  border-left-color: #ffa000;
+  font-weight: bold;
+}
+
+/* 过渡提示 */
+.transition-note {
+  text-align: center;
+  background: #e8f5e8;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9em;
+  color: #2e7d32;
+}
+
+.next-variant {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: #f3e5f5;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.sequence-end {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #e8eaf6;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .variants-container.multi-variant {
+    grid-template-columns: 1fr;
+  }
+  
+  .asana-stats {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .flow-right, .flow-left {
+    margin: 0;
+  }
+}

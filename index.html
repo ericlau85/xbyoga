@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashtanga Studio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body class="home-page-body">
+    <div class="home-container">
+        <div class="home-layout">
+            
+            <div class="home-left-column">
+                
+                <div class="home-logo">
+                    <div class="ashtanga-text">🌞</div>
+                </div>
+                
+                <!-- 中文内容 -->
+                <div class="home-name zh-content">Ashtanga Studio</div>
+                <div class="home-location zh-content">希波</div>
+                
+                <!-- 英文内容 (默认隐藏) -->
+                <div class="home-name en-content" style="display: none;">Ashtanga Studio</div>
+                    <div class="home-location en-content" style="display: none;">Eric</div>
+                    
+                <div class="home-contact-icons">
+                    <a href="mailto:info@ashtangastudio.com" class="home-contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="home-contact-icon" onclick="showWechatQR()">
+                        <i class="fab fa-weixin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/xbyoga" class="home-contact-icon" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <!-- 语言切换按钮 -->
+                <div class="language-switcher-single">
+                    <button class="lang-btn-single" data-lang="zh">🇬🇧</button>
+                </div>
+            </div>
+
+            <div class="home-right-column">
+                <!-- 中文内容 -->
+                <section class="home-section zh-content">
+                    <h2 class="home-section-title">课程</h2>
+                    <div class="home-items-list">
+                        <a href="courses/ashtanga.html" class="home-item">阿斯汤加</a>
+                        <a href="courses/sanskrit.html" class="home-item">梵语</a>
+                    </div>
+                </section>
+
+                <section class="home-section zh-content">
+                    <h2 class="home-section-title">知识库</h2>
+                    <div class="home-items-list">
+                        <a href="knowledge/practice.html" class="home-item">瑜伽基础</a>
+                        <a href="knowledge/sanskrit.html" class="home-item">梵语智慧</a>
+                        <a href="knowledge/philosophy.html" class="home-item">瑜伽哲学</a>
+                    </div>
+                </section>
+
+                <!-- 英文内容 (默认隐藏) -->
+                <section class="home-section en-content" style="display: none;">
+                    <h2 class="home-section-title">Courses</h2>
+                    <div class="home-items-list">
+                        <a href="en-pages/courses/ashtanga-en.html" class="home-item">Ashtanga</a>
+                        <a href="en-pages/courses/sanskrit-en.html" class="home-item">Sanskrit</a>
+                    </div>
+                </section>
+
+                <section class="home-section en-content" style="display: none;">
+                    <h2 class="home-section-title">Knowledge Base</h2>
+                    <div class="home-items-list">
+                        <a href="en-pages/knowledge/practice-en.html" class="home-item">Yoga Foundation</a>
+                        <a href="en-pages/knowledge/sanskrit-en.html" class="home-item">Sanskrit Wisdom</a>
+                        <a href="en-pages/knowledge/philosophy-en.html" class="home-item">Yoga Philosophy</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wechatQRModal" class="qr-modal">
+        <div class="qr-modal-content">
+            <span class="qr-close">&times;</span>
+            
+            <!-- 中文版本 -->
+            <div class="zh-content">
+            <h3>添加微信</h3>
+            <img src="images/wechat-qr.jpg" alt="微信二维码" class="qr-image">
+            <p>扫描二维码联系我</p>
+            <p class="qr-username">微信号: xbyogi</p>
+        </div>
+            
+            <!-- 英文版本 -->
+            <div class="en-content" style="display: none;">
+                <h3>Add WeChat</h3>
+                <img src="images/wechat-qr.jpg" alt="WeChat QR Code" class="qr-image">
+                <p>Scan QR code to contact me</p>
+                <p class="qr-username">WeChat ID: xbyogi</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

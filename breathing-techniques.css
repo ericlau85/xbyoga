@@ -1,0 +1,410 @@
+/* breathing-techniques.css */
+
+:root {
+    --primary-color: #000000;
+    --secondary-color: #666666;
+    --light-color: #888888;
+    --border-color: #f0f0f0;
+    --accent-color: #2c5530; /* 深绿色强调色 */
+    --accent-light: #4a7c59; /* 浅绿色 */
+    --white: #ffffff;
+}
+
+/* 背景渐变 */
+.article-section {
+    padding: 90px 0 40px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, var(--white) 50%, #f8f9fa 100%);
+}
+
+.article-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+}
+
+/* 页面头部 */
+.article-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.article-header h1 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    color: var(--primary-color);
+    line-height: 1.3;
+}
+
+.article-header .subtitle {
+    font-size: 0.75rem;
+    color: var(--accent-color);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* 章节样式 */
+.chapter {
+    margin-bottom: 60px;
+    padding: 30px;
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.chapter:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.chapter h2 {
+    font-size: 1.1rem;
+    font-weight: 350;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+}
+
+.sanskrit-subtitle {
+    color: var(--accent-color);
+    font-size: 0.7rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    font-style: italic;
+}
+
+/* 正文内容 */
+.article-content p {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: var(--secondary-color);
+    margin-bottom: 16px;
+    font-weight: 300;
+}
+
+.sanskrit {
+    font-family: serif;
+    color: var(--accent-color);
+    font-weight: 400;
+}
+
+.transliteration {
+    color: var(--light-color);
+    font-size: 0.7rem;
+    font-style: italic;
+    margin-top: 4px;
+}
+
+/* 内容网格布局 */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+}
+
+.content-item {
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+.content-item:hover {
+    border-color: var(--accent-light);
+    transform: translateY(-2px);
+}
+
+.content-item h4 {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: var(--primary-color);
+    letter-spacing: 0.3px;
+}
+
+.content-item .sanskrit {
+    font-size: 0.7rem;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+.content-item .transliteration {
+    font-size: 0.65rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.content-item p:last-of-type {
+    font-size: 0.7rem;
+    color: var(--secondary-color);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* 辅音网格布局 */
+.consonant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.consonant-item {
+    padding: 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--white);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.consonant-item:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.consonant-item h4 {
+    font-size: 0.75rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+    letter-spacing: 0.3px;
+}
+
+.consonant-item .sanskrit {
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.consonant-item p {
+    font-size: 0.65rem;
+    line-height: 1.4;
+    color: var(--secondary-color);
+    margin-bottom: 0;
+}
+
+/* 支持网格布局 */
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+}
+
+.support-item {
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f8f9fa 0%, var(--white) 100%);
+    transition: all 0.3s ease;
+}
+
+.support-item:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.support-item h4 {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: var(--accent-color);
+    letter-spacing: 0.3px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.support-item p {
+    font-size: 0.7rem;
+    line-height: 1.5;
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+}
+
+.support-item strong {
+    color: var(--primary-color);
+    font-weight: 400;
+}
+
+/* 子标题 */
+.chapter h3 {
+    font-size: 0.9rem;
+    font-weight: 350;
+    margin: 24px 0 16px 0;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* 返回链接 */
+.back-section {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid var(--accent-color);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 300;
+}
+
+.back-link:hover {
+    background: var(--accent-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* 加载动画 */
+.chapter,
+.content-item,
+.consonant-item,
+.support-item {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 延迟动画 */
+.chapter:nth-child(1) { animation-delay: 0.1s; }
+.chapter:nth-child(2) { animation-delay: 0.2s; }
+.chapter:nth-child(3) { animation-delay: 0.3s; }
+.chapter:nth-child(4) { animation-delay: 0.4s; }
+.chapter:nth-child(5) { animation-delay: 0.5s; }
+.chapter:nth-child(6) { animation-delay: 0.6s; }
+.chapter:nth-child(7) { animation-delay: 0.7s; }
+.chapter:nth-child(8) { animation-delay: 0.8s; }
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .article-section {
+        padding: 80px 0 30px;
+    }
+    
+    .article-section .container {
+        padding: 0 28px;
+    }
+    
+    .article-header {
+        margin-bottom: 40px;
+        padding-bottom: 25px;
+    }
+    
+    .article-header h1 {
+        font-size: 1.3rem;
+        letter-spacing: 1.5px;
+    }
+    
+    .chapter {
+        padding: 24px 20px;
+        margin-bottom: 40px;
+    }
+    
+    .chapter h2 {
+        font-size: 1rem;
+        letter-spacing: 0.8px;
+    }
+    
+    .content-grid,
+    .consonant-grid,
+    .support-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .content-item,
+    .consonant-item,
+    .support-item {
+        padding: 16px;
+    }
+    
+    .back-section {
+        margin-top: 40px;
+        padding-top: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-section .container {
+        padding: 0 24px;
+    }
+    
+    .article-header h1 {
+        font-size: 1.2rem;
+    }
+    
+    .chapter {
+        padding: 20px 16px;
+    }
+    
+    .content-item:hover,
+    .consonant-item:hover,
+    .support-item:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* 大屏幕优化 */
+@media (min-width: 1200px) {
+    .article-section .container {
+        max-width: 1100px;
+    }
+    
+    .content-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .consonant-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .support-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .article-section {
+        background: white;
+        padding: 20px 0;
+    }
+    
+    .chapter {
+        border: 1px solid #ccc;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}

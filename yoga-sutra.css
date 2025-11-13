@@ -1,0 +1,118 @@
+/* yoga-sutra.css */
+
+#invocation .mantra-section {
+    text-align: center;
+    margin: 1.5rem auto;
+    max-width: 600px;
+    padding: 0;
+}
+
+#invocation .sanskrit-text {
+    font-size: 0.7rem;
+    line-height: 1.2;
+    color: #000000;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+#invocation .transliteration-text {
+    font-size: 0.7rem;
+    line-height: 1.2;
+    color: #666666;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+#invocation .translation-text {
+    font-size: 0.7rem;
+    line-height: 1.2;
+    color: #000000;
+    margin-bottom: 1rem;
+    font-family: "SimSun", "NSimSun", serif;
+    text-align: center;
+    border-left: none;
+    padding-left: 0;
+}
+
+#invocation .mantra-section:not(:last-child) {
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.sutra-section {
+    margin: 0.5rem 0;
+    padding: 0.8rem 0;
+    background: transparent;
+    border-left: none;
+    padding-left: 0;
+}
+
+.sutra-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.4rem;
+}
+
+.sutra-number {
+    background: #000000;
+    color: #ffffff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    font-size: 0.6rem;
+    font-weight: bold;
+    line-height: 1.0;
+}
+
+.sutra-title {
+    font-weight: 500;
+    color: #000000;
+    font-size: 0.7rem;
+    line-height: 1.0;
+}
+
+/* 经文内容 */
+.sutra-content .sanskrit-text p {
+    font-size: 0.7rem;
+    line-height: 1.2;
+    color: #000000;
+    margin-bottom: 0.2rem;
+    font-weight: 500;
+}
+
+.sutra-content .transliteration-text p {
+    font-size: 0.7rem;
+    line-height: 1.2;
+    color: #666666;
+    margin-bottom: 0.2rem;
+    font-style: italic;
+}
+
+.sutra-content .translation-text p {
+    font-size: 0.7rem;
+    line-height: 1.2;
+    color: #666666;
+    margin-bottom: 0.2rem;
+    border-left: none;
+    padding-left: 0;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    #invocation .mantra-section {
+        max-width: 90%;
+        margin: 1rem auto;
+    }
+    
+    .sutra-section {
+        padding: 0.6rem 0;
+        margin: 0.4rem 0;
+        padding-left: 0;
+    }
+    
+    .sutra-header {
+        gap: 0.6rem;
+        margin-bottom: 0.3rem;
+    }
+}
