@@ -1,0 +1,106 @@
+{
+  "id": "sanskrit",
+  "type": "course",
+  "en": {
+    "title": "SANSKRIT COURSES",
+    "subtitle": "Online Sanskrit for Yoga · The Cultural Foundation of Yoga",
+    "intro": "Sanskrit (संस्कृतम्), meaning \"the language of the gods\", is one of the world's oldest linguistic systems and serves as the foundation of yoga philosophy and culture. In ancient India, it was the universal language for conveying knowledge, wisdom, and spiritual exploration. Whether you aim to read scriptures deeply, recite classics accurately, or integrate authentic mantra chanting into your yoga practice, this online course will provide you with a solid foundation.",
+    "whyTitle": "Course Features",
+    "features": [
+      {
+        "icon": "fas fa-microphone-alt",
+        "title": "Build Phonetic Foundation",
+        "description": "Systematically learn Devanagari script and Latin transliteration, overcoming pronunciation challenges"
+      },
+      {
+        "icon": "fas fa-book-open",
+        "title": "Master Yoga Terminology",
+        "description": "Gain deep understanding of common yoga terms, asana names, and precise meanings in classical texts"
+      },
+      {
+        "icon": "fas fa-om",
+        "title": "Learn Core Chants",
+        "description": "Accurately recite essential mantras to enrich your yoga practice"
+      }
+    ],
+    "syllabusTitle": "Syllabus",
+    "syllabusSubtitle": "Systematic Learning · Progressive Approach",
+    "syllabus": [
+      {
+        "number": "1",
+        "title": "Gateway to Sanskrit · Phonetics & Reading",
+        "description": "Introduction to Devanagari and Latin transliteration; learning vowels, consonants and standard pronunciation rules"
+      },
+      {
+        "number": "2",
+        "title": "Foundation of Wisdom · Numbers & Philosophy",
+        "description": "Learning Sanskrit numerals; introduction to Yoga Sutras core terminology and philosophical concepts"
+      },
+      {
+        "number": "3",
+        "title": "Asana Analysis · Names & Meanings",
+        "description": "Learning Sanskrit names, structure and literal meanings of common yoga asanas"
+      },
+      {
+        "number": "4",
+        "title": "Devotional Chanting · Hymns & Prayers",
+        "description": "Learning and precisely practising core mantras including devotional verses, peace invocations and Vedic hymns"
+      }
+    ],
+    "pricingTitle": "Course Fees",
+    "courseDuration": "4 Sessions Course",
+    "coursePrice": "¥290",
+    "priceNote": "Includes all learning materials and online support"
+  },
+  "zh": {
+    "title": "梵语课程",
+    "subtitle": "在线瑜伽梵语课 · 瑜伽的文化根基",
+    "intro": "梵语（संस्कृतम्），意为\"神的语言\"，是世界上最古老的语言体系之一，更是瑜伽哲学与文化的根基。在古印度，它作为承载知识、智慧与灵性探索的通用语言。无论您是为了深度阅读典籍、精准诵读经典，还是将纯正的咒语念诵融入瑜伽练习，本在线课程都将为您奠定坚实的基础。",
+    "whyTitle": "为何学习梵语",
+    "features": [
+      {
+        "icon": "fas fa-microphone-alt",
+        "title": "夯实语音根基",
+        "description": "系统学习天城文书写与拉丁转写，突破发音难关"
+      },
+      {
+        "icon": "fas fa-book-open",
+        "title": "精通瑜伽术语",
+        "description": "深入理解瑜伽常用术语、体式名称及经典经文的精确含义"
+      },
+      {
+        "icon": "fas fa-om",
+        "title": "掌握核心唱诵",
+        "description": "精准念诵必要咒语，丰富瑜伽练习内涵"
+      }
+    ],
+    "syllabusTitle": "学习大纲",
+    "syllabusSubtitle": "系统学习 · 循序渐进",
+    "syllabus": [
+      {
+        "number": "1",
+        "title": "梵语之门 · 语音与拼读",
+        "description": "认识天城文与拉丁转写；学习元音、辅音及其标准发音规则"
+      },
+      {
+        "number": "2",
+        "title": "智慧基石 · 计数与哲学",
+        "description": "学习梵语数字；初探《瑜伽经》核心术语与哲学概念"
+      },
+      {
+        "number": "3",
+        "title": "体式精解 · 名称与内涵",
+        "description": "学习常见瑜伽体式的梵语名称、结构及字面含义"
+      },
+      {
+        "number": "4",
+        "title": "经典唱诵 · 颂赞与祷文",
+        "description": "学习并精准练唱部分颂赞诗节、和平祷文及吠陀赞歌等核心咒语"
+      }
+    ],
+    "pricingTitle": "课程费用",
+    "courseDuration": "4节课程",
+    "coursePrice": "¥290",
+    "priceNote": "包含所有学习资料和在线支持"
+  }
+}

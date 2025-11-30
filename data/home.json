@@ -1,0 +1,22 @@
+{
+  "en": {
+    "studioName": "Ashtanga Studio",
+    "coursesTitle": "Courses",
+    "knowledgeTitle": "Knowledge Base",
+    "ashtanga": "Ashtanga",
+    "sanskrit": "Sanskrit",
+    "yogaFoundation": "Yoga Foundation",
+    "sanskritWisdom": "Sanskrit Wisdom",
+    "yogaPhilosophy": "Yoga Philosophy"
+  },
+  "zh": {
+    "studioName": "阿斯汤加工作室",
+    "coursesTitle": "课程",
+    "knowledgeTitle": "知识库",
+    "ashtanga": "阿斯汤加",
+    "sanskrit": "梵语",
+    "yogaFoundation": "瑜伽基础",
+    "sanskritWisdom": "梵语智慧",
+    "yogaPhilosophy": "瑜伽哲学"
+  }
+}

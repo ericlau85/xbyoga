@@ -1,0 +1,56 @@
+{
+  "en": {
+    "title": "Yoga Foundation",
+    "subtitle": "Asanas, Pranayama and Practice Methods",
+    "intro": "Systematic learning of yoga postures Sanskrit names, pranayama principles and techniques, establishing a complete yoga practice system.",
+    "articles": [
+      {
+        "title": "Asana Sanskrit Names",
+        "description": "Detailed explanation of Ashtanga yoga postures Sanskrit names, etymology and accurate pronunciation, understanding the deep meaning of each posture name.",
+        "icon": "fas fa-language"
+      },
+      {
+        "title": "Asana Practice Details",
+        "description": "Step-by-step explanation of each posture's specific practice methods, including breath coordination, movement sequences and precautions.",
+        "icon": "fas fa-user-check"
+      },
+      {
+        "title": "Pranayama Principles",
+        "description": "In-depth exploration of pranayama's philosophical basis, technical points and practice methods, including bandha application and nadishodhana.",
+        "icon": "fas fa-wind"
+      },
+      {
+        "title": "Complete Ashtanga Sequence",
+        "description": "Full Ashtanga primary series with Sanskrit names, pronunciation guides, and detailed explanations of each posture.",
+        "icon": "fas fa-list-ol"
+      }
+    ]
+  },
+  "zh": {
+    "title": "瑜伽基础",
+    "subtitle": "体式、调息与练习方法",
+    "intro": "系统学习瑜伽体式梵文名称、调息法原理与技巧，建立完整的瑜伽练习体系。",
+    "articles": [
+      {
+        "title": "体式梵文",
+        "description": "详细解析阿斯汤加瑜伽体式的梵文名称、词源构成及准确发音，理解每个体式名称的深层含义。",
+        "icon": "fas fa-language"
+      },
+      {
+        "title": "体式方法",
+        "description": "逐步讲解每个体式的具体练习方法，包括呼吸配合、动作序列和注意事项，提供清晰的练习指导。",
+        "icon": "fas fa-user-check"
+      },
+      {
+        "title": "调息法",
+        "description": "深入探讨调息法的哲学基础、技术要点和实践方法，包括锁印运用和气脉净化等高级技巧。",
+        "icon": "fas fa-wind"
+      },
+      {
+        "title": "阿斯汤加完整序列",
+        "description": "完整的阿斯汤加初级序列，包含梵文名称、发音指南和每个体式的详细解释。",
+        "icon": "fas fa-list-ol"
+      }
+    ]
+  }
+}

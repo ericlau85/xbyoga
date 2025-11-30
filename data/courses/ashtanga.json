@@ -1,0 +1,268 @@
+{
+  "id": "ashtanga",
+  "type": "course",
+  "en": {
+    "title": "MYSORE PROGRAMME",
+    "subtitle": "Ashtanga Yoga · Traditional Practice",
+    "intro": "Mysore is the most traditional way to practice Ashtanga Yoga. Each student practises a fixed sequence at their own pace and from memory, whilst the teacher provides individualised guidance and adjustments.",
+    "whyTitle": "Teaching Features",
+    "practiceTitle": "Practice Styles",
+    "features": [
+      {
+        "icon": "fas fa-dharmachakra",
+        "title": "Traditional Method",
+        "description": "Based on the traditional Ashtanga practice method"
+      },
+      {
+        "icon": "fas fa-heart",
+        "title": "Individual Attention",
+        "description": "Practice adjustments based on individual circumstances and progress"
+      },
+      {
+        "icon": "fas fa-compass",
+        "title": "Continuous Refinement",
+        "description": "Cultivate patience and inner awareness through repetitive practice"
+      }
+    ],
+    "practiceStyles": [
+      {
+        "icon": "fas fa-user-clock",
+        "title": "Mysore",
+        "subtitle": "Self-Practice · Individualised Adjustments",
+        "features": [
+          "Flexible arrival within a set time frame",
+          "Memorise and practise the fixed sequence at your own pace",
+          "Teacher provides real-time adjustments based on the individual",
+          "Develop self-practice ability and inner awareness",
+          "Suitable for practitioners of all levels"
+        ]
+      },
+      {
+        "icon": "fas fa-users",
+        "title": "Led Class",
+        "subtitle": "Unified Pace · Guided Practice",
+        "features": [
+          "Group practice starts on time",
+          "Teacher guides the entire sequence using Sanskrit count",
+          "Fixed pace and breath coordination",
+          "Deepen coordination between postures and breath",
+          "Suitable for practitioners with a foundation"
+        ]
+      }
+    ],
+    "scheduleTitle": "Class Schedule",
+    "scheduleSubtitle": "Online Classes · Flexible Participation",
+    "scheduleItems": [
+      {
+        "icon": "fas fa-user-clock",
+        "title": "Mysore",
+        "time": "Sunday - Thursday 6:30-8:00",
+        "description": "Self-practice time"
+      },
+      {
+        "icon": "fas fa-users",
+        "title": "Led Class",
+        "time": "Every Friday 6:30",
+        "description": "Guided by Sanskrit count"
+      },
+      {
+        "icon": "fas fa-graduation-cap",
+        "title": "Workshop",
+        "time": "Occasional Sundays",
+        "description": "Theory · Q&A · Deepen Understanding"
+      },
+      {
+        "icon": "fas fa-star",
+        "title": "Private Session",
+        "time": "Flexible booking",
+        "description": "Exclusively tailored time"
+      }
+    ],
+    "restDays": "Rest Days: Every Saturday & Moon Days",
+    "pricingTitle": "Course Fees",
+    "pricingSubtitle": "Choose the yoga course package that suits you",
+    "groupTitle": "Regular Courses",
+    "groupSubtitle": "Group Classes · Flexible Options",
+    "groupPrices": [
+      {
+        "title": "Single Session",
+        "price": "¥128",
+        "description": "Pay-as-you-go or irregular practice"
+      },
+      {
+        "title": "Weekly Pass",
+        "price": "¥320",
+        "description": "Short-term or trial practice"
+      },
+      {
+        "title": "Monthly Pass (12 sessions)",
+        "price": "¥660",
+        "description": "For those adapting to practice"
+      },
+      {
+        "title": "Monthly Pass",
+        "price": "¥980",
+        "description": "Choice for regular practice"
+      },
+      {
+        "title": "Quarterly Pass",
+        "price": "¥2,680",
+        "description": "Best choice for long-term practice"
+      }
+    ],
+    "privateTitle": "Private Courses",
+    "privateSubtitle": "One-on-One Guidance · Personalised Customisation",
+    "privatePrices": [
+      {
+        "title": "Single Private Session",
+        "price": "¥380",
+        "description": "75 minutes/session"
+      },
+      {
+        "title": "5 Session Package",
+        "price": "¥1,760",
+        "description": "Valid for 1 month"
+      },
+      {
+        "title": "10 Session Package",
+        "price": "¥3,200",
+        "description": "Valid for 2 months"
+      }
+    ],
+    "teacherName": "Xibo Eric",
+    "teacherSubtitle": "Discipline · Focus · Refined Guidance",
+    "teacherIntro": "Each practitioner embodies a unique inner landscape and individual rhythm of growth. My online classes are built upon daily practice, sharing insights and wisdom that emerge organically. As a fellow traveller, I walk alongside you on this journey of unifying knowledge and action, supporting yoga as it evolves from a mat-based practice into an art of living."
+  },
+  "zh": {
+    "title": "迈索尔课程",
+    "subtitle": "阿斯汤加瑜伽 · 传统练习",
+    "intro": "迈索尔是阿斯汤加瑜伽最传统的练习方式。每位学员按照自己的节奏和记忆练习固定序列，教师提供个性化的指导和调整。",
+    "whyTitle": "教学特色",
+    "practiceTitle": "练习方式",
+    "features": [
+      {
+        "icon": "fas fa-dharmachakra",
+        "title": "传统方式",
+        "description": "基于阿斯汤加传统的练习方法"
+      },
+      {
+        "icon": "fas fa-heart",
+        "title": "个体关注",
+        "description": "根据个体情况和进度提供练习调整"
+      },
+      {
+        "icon": "fas fa-compass",
+        "title": "持续精进",
+        "description": "在重复练习中培养耐心和内在觉察"
+      }
+    ],
+    "practiceStyles": [
+      {
+        "icon": "fas fa-user-clock",
+        "title": "Mysore",
+        "subtitle": "自主练习 · 个体化调整",
+        "features": [
+          "规定时间段灵活入场",
+          "按照个人节奏记忆并练习固定序列",
+          "教师根据个体情况提供实时调整",
+          "培养自我练习能力和内在觉察",
+          "适合所有水平的练习者"
+        ]
+      },
+      {
+        "icon": "fas fa-users",
+        "title": "领课",
+        "subtitle": "统一节奏 · 引导式练习",
+        "features": [
+          "团体练习准时开始",
+          "教师用梵语统一口令引导整个序列",
+          "固定节奏和呼吸配合",
+          "深化体式与呼吸的协调性",
+          "适合有基础的练习者"
+        ]
+      }
+    ],
+    "scheduleTitle": "课程安排",
+    "scheduleSubtitle": "线上课程 · 灵活参与",
+    "scheduleItems": [
+      {
+        "icon": "fas fa-user-clock",
+        "title": "Mysore",
+        "time": "周日至周四 6:30-8:00",
+        "description": "自主练习时间"
+      },
+      {
+        "icon": "fas fa-users",
+        "title": "领课",
+        "time": "每周五 6:30",
+        "description": "统一口令引导"
+      },
+      {
+        "icon": "fas fa-graduation-cap",
+        "title": "研习会",
+        "time": "周日不定期",
+        "description": "理论 · 答疑 · 深化理解"
+      },
+      {
+        "icon": "fas fa-star",
+        "title": "私教",
+        "time": "灵活预约",
+        "description": "专属定制时间"
+      }
+    ],
+    "restDays": "休息日：每周六 & 新月/满月日",
+    "pricingTitle": "课程费用",
+    "pricingSubtitle": "选择适合您的瑜伽课程套餐",
+    "groupTitle": "常规课程",
+    "groupSubtitle": "团体课程 · 灵活选择",
+    "groupPrices": [
+      {
+        "title": "单次体验",
+        "price": "¥128",
+        "description": "按次或无规律练习"
+      },
+      {
+        "title": "周卡",
+        "price": "¥320",
+        "description": "短期和尝试性练习"
+      },
+      {
+        "title": "月卡12次",
+        "price": "¥660",
+        "description": "适应练习阶段"
+      },
+      {
+        "title": "月卡",
+        "price": "¥980",
+        "description": "规律练习的选择"
+      },
+      {
+        "title": "季卡",
+        "price": "¥2,680",
+        "description": "长期练习最佳选择"
+      }
+    ],
+    "privateTitle": "私教课程",
+    "privateSubtitle": "一对一指导 · 个性化定制",
+    "privatePrices": [
+      {
+        "title": "单节私教",
+        "price": "¥380",
+        "description": "75分钟/节"
+      },
+      {
+        "title": "5节套餐",
+        "price": "¥1,760",
+        "description": "期限1个月"
+      },
+      {
+        "title": "10节套餐",
+        "price": "¥3,200",
+        "description": "期限2个月"
+      }
+    ],
+    "teacherName": "希波 Eric",
+    "teacherSubtitle": "自律 · 专注 · 精进指导",
+    "teacherIntro": "每位练习者，都有其独特的内在风景与成长节奏。我的线上课程，以每日练习为土壤，分享由此生发的体悟与智慧。我以同行者之姿，陪伴你踏上这趟知行合一的探索之旅，让瑜伽从垫上的练习，成为生活的艺术。"
+  }
+}

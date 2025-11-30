@@ -1,0 +1,16 @@
+{
+  "/courses/ashtanga/page": "app/courses/ashtanga/page.js",
+  "/courses/sanskrit/page": "app/courses/sanskrit/page.js",
+  "/knowledge/sanskrit-wisdom/alphabet/page": "app/knowledge/sanskrit-wisdom/alphabet/page.js",
+  "/knowledge/sanskrit-wisdom/chants/page": "app/knowledge/sanskrit-wisdom/chants/page.js",
+  "/knowledge/sanskrit-wisdom/page": "app/knowledge/sanskrit-wisdom/page.js",
+  "/knowledge/yoga-foundation/asana/page": "app/knowledge/yoga-foundation/asana/page.js",
+  "/knowledge/yoga-foundation/page": "app/knowledge/yoga-foundation/page.js",
+  "/knowledge/yoga-foundation/practice/page": "app/knowledge/yoga-foundation/practice/page.js",
+  "/knowledge/yoga-foundation/pranayama/page": "app/knowledge/yoga-foundation/pranayama/page.js",
+  "/knowledge/yoga-philosophy/page": "app/knowledge/yoga-philosophy/page.js",
+  "/knowledge/yoga-philosophy/sutras/page": "app/knowledge/yoga-philosophy/sutras/page.js",
+  "/knowledge/yoga-philosophy/systems/page": "app/knowledge/yoga-philosophy/systems/page.js",
+  "/moon-calendar/page": "app/moon-calendar/page.js",
+  "/page": "app/page.js"
+}

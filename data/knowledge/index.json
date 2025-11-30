@@ -1,0 +1,58 @@
+{
+  "en": {
+    "categories": [
+      {
+        "title": "Yoga Foundation",
+        "description": "Complete Ashtanga sequence with Sanskrit names, practice methods, and pranayama techniques",
+        "icon": "fas fa-seedling",
+        "articleCount": "4 Articles",
+        "link": "/knowledge/yoga-foundation",
+        "sections": ["Asana List", "Asana Meanings", "Practice Methods", "Pranayama"]
+      },
+      {
+        "title": "Sanskrit Wisdom",
+        "description": "Sanskrit alphabet, grammar rules, and traditional chants including mantras and Vedic hymns",
+        "icon": "fas fa-om",
+        "articleCount": "3 Articles",
+        "link": "/knowledge/sanskrit-wisdom",
+        "sections": ["Alphabet & Grammar", "Sacred Sounds", "Classical Chants"]
+      },
+      {
+        "title": "Yoga Philosophy",
+        "description": "Patanjali's Yoga Sutras with 196 verses and core philosophical systems of yoga",
+        "icon": "fas fa-book-open",
+        "articleCount": "2 Articles",
+        "link": "/knowledge/yoga-philosophy",
+        "sections": ["Yoga Sutras", "Philosophical Systems"]
+      }
+    ]
+  },
+  "zh": {
+    "categories": [
+      {
+        "title": "瑜伽基础",
+        "description": "完整的阿斯汤加序列体式列表、练习方法和调息技巧",
+        "icon": "fas fa-seedling",
+        "articleCount": "4篇文章",
+        "link": "/knowledge/yoga-foundation",
+        "sections": ["体式列表", "体式释义", "练习方法", "调息法"]
+      },
+      {
+        "title": "梵语智慧",
+        "description": "梵语字母、语法规则和传统唱诵，包括曼陀罗和吠陀赞歌",
+        "icon": "fas fa-om",
+        "articleCount": "3篇文章",
+        "link": "/knowledge/sanskrit-wisdom",
+        "sections": ["字母语法", "圣音唱诵", "经典唱诵集"]
+      },
+      {
+        "title": "瑜伽哲学",
+        "description": "帕坦伽利《瑜伽经》196条经文及瑜伽哲学核心体系",
+        "icon": "fas fa-book-open",
+        "articleCount": "2篇文章",
+        "link": "/knowledge/yoga-philosophy",
+        "sections": ["《瑜伽经》", "哲学体系"]
+      }
+    ]
+  }
+}
