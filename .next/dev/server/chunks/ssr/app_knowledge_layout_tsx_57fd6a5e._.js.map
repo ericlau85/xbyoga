@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/eric/Documents/xbyoga-clean/ashtangastudio/app/knowledge/layout.tsx"],"sourcesContent":["// app/knowledge/layout.tsx\nexport default function KnowledgeLayout({\n  children,\n}: {\n  children: React.ReactNode;\n}) {\n  return <>{children}</>;\n}\n"],"names":[],"mappings":"AAAA,2BAA2B;;;;;;;AACZ,SAAS,gBAAgB,EACtC,QAAQ,EAGT;IACC,qBAAO;kBAAG;;AACZ"}}]
-}
