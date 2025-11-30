@@ -84,9 +84,7 @@ export default function Home() {
             <div className="home-instructor-name">
               {language === 'zh' ? '希波' : 'Eric'}
             </div>
-            
-            <div className="home-location">{content.location}</div>
-            
+                        
             <div className="home-contact-icons">
               <a href="mailto:infor@xbyoga.com" className="home-contact-icon">
                 <i className="fas fa-envelope"></i>

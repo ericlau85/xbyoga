@@ -2,7 +2,7 @@
 import './globals.css'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
-import { LanguageProvider } from '../lib/language-context'  // 新增这行
+import { LanguageProvider } from '../lib/language-context'
 
 export default function RootLayout({
   children,

@@ -46,6 +46,12 @@
 
 
 /* === 整合的星空背景效果 === */
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .home-container {
   background: #000000;
   position: relative;
@@ -55,6 +61,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* 原有的渐变星空背景 - 保留但调整透明度 */
@@ -1754,6 +1762,27 @@
 
 
 
+/* 月相表移动端适配 */
+@media (max-width: 768px) {
+  .moon-table {
+    font-size: 12px;
+    overflow-x: auto;
+  }
+  
+  .moon-header {
+    grid-template-columns: 100px 1fr 1fr;
+    padding: 1rem 0.5rem;
+  }
+  
+  .moon-row {
+    grid-template-columns: 100px 1fr 1fr;
+    padding: 0.8rem 0.5rem;
+  }
+}
+
+
+
+
 
 
 
@@ -1953,6 +1982,45 @@
   font-size: 0.85rem;
   font-style: italic;
 }
+
+
+/* 体式表移动端优化 */
+@media (max-width: 768px) {
+  .asana-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    background: var(--surface-card);
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+  }
+  
+  .asana-item .devanagari {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-deep);
+  }
+  
+  .asana-item .sanskrit {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    border-left: none;
+    border-top: 1px solid var(--border-subtle);
+    padding-left: 0;
+    padding-top: 8px;
+  }
+  
+  .asana-item .meaning {
+    font-size: 0.85rem;
+    text-align: left;
+  }
+}
+
+
+
+
+
 
 /* === 标签页设计 === */
 .tabs-section {
@@ -2246,5 +2314,26 @@
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+  }
+}
+
+
+
+/* 移动端字体调整 */
+@media (max-width: 768px) {
+  .home-name {
+    font-size: 20px;
+  }
+  
+  .home-instructor-name {
+    font-size: 16px;
+  }
+  
+  .home-section-title {
+    font-size: 16px;
+  }
+  
+  .home-item {
+    font-size: 14px;
   }
 }
