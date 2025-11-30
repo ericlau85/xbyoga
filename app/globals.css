@@ -2337,3 +2337,153 @@ html, body {
     font-size: 14px;
   }
 }
+
+
+
+/* === 移动端紧凑设计 === */
+@media (max-width: 768px) {
+  /* 整体布局紧凑 */
+  .home-layout {
+    gap: 30px;
+    padding: 0 20px;
+  }
+  
+  /* 首页文字紧凑 */
+  .home-name {
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+  
+  .home-instructor-name {
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+  
+  .home-location {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  
+  /* 导航链接紧凑 */
+  .home-section {
+    margin-bottom: 10px;
+  }
+  
+  .home-section-title {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  
+  .home-item {
+    font-size: 13px;
+    padding: 6px 15px 6px 0;
+    letter-spacing: 0.5px;
+  }
+  
+  .home-item:hover {
+    padding-left: 12px;
+    letter-spacing: 1px;
+  }
+  
+  /* 月相表紧凑设计 */
+  .moon-table {
+    font-size: 11px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .moon-header {
+    grid-template-columns: 80px 1fr 1fr;
+    padding: 10px 8px;
+    font-size: 10px;
+  }
+  
+  .moon-row {
+    grid-template-columns: 80px 1fr 1fr;
+    padding: 8px;
+  }
+  
+  .time-pair {
+    min-width: auto;
+    padding: 6px;
+    gap: 4px;
+  }
+  
+  .utc-time, .local-time {
+    min-width: 60px;
+    font-size: 10px;
+  }
+  
+  /* 体式表紧凑设计 */
+  .asana-list {
+    gap: 8px;
+  }
+  
+  .asana-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 12px;
+    margin-bottom: 8px;
+  }
+  
+  .asana-item .devanagari {
+    font-size: 0.9rem;
+  }
+  
+  .asana-item .sanskrit {
+    font-size: 0.8rem;
+    padding-top: 6px;
+    margin-top: 2px;
+  }
+  
+  .asana-item .meaning {
+    font-size: 0.75rem;
+  }
+  
+  /* 页面容器紧凑 */
+  .page-container {
+    padding: 30px 15px;
+  }
+  
+  .content-card {
+    padding: 20px;
+  }
+  
+  /* 防止任何水平滚动 */
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  .home-container, .page-container {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 375px) {
+  .home-layout {
+    gap: 20px;
+    padding: 0 15px;
+  }
+  
+  .home-name {
+    font-size: 16px;
+  }
+  
+  .home-section-title {
+    font-size: 13px;
+  }
+  
+  .home-item {
+    font-size: 12px;
+  }
+  
+  .moon-header,
+  .moon-row {
+    grid-template-columns: 70px 1fr 1fr;
+  }
+}
