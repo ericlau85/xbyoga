@@ -1593,23 +1593,6 @@ html, body {
 }
 
 /* 响应式设计的字号调整 */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 1.8rem;  /* 减小 */
-  }
-  
-  .section-title {
-    font-size: 1.6rem;  /* 减小 */
-  }
-  
-  .ashtanga-text {
-    font-size: 2.5rem;  /* 减小 */
-  }
-  
-  .home-name {
-    font-size: 1.4rem;  /* 减小 */
-  }
-}
 
 @media (max-width: 480px) {
   .hero-title {
@@ -2319,26 +2302,6 @@ html, body {
 
 
 
-/* 移动端字体调整 */
-@media (max-width: 768px) {
-  .home-name {
-    font-size: 20px;
-  }
-  
-  .home-instructor-name {
-    font-size: 16px;
-  }
-  
-  .home-section-title {
-    font-size: 16px;
-  }
-  
-  .home-item {
-    font-size: 14px;
-  }
-}
-
-
 
 /* === 移动端紧凑设计 === */
 @media (max-width: 768px) {
@@ -2485,5 +2448,299 @@ html, body {
   .moon-header,
   .moon-row {
     grid-template-columns: 70px 1fr 1fr;
+  }
+}
+
+
+
+/* === 移动端优化设计 === */
+@media (max-width: 768px) {
+  /* 基础布局优化 */
+  html, body {
+    font-size: 14px; /* 统一基础字号 */
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .home-container {
+    min-height: 100vh;
+    padding: 20px 0;
+  }
+  
+  .home-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 0 20px;
+    height: auto;
+    min-height: 100vh;
+    align-content: center;
+  }
+  
+  /* 左侧栏紧凑设计 */
+  .home-left-column {
+    gap: 12px;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .home-logo {
+    font-size: 48px;
+    margin-bottom: 8px;
+  }
+  
+  .ashtanga-text {
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  
+  .home-name {
+    font-size: 1.3rem;
+    margin-bottom: 2px;
+    line-height: 1.2;
+  }
+  
+  .home-instructor-name {
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+    line-height: 1.2;
+  }
+  
+  .home-location {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  
+  /* 联系图标紧凑 */
+  .home-contact-icons {
+    gap: 6px;
+    margin-top: 10px;
+  }
+  
+  .home-contact-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+  
+  /* 会员区域紧凑 */
+  .home-member-section {
+    margin-top: 10px;
+  }
+  
+  .auth-buttons {
+    gap: 6px;
+  }
+  
+  .home-auth-btn.icon-only {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+  
+  .lang-btn-single {
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+  }
+  
+  /* 右侧导航紧凑 */
+  .home-right-column {
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .home-section {
+    margin-bottom: 8px;
+    width: 100%;
+  }
+  
+  .home-section-title {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  
+  .home-items-list {
+    gap: 1px;
+    width: 100%;
+  }
+  
+  .home-item {
+    font-size: 0.85rem;
+    padding: 8px 0;
+    letter-spacing: 0.8px;
+    line-height: 1.2;
+    text-align: center;
+  }
+  
+  .home-item:hover {
+    padding-left: 0;
+    padding-right: 0;
+    letter-spacing: 1px;
+  }
+  
+  .home-item::before {
+    display: none; /* 移动端隐藏箭头 */
+  }
+  
+  /* 星星优化 - 减少数量和大小 */
+  .star {
+    width: 1px !important;
+    height: 1px !important;
+  }
+  
+  .star:nth-child(n+13) {
+    display: none; /* 只显示12颗星星 */
+  }
+  
+  /* 页面内容紧凑 */
+  .page-container {
+    padding: 40px 20px;
+  }
+  
+  .hero-title {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  /* 卡片紧凑 */
+  .feature-card,
+  .practice-card,
+  .pricing-category,
+  .syllabus-card {
+    padding: 1.5rem 1.2rem;
+  }
+  
+  .feature-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-card h3,
+  .practice-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .feature-card p,
+  .practice-features li {
+    font-size: 0.85rem;
+  }
+  
+  /* 月相表紧凑 */
+  .moon-table {
+    font-size: 11px;
+  }
+  
+  .moon-header {
+    grid-template-columns: 70px 1fr 1fr;
+    padding: 10px 6px;
+  }
+  
+  .moon-row {
+    grid-template-columns: 70px 1fr 1fr;
+    padding: 8px 6px;
+  }
+  
+  .time-pair {
+    min-width: auto;
+  }
+  
+  .main-time {
+    font-size: 0.9rem;
+  }
+  
+  .utc-reference {
+    font-size: 0.7rem;
+  }
+  
+  /* 体式表紧凑 */
+  .asana-list {
+    gap: 8px;
+  }
+  
+  .asana-item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 10px;
+    margin-bottom: 6px;
+  }
+  
+  .asana-item .devanagari {
+    font-size: 0.9rem;
+  }
+  
+  .asana-item .sanskrit {
+    font-size: 0.8rem;
+    padding-top: 4px;
+  }
+  
+  .asana-item .meaning {
+    font-size: 0.75rem;
+  }
+  
+  /* 导航栏紧凑 */
+  .nav-container {
+    padding: 0 1rem;
+  }
+  
+  .nav-items {
+    gap: 1.2rem;
+  }
+  
+  .nav-item > span {
+    font-size: 0.9rem;
+  }
+  
+  .dropdown-menu {
+    min-width: 200px;
+  }
+}
+
+/* 超小屏幕额外优化 */
+@media (max-width: 375px) {
+  html, body {
+    font-size: 13px;
+  }
+  
+  .home-layout {
+    padding: 0 15px;
+    gap: 25px;
+  }
+  
+  .ashtanga-text {
+    font-size: 2.4rem;
+  }
+  
+  .home-name {
+    font-size: 1.1rem;
+  }
+  
+  .home-section-title {
+    font-size: 0.85rem;
+  }
+  
+  .home-item {
+    font-size: 0.8rem;
+    padding: 6px 0;
+  }
+  
+  .moon-header,
+  .moon-row {
+    grid-template-columns: 60px 1fr 1fr;
+    font-size: 10px;
   }
 }
