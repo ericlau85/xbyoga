@@ -44,7 +44,7 @@ export default function Navigation() {
                 </Link>
 
                 {/* 右侧按钮 */}
-                <div className="flex items-center space-x-4 sm:space-x-6">
+                <div className="flex items-center space-x-4 sm:space-x-6 whitespace-nowrap">
                   {/* 首页链接 */}
                   <Link
                     href="/"
@@ -80,7 +80,7 @@ export default function Navigation() {
                   {/* 语言切换按钮 */}
                   <button
                     onClick={toggleLanguage}
-                    className="px-4 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 transition-all duration-200 min-w-[80px] text-center"
+                    className="px-4 py-2 bg-white text-red-800 border border-red-800 text-sm rounded-lg hover:bg-red-50 hover:border-red-900 transition-all duration-200 min-w-[80px] text-center"
                   >
                     {language === 'zh' ? 'EN' : '中文'}
                   </button>

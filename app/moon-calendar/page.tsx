@@ -113,7 +113,7 @@ export default function MoonCalendarPage() {
                   <div className="p-4 border-l border-gray-200">
                     <div className="text-center space-y-1">
                       <div className="font-medium text-gray-800">
-                        {month.newMoon.local.split(' ')[1]} {month.newMoon.local.split(' ')[2]}
+                        {month.newMoon.local.split(' ')[0]} {month.newMoon.local.split(' ')[1]}
                         {month.newMoon.nextDay && <sup className="text-red-800 ml-0.5">*</sup>}
                       </div>
                       <div className="text-sm text-gray-500">
@@ -129,7 +129,7 @@ export default function MoonCalendarPage() {
                         {month.fullMoons.map((fullMoon, idx) => (
                           <div key={idx} className="text-center space-y-1">
                             <div className="font-medium text-gray-800">
-                              {fullMoon.local.split(' ')[1]} {fullMoon.local.split(' ')[2]}
+                              {fullMoon.local.split(' ')[0]} {fullMoon.local.split(' ')[1]}
                               {fullMoon.nextDay && <sup className="text-red-800 ml-0.5">*</sup>}
                             </div>
                             <div className="text-sm text-gray-500">
