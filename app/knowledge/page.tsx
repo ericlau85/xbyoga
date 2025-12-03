@@ -1,101 +1,189 @@
-// app/knowledge/page.tsx
 'use client';
 
-import Link from 'next/link';
-import { useLanguage } from '../../lib/language-context';  // 修改导入路径
+import { useLanguage } from '../../lib/language-context';
+import Footer from '../components/Footer';
+import Navigation from '../components/Navigation';
+
+// 三分类七文章结构
+const categories = [
+  {
+    id: 'yoga-foundation',
+    title_en: 'Yoga Foundation',
+    title_zh: '瑜伽基础',
+    subtitle_en: 'Asana, Pranayama & Practice Methods',
+    subtitle_zh: '体式、调息与练习方法',
+    description_en: 'Systematic learning of yoga asana Sanskrit names, pranayama principles and techniques, establishing a complete yoga practice system.',
+    description_zh: '系统学习瑜伽体式梵文名称、调息法原理与技巧，建立完整的瑜伽练习体系。',
+    articles: [
+      {
+        slug: 'asanas',
+        title_en: 'ASHTANGA ASANAS SANSKRIT GUIDE',
+        title_zh: '阿斯汤加体式梵文释义',
+        excerpt_en: 'In-depth exploration of pranayama philosophical foundations, technical essentials and practice methods, including bandha application and nadi purification techniques.',
+        excerpt_zh: '详细解析阿斯汤加瑜伽体式的梵文名称、词源构成及准确发音，理解每个体式名称的深层含义。',
+        order: 1
+      },
+      {
+        slug: 'pranayama',
+        title_en: 'PRANAYAMA PRINCIPLES & PRACTICE',
+        title_zh: '调息法原理与实践',
+        excerpt_en: 'Complete guide to breathing techniques, energy control and prana management.',
+        excerpt_zh: '深入探讨调息法的哲学基础、技术要点和实践方法，包括锁印运用和气脉净化等高级技巧。',
+        order: 2
+      },
+      {
+        slug: 'practice',
+        title_en: 'ASANA PRACTICE METHODS',
+        title_zh: '体式练习方法',
+        excerpt_en: 'Step-by-step guidance for each asana practice method, including breath coordination, movement sequences and precautions for clear practice instruction.',
+        excerpt_zh: '逐步讲解每个体式的具体练习方法，包括呼吸配合、动作序列和注意事项，提供清晰的练习指导。',
+        order: 3
+      }
+    ]
+  },
+  {
+    id: 'sanskrit-wisdom',
+    title_en: 'Sanskrit Wisdom',
+    title_zh: '梵语智慧',
+    subtitle_en: 'Alphabet, Grammar & Sacred Chants',
+    subtitle_zh: '梵语字母、语法与神圣唱诵',
+    description_en: 'Systematic learning of Sanskrit alphabet pronunciation, grammar rules, sandhi changes, traditional chants and mantras.',
+    description_zh: '系统学习梵语字母发音、语法规则、连音变化，以及传统唱诵、曼陀罗和吠陀赞歌。',
+    articles: [
+      {
+        slug: 'sanskritalphabet',
+        title_en: 'SANSKRIT ALPHABET & GRAMMAR SYSTEM',
+        title_zh: '梵语字母与语法体系',
+        excerpt_en: 'Complete study of 16 vowels and 33 consonants with pronunciation points, writing rules, syllable division, sandhi changes and core grammatical structures.',
+        excerpt_zh: '完整学习16个元音和33个辅音的发音要点、书写规则和核心语法结构。',
+        order: 4
+      },
+      {
+        slug: 'mantras',
+        title_en: 'SANSKRIT SACRED SOUNDS & CHANT COLLECTION',
+        title_zh: '梵语圣音与唱诵集',
+        excerpt_en: 'Learn traditional chants including seed syllables, short mantras, Vedic hymns, philosophical maxims, ritual recitations and peace invocations with accurate pronunciation and profound meanings.',
+        excerpt_zh: '学习传统唱诵，包括种子音节、短咒、吠陀赞歌、哲学格言、仪式诵文和平安祈请，掌握准确的发音和深刻含义。',
+        order: 5
+      }
+    ]
+  },
+  {
+    id: 'yoga-philosophy',
+    title_en: 'Yoga Philosophy',
+    title_zh: '瑜伽哲学',
+    subtitle_en: 'Yoga Sutras Wisdom & Philosophical System',
+    subtitle_zh: '《瑜伽经》智慧与哲学体系',
+    description_en: 'Systematic learning of Patanjali\'s 196 Yoga Sutras, understanding consciousness structure and eightfold path.',
+    description_zh: '系统学习帕坦伽利《瑜伽经》196条经文，深入理解心识结构和八支修行。',
+    articles: [
+      {
+        slug: 'yogasutras',
+        title_en: 'YOGA SUTRAS: COMPLETE TRANSLATION & STUDY',
+        title_zh: '《瑜伽经》全文译注与研究',
+        excerpt_en: 'Comprehensive study of all 196 sutras across four chapters, featuring Sanskrit original, Roman transliteration, and English translation covering Samadhi, Sadhana, Vibhuti, and Kaivalya.',
+        excerpt_zh: '完整学习《瑜伽经》四篇196条经文，包含梵文原文、国际转写和中文翻译，涵盖三昧品、修行品、神通品和解脱品。',
+        order: 6
+      },
+      {
+        slug: 'yogaphilosophy',
+        title_en: 'CORE THEORIES OF YOGA PHILOSOPHY',
+        title_zh: '瑜伽哲学核心理论解析',
+        excerpt_en: 'In-depth analysis of key philosophical frameworks including four-layer consciousness, five causes of suffering, five sheaths theory, seven chakras system, and the eightfold path.',
+        excerpt_zh: '深入解析心识四层结构、五苦因理论、五鞘学说、七轮系统和八支修行等瑜伽哲学核心理论体系。',
+        order: 7
+      }
+    ]
+  }
+];
 
 export default function KnowledgePage() {
-  const { language } = useLanguage();  // 使用 Context
-
-  const content = {
-    en: {
-      title: "Knowledge Base",
-      subtitle: "Systematic learning of yoga asana, Sanskrit wisdom and philosophy",
-      categories: [
-        {
-          title: "Yoga Foundation",
-          description: "Complete Ashtanga sequence with Sanskrit names, practice methods, and pranayama techniques",
-          icon: "fas fa-seedling",
-          articleCount: "3 Articles",
-          link: "/knowledge/yoga-foundation"
-        },
-        {
-          title: "Sanskrit Wisdom",
-          description: "Sanskrit alphabet, grammar rules, and traditional chants including mantras and Vedic hymns",
-          icon: "fas fa-om",
-          articleCount: "3 Articles",
-          link: "/knowledge/sanskrit-wisdom"
-        },
-        {
-          title: "Yoga Philosophy",
-          description: "Patanjali's Yoga Sutras with 196 verses and core philosophical systems of yoga",
-          icon: "fas fa-book-open",
-          articleCount: "2 Articles",
-          link: "/knowledge/yoga-philosophy"
-        }
-      ]
-    },
-    zh: {
-      title: "知识库",
-      subtitle: "系统学习瑜伽体式、梵语智慧和哲学体系",
-      categories: [
-        {
-          title: "瑜伽基础",
-          description: "完整的阿斯汤加序列体式列表、练习方法和调息技巧",
-          icon: "fas fa-seedling",
-          articleCount: "3篇文章",
-          link: "/knowledge/yoga-foundation"
-        },
-        {
-          title: "梵语智慧",
-          description: "梵语字母、语法规则和传统唱诵，包括曼陀罗和吠陀赞歌",
-          icon: "fas fa-om",
-          articleCount: "3篇文章",
-          link: "/knowledge/sanskrit-wisdom"
-        },
-        {
-          title: "瑜伽哲学",
-          description: "帕坦伽利《瑜伽经》196条经文及瑜伽哲学核心体系",
-          icon: "fas fa-book-open",
-          articleCount: "2篇文章",
-          link: "/knowledge/yoga-philosophy"
-        }
-      ]
-    }
-  };
-
-  const pageContent = content[language];
-
+  const { language } = useLanguage();
+  
   return (
-    <div className="page-container">
-      <section className="hero-section">
-        <div className="container">
-          <h1 className="hero-title">{pageContent.title}</h1>
-          <p className="hero-subtitle">{pageContent.subtitle}</p>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <Navigation />
+      
+      {/* ============ 标题区域 - 与课程页面相同设计 ============ */}
+      <div className="w-full flex justify-center items-center bg-gradient-to-r from-gray-900 to-gray-800 text-white py-20">
+        <div className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+          <h1 className="text-4xl md:text-5xl font-light mb-8 text-center">
+            {language === 'zh' ? '瑜伽知识库' : 'Yoga Knowledge Base'}
+          </h1>
+          <p className="text-xl text-red-300 mb-10 text-center">
+            {language === 'zh' ? '从基础到深入的瑜伽学习指南' : 'Comprehensive Yoga Learning Resources'}
+          </p>
+          <p className="text-gray-300 text-lg max-w-3xl text-center mx-auto leading-relaxed">
+            {language === 'zh'
+              ? '系统学习瑜伽体式、梵语、哲学与练习方法的完整知识体系'
+              : 'Complete knowledge system for systematic learning of yoga asanas, Sanskrit, philosophy and practice methods'
+            }
+          </p>
         </div>
-      </section>
-
-      <section className="categories-section">
-        <div className="container">
-          <div className="categories-grid">
-            {pageContent.categories.map((category, index) => (
-              <Link key={index} href={category.link} className="category-card">
-                <div className="category-icon">
-                  <i className={category.icon}></i>
-                </div>
-                <div className="category-content">
-                  <h3>{category.title}</h3>
-                  <p className="category-description">{category.description}</p>
-                  <span className="article-count">{category.articleCount}</span>
-                </div>
-                <div className="category-arrow">
-                  <i className="fas fa-chevron-right"></i>
-                </div>
-              </Link>
-            ))}
-          </div>
+      </div>
+      
+      {/* ============ 主要内容 ============ */}
+      <div className="w-full flex justify-center px-4 py-16">
+        <div className="w-full max-w-6xl">
+          
+          {/* 分类循环 */}
+          {categories.map((category) => (
+            <section key={category.id} className="mb-24 last:mb-0">
+              {/* 分类标题 */}
+              <div className="mb-16 text-center">
+                <h2 className="text-3xl font-light text-gray-800 mb-4">
+                  {language === 'zh' ? category.title_zh : category.title_en}
+                </h2>
+                <p className="text-xl text-red-800 mb-6">
+                  {language === 'zh' ? category.subtitle_zh : category.subtitle_en}
+                </p>
+                <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+                  {language === 'zh' ? category.description_zh : category.description_en}
+                </p>
+              </div>
+              
+              {/* 文章列表 - 每行一个 */}
+              <div className="space-y-8">
+                {category.articles.map((article) => (
+                  <a
+                    key={article.slug}
+                    href={`/knowledge/${article.slug}`}
+                    className="group block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-red-200"
+                  >
+                    <div className="p-10">
+                      <div className="flex justify-between items-start">
+                        <div className="flex-1">
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 group-hover:text-red-800 transition-colors">
+                            {language === 'zh' ? article.title_zh : article.title_en}
+                          </h3>
+                          <p className="text-gray-600 text-lg leading-relaxed">
+                            {language === 'zh' ? article.excerpt_zh : article.excerpt_en}
+                          </p>
+                        </div>
+                        <div className="ml-8 flex-shrink-0">
+                          <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-50 group-hover:bg-red-100 transition-colors">
+                            <svg
+                              className="w-6 h-6 text-red-800 transform group-hover:translate-x-1 transition-transform"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+          ))}
+          
         </div>
-      </section>
+      </div>
+      
+      <Footer />
     </div>
   );
 }

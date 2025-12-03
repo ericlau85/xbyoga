@@ -1,34 +1,23 @@
-// app/components/Footer.tsx
 'use client';
 
 import { usePathname } from 'next/navigation';
+import { useLanguage } from '../../lib/language-context';
 
 export default function Footer() {
   const pathname = usePathname();
   const isHomePage = pathname === '/';
+  const { language } = useLanguage();
   
   if (isHomePage) return null;
 
   return (
-    <footer style={{
-      padding: '16px 12px',
-      textAlign: 'center',
-      marginTop: '50px',
-      borderTop: '1px solid #e0e0e0',
-      backgroundColor: '#f8f9fa',
-      width: '100%',           // 确保宽度100%
-      display: 'flex',         // 使用flex布局
-      justifyContent: 'center', // 水平居中
-      alignItems: 'center'     // 垂直居中
-    }}>
-      <div style={{
-        maxWidth: '1000px',
-        width: '100%',         // 确保div宽度100%
-        margin: 0,
-        textAlign: 'center'    // 文字居中对齐
-      }}>
-        <p style={{ margin: 0, color: '#666', fontSize: '10px' }}>
-          &copy; 2025 ASHTANGA STUDIO. All rights reserved.
+    <footer className="py-4 text-center mt-12 border-t border-gray-200 bg-gray-50 w-full">
+      <div className="max-w-7xl mx-auto px-4">
+        <p className="text-gray-500 text-xs m-0">
+          {language === 'zh'
+            ? '© 2025 阿斯汤加工作室. 保留所有权利。'
+            : '© 2025 ASHTANGA STUDIO. All rights reserved.'
+          }
         </p>
       </div>
     </footer>

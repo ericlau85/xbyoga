@@ -7,8 +7,8 @@
     "intro": "Traditional Ashtanga yoga practice observes rest days on new moon and full moon days. This calendar provides accurate moon phase timings for planning your practice schedule.",
     "tableHeaders": {
       "month": "Month",
-      "newMoon": "🌑 New Moon (GMT+8)",
-      "fullMoon": "🌕 Full Moon (GMT+8)"
+      "newMoon": "New Moon (GMT+8)",
+      "fullMoon": "Full Moon (GMT+8)"
     },
     "legend": "* Dates are based on the Gregorian calendar, times are in Greenwich Mean Time. Other cities may calculate based on their local time zones, consecutive rest days may occur.",
     "years": [
@@ -153,8 +153,8 @@
     "intro": "传统阿斯汤加瑜伽练习在新月和满月日休息。此日历提供准确的月相时间，方便您安排练习计划。",
     "tableHeaders": {
       "month": "月份",
-      "newMoon": "🌑 新月 (GMT+8)",
-      "fullMoon": "🌕 满月 (GMT+8)"
+      "newMoon": "新月 (GMT+8)",
+      "fullMoon": "满月 (GMT+8)"
     },
     "legend": "* 表格为日期基于公历的东八区及世界协调时月相，其他城市可依格林威治标准时间推算，可能出现连休。",
     "years": [
