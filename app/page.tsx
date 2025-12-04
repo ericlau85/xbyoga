@@ -138,60 +138,131 @@ export default function Home() {
             {language === 'zh' ? '梵语课程' : 'Sanskrit Course'}
           </Link>
         </div>
-        
-        {/* 联系图标 */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '1rem',
-          marginBottom: '2rem'
-        }}>
-          <a
-            href="mailto:info@xbyoga.com"
-            style={{
-              width: '40px',
-              height: '40px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: 'rgba(255,255,255,0.1)',
-              color: 'white',
-              borderRadius: '50%',
-              textDecoration: 'none',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(139, 0, 0, 0.8)';
-              e.currentTarget.style.transform = 'scale(1.1)';
-            }}
-          >
-            <i className="fas fa-envelope"></i>
-          </a>
           
-          <button
-            onClick={showWechatQR}
-            style={{
-              width: '40px',
-              height: '40px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: 'rgba(255,255,255,0.1)',
-              color: 'white',
-              borderRadius: '50%',
-              border: 'none',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(7, 193, 96, 0.8)';
-              e.currentTarget.style.transform = 'scale(1.1)';
-            }}
-          >
-            <i className="fab fa-weixin"></i>
-          </button>
-        </div>
-        
+          {/* 联系图标 - 修正版：图标变色，背景保持呼吸感 */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '1.25rem',
+            marginBottom: '2rem'
+          }}>
+            
+            {/* 邮箱图标 - 悬停时图标变Gmail蓝 */}
+            <a
+              href="mailto:info@xbyoga.com"
+              style={{
+                width: '46px',
+                height: '46px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: 'rgba(255,255,255,0.08)',
+                color: 'white', // 默认白色
+                borderRadius: '50%',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease',
+                border: '1px solid rgba(255,255,255,0.15)'
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget;
+                el.style.color = '#4285F4'; // Gmail蓝色图标
+                el.style.background = 'rgba(255,255,255,0.15)'; // 背景轻微加深
+                el.style.borderColor = 'rgba(255,255,255,0.25)';
+                el.style.transform = 'scale(1.1)';
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget;
+                el.style.color = 'white';
+                el.style.background = 'rgba(255,255,255,0.08)';
+                el.style.borderColor = 'rgba(255,255,255,0.15)';
+                el.style.transform = 'scale(1)';
+              }}
+              title="Email: info@xbyoga.com"
+            >
+              <i className="fas fa-envelope" style={{ fontSize: '18px' }}></i>
+            </a>
+            
+            {/* 微信图标 - 悬停时图标变微信绿 */}
+            <button
+              onClick={showWechatQR}
+              style={{
+                width: '46px',
+                height: '46px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: 'rgba(255,255,255,0.08)',
+                color: 'white',
+                borderRadius: '50%',
+                border: '1px solid rgba(255,255,255,0.15)',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget;
+                el.style.color = '#07C160'; // 微信绿色图标
+                el.style.background = 'rgba(255,255,255,0.15)';
+                el.style.borderColor = 'rgba(255,255,255,0.25)';
+                el.style.transform = 'scale(1.1)';
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget;
+                el.style.color = 'white';
+                el.style.background = 'rgba(255,255,255,0.08)';
+                el.style.borderColor = 'rgba(255,255,255,0.15)';
+                el.style.transform = 'scale(1)';
+              }}
+              title="WeChat: xbyogi"
+            >
+              <i className="fab fa-weixin" style={{ fontSize: '20px' }}></i>
+            </button>
+            
+            {/* Instagram图标 - 悬停时图标彩虹色 */}
+            <a
+              href="https://instagram.com/xbyoga"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                width: '46px',
+                height: '46px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: 'rgba(255,255,255,0.08)',
+                color: 'white',
+                borderRadius: '50%',
+                border: '1px solid rgba(255,255,255,0.15)',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget;
+                el.style.background = 'rgba(255,255,255,0.15)';
+                el.style.borderColor = 'rgba(255,255,255,0.25)';
+                el.style.transform = 'scale(1.1)';
+                // 图标彩虹渐变
+                el.querySelector('i').style.background = 'linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D)';
+                el.querySelector('i').style.WebkitBackgroundClip = 'text';
+                el.querySelector('i').style.WebkitTextFillColor = 'transparent';
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget;
+                el.style.background = 'rgba(255,255,255,0.08)';
+                el.style.borderColor = 'rgba(255,255,255,0.15)';
+                el.style.transform = 'scale(1)';
+                // 恢复白色图标
+                const icon = el.querySelector('i');
+                icon.style.background = '';
+                icon.style.WebkitBackgroundClip = '';
+                icon.style.WebkitTextFillColor = '';
+                icon.style.color = 'white';
+              }}
+              title="Instagram: @xbyoga"
+            >
+              <i className="fab fa-instagram" style={{ fontSize: '20px' }}></i>
+            </a>
+          </div>
+          
         {/* 语言切换按钮 - 使用 context 的 toggleLanguage */}
         <button
           onClick={toggleLanguage}
@@ -215,12 +286,15 @@ export default function Home() {
         </button>
         
         {/* 联系信息 */}
-        <div style={{
-          color: 'rgba(255,255,255,0.7)',
-          fontSize: '0.9rem'
-        }}>
-          <p>微信: xbyogi</p>
-          <p style={{ marginTop: '0.5rem' }}>Email: info@xbyoga.com</p>
+          <div style={{
+            color: 'rgba(255,255,255,0.7)',
+            fontSize: '0.9rem',
+            textAlign: 'center',
+            marginTop: '1rem'
+          }}>
+            <p style={{ marginTop: '0.5rem', fontSize: '0.8rem' }}>
+              {language === 'zh' ? '传统 · 专注 · 精进' : 'Traditional · Focused · Progressive'}
+            </p>
         </div>
       </main>
       

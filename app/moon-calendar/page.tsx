@@ -141,7 +141,7 @@ export default function MoonCalendarPage() {
                     ) : (
                       <div className="text-center space-y-1">
                         <div className="font-medium text-gray-800">
-                          {month.fullMoon.local.split(' ')[1]} {month.fullMoon.local.split(' ')[2]}
+                          {month.fullMoon.local.split(' ')[0]} {month.fullMoon.local.split(' ')[1]}
                           {month.fullMoon.nextDay && <sup className="text-red-800 ml-0.5">*</sup>}
                         </div>
                         <div className="text-sm text-gray-500">
