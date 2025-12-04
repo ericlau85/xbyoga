@@ -168,3 +168,33 @@ button:not(:disabled) {
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
   font-weight: 600;
 }
+
+
+/* 添加到 globals.css 末尾 */
+@media (max-width: 768px) {
+  /* 强制卡片间距 */
+  .grid > * {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* 强制卡片内边距 */
+  [class*="p-10"], [class*="p-8"] {
+    padding: 1.5rem !important;
+  }
+  
+  /* 网格间距覆盖 */
+  .gap-8, [class*="gap-"] {
+    gap: 1rem !important;
+  }
+}
+
+/* 防止横向滚动 */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* 页面容器限制 */
+.min-h-screen {
+  overflow-x: hidden;
+}
