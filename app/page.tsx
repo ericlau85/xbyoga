@@ -300,7 +300,7 @@ export default function Home() {
           marginTop: '1rem'
         }}>
           <p style={{ marginTop: '0.5rem', fontSize: 'clamp(0.75rem, 2.5vw, 0.8rem)' }}>
-            {language === 'zh' ? '传统 · 专注 · 精进' : 'Traditional · Focused · Progressive'}
+            {language === 'zh' ? '传统练习 · 个性化指导 · 线上便捷学习' : 'Traditional Practice · Personalized Guidance · Online Convenience'}
           </p>
         </div>
       </main>
