@@ -5,7 +5,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date()
   
   return [
-    {
+      { url: 'https://xbyoga.com' },
+          { url: 'https://xbyoga.com/courses/ashtanga' },
+          { url: 'https://xbyoga.com/courses/sanskrit' },
+          { url: 'https://xbyoga.com/knowledge' },
+          { url: 'https://xbyoga.com/moon-calendar' },
+      {
       url: baseUrl,
       lastModified,
       changeFrequency: 'daily',
