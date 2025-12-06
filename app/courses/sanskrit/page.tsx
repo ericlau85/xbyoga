@@ -4,11 +4,10 @@ import { useState, useEffect } from 'react';
 import sanskritData from '../../../data/courses/sanskrit.json';
 import Footer from '../../components/Footer';
 import Navigation from '../../components/Navigation';
-import Link from 'next/link';
 import { useLanguage } from '../../../lib/language-context';
 
 export default function SanskritPage() {
-  const { language, toggleLanguage } = useLanguage();
+  const { language } = useLanguage();
   const [content, setContent] = useState<any>(null);
   const [showWechat, setShowWechat] = useState(false);
 
@@ -25,7 +24,7 @@ export default function SanskritPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white safe-top safe-bottom overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white safe-top safe-bottom overflow-x-hidden pt-12">
       {/* ==================== 导航栏 ==================== */}
       <Navigation />
 
@@ -36,7 +35,7 @@ export default function SanskritPage() {
           <h1 className="text-3xl md:text-5xl font-light mb-6 md:mb-6 text-center">
             {content.title}
           </h1>
-          <p className="text-lg md:text-xl text-red-300 mb-4 md:mb-8 text-center">
+          <p className="text-lg md:text-xl text-red-800 mb-4 md:mb-8 text-center">
             {content.subtitle}
           </p>
           <p className="text-gray-300 text-base md:text-lg max-w-2xl text-center mx-auto px-4">
@@ -174,9 +173,11 @@ export default function SanskritPage() {
               </div>
             </div>
           </section>
+          
+          {/* 删除了报名按钮 */}
         </div>
       </div>
-          
+                    
       {/* 页脚 */}
       <Footer />
 

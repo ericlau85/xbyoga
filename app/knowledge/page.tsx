@@ -2,7 +2,8 @@
 
 import { useLanguage } from '../../lib/language-context';
 import Footer from '../components/Footer';
-import Navigation from '../components/Navigation'; 
+import Navigation from '../components/Navigation';
+import Link from 'next/link';
 
 // 三分类七文章结构
 const categories = [
@@ -101,7 +102,7 @@ export default function KnowledgePage() {
   const { language } = useLanguage();
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white overflow-x-hidden"> {/* 添加 overflow-x-hidden */}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white overflow-x-hidden pt-12">
       
       <Navigation />
       
@@ -111,7 +112,7 @@ export default function KnowledgePage() {
           <h1 className="text-3xl md:text-5xl font-light mb-4 md:mb-8 text-center px-2">
             {language === 'zh' ? '瑜伽知识库' : 'Yoga Knowledge Base'}
           </h1>
-          <p className="text-lg md:text-xl text-red-300 mb-6 md:mb-10 text-center px-2">
+          <p className="text-lg md:text-xl text-red-800 mb-6 md:mb-10 text-center px-2">
             {language === 'zh' ? '从基础到深入的瑜伽学习指南' : 'Comprehensive Yoga Learning Resources'}
           </p>
           <p className="text-gray-300 text-base md:text-lg max-w-3xl text-center mx-auto px-2 leading-relaxed">
@@ -146,7 +147,7 @@ export default function KnowledgePage() {
               {/* 文章列表 - 每行一个 */}
               <div className="space-y-4 md:space-y-8">
                 {category.articles.map((article) => (
-                  <a
+                  <Link
                     key={article.slug}
                     href={`/knowledge/${article.slug}`}
                     className="group block bg-white rounded-lg md:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-red-200"
@@ -175,7 +176,7 @@ export default function KnowledgePage() {
                         </div>
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </section>

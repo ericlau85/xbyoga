@@ -11,81 +11,141 @@ export default function Navigation() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const pathname = usePathname();
 
-  // 自动关闭菜单
-  useEffect(() => {
+  const handleLanguageToggle = () => {
+    toggleLanguage();
     setShowMobileMenu(false);
-  }, [pathname]);
+  };
 
-  // 简化版本 - 不用复杂的样式函数
+  const handleWechatClick = () => {
+    setShowWechat(true);
+    setShowMobileMenu(false);
+  };
+
   const isCurrent = (path: string) => pathname.startsWith(path);
+
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+    link.integrity = 'sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==';
+    link.crossOrigin = 'anonymous';
+    link.referrerPolicy = 'no-referrer';
+    document.head.appendChild(link);
+    
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
 
   return (
     <>
-      <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm">
         <div className="w-full px-4">
-          <div className="flex justify-between items-center h-14">
+          <div className="flex justify-between items-center h-12">
             
-            {/* Logo */}
-            <Link href="/" className="text-lg font-light text-gray-800">
-              {language === 'zh' ? '阿斯汤加工作室' : 'Ashtanga Studio'}
+            <Link href="/" className="text-base font-light text-gray-800">
+              {language === 'zh' ? '阿斯汤加工作室' : 'ASHTANGA STUDIO'}
             </Link>
 
-            {/* 右侧 */}
             <div className="flex items-center gap-2">
               
-              {/* 桌面端链接 */}
               <div className="hidden md:flex items-center gap-4 mr-4">
-                <Link href="/courses/ashtanga"
-                  className={`px-3 py-1.5 text-sm ${isCurrent('/courses/ashtanga') ? 'text-red-800 font-bold' : 'text-gray-700'}`}>
+                <Link
+                  href="/courses/ashtanga"
+                  className={`px-3 py-1 text-xs ${isCurrent('/courses/ashtanga') 
+                    ? 'text-red-800 font-bold border-b-2 border-red-800'
+                    : 'text-gray-700 hover:text-red-800'}`}
+                >
                   {language === 'zh' ? '阿斯汤加' : 'Ashtanga'}
                 </Link>
-                <Link href="/courses/sanskrit"
-                  className={`px-3 py-1.5 text-sm ${isCurrent('/courses/sanskrit') ? 'text-red-800 font-bold' : 'text-gray-700'}`}>
+                <Link
+                  href="/courses/sanskrit"
+                  className={`px-3 py-1.5 text-xs ${isCurrent('/courses/sanskrit') 
+                    ? 'text-red-800 font-bold border-b-2 border-red-800'
+                    : 'text-gray-700 hover:text-red-800'}`}
+                >
                   {language === 'zh' ? '梵语' : 'Sanskrit'}
                 </Link>
-                <Link href="/knowledge"
-                  className={`px-3 py-1.5 text-sm ${isCurrent('/knowledge') ? 'text-red-800 font-bold' : 'text-gray-700'}`}>
+                <Link
+                  href="/knowledge"
+                  className={`px-3 py-1.5 text-xs ${isCurrent('/knowledge') 
+                    ? 'text-red-800 font-bold border-b-2 border-red-800'
+                    : 'text-gray-700 hover:text-red-800'}`}
+                >
                   {language === 'zh' ? '知识库' : 'Knowledge'}
                 </Link>
               </div>
 
-              {/* 移动端菜单按钮 */}
-              <button className="md:hidden w-10 h-10 text-gray-700" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+              <button
+                className="md:hidden w-8 h-8 text-gray-700"
+                onClick={() => setShowMobileMenu(!showMobileMenu)}
+                aria-label="菜单"
+              >
                 {showMobileMenu ? '✕' : '☰'}
               </button>
 
-              {/* 桌面端功能按钮 */}
               <div className="hidden md:flex items-center gap-3">
-                <button onClick={toggleLanguage} className="px-3 py-1.5 text-sm border border-gray-300 rounded">
+                <button
+                  onClick={handleLanguageToggle}
+                  className="px-3 py-1 text-xs border border-gray-300 rounded hover:bg-gray-50"
+                >
                   {language === 'zh' ? 'EN' : '中文'}
                 </button>
-                <button onClick={() => setShowWechat(true)} className="w-10 h-10 text-green-600">
-                  <i className="fab fa-weixin text-xl"></i>
+                <button
+                  onClick={() => setShowWechat(true)}
+                  className="w-10 h-10 text-green-600 hover:text-green-700"
+                  aria-label="微信"
+                >
+                  <i className="fab fa-weixin text-base"></i>
                 </button>
               </div>
             </div>
           </div>
 
-          {/* 移动端菜单 */}
           {showMobileMenu && (
-            <div className="md:hidden border-t border-gray-100 bg-white py-2">
+            <div className="md:hidden border-t border-gray-100 bg-white py-3">
               <div className="flex flex-col gap-1 px-2">
-                <Link href="/courses/ashtanga" className="px-3 py-2 text-sm text-gray-700" onClick={() => setShowMobileMenu(false)}>
+                <Link
+                  href="/courses/ashtanga"
+                  className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/courses/ashtanga') 
+                    ? 'text-red-800 font-bold bg-gray-100'  // 改为灰色背景
+                    : 'text-gray-700 hover:bg-gray-50'}`}
+                  onClick={() => setShowMobileMenu(false)}
+                >
                   {language === 'zh' ? '阿斯汤加' : 'Ashtanga'}
                 </Link>
-                <Link href="/courses/sanskrit" className="px-3 py-2 text-sm text-gray-700" onClick={() => setShowMobileMenu(false)}>
+                <Link
+                  href="/courses/sanskrit"
+                  className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/courses/sanskrit') 
+                    ? 'text-red-800 font-bold bg-gray-100'  // 改为灰色背景
+                    : 'text-gray-700 hover:bg-gray-50'}`}
+                  onClick={() => setShowMobileMenu(false)}
+                >
                   {language === 'zh' ? '梵语' : 'Sanskrit'}
                 </Link>
-                <Link href="/knowledge" className="px-3 py-2 text-sm text-gray-700" onClick={() => setShowMobileMenu(false)}>
+                <Link
+                  href="/knowledge"
+                  className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/knowledge') 
+                    ? 'text-red-800 font-bold bg-gray-100'  // 改为灰色背景
+                    : 'text-gray-700 hover:bg-gray-50'}`}
+                  onClick={() => setShowMobileMenu(false)}
+                >
                   {language === 'zh' ? '知识库' : 'Knowledge'}
                 </Link>
                 
-                <div className="flex gap-3 pt-2 mt-2 border-t border-gray-100">
-                  <button onClick={toggleLanguage} className="flex-1 px-4 py-2 text-sm border border-gray-300 rounded">
+                <div className="flex gap-3 pt-3 mt-3 border-t border-gray-100">
+                  <button
+                    onClick={handleLanguageToggle}
+                    className="flex-1 px-4 py-3 text-xs border border-gray-300 rounded-lg hover:bg-gray-50"
+                  >
                     {language === 'zh' ? 'EN' : '中文'}
                   </button>
-                  <button onClick={() => { setShowWechat(true); setShowMobileMenu(false); }} className="flex-1 px-4 py-2 text-sm text-green-600 border border-green-300 rounded">
-                    <i className="fab fa-weixin mr-2"></i>微信
+                  <button
+                    onClick={handleWechatClick}
+                    className="flex-1 px-4 py-3 text-xs text-green-600 border border-green-300 rounded-lg hover:bg-green-50"
+                  >
+                    <i className="fab fa-weixin mr-2 text-base"></i>
+                    {language === 'zh' ? '微信' : 'WeChat'}
                   </button>
                 </div>
               </div>

@@ -15,8 +15,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4">
         <p className="text-gray-500 text-xs m-0">
           {language === 'zh'
-            ? '© 2025 阿斯汤加工作室. 保留所有权利。'
-            : '© 2025 ASHTANGA STUDIO. All rights reserved.'
+            ? '© 2025 阿斯汤加工作室'
+            : '© 2025 ASHTANGA STUDIO'
           }
         </p>
       </div>

@@ -8,14 +8,13 @@ import Link from 'next/link';
 import { useLanguage } from '../../../lib/language-context';
 
 export default function AshtangaPage() {
-  const { language, toggleLanguage } = useLanguage();
+  const { language } = useLanguage(); // 删除了 toggleLanguage
   const [content, setContent] = useState<any>(null);
   const [showWechat, setShowWechat] = useState(false);
 
-  // 添加这个useEffect，响应language变化
   useEffect(() => {
     setContent(ashtangaData[language as keyof typeof ashtangaData]);
-  }, [language]); // 当language变化时自动更新内容
+  }, [language]);
 
   if (!content) {
     return (
@@ -26,18 +25,16 @@ export default function AshtangaPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white safe-top safe-bottom">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white safe-top safe-bottom pt-12">
       <Navigation />
 
-      {/* 页面内容保持不变 */}
-      {/* ==================== 页面内容 ==================== */}
-      {/* 蓝色区域 - 确保完全居中 */}
+      {/* 蓝色区域 */}
       <div className="w-full flex justify-center items-center bg-gradient-to-r from-gray-900 to-gray-800 text-white py-8 md:py-16">
         <div className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <h1 className="text-3xl md:text-5xl font-light mb-6 md:mb-6 text-center">
             {content.title}
           </h1>
-          <p className="text-xl md:text-xl text-red-300 mb-4 md:mb-8 text-center">
+          <p className="text-xl md:text-xl text-red-800 mb-4 md:mb-8 text-center">
             {content.subtitle}
           </p>
           <p className="text-gray-300 text-lg md:text-lg max-w-2xl text-center mx-auto px-4">
@@ -115,7 +112,7 @@ export default function AshtangaPage() {
             <p className="text-gray-600 text-center text-lg md:text-lg mb-6 md:mb-12 max-w-3xl mx-auto">
               {content.scheduleSubtitle}
             </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
               {content.scheduleItems.map((item: any, index: number) => (
                 <div key={index} className="bg-white rounded-xl shadow-lg p-5 md:p-8 hover:shadow-xl transition-all duration-300 text-center">
                   <div className="text-2xl md:text-3xl text-red-800 mb-3 md:mb-4">
@@ -132,10 +129,11 @@ export default function AshtangaPage() {
             {/* 休息日信息 */}
             <div className="mt-6 md:mt-12 text-center">
               <p className="text-gray-700 font-medium text-base md:text-base">
-                休息日：每周六 & <a href="/moon-calendar" className="text-red-800 hover:text-red-900 underline underline-offset-2 transition-colors">新月/满月日</a>
-              </p>
-            </div>
-          </section>
+                休息日：每周六 & <Link href="/moon-calendar" className="text-red-800 hover:text-red-900 underline underline-offset-2 transition-colors">新月/满月日
+              </Link>
+            </p>
+          </div>
+        </section>
 
           {/* 价格表 */}
           <section className="mb-10 md:mb-20">
@@ -214,10 +212,12 @@ export default function AshtangaPage() {
 
           {/* 希波介绍 */}
           <section className="mb-8 md:mb-12">
-            <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-3xl p-6 md:p-10 shadow-lg">
+            {/* 删除粉色背景，改为白色背景 */}
+            <div className="bg-white rounded-3xl p-6 md:p-10 shadow-lg border border-gray-200">
               <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
                 <div className="flex-shrink-0">
-                  <div className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                  {/* 头像边框从白色改为墨绿色 */}
+                  <div className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-green-900 shadow-lg">
                     <img
                       src="/images/profile.jpg"
                       alt="希波"
@@ -229,6 +229,7 @@ export default function AshtangaPage() {
                   <h3 className="text-2xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-4">
                     {content.teacherName}
                   </h3>
+                  {/* 指导语保持深红色 */}
                   <p className="text-red-800 font-medium mb-6 md:mb-8 text-lg md:text-lg">
                     {content.teacherSubtitle}
                   </p>

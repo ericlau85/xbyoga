@@ -33,7 +33,7 @@ export default function MoonCalendarPage() {
           <h1 className="text-3xl md:text-5xl font-light mb-6 md:mb-6">
             {content.title}
           </h1>
-          <p className="text-lg md:text-xl text-red-300 mb-4 md:mb-8">
+          <p className="text-lg md:text-xl text-red-800 mb-4 md:mb-8">
             {content.subtitle}
           </p>
           <p className="text-gray-300 text-base md:text-lg max-w-3xl mx-auto">
@@ -156,7 +156,7 @@ export default function MoonCalendarPage() {
           </div>
 
           {/* 图例说明 */}
-          <div className="mb-8 md:mb-12 p-4 md:p-6 bg-gradient-to-r from-red-50 to-orange-50 rounded-xl border border-red-100">
+          <div className="mb-8 md:mb-12 p-4 md:p-6 bg-gradient-to-r from-gray-50 to-gray-50 rounded-xl border border-gray-100">
             <p className="text-gray-700 text-center text-sm md:text-base">
               <sup className="text-red-800 mr-1">*</sup>
               {content.legend}
