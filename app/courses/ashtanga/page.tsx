@@ -238,7 +238,7 @@ export default function AshtangaPage() {
                             cls === 'Mysore' || cls === '领课' ? 'text-gray-800' :
                             cls === 'Led Class' ? 'text-gray-800' :
                             cls === 'Rest' || cls === '休息' ? 'text-gray-500' :
-                            cls === 'Workshop*' || cls === '研习会*' || cls === 'Workshop' || cls === '研习会' ? 'text-amber-700' :
+                            cls === 'Workshop*' || cls === '研习会*' || classType === 'Workshop' || classType === '研习会' ? 'text-amber-700' :
                             'text-gray-800'
                           }`}>
                             {cls.replace('*', '')}
