@@ -10,19 +10,7 @@ import Link from 'next/link';
 export default function MoonCalendarPage() {
   const { language } = useLanguage();
   const [activeYear, setActiveYear] = useState('2025');
-  const [isMobile, setIsMobile] = useState(false);
   
-  // 检测是否是移动设备
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
   const content = moonData[language as keyof typeof moonData];
   if (typeof content === 'string' || !content) {
     return (
@@ -36,7 +24,7 @@ export default function MoonCalendarPage() {
   const yearData = content.years.find(year => year.year === activeYear) || content.years[0];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white safe-top safe-bottom overflow-x-hidden pt-12">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white safe-top safe-bottom pt-12">
       <Navigation />
       
       {/* 标题部分 */}
@@ -83,113 +71,115 @@ export default function MoonCalendarPage() {
           {/* 月相表格 */}
           <div className="bg-white rounded-xl shadow-md overflow-hidden mb-6 md:mb-8 border border-gray-200">
             
-            {/* 表头 - 桌面端使用flex布局，移动端保持单列 */}
-            {/* 移动端：单列显示 */}
-            <div className="md:hidden border-b border-gray-200 bg-gray-50 p-3">
-              <div className="font-semibold text-gray-800 text-sm text-center">
-                {content.tableHeaders.month} / 🌑 {content.tableHeaders.newMoon.split('(')[0].trim()} / 🌕 {content.tableHeaders.fullMoon.split('(')[0].trim()}
-              </div>
-            </div>
-            
-            {/* 桌面端：flex布局，三列等宽 */}
+            {/* 桌面端表头 */}
             <div className="hidden md:flex border-b border-gray-200 bg-gray-50">
-              {/* 月份列 - 25% */}
               <div className="w-1/4 p-3 text-center font-semibold text-gray-800 text-sm">
                 {content.tableHeaders.month}
               </div>
-              {/* 新月列 - 37.5% */}
               <div className="w-3/8 p-3 text-center border-l border-gray-200">
                 <div className="font-semibold text-gray-800 mb-1 text-sm">
                   🌑 {content.tableHeaders.newMoon.split('(')[0].trim()}
                 </div>
                 <div className="flex justify-center text-xs text-gray-500 space-x-2">
                   <span>GMT+8</span>
-                  <span className="text-gray-400">|</span>
                   <span>UTC</span>
                 </div>
               </div>
-              {/* 满月列 - 37.5% */}
               <div className="w-3/8 p-3 text-center border-l border-gray-200">
                 <div className="font-semibold text-gray-800 mb-1 text-sm">
                   🌕 {content.tableHeaders.fullMoon.split('(')[0].trim()}
                 </div>
                 <div className="flex justify-center text-xs text-gray-500 space-x-2">
                   <span>GMT+8</span>
-                  <span className="text-gray-400">|</span>
                   <span>UTC</span>
                 </div>
               </div>
             </div>
+            
+            {/* 移动端表头 - 三列 */}
+            <div className="md:hidden border-b border-gray-200 bg-gray-50 p-3">
+              <div className="grid grid-cols-3 gap-2">
+                <div className="font-semibold text-gray-800 text-sm text-center">
+                  {content.tableHeaders.month}
+                </div>
+                <div className="font-semibold text-gray-800 text-sm text-center">
+                  🌑 新月
+                </div>
+                <div className="font-semibold text-gray-800 text-sm text-center">
+                  🌕 满月
+                </div>
+              </div>
+            </div>
 
-            {/* 表格内容 - 修复了重复数据问题 */}
+            {/* 表格内容 */}
             <div className="divide-y divide-gray-100">
               {yearData.months.map((month, index) => (
                 <div key={index} className="hover:bg-gray-50 transition-colors">
-                  {/* 移动端：单列显示 */}
+                  
+                  {/* 移动端：三列数据行 */}
                   <div className="md:hidden p-3 border-b border-gray-100 last:border-0">
-                    <div className="font-medium text-gray-800 text-sm mb-2">
-                      {month.month}
-                    </div>
-                    <div className="grid grid-cols-2 gap-3">
-                      {/* 新月 */}
-                      <div className="space-y-0.5">
-                        <div className="text-xs text-gray-600">🌑 新月</div>
-                        <div className="font-medium text-gray-800 text-xs">
-                          {month.newMoon.local.split(' ')[0]} {month.newMoon.local.split(' ')[1]}
-                          {month.newMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[8px]">*</sup>}
-                        </div>
-                        <div className="text-xs text-gray-500">
-                          {month.newMoon.utc}
-                        </div>
+                    <div className="grid grid-cols-3 gap-2 items-start">
+                      {/* 月份 */}
+                      <div className="font-medium text-gray-800 text-sm text-center pt-1">
+                        {month.month}
                       </div>
                       
-                      {/* 满月 - 关键修复：正确处理单个和多个满月 */}
-                      <div className="space-y-0.5">
-                        <div className="text-xs text-gray-600">🌕 满月</div>
-                        {/* 修复逻辑：优先检查 fullMoons 数组 */}
+                      {/* 新月 */}
+                      <div className="text-center">
+                        <div className="font-medium text-gray-800 text-xs">
+                          {month.newMoon.local.split(' ')[1]}
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          {month.newMoon.local.split(' ')[0]}
+                        </div>
+                        {month.newMoon.nextDay && (
+                          <div className="text-[8px] text-red-800 mt-1">*</div>
+                        )}
+                      </div>
+                      
+                      {/* 满月 */}
+                      <div className="text-center">
                         {Array.isArray(month.fullMoons) ? (
                           <div className="space-y-1">
                             {month.fullMoons.map((fullMoon, idx) => (
                               <div key={idx}>
                                 <div className="font-medium text-gray-800 text-xs">
-                                  {fullMoon.local.split(' ')[0]} {fullMoon.local.split(' ')[1]}
-                                  {fullMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[8px]">*</sup>}
+                                  {fullMoon.local.split(' ')[1]}
                                 </div>
                                 <div className="text-xs text-gray-500">
-                                  {fullMoon.utc}
+                                  {fullMoon.local.split(' ')[0]}
                                 </div>
+                                {fullMoon.nextDay && (
+                                  <div className="text-[8px] text-red-800 mt-1">*</div>
+                                )}
                               </div>
                             ))}
                           </div>
-                        ) : month.fullMoon ? (
-                          // 单个满月情况
+                        ) : (
                           <div>
                             <div className="font-medium text-gray-800 text-xs">
-                              {month.fullMoon.local.split(' ')[0]} {month.fullMoon.local.split(' ')[1]}
-                              {month.fullMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[8px]">*</sup>}
+                              {month.fullMoon.local.split(' ')[1]}
                             </div>
                             <div className="text-xs text-gray-500">
-                              {month.fullMoon.utc}
+                              {month.fullMoon.local.split(' ')[0]}
                             </div>
+                            {month.fullMoon.nextDay && (
+                              <div className="text-[8px] text-red-800 mt-1">*</div>
+                            )}
                           </div>
-                        ) : (
-                          // 无数据情况（理论上不会出现）
-                          <div className="text-gray-400 text-xs">-</div>
                         )}
                       </div>
                     </div>
                   </div>
                   
-                  {/* 桌面端：flex布局 */}
+                  {/* 桌面端 */}
                   <div className="hidden md:flex">
-                    {/* 月份列 - 25% */}
                     <div className="w-1/4 p-3 flex items-center justify-center border-r border-gray-200">
                       <span className="font-medium text-gray-800 text-base">
                         {month.month}
                       </span>
                     </div>
                     
-                    {/* 新月列 - 37.5% */}
                     <div className="w-3/8 p-3 border-r border-gray-200">
                       <div className="text-center space-y-1">
                         <div className="font-medium text-gray-800 text-sm">
@@ -202,11 +192,8 @@ export default function MoonCalendarPage() {
                       </div>
                     </div>
                     
-                    {/* 满月列 - 37.5% - 关键修复：正确处理单个和多个满月 */}
                     <div className="w-3/8 p-3">
-                      {/* 修复逻辑：优先检查 fullMoons 数组 */}
                       {Array.isArray(month.fullMoons) ? (
-                        // 蓝月情况：2026年5月有 fullMoons 数组
                         <div className="text-center space-y-2">
                           {month.fullMoons.map((fullMoon, idx) => (
                             <div key={idx} className="space-y-1">
@@ -220,8 +207,7 @@ export default function MoonCalendarPage() {
                             </div>
                           ))}
                         </div>
-                      ) : month.fullMoon ? (
-                        // 单个满月情况：其他月份
+                      ) : (
                         <div className="text-center space-y-1">
                           <div className="font-medium text-gray-800 text-sm">
                             {month.fullMoon.local.split(' ')[0]} {month.fullMoon.local.split(' ')[1]}
@@ -231,11 +217,6 @@ export default function MoonCalendarPage() {
                             {month.fullMoon.utc}
                           </div>
                         </div>
-                      ) : (
-                        // 无满月数据的情况（理论上不应该出现）
-                        <div className="text-center text-gray-400 text-sm">
-                          {language === 'zh' ? '无数据' : 'No data'}
-                        </div>
                       )}
                     </div>
                   </div>
@@ -244,9 +225,9 @@ export default function MoonCalendarPage() {
             </div>
           </div>
 
-          {/* 图例说明 - 小字号 */}
-          <div className="mb-6 md:mb-8 p-3 md:p-4 bg-gradient-to-r from-gray-50 to-gray-50 rounded-lg border border-gray-200">
-            <p className="text-gray-700 text-center text-[10px] md:text-xs leading-tight">
+          {/* 图例说明 */}
+          <div className="mb-6 md:mb-8 p-3 md:p-4 bg-gray-50 rounded-lg border border-gray-200">
+            <p className="text-gray-700 text-center text-[10px] md:text-xs">
               <sup className="text-red-800 mr-0.5 text-[8px]">*</sup>
               {content.legend}
             </p>
@@ -256,7 +237,7 @@ export default function MoonCalendarPage() {
           <div className="flex justify-center pt-4 md:pt-6 border-t border-gray-200">
             <Link
               href="/courses/ashtanga"
-              className="inline-flex items-center px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-medium text-red-800 hover:text-red-900 hover:bg-red-50 rounded-lg transition-colors duration-150"
+              className="inline-flex items-center px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-medium text-red-800 hover:text-red-900 hover:bg-red-50 rounded-lg transition-colors"
             >
               <svg className="w-3 h-3 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
