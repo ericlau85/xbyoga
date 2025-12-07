@@ -210,7 +210,7 @@ export default function AshtangaPage() {
             </div>
           </section>
 
-          {/* 课程表 - 已修复移动端滑动问题 */}
+          {/* 课程表 - 已修复移动端滑动问题和cls变量错误 */}
           <section className="mb-8 md:mb-12">
             <div className="bg-white rounded-lg shadow-md p-4 md:p-6 border border-gray-100">
               <h3 className="text-lg md:text-lg font-semibold text-gray-800 mb-4 text-center">
@@ -257,7 +257,8 @@ export default function AshtangaPage() {
                           timeText = '6:30-8:00';
                         } else if (classType === 'Led Class' || classType === '领课') {
                           timeText = '6:30';
-                        } else if (classType === 'Workshop*' || classType === '研习会*' || cls === 'Workshop' || cls === '研习会') {
+                        } else if (classType === 'Workshop*' || classType === '研习会*' || classType === 'Workshop' || classType === '研习会') {
+                          // 修复这里：把 cls 改为 classType
                           timeText = '8:00-9:00';
                         } else if (classType === 'Rest' || classType === '休息') {
                           timeText = '-';
