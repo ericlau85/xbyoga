@@ -106,16 +106,16 @@ export default function KnowledgePage() {
       
       <Navigation />
       
-      {/* ============ 标题区域 - 与课程页面相同设计 ============ */}
-      <div className="w-full flex justify-center items-center bg-gradient-to-r from-gray-900 to-gray-800 text-white py-12 md:py-20">
+      {/* ============ 标题区域 - 紧凑 ============ */}
+      <div className="w-full flex justify-center items-center bg-gradient-to-r from-gray-900 to-gray-800 text-white py-6 md:py-10">
         <div className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-          <h1 className="text-3xl md:text-5xl font-light mb-4 md:mb-8 text-center px-2">
-            {language === 'zh' ? '瑜伽知识库' : 'Yoga Knowledge Base'}
+          <h1 className="text-2xl md:text-3xl font-light mb-3 md:mb-4 text-center px-2">
+            {language === 'zh' ? '瑜伽知识库' : 'YOGA KNOWLEDGE BASE'}
           </h1>
-          <p className="text-lg md:text-xl text-red-800 mb-6 md:mb-10 text-center px-2">
+          <p className="text-lg md:text-lg text-red-800 mb-3 md:mb-6 text-center px-2">
             {language === 'zh' ? '从基础到深入的瑜伽学习指南' : 'Comprehensive Yoga Learning Resources'}
           </p>
-          <p className="text-gray-300 text-base md:text-lg max-w-3xl text-center mx-auto px-2 leading-relaxed">
+          <p className="text-gray-300 text-sm md:text-base max-w-3xl text-center mx-auto px-2 leading-snug">
             {language === 'zh'
               ? '系统学习瑜伽体式、梵语、哲学与练习方法的完整知识体系'
               : 'Complete knowledge system for systematic learning of yoga asanas, Sanskrit, philosophy and practice methods'
@@ -125,47 +125,47 @@ export default function KnowledgePage() {
       </div>
       
       {/* ============ 主要内容 ============ */}
-      <div className="w-full flex justify-center px-3 sm:px-4 py-10 md:py-16"> {/* 移动端 px-3 */}
-        <div className="w-full max-w-4xl lg:max-w-6xl"> {/* 移动端 max-w-4xl，桌面端 max-w-6xl */}
+      <div className="w-full flex justify-center px-3 sm:px-4 py-6 md:py-12">
+        <div className="w-full max-w-4xl lg:max-w-6xl">
           
           {/* 分类循环 */}
           {categories.map((category) => (
-            <section key={category.id} className="mb-12 md:mb-24 last:mb-0">
+            <section key={category.id} className="mb-8 md:mb-16 last:mb-0">
               {/* 分类标题 */}
-              <div className="mb-8 md:mb-16 text-center px-2">
-                <h2 className="text-2xl md:text-3xl font-light text-gray-800 mb-3 md:mb-4">
+              <div className="mb-4 md:mb-8 text-center px-2">
+                <h2 className="text-xl md:text-2xl font-medium text-gray-800 mb-2 md:mb-3">
                   {language === 'zh' ? category.title_zh : category.title_en}
                 </h2>
-                <p className="text-lg md:text-xl text-red-800 mb-4 md:mb-6">
+                <p className="text-base md:text-lg text-red-800 mb-2 md:mb-4">
                   {language === 'zh' ? category.subtitle_zh : category.subtitle_en}
                 </p>
-                <p className="text-gray-600 text-sm md:text-base max-w-3xl mx-auto">
+                <p className="text-gray-600 text-xs md:text-sm max-w-3xl mx-auto leading-snug">
                   {language === 'zh' ? category.description_zh : category.description_en}
                 </p>
               </div>
               
               {/* 文章列表 - 每行一个 */}
-              <div className="space-y-4 md:space-y-8">
+              <div className="space-y-3 md:space-y-6">
                 {category.articles.map((article) => (
                   <Link
                     key={article.slug}
                     href={`/knowledge/${article.slug}`}
-                    className="group block bg-white rounded-lg md:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-red-200"
+                    className="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200 border border-gray-100 hover:border-red-200"
                   >
-                    <div className="p-5 md:p-10">
+                    <div className="p-4 md:p-6">
                       <div className="flex flex-col md:flex-row justify-between items-start">
-                        <div className="flex-1 w-full"> {/* 确保宽度100% */}
-                          <h3 className="text-lg md:text-2xl font-semibold text-gray-800 mb-3 md:mb-4 group-hover:text-red-800 transition-colors">
+                        <div className="flex-1 w-full">
+                          <h3 className="text-base md:text-lg font-semibold text-gray-800 mb-2 md:mb-3 group-hover:text-red-800 transition-colors">
                             {language === 'zh' ? article.title_zh : article.title_en}
                           </h3>
-                          <p className="text-gray-600 text-sm md:text-lg leading-relaxed">
+                          <p className="text-gray-600 text-xs md:text-sm leading-snug">
                             {language === 'zh' ? article.excerpt_zh : article.excerpt_en}
                           </p>
                         </div>
-                        <div className="mt-4 md:mt-0 md:ml-8 flex-shrink-0 self-start">
-                          <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-red-50 group-hover:bg-red-100 transition-colors">
+                        <div className="mt-3 md:mt-0 md:ml-6 flex-shrink-0 self-start">
+                          <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-red-50 group-hover:bg-red-100 transition-colors">
                             <svg
-                              className="w-5 h-5 md:w-6 md:h-6 text-red-800 transform group-hover:translate-x-1 transition-transform"
+                              className="w-4 h-4 md:w-5 md:h-5 text-red-800 transform group-hover:translate-x-1 transition-transform"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"

@@ -645,412 +645,396 @@ Beginners understanding this will help with practical spelling and pronunciation
     }
   };
 
-  const langContent = content[language as keyof typeof content];
-  const sectionData = langContent[activeSection];
+    const langContent = content[language as keyof typeof content];
+    const sectionData = langContent[activeSection];
 
-  return (
-    <>
-      <Navigation />
-      
-      <div className="min-h-screen bg-white pt-12">
-        {/* 页面标题 - 更小字号 */}
-        <div className="max-w-6xl mx-auto px-4 pt-6 pb-3">
-          <h1 className="text-lg md:text-xl font-medium text-gray-900 mb-0.5">
-            {langContent.title}
-          </h1>
-          <p className="text-sm md:text-base text-gray-600 font-sans">
-            {langContent.subtitle}
-          </p>
-        </div>
+    return (
+      <>
+        <Navigation />
+        
+        <div className="min-h-screen bg-white pt-12">
+          {/* 页面标题 - 紧凑学术风格 */}
+          <div className="max-w-6xl mx-auto px-4 pt-4 pb-2">
+            <h1 className="text-base md:text-lg font-medium text-gray-900 mb-0.5 tracking-tight">
+              {langContent.title}
+            </h1>
+            <p className="text-sm md:text-base text-gray-600 font-sans">
+              {langContent.subtitle}
+            </p>
+          </div>
 
-        {/* 标签切换 */}
-          <div className="max-w-6xl mx-auto px-4 md:px-6 border-b border-gray-200 mb-3">
-                    <div className="flex flex-wrap gap-1 md:gap-2 -mb-px">
-                      {(Object.entries(langContent.sections) as [string, string][]).map(([key, title]) => (
-                        <button
-                          key={key}
-                          onClick={() => setActiveSection(key as any)}
-                          className={`px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-medium whitespace-nowrap transition-all duration-200 rounded-t-lg border ${
-                            activeSection === key
-                              ? 'text-gray-900 bg-white border-gray-300 border-b-white -mb-px'
-                              : 'text-gray-500 border-transparent hover:text-gray-700 hover:bg-gray-50'
-                          }`}
-                        >
-                          {title}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-        {/* 内容区域 */}
-        <div className="max-w-6xl mx-auto px-4 pb-8 md:pb-12">
-          <div className="font-['Futura','Segoe UI',system-ui,sans-serif]">
-            
-            {/* 标题和副标题 */}
-            <div className="mb-4">
-              <h2 className="text-sm md:text-base font-medium text-gray-800 inline-block">
-                {sectionData.title}
-              </h2>
-              {sectionData.subtitle && (
-                <span className="ml-2 text-xs md:text-sm text-gray-500 font-sans font-normal">
-                  {sectionData.subtitle}
-                </span>
-              )}
+          {/* 标签切换 - 紧凑 */}
+          <div className="max-w-6xl mx-auto px-4 md:px-6 border-b border-gray-200 mb-2">
+            <div className="flex flex-wrap gap-1 md:gap-1 -mb-px">
+              {(Object.entries(langContent.sections) as [string, string][]).map(([key, title]) => (
+                <button
+                  key={key}
+                  onClick={() => setActiveSection(key as any)}
+                  className={`px-2 py-1 md:px-3 md:py-1.5 text-xs font-medium whitespace-nowrap transition-all duration-150 rounded-t border ${
+                    activeSection === key
+                      ? 'text-gray-900 bg-white border-gray-300 border-b-white -mb-px'
+                      : 'text-gray-500 border-transparent hover:text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  {title}
+                </button>
+              ))}
             </div>
-            
-            {/* 定义/描述 */}
-            {sectionData.definition && (
-              <p className="text-xs md:text-sm text-gray-700 mb-4 leading-relaxed">
-                {sectionData.definition}
-              </p>
-            )}
-            
-            {/* 主要内容 - 文本块 */}
-            {sectionData.content && typeof sectionData.content === 'string' && (
-              <div className="mb-6">
-                <div className="text-xs md:text-sm text-gray-700 whitespace-pre-line leading-relaxed">
-                  {sectionData.content}
-                </div>
-              </div>
-            )}
-            
-            {/* 简介内容 */}
-            {sectionData.intro && (
-              <p className="text-xs md:text-sm text-gray-700 mb-4">
-                {sectionData.intro}
-              </p>
-            )}
+          </div>
 
-            {/* 表格 */}
-            {sectionData.tables && sectionData.tables.map((table: any, idx: number) => (
-              <div key={idx} className="mb-6 overflow-x-auto">
-                {table.title && (
-                  <h3 className="text-xs md:text-sm font-medium text-gray-800 mb-2">
-                    {table.title}
-                  </h3>
+          {/* 内容区域 */}
+          <div className="max-w-6xl mx-auto px-4 pb-6 md:pb-8">
+            <div className="font-['Futura','Segoe UI',system-ui,sans-serif]">
+              
+              {/* 标题和副标题 */}
+              <div className="mb-3">
+                <h2 className="text-sm font-medium text-gray-800 inline-block">
+                  {sectionData.title}
+                </h2>
+                {sectionData.subtitle && (
+                  <span className="ml-1.5 text-xs text-gray-500 font-sans font-normal">
+                    {sectionData.subtitle}
+                  </span>
                 )}
-                <table className="min-w-full border-collapse border border-gray-300 text-xs md:text-sm">
-                  <thead>
-                    <tr className="bg-gray-50">
-                      {table.headers.map((header: string, i: number) => (
-                        <th key={i} className="border border-gray-300 px-3 py-1.5 text-left font-medium text-gray-700 whitespace-nowrap">
-                          {header}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {table.rows.map((row: string[], rowIdx: number) => (
-                      <tr key={rowIdx} className={rowIdx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                        {row.map((cell: string, cellIdx: number) => (
-                          <td key={cellIdx} className="border border-gray-300 px-3 py-1.5 text-gray-700 align-top">
-                            {cellIdx === 0 ? (
-                              <span className="font-medium">{cell}</span>
-                            ) : (
-                              cell
-                            )}
-                          </td>
+              </div>
+              
+              {/* 定义/描述 */}
+              {sectionData.definition && (
+                <p className="text-xs text-gray-700 mb-3 leading-snug">
+                  {sectionData.definition}
+                </p>
+              )}
+              
+              {/* 主要内容 - 文本块 */}
+              {sectionData.content && typeof sectionData.content === 'string' && (
+                <div className="mb-4">
+                  <div className="text-xs text-gray-700 whitespace-pre-line leading-snug">
+                    {sectionData.content}
+                  </div>
+                </div>
+              )}
+              
+              {/* 简介内容 */}
+              {sectionData.intro && (
+                <p className="text-xs text-gray-700 mb-3 leading-snug">
+                  {sectionData.intro}
+                </p>
+              )}
+
+              {/* 表格 - 紧凑学术表格 */}
+              {sectionData.tables && sectionData.tables.map((table: any, idx: number) => (
+                <div key={idx} className="mb-4 overflow-x-auto">
+                  {table.title && (
+                    <h3 className="text-xs font-medium text-gray-800 mb-1.5">
+                      {table.title}
+                    </h3>
+                  )}
+                  <table className="min-w-full border-collapse border border-gray-200 text-xs">
+                    <thead>
+                      <tr className="bg-gray-50">
+                        {table.headers.map((header: string, i: number) => (
+                          <th
+                            key={i}
+                            className="border border-gray-200 px-2 py-1 text-left font-medium text-gray-700 whitespace-nowrap"
+                          >
+                            {header}
+                          </th>
                         ))}
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            ))}
-
-            {/* 子章节（发音基础等） */}
-             {sectionData.sections && !sectionData.types && ( // 添加 !sectionData.types 条件
-              <div className="space-y-6">
-                {sectionData.sections.map((subsection: any, idx: number) => (
-                  <div key={idx} className="border-l border-gray-200 pl-3">
-                    <h3 className="text-xs md:text-sm font-medium text-gray-800 mb-1.5">
-                      {subsection.title}
-                      {subsection.devanagari && (
-                        <span className="ml-2 text-xs text-gray-500 font-sans font-normal">
-                          {subsection.devanagari}
-                        </span>
-                      )}
-                    </h3>
-                    
-                    {subsection.content && (
-                      <div className="text-xs md:text-sm text-gray-700 mb-2 whitespace-pre-line leading-relaxed">
-                        {subsection.content}
-                      </div>
-                    )}
-                    
-                    {subsection.items && (
-                      <ul className="text-xs md:text-sm text-gray-700 space-y-1">
-                        {subsection.items.map((item: any, itemIdx: number) => (
-                          <li key={itemIdx} className="flex items-baseline">
-                            {item.sanskrit && (
-                              <span className="font-sans text-gray-600 min-w-[120px]">
-                                {item.sanskrit}
-                              </span>
-                            )}
-                            {item.meaning && (
-                              <span className="ml-2">{item.meaning}</span>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* 辅音分类 */}
-            {sectionData.categories && (
-              <div className="space-y-4">
-                {sectionData.categories.map((category: any, idx: number) => (
-                  <div key={idx} className="border-l border-gray-300 pl-3">
-                    <h3 className="text-xs md:text-sm font-medium text-gray-800 mb-1">
-                      {category.name}
-                    </h3>
-                    <p className="text-xs md:text-sm text-gray-700 mb-1">
-                      {category.description}
-                    </p>
-                    {category.subcategories && (
-                      <ul className="text-xs md:text-sm text-gray-700 ml-4 space-y-0.5">
-                        {category.subcategories.map((sub: string, subIdx: number) => (
-                          <li key={subIdx} className="flex">
-                            <span className="mr-1">•</span>
-                            <span>{sub}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                    {category.example && (
-                      <p className="text-xs md:text-sm text-gray-600 mt-1">
-                        {category.example}
-                      </p>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* 规则列表 */}
-            {sectionData.rules && (
-              <div className="mb-6">
-                <ul className="text-xs md:text-sm text-gray-700 space-y-1 ml-1">
-                  {sectionData.rules.map((rule: string, idx: number) => (
-                    <li key={idx} className="flex">
-                      <span className="mr-2">•</span>
-                      <span>{rule}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {/* 特殊复合辅音 */}
-            {sectionData.specialCombinations && (
-              <div className="mb-6">
-                <h3 className="text-xs md:text-sm font-medium text-gray-800 mb-3">
-                  {language === 'zh' ? '特殊复合辅音' : 'Special Conjuncts'}
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {sectionData.specialCombinations.map((item: any, idx: number) => (
-                    <div key={idx} className="border border-gray-200 rounded p-3 hover:bg-gray-50/50">
-                      <div className="flex items-baseline mb-1">
-                        <div className="text-base font-sans mr-2">{item.devanagari}</div>
-                        <div className="text-xs italic text-gray-600 font-mono">{item.transliteration}</div>
-                      </div>
-                      <div className="text-xs text-gray-500 mb-1">{item.components}</div>
-                      {item.examples && (
-                        <div className="text-xs text-gray-700 mt-2 space-y-0.5">
-                          {item.examples.map((ex: string, exIdx: number) => (
-                            <div key={exIdx} className="font-sans">{ex}</div>
+                    </thead>
+                    <tbody>
+                      {table.rows.map((row: string[], rowIdx: number) => (
+                        <tr
+                          key={rowIdx}
+                          className={rowIdx % 2 === 0 ? 'bg-white' : 'bg-gray-50 hover:bg-gray-50/80'}
+                        >
+                          {row.map((cell: string, cellIdx: number) => (
+                            <td
+                              key={cellIdx}
+                              className="border border-gray-200 px-2 py-1 text-gray-700 align-top"
+                            >
+                              {cellIdx === 0 ? (
+                                <span className="font-medium">{cell}</span>
+                              ) : (
+                                cell
+                              )}
+                            </td>
                           ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ))}
+
+              {/* 子章节（发音基础等） */}
+              {sectionData.sections && !sectionData.types && (
+                <div className="space-y-4">
+                  {sectionData.sections.map((subsection: any, idx: number) => (
+                    <div key={idx} className="border-l border-gray-200 pl-2.5">
+                      <h3 className="text-xs font-medium text-gray-800 mb-1">
+                        {subsection.title}
+                        {subsection.devanagari && (
+                          <span className="ml-1.5 text-xs text-gray-500 font-sans font-normal">
+                            {subsection.devanagari}
+                          </span>
+                        )}
+                      </h3>
+                      
+                      {subsection.content && (
+                        <div className="text-xs text-gray-700 mb-1.5 whitespace-pre-line leading-snug">
+                          {subsection.content}
                         </div>
                       )}
-                    </div>
-                  ))}
-                </div>
-                {sectionData.note && (
-                  <div className="mt-3 text-xs text-gray-600 italic border-l-2 border-gray-300 pl-2 py-1">
-                    {sectionData.note}
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* 音节类型 */}
-            {sectionData.types && Array.isArray(sectionData.types) && sectionData.types[0] && sectionData.types[0].name && (
-              <div className="mb-6">
-                <h3 className="text-xs md:text-sm font-medium text-gray-800 mb-2">
-                  {language === 'zh' ? '音节类型' : 'Syllable Types'}
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {sectionData.types.map((type: any, idx: number) => (
-                    <div key={idx} className="border border-gray-200 rounded p-3">
-                      <div className="text-xs font-medium text-gray-800 mb-1">{type.name}</div>
-                      <div className="text-xs font-sans text-gray-600 mb-1">{type.example}</div>
-                      <div className="text-xs text-gray-500">{type.description}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* 音节重量 */}
-            {sectionData.weight && (
-              <div className="mb-6 p-3 border border-gray-200 rounded">
-                <h3 className="text-xs md:text-sm font-medium text-gray-800 mb-2">
-                  {language === 'zh' ? '音节重量' : 'Syllable Weight'}
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-2">
-                  <div>
-                    <div className="text-xs font-medium text-gray-700 mb-0.5">
-                      {language === 'zh' ? '轻音节' : 'Light syllable'}
-                    </div>
-                    <div className="text-xs text-gray-600">{sectionData.weight.light}</div>
-                  </div>
-                  <div>
-                    <div className="text-xs font-medium text-gray-700 mb-0.5">
-                      {language === 'zh' ? '重音节' : 'Heavy syllable'}
-                    </div>
-                    <div className="text-xs text-gray-600">{sectionData.weight.heavy}</div>
-                  </div>
-                </div>
-                {sectionData.weight.note && (
-                  <div className="text-xs text-gray-500 italic">
-                    {sectionData.weight.note}
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* 连音类型 */}
-            {sectionData.types && Array.isArray(sectionData.types) && sectionData.types[0] && sectionData.types[0].devanagari && (
-              <div className="space-y-4">
-                {sectionData.types.map((type: any, idx: number) => (
-                  <div key={idx} className="border-l border-gray-300 pl-3">
-                    <h3 className="text-xs md:text-sm font-medium text-gray-800 mb-1">
-                      {type.name}
-                      {type.devanagari && (
-                        <span className="ml-2 text-xs text-gray-500 font-sans font-normal">
-                          {type.devanagari}
-                        </span>
+                      
+                      {subsection.items && (
+                        <ul className="text-xs text-gray-700 space-y-0.5">
+                          {subsection.items.map((item: any, itemIdx: number) => (
+                            <li key={itemIdx} className="flex items-baseline py-0.5">
+                              {item.sanskrit && (
+                                <span className="font-sans text-gray-600 min-w-[100px]">
+                                  {item.sanskrit}
+                                </span>
+                              )}
+                              {item.meaning && (
+                                <span className="ml-1.5">{item.meaning}</span>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
                       )}
-                    </h3>
-                    <p className="text-xs md:text-sm text-gray-700 mb-2">
-                      {type.description}
-                    </p>
-                    <ul className="text-xs md:text-sm text-gray-700 space-y-0.5 ml-1">
-                      {type.examples.map((example: string, exIdx: number) => (
-                        <li key={exIdx} className="flex">
-                          <span className="mr-1">•</span>
-                          <span>{example}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            )}
+                    </div>
+                  ))}
+                </div>
+              )}
 
-            {/* 注意：瑜伽哲学与脉轮对应关系 */}
-            {activeSection === 'intro' && language === 'zh' && (
-              <div className="mt-8 p-4 border border-gray-200 rounded bg-gray-50">
-                <h3 className="text-xs md:text-sm font-medium text-gray-800 mb-2">
-                  瑜伽哲学中的梵语字母
-                </h3>
-                <p className="text-xs md:text-sm text-gray-700 mb-3">
-                  在瑜伽哲学中，不同的梵语字母被认为与身体的能量中心（脉轮）相关联：
-                </p>
-                <div className="text-xs text-gray-600 space-y-1">
-                  <div className="flex items-center">
-                    <span className="font-sans mr-2">ॐ</span>
-                    <span>顶轮（千花瓣）</span>
+              {/* 辅音分类 */}
+              {sectionData.categories && (
+                <div className="space-y-3">
+                  {sectionData.categories.map((category: any, idx: number) => (
+                    <div key={idx} className="border-l border-gray-300 pl-2.5">
+                      <h3 className="text-xs font-medium text-gray-800 mb-0.5">
+                        {category.name}
+                      </h3>
+                      <p className="text-xs text-gray-700 mb-1">
+                        {category.description}
+                      </p>
+                      {category.subcategories && (
+                        <ul className="text-xs text-gray-700 ml-3 space-y-0">
+                          {category.subcategories.map((sub: string, subIdx: number) => (
+                            <li key={subIdx} className="flex py-0">
+                              <span className="mr-1">•</span>
+                              <span>{sub}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      {category.example && (
+                        <p className="text-xs text-gray-600 mt-1">
+                          {category.example}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* 规则列表 */}
+              {sectionData.rules && (
+                <div className="mb-4">
+                  <ul className="text-xs text-gray-700 space-y-0.5 ml-0.5">
+                    {sectionData.rules.map((rule: string, idx: number) => (
+                      <li key={idx} className="flex py-0.5">
+                        <span className="mr-1.5">•</span>
+                        <span>{rule}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* 特殊复合辅音 - 紧凑卡片 */}
+              {sectionData.specialCombinations && (
+                <div className="mb-4">
+                  <h3 className="text-xs font-medium text-gray-800 mb-2">
+                    {language === 'zh' ? '特殊复合辅音' : 'Special Conjuncts'}
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    {sectionData.specialCombinations.map((item: any, idx: number) => (
+                      <div
+                        key={idx}
+                        className="border border-gray-200 rounded p-2 hover:bg-gray-50/30"
+                      >
+                        <div className="flex items-baseline mb-0.5">
+                          <div className="text-sm font-sans mr-1.5">{item.devanagari}</div>
+                          <div className="text-xs italic text-gray-600 font-mono">{item.transliteration}</div>
+                        </div>
+                        <div className="text-xs text-gray-500 mb-1">{item.components}</div>
+                        {item.examples && (
+                          <div className="text-xs text-gray-700 mt-1.5 space-y-0">
+                            {item.examples.map((ex: string, exIdx: number) => (
+                              <div key={exIdx} className="font-sans">{ex}</div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
                   </div>
-                  <div className="flex items-center">
-                    <span className="font-sans mr-2">उँ</span>
-                    <span>额轮（2花瓣）</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="font-sans mr-2">हं</span>
-                    <span>喉轮（16花瓣）</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="font-sans mr-2">यं</span>
-                    <span>心轮（12花瓣）</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="font-sans mr-2">रं</span>
-                    <span>脐轮（10花瓣）</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="font-sans mr-2">वं</span>
-                    <span>腹轮（6花瓣）</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="font-sans mr-2">लं</span>
-                    <span>根轮（4花瓣）</span>
+                  {sectionData.note && (
+                    <div className="mt-2 text-xs text-gray-600 italic border-l border-gray-300 pl-2 py-0.5">
+                      {sectionData.note}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* 音节类型 - 紧凑卡片 */}
+              {sectionData.types && Array.isArray(sectionData.types) && sectionData.types[0] && sectionData.types[0].name && (
+                <div className="mb-4">
+                  <h3 className="text-xs font-medium text-gray-800 mb-1.5">
+                    {language === 'zh' ? '音节类型' : 'Syllable Types'}
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    {sectionData.types.map((type: any, idx: number) => (
+                      <div key={idx} className="border border-gray-200 rounded p-2">
+                        <div className="text-xs font-medium text-gray-800 mb-0.5">{type.name}</div>
+                        <div className="text-xs font-sans text-gray-600 mb-0.5">{type.example}</div>
+                        <div className="text-xs text-gray-500">{type.description}</div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
-            )}
+              )}
 
-            {activeSection === 'intro' && language === 'en' && (
-              <div className="mt-8 p-4 border border-gray-200 rounded bg-gray-50">
-                <h3 className="text-xs md:text-sm font-medium text-gray-800 mb-2">
-                  Sanskrit Letters in Yoga Philosophy
-                </h3>
-                <p className="text-xs md:text-sm text-gray-700 mb-3">
-                  In yoga philosophy, different Sanskrit letters are believed to be associated with the body's energy centres (chakras):
-                </p>
-                <div className="text-xs text-gray-600 space-y-1">
-                  <div className="flex items-center">
-                    <span className="font-sans mr-2">ॐ</span>
-                    <span>Crown Chakra (Thousand Petals)</span>
+              {/* 音节重量 - 紧凑面板 */}
+              {sectionData.weight && (
+                <div className="mb-4 p-2 border border-gray-200 rounded">
+                  <h3 className="text-xs font-medium text-gray-800 mb-1.5">
+                    {language === 'zh' ? '音节重量' : 'Syllable Weight'}
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-1.5">
+                    <div>
+                      <div className="text-xs font-medium text-gray-700 mb-0">
+                        {language === 'zh' ? '轻音节' : 'Light syllable'}
+                      </div>
+                      <div className="text-xs text-gray-600">{sectionData.weight.light}</div>
+                    </div>
+                    <div>
+                      <div className="text-xs font-medium text-gray-700 mb-0">
+                        {language === 'zh' ? '重音节' : 'Heavy syllable'}
+                      </div>
+                      <div className="text-xs text-gray-600">{sectionData.weight.heavy}</div>
+                    </div>
                   </div>
-                  <div className="flex items-center">
-                    <span className="font-sans mr-2">उँ</span>
-                    <span>Brow Chakra (2 Petals)</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="font-sans mr-2">हं</span>
-                    <span>Throat Chakra (16 Petals)</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="font-sans mr-2">यं</span>
-                    <span>Heart Chakra (12 Petals)</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="font-sans mr-2">रं</span>
-                    <span>Solar Plexus Chakra (10 Petals)</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="font-sans mr-2">वं</span>
-                    <span>Sacral Chakra (6 Petals)</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="font-sans mr-2">लं</span>
-                    <span>Root Chakra (4 Petals)</span>
+                  {sectionData.weight.note && (
+                    <div className="text-xs text-gray-500 italic">
+                      {sectionData.weight.note}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* 连音类型 */}
+              {sectionData.types && Array.isArray(sectionData.types) && sectionData.types[0] && sectionData.types[0].devanagari && (
+                <div className="space-y-3">
+                  {sectionData.types.map((type: any, idx: number) => (
+                    <div key={idx} className="border-l border-gray-300 pl-2">
+                      <h3 className="text-xs font-medium text-gray-800 mb-0.5">
+                        {type.name}
+                        {type.devanagari && (
+                          <span className="ml-1.5 text-xs text-gray-500 font-sans font-normal">
+                            {type.devanagari}
+                          </span>
+                        )}
+                      </h3>
+                      <p className="text-xs text-gray-700 mb-1.5">
+                        {type.description}
+                      </p>
+                      <ul className="text-xs text-gray-700 space-y-0 ml-0.5">
+                        {type.examples.map((example: string, exIdx: number) => (
+                          <li key={exIdx} className="flex py-0">
+                            <span className="mr-1">•</span>
+                            <span>{example}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* 瑜伽哲学与脉轮对应关系 - 紧凑 */}
+              {activeSection === 'intro' && language === 'zh' && (
+                <div className="mt-4 p-3 border border-gray-200 rounded bg-gray-50/50">
+                  <h3 className="text-xs font-medium text-gray-800 mb-1.5">
+                    瑜伽哲学中的梵语字母
+                  </h3>
+                  <p className="text-xs text-gray-700 mb-2">
+                    在瑜伽哲学中，不同的梵语字母被认为与身体的能量中心（脉轮）相关联：
+                  </p>
+                  <div className="text-xs text-gray-600 space-y-0.5">
+                    {[
+                      { char: 'ॐ', name: '顶轮（千花瓣）' },
+                      { char: 'उँ', name: '额轮（2花瓣）' },
+                      { char: 'हं', name: '喉轮（16花瓣）' },
+                      { char: 'यं', name: '心轮（12花瓣）' },
+                      { char: 'रं', name: '脐轮（10花瓣）' },
+                      { char: 'वं', name: '腹轮（6花瓣）' },
+                      { char: 'लं', name: '根轮（4花瓣）' }
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-center">
+                        <span className="font-sans mr-1.5">{item.char}</span>
+                        <span>{item.name}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
-            )}
-          </div>
+              )}
 
-          {/* 返回按钮 */}
-          <div className="mt-8 pt-6 border-t border-gray-200">
-            <a
-              href="/knowledge"
-              className="inline-flex items-center text-red-800 hover:text-red-900 font-medium text-sm"
-            >
-              <svg className="w-3 h-3 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
-              {language === 'zh' ? '返回知识库' : 'Back to Knowledge Base'}
-            </a>
+              {activeSection === 'intro' && language === 'en' && (
+                <div className="mt-4 p-3 border border-gray-200 rounded bg-gray-50/50">
+                  <h3 className="text-xs font-medium text-gray-800 mb-1.5">
+                    Sanskrit Letters in Yoga Philosophy
+                  </h3>
+                  <p className="text-xs text-gray-700 mb-2">
+                    In yoga philosophy, different Sanskrit letters are believed to be associated with the body's energy centres (chakras):
+                  </p>
+                  <div className="text-xs text-gray-600 space-y-0.5">
+                    {[
+                      { char: 'ॐ', name: 'Crown Chakra (Thousand Petals)' },
+                      { char: 'उँ', name: 'Brow Chakra (2 Petals)' },
+                      { char: 'हं', name: 'Throat Chakra (16 Petals)' },
+                      { char: 'यं', name: 'Heart Chakra (12 Petals)' },
+                      { char: 'रं', name: 'Solar Plexus Chakra (10 Petals)' },
+                      { char: 'वं', name: 'Sacral Chakra (6 Petals)' },
+                      { char: 'लं', name: 'Root Chakra (4 Petals)' }
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-center">
+                        <span className="font-sans mr-1.5">{item.char}</span>
+                        <span>{item.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* 返回按钮 */}
+            <div className="mt-6 pt-4 border-t border-gray-200">
+              <a
+                href="/knowledge"
+                className="inline-flex items-center text-red-800 hover:text-red-900 font-medium text-xs"
+              >
+                <svg className="w-2.5 h-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                {language === 'zh' ? '返回知识库' : 'Back to Knowledge Base'}
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <Footer />
-    </>
-  );
+        <Footer />
+      </>
+    );
 }

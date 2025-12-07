@@ -1713,116 +1713,129 @@ export default function AsanaPage() {
       <>
         <Navigation />
         <div className="min-h-screen bg-white pt-12">
-          {/* 文章标题部分 - 响应式字号 */}
-          <div className="max-w-6xl mx-auto px-4 pt-6 pb-3 md:pt-8 md:pb-4">
-            <h1 className="text-lg md:text-xl font-medium text-gray-900 mb-0.5">
+          {/* 文章标题部分 - 紧凑学术风格 */}
+          <div className="max-w-6xl mx-auto px-4 pt-4 pb-2 md:pt-6 md:pb-3">
+            <h1 className="text-base md:text-lg font-medium text-gray-900 mb-1 tracking-tight">
               {asanaContent.title}
             </h1>
-            <p className="text-sm md:text-base text-gray-600 mb-2">
+            <p className="text-sm md:text-base text-gray-600 mb-1.5">
               {asanaContent.subtitle}
             </p>
-            <p className="text-xs md:text-sm text-gray-700 max-w-5xl">
+            <p className="text-xs md:text-sm text-gray-700 mb-3 leading-snug">
               {asanaContent.intro}
             </p>
           </div>
 
-          {/* 只保留 SectionTabs 组件，删除手动代码 */}
+          {/* SectionTabs 组件 - 确保它也是紧凑的 */}
           <SectionTabs
             sections={sectionTabs}
             activeSection={activeSection}
             onSectionChange={setActiveSection}
           />
 
-        {/* 内容区域 */}
-        <div className="max-w-6xl mx-auto px-4 pb-8 md:pb-12">
-          {activeSection === 'list' && (
-            <div>
-              <h2 className="text-sm md:text-base font-medium mb-3 md:mb-4 text-gray-800">
-                {asanaContent.sections.list.content}
-              </h2>
-              
-              {/* 体式列表 - 响应式字号 */}
-              <div className="space-y-0.5 md:space-y-1">
-                {asanaContent.asanas.map((asana, index) => (
-                  <div key={index} className="py-1.5 md:py-2 border-b border-gray-100 hover:bg-gray-50/50">
-                    <div className="flex items-baseline">
-                      {/* 左列：天城体 */}
-                      <div className="w-1/2 pr-3 md:pr-4">
-                        <div className="text-sm md:text-base font-sans leading-tight">
-                          {asana.devanagari}
+          {/* 内容区域 - 紧凑学术表格风格 */}
+          <div className="max-w-6xl mx-auto px-4 pb-6 md:pb-8">
+            {activeSection === 'list' && (
+              <div>
+                <h2 className="text-sm md:text-base font-medium text-gray-800 mb-1.5">
+                  {asanaContent.sections.list.content}
+                </h2>
+                
+                {/* 体式列表 - 超紧凑表格 */}
+                <div className="space-y-0">
+                  {asanaContent.asanas.map((asana, index) => (
+                    <div
+                      key={index}
+                      className="py-1 md:py-1.5 border-b border-gray-100 hover:bg-gray-50/30 transition-colors"
+                    >
+                      <div className="flex items-center">
+                        {/* 左列：天城体 */}
+                        <div className="w-1/2 pr-2 md:pr-3">
+                          <div className="text-xs md:text-sm font-sans leading-tight tracking-tight">
+                            {asana.devanagari}
+                          </div>
                         </div>
-                      </div>
-                      
-                      {/* 右列：罗马转写 */}
-                      <div className="w-1/2">
-                        <div className="text-xs md:text-sm italic text-gray-600 font-mono leading-tight">
-                          {asana.sanskrit}
+                        
+                        {/* 右列：罗马转写 */}
+                        <div className="w-1/2">
+                          <div className="text-xs italic text-gray-600 font-mono leading-tight">
+                            {asana.sanskrit}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
-          {activeSection === 'meanings' && (
-            <div className="font-['Futura','Segoe UI',system-ui,sans-serif]">
-              <h2 className="text-sm md:text-base font-medium mb-3 md:mb-4 text-gray-800">
-                {asanaContent.sections.meanings.content}
-              </h2>
-              
-              {/* 词源分析 - 两列三行表格 */}
-              <div className="space-y-3 md:space-y-4">
-                {asanaContent.meanings.map((item, index) => (
-                  <div key={index} className="py-2 md:py-3 border-b border-gray-200 last:border-b-0">
-                    
-                    {/* 两列布局 */}
-                    <div className="flex flex-col md:flex-row">
-                      {/* 左列 */}
-                      <div className="w-full md:w-1/2 pr-0 md:pr-4 mb-2 md:mb-0">
-                        {/* 第一行：完整体式天城体 */}
-                        <div className="text-sm md:text-base font-sans mb-1 leading-tight">
-                          {item.devanagari}
+            {activeSection === 'meanings' && (
+              <div className="font-['Futura','Segoe UI',system-ui,sans-serif]">
+                <h2 className="text-xs md:text-sm font-medium mb-2 md:mb-3 text-gray-800">
+                  {asanaContent.sections.meanings.content}
+                </h2>
+                
+                {/* 词源分析 - 紧凑学术表格 */}
+                <div className="space-y-2 md:space-y-3">
+                  {asanaContent.meanings.map((item, index) => (
+                    <div
+                      key={index}
+                      className="py-1.5 md:py-2 border-b border-gray-200 last:border-b-0 hover:bg-gray-50/20"
+                    >
+                      {/* 两列布局 - 学术表格 */}
+                      <div className="flex flex-col md:flex-row gap-1.5 md:gap-2">
+                        {/* 左列：完整形式 */}
+                        <div className="w-full md:w-1/2">
+                          <div className="text-xs md:text-sm font-sans mb-0.5 leading-tight">
+                            {item.devanagari}
+                          </div>
+                          <div className="text-xs italic text-gray-600 mb-0.5 leading-tight">
+                            {item.sanskrit}
+                          </div>
+                          <div className="text-xs text-gray-700 leading-tight">
+                            {item.meaning}
+                          </div>
                         </div>
-                        {/* 第二行：完整体式罗马转写 */}
-                        <div className="text-xs md:text-sm italic text-gray-600 mb-1 leading-tight">
-                          {item.sanskrit}
+                        
+                        {/* 右列：词根分解 */}
+                        <div className="w-full md:w-1/2">
+                          {item.breakdown && (
+                            <div className="pt-0.5 border-t border-gray-100 md:border-t-0 md:pt-0">
+                              <div className="text-xs font-sans text-gray-600 mb-0.5 leading-tight">
+                                {item.breakdown.devanagari}
+                              </div>
+                              <div className="text-xs italic text-gray-500 mb-0.5 leading-tight">
+                                {item.breakdown.sanskrit}
+                              </div>
+                              <div className="text-xs text-gray-500 leading-tight">
+                                {item.breakdown.meaning}
+                              </div>
+                            </div>
+                          )}
                         </div>
-                        {/* 第三行：完整翻译 */}
-                        <div className="text-xs md:text-sm text-gray-700 leading-tight">
-                          {item.meaning}
-                        </div>
-                      </div>
-                      
-                      {/* 右列 */}
-                      <div className="w-full md:w-1/2">
-                        {item.breakdown && (
-                          <>
-                            {/* 第一行：词根分解天城体 */}
-                            <div className="text-xs md:text-sm font-sans text-gray-600 mb-1 leading-tight">
-                              {item.breakdown.devanagari}
-                            </div>
-                            {/* 第二行：词根分解罗马转写 */}
-                            <div className="text-xs md:text-sm italic text-gray-500 mb-1 leading-tight">
-                              {item.breakdown.sanskrit}
-                            </div>
-                            {/* 第三行：词根分解翻译 */}
-                            <div className="text-xs md:text-sm text-gray-500 leading-tight">
-                              {item.breakdown.meaning}
-                            </div>
-                          </>
-                        )}
                       </div>
                     </div>
-                    
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
+            )}
+            
+            {/* 返回按钮 */}
+            <div className="mt-6 pt-4 border-t border-gray-200">
+              <a
+                href="/knowledge"
+                className="inline-flex items-center text-red-800 hover:text-red-900 font-medium text-xs"
+              >
+                <svg className="w-2.5 h-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                {language === 'zh' ? '返回知识库' : 'Back to Knowledge Base'}
+              </a>
             </div>
-          )}
+          </div>
         </div>
-      </div>
-    </>
-  );
+
+        <Footer />
+      </>
+    );
 }

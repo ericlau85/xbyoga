@@ -4,11 +4,14 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '../../lib/language-context';
+import { isTodayRestDay, getRestDayInfo } from '../../lib/rest-day-utils';
 
 export default function Navigation() {
   const { language, toggleLanguage } = useLanguage();
   const [showWechat, setShowWechat] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [isRestDay, setIsRestDay] = useState(false);
+  const [restDayType, setRestDayType] = useState<'saturday' | 'new_moon' | 'full_moon' | null>(null);
   const pathname = usePathname();
 
   const handleLanguageToggle = () => {
@@ -24,6 +27,11 @@ export default function Navigation() {
   const isCurrent = (path: string) => pathname.startsWith(path);
 
   useEffect(() => {
+    // 获取休息日信息
+    const info = getRestDayInfo(language === 'zh' ? 'zh' : 'en');
+    setIsRestDay(info.isRestDay);
+    setRestDayType(info.type);
+    
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
@@ -35,7 +43,36 @@ export default function Navigation() {
     return () => {
       document.head.removeChild(link);
     };
-  }, []);
+  }, [language]);
+
+  // 休息日徽章组件
+  const RestDayBadge = () => {
+    if (!isRestDay) return null;
+    
+    const getBadgeText = () => {
+      switch(restDayType) {
+        case 'saturday':
+          return language === 'zh' ? '周六休' : 'Sat';
+        case 'new_moon':
+          return language === 'zh' ? '新月' : 'New';
+        case 'full_moon':
+          return language === 'zh' ? '满月' : 'Full';
+        default:
+          return language === 'zh' ? '休息' : 'Rest';
+      }
+    };
+    
+    return (
+      <div className="flex items-center gap-1 ml-1">
+        {/* 小红点 */}
+        <div className="w-1.5 h-1.5 bg-red-600 rounded-full animate-pulse"></div>
+        {/* 文字标签 */}
+        <span className="text-red-700 text-[10px] font-medium bg-red-50 px-1.5 py-0.5 rounded">
+          {getBadgeText()}
+        </span>
+      </div>
+    );
+  };
 
   return (
     <>
@@ -66,6 +103,18 @@ export default function Navigation() {
                 >
                   {language === 'zh' ? '梵语' : 'Sanskrit'}
                 </Link>
+          
+                {/* 休息日链接 */}
+                <Link
+                  href="/moon-calendar"
+                  className={`px-3 py-1.5 text-xs flex items-center ${pathname === '/moon-calendar' 
+                    ? 'text-red-800 font-bold border-b-2 border-red-800'
+                    : 'text-gray-700 hover:text-red-800'}`}
+                >
+                  {language === 'zh' ? '休息日' : 'Rest Days'}
+                  {isRestDay && <RestDayBadge />}
+                </Link>
+          
                 <Link
                   href="/knowledge"
                   className={`px-3 py-1.5 text-xs ${isCurrent('/knowledge') 
@@ -108,7 +157,7 @@ export default function Navigation() {
                 <Link
                   href="/courses/ashtanga"
                   className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/courses/ashtanga') 
-                    ? 'text-red-800 font-bold bg-gray-100'  // 改为灰色背景
+                    ? 'text-red-800 font-bold bg-gray-100'
                     : 'text-gray-700 hover:bg-gray-50'}`}
                   onClick={() => setShowMobileMenu(false)}
                 >
@@ -117,16 +166,45 @@ export default function Navigation() {
                 <Link
                   href="/courses/sanskrit"
                   className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/courses/sanskrit') 
-                    ? 'text-red-800 font-bold bg-gray-100'  // 改为灰色背景
+                    ? 'text-red-800 font-bold bg-gray-100'
                     : 'text-gray-700 hover:bg-gray-50'}`}
                   onClick={() => setShowMobileMenu(false)}
                 >
                   {language === 'zh' ? '梵语' : 'Sanskrit'}
                 </Link>
+                              
+                {/* 移动端休息日链接 */}
+                <Link
+                  href="/moon-calendar"
+                  className={`px-3 py-2 text-xs rounded-lg flex items-center justify-between ${pathname === '/moon-calendar' 
+                    ? 'text-red-800 font-bold bg-gray-100'
+                    : 'text-gray-700 hover:bg-gray-50'}`}
+                  onClick={() => setShowMobileMenu(false)}
+                >
+                  <div className="flex items-center gap-2">
+                    <span>{language === 'zh' ? '休息日' : 'Rest Days'}</span>
+                    {isRestDay && (
+                      <div className="flex items-center gap-1">
+                        <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse"></div>
+                        {restDayType === 'saturday' && (
+                          <span className="text-red-600 text-[10px] font-medium">
+                            {language === 'zh' ? '周六休息' : 'Saturday'}
+                          </span>
+                        )}
+                        {(restDayType === 'new_moon' || restDayType === 'full_moon') && (
+                          <span className="text-red-600 text-[10px] font-medium">
+                            {language === 'zh' ? '月相休息' : 'Moon Day'}
+                          </span>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </Link>
+                
                 <Link
                   href="/knowledge"
                   className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/knowledge') 
-                    ? 'text-red-800 font-bold bg-gray-100'  // 改为灰色背景
+                    ? 'text-red-800 font-bold bg-gray-100'
                     : 'text-gray-700 hover:bg-gray-50'}`}
                   onClick={() => setShowMobileMenu(false)}
                 >
