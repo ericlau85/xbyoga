@@ -318,12 +318,10 @@ export default function AshtangaPage() {
                         <div className="font-medium text-gray-800 text-sm">
                           {day}
                         </div>
-                        <div className={`px-2 py-1 rounded text-xs font-medium ${
-                          classType === 'Mysore' || classType === '领课' ? 'bg-blue-100 text-blue-800' :
-                          classType === 'Led Class' ? 'bg-green-100 text-green-800' :
-                          classType === 'Rest' || classType === '休息' ? 'bg-gray-100 text-gray-500' :
-                          'bg-amber-100 text-amber-800'
-                        }`}>
+                          <div className={`px-2 py-1 rounded text-xs font-medium ${
+                            classType === 'Rest' || classType === '休息' ? 'bg-gray-100 text-gray-500' :
+                            'bg-gray-100 text-gray-700'
+                          }`}>
                           {classType.replace('*', '')}
                         </div>
                       </div>
@@ -335,7 +333,7 @@ export default function AshtangaPage() {
                 })}
                 
                 {/* 私教预约单独卡片 */}
-                <div className="bg-gray-50 rounded-lg p-3 border-l-4 border-purple-500">
+                <div className="bg-gray-50 rounded-lg p-3">
                   <div className="font-medium text-gray-800 text-sm">
                     {language === 'zh' ? '私教预约' : 'Private Booking'}
                   </div>
