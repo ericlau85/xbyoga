@@ -103,11 +103,16 @@ export default function MoonCalendarPage() {
                   {content.tableHeaders.month}
                 </div>
                 <div className="font-semibold text-gray-800 text-sm text-center">
-                  🌑 新月
+                  🌑 {content.tableHeaders.newMoon.split('(')[0].trim()}
                 </div>
                 <div className="font-semibold text-gray-800 text-sm text-center">
-                  🌕 满月
+                  🌕 {content.tableHeaders.fullMoon.split('(')[0].trim()}
                 </div>
+              </div>
+              <div className="grid grid-cols-3 gap-2 mt-1">
+                <div className="text-xs text-gray-500 text-center"></div>
+                <div className="text-xs text-gray-500 text-center">GMT+8 | UTC</div>
+                <div className="text-xs text-gray-500 text-center">GMT+8 | UTC</div>
               </div>
             </div>
 
@@ -116,56 +121,50 @@ export default function MoonCalendarPage() {
               {yearData.months.map((month, index) => (
                 <div key={index} className="hover:bg-gray-50 transition-colors">
                   
-                  {/* 移动端：三列数据行 */}
+                  {/* 移动端：三列显示 */}
                   <div className="md:hidden p-3 border-b border-gray-100 last:border-0">
-                    <div className="grid grid-cols-3 gap-2 items-start">
-                      {/* 月份 */}
-                      <div className="font-medium text-gray-800 text-sm text-center pt-1">
+                    <div className="grid grid-cols-3 gap-3">
+                      {/* 月份列 */}
+                      <div className="font-medium text-gray-800 text-sm text-center flex items-center justify-center">
                         {month.month}
                       </div>
                       
-                      {/* 新月 */}
-                      <div className="text-center">
-                        <div className="font-medium text-gray-800 text-xs">
-                          {month.newMoon.local.split(' ')[1]}
+                      {/* 新月列 */}
+                      <div className="space-y-1">
+                        <div className="font-medium text-gray-800 text-xs text-center">
+                          {month.newMoon.local.split(' ')[0]} {month.newMoon.local.split(' ')[1]}
+                          {month.newMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[8px]">*</sup>}
                         </div>
-                        <div className="text-xs text-gray-500">
-                          {month.newMoon.local.split(' ')[0]}
+                        <div className="text-xs text-gray-500 text-center">
+                          {month.newMoon.utc}
                         </div>
-                        {month.newMoon.nextDay && (
-                          <div className="text-[8px] text-red-800 mt-1">*</div>
-                        )}
                       </div>
                       
-                      {/* 满月 */}
-                      <div className="text-center">
+                      {/* 满月列 */}
+                      <div className="space-y-1">
                         {Array.isArray(month.fullMoons) ? (
-                          <div className="space-y-1">
+                          <div className="space-y-2">
                             {month.fullMoons.map((fullMoon, idx) => (
-                              <div key={idx}>
-                                <div className="font-medium text-gray-800 text-xs">
-                                  {fullMoon.local.split(' ')[1]}
+                              <div key={idx} className="space-y-1">
+                                <div className="font-medium text-gray-800 text-xs text-center">
+                                  {fullMoon.local.split(' ')[0]} {fullMoon.local.split(' ')[1]}
+                                  {fullMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[8px]">*</sup>}
                                 </div>
-                                <div className="text-xs text-gray-500">
-                                  {fullMoon.local.split(' ')[0]}
+                                <div className="text-xs text-gray-500 text-center">
+                                  {fullMoon.utc}
                                 </div>
-                                {fullMoon.nextDay && (
-                                  <div className="text-[8px] text-red-800 mt-1">*</div>
-                                )}
                               </div>
                             ))}
                           </div>
                         ) : (
-                          <div>
-                            <div className="font-medium text-gray-800 text-xs">
-                              {month.fullMoon.local.split(' ')[1]}
+                          <div className="space-y-1">
+                            <div className="font-medium text-gray-800 text-xs text-center">
+                              {month.fullMoon.local.split(' ')[0]} {month.fullMoon.local.split(' ')[1]}
+                              {month.fullMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[8px]">*</sup>}
                             </div>
-                            <div className="text-xs text-gray-500">
-                              {month.fullMoon.local.split(' ')[0]}
+                            <div className="text-xs text-gray-500 text-center">
+                              {month.fullMoon.utc}
                             </div>
-                            {month.fullMoon.nextDay && (
-                              <div className="text-[8px] text-red-800 mt-1">*</div>
-                            )}
                           </div>
                         )}
                       </div>
