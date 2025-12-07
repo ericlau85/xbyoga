@@ -121,7 +121,7 @@ export default function MoonCalendarPage() {
               </div>
             </div>
 
-            {/* 表格内容 */}
+            {/* 表格内容 - 修复了重复数据问题 */}
             <div className="divide-y divide-gray-100">
               {yearData.months.map((month, index) => (
                 <div key={index} className="hover:bg-gray-50 transition-colors">
@@ -131,6 +131,7 @@ export default function MoonCalendarPage() {
                       {month.month}
                     </div>
                     <div className="grid grid-cols-2 gap-3">
+                      {/* 新月 */}
                       <div className="space-y-0.5">
                         <div className="text-xs text-gray-600">🌑 新月</div>
                         <div className="font-medium text-gray-800 text-xs">
@@ -141,8 +142,11 @@ export default function MoonCalendarPage() {
                           {month.newMoon.utc}
                         </div>
                       </div>
+                      
+                      {/* 满月 - 关键修复：正确处理单个和多个满月 */}
                       <div className="space-y-0.5">
                         <div className="text-xs text-gray-600">🌕 满月</div>
+                        {/* 修复逻辑：优先检查 fullMoons 数组 */}
                         {Array.isArray(month.fullMoons) ? (
                           <div className="space-y-1">
                             {month.fullMoons.map((fullMoon, idx) => (
@@ -157,8 +161,9 @@ export default function MoonCalendarPage() {
                               </div>
                             ))}
                           </div>
-                        ) : (
-                          <>
+                        ) : month.fullMoon ? (
+                          // 单个满月情况
+                          <div>
                             <div className="font-medium text-gray-800 text-xs">
                               {month.fullMoon.local.split(' ')[0]} {month.fullMoon.local.split(' ')[1]}
                               {month.fullMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[8px]">*</sup>}
@@ -166,7 +171,10 @@ export default function MoonCalendarPage() {
                             <div className="text-xs text-gray-500">
                               {month.fullMoon.utc}
                             </div>
-                          </>
+                          </div>
+                        ) : (
+                          // 无数据情况（理论上不会出现）
+                          <div className="text-gray-400 text-xs">-</div>
                         )}
                       </div>
                     </div>
@@ -194,9 +202,11 @@ export default function MoonCalendarPage() {
                       </div>
                     </div>
                     
-                    {/* 满月列 - 37.5% */}
+                    {/* 满月列 - 37.5% - 关键修复：正确处理单个和多个满月 */}
                     <div className="w-3/8 p-3">
+                      {/* 修复逻辑：优先检查 fullMoons 数组 */}
                       {Array.isArray(month.fullMoons) ? (
+                        // 蓝月情况：2026年5月有 fullMoons 数组
                         <div className="text-center space-y-2">
                           {month.fullMoons.map((fullMoon, idx) => (
                             <div key={idx} className="space-y-1">
@@ -210,7 +220,8 @@ export default function MoonCalendarPage() {
                             </div>
                           ))}
                         </div>
-                      ) : (
+                      ) : month.fullMoon ? (
+                        // 单个满月情况：其他月份
                         <div className="text-center space-y-1">
                           <div className="font-medium text-gray-800 text-sm">
                             {month.fullMoon.local.split(' ')[0]} {month.fullMoon.local.split(' ')[1]}
@@ -219,6 +230,11 @@ export default function MoonCalendarPage() {
                           <div className="text-xs text-gray-500">
                             {month.fullMoon.utc}
                           </div>
+                        </div>
+                      ) : (
+                        // 无满月数据的情况（理论上不应该出现）
+                        <div className="text-center text-gray-400 text-sm">
+                          {language === 'zh' ? '无数据' : 'No data'}
                         </div>
                       )}
                     </div>

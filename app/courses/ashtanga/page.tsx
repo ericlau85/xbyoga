@@ -210,14 +210,15 @@ export default function AshtangaPage() {
             </div>
           </section>
 
-          {/* 课程表 */}
+          {/* 课程表 - 已修复移动端滑动问题 */}
           <section className="mb-8 md:mb-12">
-            <div className="bg-white rounded-lg shadow-md p-4 md:p-6 border border-gray-100 overflow-x-auto">
+            <div className="bg-white rounded-lg shadow-md p-4 md:p-6 border border-gray-100">
               <h3 className="text-lg md:text-lg font-semibold text-gray-800 mb-4 text-center">
                 {language === 'zh' ? '课程表' : 'Class Schedule'}
               </h3>
               
-              <div className="overflow-x-auto">
+              {/* 桌面端：保持原来的表格 */}
+              <div className="hidden md:block overflow-x-auto">
                 <table className="w-full min-w-full">
                   <thead>
                     <tr className="border-b border-gray-200">
@@ -256,7 +257,7 @@ export default function AshtangaPage() {
                           timeText = '6:30-8:00';
                         } else if (classType === 'Led Class' || classType === '领课') {
                           timeText = '6:30';
-                        } else if (classType === 'Workshop*' || classType === '研习会*' || classType === 'Workshop' || classType === '研习会') {
+                        } else if (classType === 'Workshop*' || classType === '研习会*' || cls === 'Workshop' || cls === '研习会') {
                           timeText = '8:00-9:00';
                         } else if (classType === 'Rest' || classType === '休息') {
                           timeText = '-';
@@ -287,6 +288,60 @@ export default function AshtangaPage() {
                     </tr>
                   </tbody>
                 </table>
+              </div>
+              
+              {/* 移动端：改为垂直列表式卡片（修复滑动问题） */}
+              <div className="md:hidden space-y-3">
+                {content.timeTable.days.map((day: string, index: number) => {
+                  const classType = content.timeTable.rows[0].classes[index];
+                  let timeText = '';
+                  
+                  if (classType === 'Mysore' || classType === '领课') {
+                    timeText = '6:30-8:00';
+                  } else if (classType === 'Led Class' || classType === '领课') {
+                    timeText = '6:30';
+                  } else if (classType === 'Workshop*' || classType === '研习会*' || classType === 'Workshop' || classType === '研习会') {
+                    timeText = '8:00-9:00';
+                  } else if (classType === 'Rest' || classType === '休息') {
+                    timeText = '-';
+                  } else {
+                    timeText = '9:00-20:00';
+                  }
+                  
+                  // 过滤掉私教预约（单独显示）和休息日
+                  if (classType === 'Private Booking' || classType === '私教预约') return null;
+                  
+                  return (
+                    <div key={index} className="bg-gray-50 rounded-lg p-3">
+                      <div className="flex justify-between items-center">
+                        <div className="font-medium text-gray-800 text-sm">
+                          {day}
+                        </div>
+                        <div className={`px-2 py-1 rounded text-xs font-medium ${
+                          classType === 'Mysore' || classType === '领课' ? 'bg-blue-100 text-blue-800' :
+                          classType === 'Led Class' ? 'bg-green-100 text-green-800' :
+                          classType === 'Rest' || classType === '休息' ? 'bg-gray-100 text-gray-500' :
+                          'bg-amber-100 text-amber-800'
+                        }`}>
+                          {classType.replace('*', '')}
+                        </div>
+                      </div>
+                      <div className="mt-1 text-xs text-gray-600">
+                        {timeText !== '-' ? `时间: ${timeText}` : '休息日'}
+                      </div>
+                    </div>
+                  );
+                })}
+                
+                {/* 私教预约单独卡片 */}
+                <div className="bg-gray-50 rounded-lg p-3 border-l-4 border-purple-500">
+                  <div className="font-medium text-gray-800 text-sm">
+                    {language === 'zh' ? '私教预约' : 'Private Booking'}
+                  </div>
+                  <div className="mt-1 text-xs text-gray-600">
+                    时间: 9:00-20:00 (灵活预约)
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -389,7 +444,7 @@ export default function AshtangaPage() {
       {/* 页脚 */}
       <Footer />
 
-      {/* 微信弹窗 - 保留但不显示按钮 */}
+      {/* 微信弹窗 */}
       {showWechat && (
         <div
           className="wechat-modal active"
