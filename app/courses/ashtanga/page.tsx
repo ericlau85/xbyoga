@@ -325,9 +325,9 @@ export default function AshtangaPage() {
                           {classType.replace('*', '')}
                         </div>
                       </div>
-                      <div className="mt-1 text-xs text-gray-600">
-                        {timeText !== '-' ? `时间: ${timeText}` : '休息日'}
-                      </div>
+                          <div className="mt-1 text-xs text-gray-600">
+                            {timeText !== '-' ? `${language === 'zh' ? '时间: ' : 'Time: '}${timeText}` : language === 'zh' ? '休息日' : 'Rest Day'}
+                          </div>
                     </div>
                   );
                 })}
@@ -337,9 +337,9 @@ export default function AshtangaPage() {
                   <div className="font-medium text-gray-800 text-sm">
                     {language === 'zh' ? '私教预约' : 'Private Booking'}
                   </div>
-                  <div className="mt-1 text-xs text-gray-600">
-                    时间: 9:00-20:00 (灵活预约)
-                  </div>
+          <div className="text-sm text-gray-600">
+            {language === 'zh' ? '时间: ' : 'Time: '}9:00-20:00 {language === 'zh' ? '(灵活预约)' : '(Flexible appointment)'}
+          </div>
                 </div>
               </div>
             </div>
@@ -395,7 +395,7 @@ export default function AshtangaPage() {
                           {price.description}
                         </div>
                       </div>
-                      <div className="text-xl md:text-xl font-bold text-red-800 whitespace-nowrap">
+                      <div className="text-base md:text-lg font-bold text-red-800 whitespace-nowrap">
                         {price.price}
                       </div>
                     </div>
@@ -428,7 +428,7 @@ export default function AshtangaPage() {
                           {price.description}
                         </div>
                       </div>
-                      <div className="text-xl md:text-xl font-bold text-red-800 whitespace-nowrap">
+                      <div className="text-base md:text-lg font-bold text-red-800 whitespace-nowrap">
                         {price.price}
                       </div>
                     </div>
