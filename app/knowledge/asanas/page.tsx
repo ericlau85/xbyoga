@@ -11,20 +11,20 @@ export default function AsanaPage() {
   const [activeSection, setActiveSection] = useState<'list' | 'meanings'>('list');
 
   const asanaData = {
-    en: {
-      title: "Ashtanga Asana Series",
-      subtitle: "Asana Reference with Sanskrit Names",
-      intro: "Reference for selected Ashtanga yoga asana sequences, including Sanskrit names, pronunciation, and meanings. Through systematic sequence practice, cultivate physical strength and flexibility, guiding balanced development of body and mind through the integration of breath and movement, achieving harmony and unity.",
-      sections: {
-        list: {
-          title: "Asana List",
-          content: "Complete sequence of Ashtanga yoga postures"
+      en: {
+        title: "Asanas",
+        subtitle: "Ashtanga Yoga Asanas",
+        intro: "Reference for partial asana sequences, including Sanskrit names, translations, and meanings. Through systematic sequence practice, cultivate physical strength and flexibility, guide balanced development of body and mind in the integration of breath and movement, achieving harmony and unity.",
+        sections: {
+          list: {
+            title: "Asana List",
+            content: "Practice sequences of partial Ashtanga Yoga asanas"
+          },
+          meanings: {
+            title: "Asana Meanings",
+            content: "Translation and etymological meaning analysis of Sanskrit names"
+          }
         },
-        meanings: {
-          title: "Asana Meanings",
-          content: "Etymology and meanings of Sanskrit names"
-        }
-      },
       asanas: [
         { devanagari: "समस्थितिः", sanskrit: "samasthitiḥ" },
         { devanagari: "सूर्य नमस्कार", sanskrit: "sūrya namaskāra" },
@@ -856,17 +856,17 @@ export default function AsanaPage() {
       ]
     },
     zh: {
-      title: "阿斯汤加体式序列",
-      subtitle: "体式列表与梵文名称",
-      intro: "阿斯汤加瑜伽部分体式序列参考，包含梵文名称、发音和释义。通过系统性的序列练习培养身体力量与柔韧性，在呼吸与动作的融合中引导身心平衡发展，实现和谐统一。",
+      title: "体式",
+      subtitle: "阿斯汤加瑜伽体式",
+      intro: "部分体式序列参考，包含梵文名称、翻译和释义。通过系统性的序列练习培养身体力量与柔韧性，在呼吸与动作的融合中引导身心平衡发展，实现和谐统一。",
       sections: {
         list: {
           title: "体式列表",
-          content: "阿斯汤加瑜伽完整练习序列"
+          content: "阿斯汤加瑜伽部分体式练习序列"
         },
         meanings: {
           title: "体式释义",
-          content: "梵文名称的词源与含义解析"
+          content: "梵文名称的翻译与词源含义解析"
         }
       },
       asanas: [
@@ -1520,7 +1520,7 @@ export default function AsanaPage() {
         {
           devanagari: "मुक्त हस्त शीर्षासन",
           sanskrit: "mukta hasta śīrṣāsana",
-          meaning: "自由手头倒立",
+          meaning: "自由手头倒立式",
           breakdown: {
             devanagari: "मुक्त + हस्त + शीर्ष + आसन",
             sanskrit: "mukta + hasta + śīrṣa + āsana",
@@ -1530,7 +1530,7 @@ export default function AsanaPage() {
         {
           devanagari: "बद्ध हस्त शीर्षासन",
           sanskrit: "baddha hasta śīrṣāsana",
-          meaning: "捆绑手头倒立",
+          meaning: "捆绑手头倒立式",
           breakdown: {
             devanagari: "बद्ध + हस्त + शीर्ष + आसन",
             sanskrit: "baddha + hasta + śīrṣa + āsana",
@@ -1570,7 +1570,7 @@ export default function AsanaPage() {
         {
           devanagari: "सालम्ब सर्वाङ्गासन",
           sanskrit: "sālamba sarvāṅgāsana",
-          meaning: "支撑肩倒立",
+          meaning: "支撑肩倒立式",
           breakdown: {
             devanagari: "स + आलम्ब + सर्व + अङ्ग + आसन",
             sanskrit: "sa + ālamba + sarva + aṅga + āsana",
@@ -1609,7 +1609,7 @@ export default function AsanaPage() {
         },
         {
           devanagari: "पिण्डासन",
-          sanskrit: "piṇ्डāsana",
+          sanskrit: "piṇḍāsana",
           meaning: "胎儿式",
           breakdown: {
             devanagari: "पिण्ड + आसन",
@@ -1705,7 +1705,7 @@ export default function AsanaPage() {
 
     // 定义标签配置
     const sectionTabs = {
-      list: asanaContent.sections.list.title,  // 使用数据中的标题
+      list: asanaContent.sections.list.title,
       meanings: asanaContent.sections.meanings.title
     };
 
@@ -1713,7 +1713,7 @@ export default function AsanaPage() {
       <>
         <Navigation />
         <div className="min-h-screen bg-white pt-12">
-          {/* 文章标题部分 - 紧凑学术风格 */}
+          {/* 文章标题部分 */}
           <div className="max-w-6xl mx-auto px-4 pt-4 pb-2 md:pt-6 md:pb-3">
             <h1 className="text-base md:text-lg font-medium text-gray-900 mb-1 tracking-tight">
               {asanaContent.title}
@@ -1726,14 +1726,14 @@ export default function AsanaPage() {
             </p>
           </div>
 
-          {/* SectionTabs 组件 - 确保它也是紧凑的 */}
+          {/* SectionTabs 组件 */}
           <SectionTabs
             sections={sectionTabs}
             activeSection={activeSection}
             onSectionChange={setActiveSection}
           />
 
-          {/* 内容区域 - 紧凑学术表格风格 */}
+          {/* 内容区域 */}
           <div className="max-w-6xl mx-auto px-4 pb-6 md:pb-8">
             {activeSection === 'list' && (
               <div>
@@ -1741,7 +1741,7 @@ export default function AsanaPage() {
                   {asanaContent.sections.list.content}
                 </h2>
                 
-                {/* 体式列表 - 超紧凑表格 */}
+                {/* 体式列表 */}
                 <div className="space-y-0">
                   {asanaContent.asanas.map((asana, index) => (
                     <div
@@ -1771,18 +1771,18 @@ export default function AsanaPage() {
 
             {activeSection === 'meanings' && (
               <div className="font-['Futura','Segoe UI',system-ui,sans-serif]">
-                <h2 className="text-xs md:text-sm font-medium mb-2 md:mb-3 text-gray-800">
+                <h2 className="text-sm md:text-base font-medium mb-2 md:mb-3 text-gray-800">
                   {asanaContent.sections.meanings.content}
                 </h2>
                 
-                {/* 词源分析 - 紧凑学术表格 */}
+                {/* 词源分析 */}
                 <div className="space-y-2 md:space-y-3">
                   {asanaContent.meanings.map((item, index) => (
                     <div
                       key={index}
                       className="py-1.5 md:py-2 border-b border-gray-200 last:border-b-0 hover:bg-gray-50/20"
                     >
-                      {/* 两列布局 - 学术表格 */}
+                      {/* 两列布局 */}
                       <div className="flex flex-col md:flex-row gap-1.5 md:gap-2">
                         {/* 左列：完整形式 */}
                         <div className="w-full md:w-1/2">
