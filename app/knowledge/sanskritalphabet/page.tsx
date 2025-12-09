@@ -14,7 +14,7 @@ export default function SanskritAlphabetPage() {
     en: {
       title: "Sanskrit Alphabet System",
       subtitle: "संस्कृत अक्षर",
-      intro: "A Sanskrit alphabet learning guide compiled for Ashtanga Yoga practitioners, covering pronunciation, writing, and chakra correspondences.",
+      intro: "A Sanskrit alphabet learning guide compiled for Ashtanga Yoga practitioners, covering pronunciation, writing, and  basic grammar structure.",
       sections: {
         alphabet: {
           title: "Alphabet",
@@ -51,7 +51,7 @@ export default function SanskritAlphabetPage() {
     zh: {
       title: "梵语字母系统",
       subtitle: "संस्कृत अक्षर",
-      intro: "为阿斯汤加瑜伽练习者编撰的梵语字母学习指南，包含发音、书写及脉轮对应关系。",
+      intro: "为阿斯汤加瑜伽练习者编撰的梵语字母学习指南，包含发音、书写及简单的语法结构。",
       sections: {
         alphabet: {
           title: "字母表",
@@ -185,8 +185,8 @@ export default function SanskritAlphabetPage() {
                             <span className="mr-1.5 mt-0.5">•</span>
                             <span>
                               {language === 'zh'
-                                ? 'ISO-15919 为国际标准化组织制定的转写规范，与IAST的主要区别包括：ṛ → r̥，ṝ → r̥̄，ḷ → l̥，ḹ → l̥̄，e → ē，o → ō，aṃ → aṁ'
-                                : 'ISO-15919 is an international standardization organization transliteration standard. Main differences from IAST include: ṛ → r̥, ṝ → r̥̄, ḷ → l̥, ḹ → l̥̄, e → ē, o → ō, aṃ → aṁ'}
+                                ? 'ISO-15919 为国际标准化组织制定的转写规范，与IAST的主要区别包括：ṛ，ṝ，ḷ，ḹ，e，o，aṃ → r̥，r̥̄，l̥，l̥̄，ē，ō，aṁ'
+                                : 'ISO-15919 is an international standardization organization transliteration standard. Main differences from IAST include: ṛ，ṝ，ḷ，ḹ，e，o，aṃ → r̥，r̥̄，l̥，l̥̄，ē，ō，aṁ'}
                             </span>
                           </li>
                         </ul>
@@ -196,241 +196,241 @@ export default function SanskritAlphabetPage() {
                 </div>
               </div>
 
-              {/* 字母表格部分 */}
-              <div className="space-y-6">
-                {/* 元音卡片 - 7列布局 */}
-                <div>
-                  <div className="grid grid-cols-7 gap-2">
-                    {/* 第一行：5个短元音 + 2个空位 */}
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">अ</div>
-                      <div className="text-xs italic text-gray-600">a</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">इ</div>
-                      <div className="text-xs italic text-gray-600">i</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">उ</div>
-                      <div className="text-xs italic text-gray-600">u</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ऋ</div>
-                      <div className="text-xs italic text-gray-600">ṛ</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ऌ</div>
-                      <div className="text-xs italic text-gray-600">ḷ</div>
-                    </div>
-                    <div className="p-2"></div>
-                    <div className="p-2"></div>
-                    
-                    {/* 第二行：5个长元音 + 2个空位 */}
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">आ</div>
-                      <div className="text-xs italic text-gray-600">ā</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ई</div>
-                      <div className="text-xs italic text-gray-600">ī</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ऊ</div>
-                      <div className="text-xs italic text-gray-600">ū</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ॠ</div>
-                      <div className="text-xs italic text-gray-600">ṝ</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ॡ</div>
-                      <div className="text-xs italic text-gray-600">ḹ</div>
-                    </div>
-                    <div className="p-2"></div>
-                    <div className="p-2"></div>
-                    
-                    {/* 第三行：4个复合元音 + 空位 + 2个辅助元音 */}
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ए</div>
-                      <div className="text-xs italic text-gray-600">e</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ऐ</div>
-                      <div className="text-xs italic text-gray-600">ai</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ओ</div>
-                      <div className="text-xs italic text-gray-600">o</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">औ</div>
-                      <div className="text-xs italic text-gray-600">au</div>
-                    </div>
-                    <div className="p-2"></div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">अं</div>
-                      <div className="text-xs italic text-gray-600">aṃ</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">अः</div>
-                      <div className="text-xs italic text-gray-600">aḥ</div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* 空行分隔 */}
-                <div className="py-4">
-                  <div className="border-t border-gray-300"></div>
-                </div>
-                
-                {/* 辅音卡片 */}
-                <div>
-                  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-2">
-                    {/* 喉音 */}
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">क्</div>
-                      <div className="text-xs italic text-gray-600">k</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ख्</div>
-                      <div className="text-xs italic text-gray-600">kh</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ग्</div>
-                      <div className="text-xs italic text-gray-600">g</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">घ्</div>
-                      <div className="text-xs italic text-gray-600">gh</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ङ्</div>
-                      <div className="text-xs italic text-gray-600">ṅ</div>
-                    </div>
-                    <div className="p-2"></div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ह्</div>
-                      <div className="text-xs italic text-gray-600">h</div>
-                    </div>
-                    
-                    {/* 颚音 */}
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">च्</div>
-                      <div className="text-xs italic text-gray-600">c</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">छ्</div>
-                      <div className="text-xs italic text-gray-600">ch</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ज्</div>
-                      <div className="text-xs italic text-gray-600">j</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">झ्</div>
-                      <div className="text-xs italic text-gray-600">jh</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ञ्</div>
-                      <div className="text-xs italic text-gray-600">ñ</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">य्</div>
-                      <div className="text-xs italic text-gray-600">y</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">श्</div>
-                      <div className="text-xs italic text-gray-600">ś</div>
-                    </div>
-                    
-                    {/* 卷舌音 */}
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ट्</div>
-                      <div className="text-xs italic text-gray-600">ṭ</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ठ्</div>
-                      <div className="text-xs italic text-gray-600">ṭh</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ड्</div>
-                      <div className="text-xs italic text-gray-600">ḍ</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ढ्</div>
-                      <div className="text-xs italic text-gray-600">ḍh</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ण्</div>
-                      <div className="text-xs italic text-gray-600">ṇ</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">र्</div>
-                      <div className="text-xs italic text-gray-600">r</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ष्</div>
-                      <div className="text-xs italic text-gray-600">ṣ</div>
-                    </div>
-                    
-                    {/* 齿音 */}
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">त्</div>
-                      <div className="text-xs italic text-gray-600">t</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">थ्</div>
-                      <div className="text-xs italic text-gray-600">th</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">द्</div>
-                      <div className="text-xs italic text-gray-600">d</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ध्</div>
-                      <div className="text-xs italic text-gray-600">dh</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">न्</div>
-                      <div className="text-xs italic text-gray-600">n</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ल्</div>
-                      <div className="text-xs italic text-gray-600">l</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">स्</div>
-                      <div className="text-xs italic text-gray-600">s</div>
-                    </div>
-                    
-                    {/* 唇音 */}
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">प्</div>
-                      <div className="text-xs italic text-gray-600">p</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">फ्</div>
-                      <div className="text-xs italic text-gray-600">ph</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">ब्</div>
-                      <div className="text-xs italic text-gray-600">b</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">भ्</div>
-                      <div className="text-xs italic text-gray-600">bh</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">म्</div>
-                      <div className="text-xs italic text-gray-600">m</div>
-                    </div>
-                    <div className="border border-gray-200 rounded p-2 text-center hover:bg-gray-50/30 min-h-[80px]">
-                      <div className="font-sans text-lg mb-1">व्</div>
-                      <div className="text-xs italic text-gray-600">v</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                                            {/* 字母表格部分 */}
+                                            <div className="space-y-6">
+                                              {/* 元音卡片 - 严格保持7列正方形布局 */}
+                                              <div>
+                                                <div className="grid grid-cols-7 gap-1 sm:gap-2">
+                                                  {/* 第一行：5个短元音 + 2个空位 */}
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">अ</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">a</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">इ</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">i</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">उ</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">u</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ऋ</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ṛ</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ऌ</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ḷ</div>
+                                                  </div>
+                                                  <div className="aspect-square"></div>
+                                                  <div className="aspect-square"></div>
+                                                  
+                                                  {/* 第二行：5个长元音 + 2个空位 */}
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">आ</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ā</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ई</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ī</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ऊ</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ū</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ॠ</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ṝ</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ॡ</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ḹ</div>
+                                                  </div>
+                                                  <div className="aspect-square"></div>
+                                                  <div className="aspect-square"></div>
+                                                  
+                                                  {/* 第三行：4个复合元音 + 空位 + 2个辅助元音 */}
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ए</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">e</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ऐ</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ai</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ओ</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">o</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">औ</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">au</div>
+                                                  </div>
+                                                  <div className="aspect-square"></div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">अं</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">aṃ</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">अः</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">aḥ</div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              
+                                              {/* 空行分隔 */}
+                                              <div className="py-4">
+                                                <div className="border-t border-gray-300"></div>
+                                              </div>
+                                              
+                                              {/* 辅音卡片 - 严格保持7列正方形布局 */}
+                                              <div>
+                                                <div className="grid grid-cols-7 gap-1 sm:gap-2">
+                                                  {/* 喉音 */}
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">क्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">k</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ख्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">kh</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ग्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">g</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">घ्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">gh</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ङ्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ṅ</div>
+                                                  </div>
+                                                  <div className="aspect-square"></div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ह्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">h</div>
+                                                  </div>
+                                                  
+                                                  {/* 颚音 */}
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">च्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">c</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">छ्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ch</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ज्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">j</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">झ्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">jh</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ञ्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ñ</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">य्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">y</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">श्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ś</div>
+                                                  </div>
+                                                  
+                                                  {/* 卷舌音 */}
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ट्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ṭ</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ठ्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ṭh</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ड्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ḍ</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ढ्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ḍh</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ण्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ṇ</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">र्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">r</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ष्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ṣ</div>
+                                                  </div>
+                                                  
+                                                  {/* 齿音 */}
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">त्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">t</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">थ्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">th</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">द्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">d</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ध्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">dh</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">न्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">n</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ल्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">l</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">स्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">s</div>
+                                                  </div>
+                                                  
+                                                  {/* 唇音 */}
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">प्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">p</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">फ्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">ph</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">ब्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">b</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">भ्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">bh</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">म्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">m</div>
+                                                  </div>
+                                                  <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30">
+                                                    <div className="font-sans text-base sm:text-lg md:text-xl">व्</div>
+                                                    <div className="text-xs italic text-gray-600 mt-0.5">v</div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
               
               {/* 音系特征部分 */}
               <div className="mt-8 pt-6 border-t border-gray-200">
