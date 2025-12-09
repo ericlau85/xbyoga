@@ -1801,13 +1801,13 @@ export default function AsanaPage() {
                         <div className="w-full md:w-1/2">
                           {item.breakdown && (
                             <div className="pt-0.5 border-t border-gray-100 md:border-t-0 md:pt-0">
-                              <div className="text-xs font-sans text-gray-600 mb-0.5 leading-tight">
+                              <div className="text-[11px] md:text-sm font-sans text-gray-500 mb-0.5 leading-tight">
                                 {item.breakdown.devanagari}
                               </div>
-                              <div className="text-xs italic text-gray-500 mb-0.5 leading-tight">
+                              <div className="text-[11px] md:text-sm italic text-gray-500 mb-0.5 leading-tight">
                                 {item.breakdown.sanskrit}
                               </div>
-                              <div className="text-xs text-gray-500 leading-tight">
+                              <div className="text-[11px] md:text-sm text-gray-400 leading-tight">
                                 {item.breakdown.meaning}
                               </div>
                             </div>
