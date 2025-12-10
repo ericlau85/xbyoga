@@ -29,7 +29,7 @@ export default function MoonCalendarPage() {
       
       {/* 标题部分 */}
       <div className="w-full flex justify-center items-center bg-gradient-to-r from-gray-900 to-gray-800 text-white py-6 md:py-10">
-        <div className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
+        <div className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 mx-auto text-center">
           <h1 className="text-2xl md:text-3xl font-light mb-4 md:mb-4">
             {content.title}
           </h1>

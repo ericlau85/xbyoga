@@ -10,144 +10,432 @@ export default function SanskritAlphabetPage() {
   const { language } = useLanguage();
   const [activeSection, setActiveSection] = useState<'alphabet' | 'vowels' | 'consonants' | 'conjuncts' | 'syllables' | 'sandhi'>('alphabet');
 
+  // ============================================
+  // 1. 完整的数据定义（包含所有中文内容）
+  // ============================================
+  
   const sanskritData = {
     en: {
-      title: "Sanskrit Alphabet System",
-      subtitle: "संस्कृत अक्षर",
-      intro: "A Sanskrit alphabet learning guide compiled for Ashtanga Yoga practitioners, covering pronunciation, writing, and  basic grammar structure.",
-      sections: {
-        alphabet: {
-          title: "Alphabet",
-          content: "Comprehensive Sanskrit alphabet system"
-        },
-        vowels: {
-          title: "Vowels",
-          content: "Sanskrit vowel system: स्वराः svarāḥ"
-        },
-        consonants: {
-          title: "Consonants",
-          content: "Sanskrit consonant system: व्यञ्जनानि vyañjanāni"
-        },
-        conjuncts: {
-          title: "Compound Letters",
-          content: "Compound consonants: संयुक्ताक्षराणि saṃyuktākṣarāṇi"
-        },
-        syllables: {
-          title: "Syllable Structure",
-          content: "Syllable formation and pronunciation rules"
-        },
-        sandhi: {
-          title: "Sandhi Rules",
-          content: "Euphonic combination rules in Sanskrit"
-        }
+      meta: {
+        title: "Sanskrit Alphabet System",
+        subtitle: "संस्कृत अक्षर",
+        intro: "A Sanskrit alphabet learning guide compiled for Ashtanga Yoga practitioners, covering pronunciation, writing, and basic grammar structure.",
+        backButton: "Back to Knowledge Base"
       },
-      // 其他标签页为空数据
-      vowels: [],
-      consonants: [],
-      conjuncts: [],
-      syllables: [],
-      sandhi: []
+      sections: {
+        alphabet: { tabTitle: "Alphabet", pageTitle: "Comprehensive Sanskrit alphabet system" },
+        vowels: { tabTitle: "Vowels", pageTitle: "Sanskrit vowel system: स्वराः svarāḥ" },
+        consonants: { tabTitle: "Consonants", pageTitle: "Sanskrit consonant system: व्यञ्जनानि vyañjanāni" },
+        conjuncts: { tabTitle: "Compound Letters", pageTitle: "Compound consonants: संयुक्ताक्षराणि saṃyuktākṣarāṇi" },
+        syllables: { tabTitle: "Syllable Structure", pageTitle: "Syllable formation and pronunciation rules" },
+        sandhi: { tabTitle: "Sandhi Rules", pageTitle: "Euphonic combination rules in Sanskrit" }
+      },
+      // 其他内容暂时保持原有结构
     },
     zh: {
-      title: "梵语字母系统",
-      subtitle: "संस्कृत अक्षर",
-      intro: "为阿斯汤加瑜伽练习者编撰的梵语字母学习指南，包含发音、书写及简单的语法结构。",
-      sections: {
-        alphabet: {
-          title: "字母表",
-          content: "完整的梵语字母系统"
-        },
-        vowels: {
-          title: "元音",
-          content: "梵语元音系统：स्वराः svarāḥ"
-        },
-        consonants: {
-          title: "辅音",
-          content: "梵语辅音系统：व्यञ्जनानि vyañjanāni"
-        },
-        conjuncts: {
-          title: "复合字母",
-          content: "复合辅音：संयुक्ताक्षराणि saṃyuktākṣarāṇi"
-        },
-        syllables: {
-          title: "音节结构",
-          content: "音节构成与发音规则"
-        },
-        sandhi: {
-          title: "连音规则",
-          content: "梵语中的音变组合规则"
-        }
+      meta: {
+        title: "梵语字母系统",
+        subtitle: "संस्कृत अक्षर",
+        intro: "为阿斯汤加瑜伽练习者编撰的梵语字母学习指南，包含发音、书写及简单的语法结构。",
+        backButton: "返回知识库"
       },
-      // 其他标签页为空数据
-      vowels: [],
-      consonants: [],
-      conjuncts: [],
-      syllables: [],
-      sandhi: []
+      sections: {
+        alphabet: { tabTitle: "字母表", pageTitle: "完整的梵语字母系统" },
+        vowels: { tabTitle: "元音", pageTitle: "梵语元音系统：स्वराः svarāḥ" },
+        consonants: { tabTitle: "辅音", pageTitle: "梵语辅音系统：व्यञ्जनानि vyañjanāni" },
+        conjuncts: { tabTitle: "复合字母", pageTitle: "复合辅音：संयुक्ताक्षराणि saṃyuktākṣarāṇi" },
+        syllables: { tabTitle: "音节结构", pageTitle: "音节构成与发音规则" },
+        sandhi: { tabTitle: "连音规则", pageTitle: "梵语中的音变组合规则" }
+      },
+      // 其他内容暂时保持原有结构
     }
   };
 
-  const sanskritContent = sanskritData[language as keyof typeof sanskritData];
+  // ============================================
+  // 2. 保持您原有的数据内容，只改变组织结构
+  // ============================================
 
-  // 定义标签配置
-  const sectionTabs = {
-    alphabet: sanskritContent.sections.alphabet.title,
-    vowels: sanskritContent.sections.vowels.title,
-    consonants: sanskritContent.sections.consonants.title,
-    conjuncts: sanskritContent.sections.conjuncts.title,
-    syllables: sanskritContent.sections.syllables.title,
-    sandhi: sanskritContent.sections.sandhi.title
+  // 元音数据
+  const vowelsData = [
+    { devanagari: "अ", transliteration: "a" },
+    { devanagari: "इ", transliteration: "i" },
+    { devanagari: "उ", transliteration: "u" },
+    { devanagari: "ऋ", transliteration: "ṛ" },
+    { devanagari: "ऌ", transliteration: "ḷ" },
+    { devanagari: "आ", transliteration: "ā" },
+    { devanagari: "ई", transliteration: "ī" },
+    { devanagari: "ऊ", transliteration: "ū" },
+    { devanagari: "ॠ", transliteration: "ṝ" },
+    { devanagari: "ॡ", transliteration: "ḹ" },
+    { devanagari: "ए", transliteration: "e" },
+    { devanagari: "ऐ", transliteration: "ai" },
+    { devanagari: "ओ", transliteration: "o" },
+    { devanagari: "औ", transliteration: "au" },
+    { devanagari: "अं", transliteration: "aṃ" },
+    { devanagari: "अः", transliteration: "aḥ" }
+  ];
+
+  // 辅音数据
+  const consonantsData = [
+    { devanagari: "क्", transliteration: "k" },
+    { devanagari: "ख्", transliteration: "kh" },
+    { devanagari: "ग्", transliteration: "g" },
+    { devanagari: "घ्", transliteration: "gh" },
+    { devanagari: "ङ्", transliteration: "ṅ" },
+    { devanagari: "ह्", transliteration: "h" },
+    { devanagari: "च्", transliteration: "c" },
+    { devanagari: "छ्", transliteration: "ch" },
+    { devanagari: "ज्", transliteration: "j" },
+    { devanagari: "झ्", transliteration: "jh" },
+    { devanagari: "ञ्", transliteration: "ñ" },
+    { devanagari: "य्", transliteration: "y" },
+    { devanagari: "श्", transliteration: "ś" },
+    { devanagari: "ट्", transliteration: "ṭ" },
+    { devanagari: "ठ्", transliteration: "ṭh" },
+    { devanagari: "ड्", transliteration: "ḍ" },
+    { devanagari: "ढ्", transliteration: "ḍh" },
+    { devanagari: "ण्", transliteration: "ṇ" },
+    { devanagari: "र्", transliteration: "r" },
+    { devanagari: "ष्", transliteration: "ṣ" },
+    { devanagari: "त्", transliteration: "t" },
+    { devanagari: "थ्", transliteration: "th" },
+    { devanagari: "द्", transliteration: "d" },
+    { devanagari: "ध्", transliteration: "dh" },
+    { devanagari: "न्", transliteration: "n" },
+    { devanagari: "ल्", transliteration: "l" },
+    { devanagari: "स्", transliteration: "s" },
+    { devanagari: "प्", transliteration: "p" },
+    { devanagari: "फ्", transliteration: "ph" },
+    { devanagari: "ब्", transliteration: "b" },
+    { devanagari: "भ्", transliteration: "bh" },
+    { devanagari: "म्", transliteration: "m" },
+    { devanagari: "व्", transliteration: "v" }
+  ];
+
+  // 梵语简介文本
+  const sanskritIntroText = {
+    en: {
+      sanskrit: 'The term संस्कृत (Sanskrit) means "refined, purified, perfected," and as such, it is revered in the Indian tradition as the "divine language" (देवभाषा devabhāṣā). As one of the oldest languages in the Indo-Iranian branch of the Indo-European family, Sanskrit served as the principal vehicle for ancient Indian religion, philosophy, literature, and science.',
+      alphabet: 'The Sanskrit alphabet is called वर्णमाला varṇamālā (literally "garland of letters"). Traditional Sanskrit phonology contains 16 vowels (स्वराः svarāḥ) and 33 consonants (व्यञ्जनानि vyañjanāni).',
+      devanagari: 'देवनागरी devanāgarī is the most commonly used writing system for Sanskrit, also used for modern Indian languages such as Hindi (हिन्दी hindī), Marathi (मराठी marāṭhī), and Nepali (नेपाली nepālī). Devanāgarī is a syllabic script where each character represents a syllable, and consonants inherently include the short vowel अ (a).',
+      transliterationItems: [
+        'IAST (International Alphabet of Sanskrit Transliteration) is the most widely adopted Latin transliteration scheme for Sanskrit in academic fields, strictly following the "one sound, one symbol" principle and preserving complete Sanskrit phonological features.',
+        'ISO-15919 is an international standardization organization transliteration standard. Main differences from IAST include: ṛ，ṝ，ḷ，ḹ，e，o，aṃ → r̥，r̥̄，l̥，l̥̄，ē，ō，aṁ'
+      ]
+    },
+    zh: {
+      sanskrit: '梵语（संस्कृतम् saṃskṛtam，意为"精炼、净化、完善的语言"）在印度传统中被尊为"神圣的言语"（देवभाषा devabhāṣā）。作为印欧语系印度-伊朗语族中最古老的语言之一，梵语是古代印度宗教、哲学、文学与科学的主要载体。',
+      alphabet: '梵语字母表被称为 वर्णमाला varṇamālā（字面义"字母花环"）。传统梵语音系包含16个元音（स्वराः svarāḥ）与33个辅音（व्यञ्जनानि vyañjanāni）。',
+      devanagari: 'देवनागरी devanāgarī 是书写梵语最常用的文字系统，亦用于书写印地语（हिन्दी hindī）、马拉地语（मराठी marāṭhī）、尼泊尔语（नेपाली nepālī）等多种现代印度语言。天城文为音节文字，每个字符代表一个音节，辅音字母默认包含短元音 अ（a）。',
+      transliterationItems: [
+        'IAST（International Alphabet of Sanskrit Transliteration）是学术领域最广泛采用的梵文拉丁转写方案，严格遵循"一音一符"原则，完整保留梵语音系特征。',
+        'ISO-15919 为国际标准化组织制定的转写规范，与IAST的主要区别包括：ṛ，ṝ，ḷ，ḹ，e，o，aṃ → r̥，r̥̄，l̥，l̥̄，ē，ō，aṁ'
+      ]
+    }
   };
 
+  // 音系特征数据
+  const phonologyData = {
+    en: {
+      lengthSystem: {
+        title: "Length System • काल kāla",
+        description: "Sanskrit vowels are classified into three categories by length:",
+        items: [
+          "Short vowels ह्रस्व hrasva • 1 syllable unit (मात्रा mātrā) • e.g.: अ a, इ i, उ u",
+          "Long vowels दीर्घ dīrgha • 2 syllable units • e.g.: आ ā, ई ī, ऊ ū",
+          "Prolonged vowels प्लुत pluta • 3 syllable units (mainly used in Vedic texts) • e.g.: आ३ ā³"
+        ]
+      },
+      toneSystem: {
+        title: "Tone System • स्वराः svarāḥ",
+        note: "Note: Classical Sanskrit usually does not mark tones; the tone system is primarily used in Vedic Sanskrit (वैदिकसंस्कृतम्).",
+        description: "Three basic tones in Vedic Sanskrit:",
+        items: [
+          "High tone उदात्त udātta • Mark: ॑ (e.g.: अ॑ a̍)",
+          "Low tone अनुदात्त anudātta • Mark: ॒ (e.g.: अ॒ a̱)",
+          "Falling/compound tone स्वरित svarita • No independent symbol, formed by natural falling after high tone"
+        ]
+      },
+      nasalization: {
+        title: "Nasalization • आनुनासिक्यम् ānunāsikyam",
+        description: "All Sanskrit phonemes can be nasalized, marked with ँ (चन्द्रबिन्दु candra-bindu). Nasalization can combine with other phonetic features (length, tone)."
+      },
+      phonemeExamples: {
+        title: "Phoneme Combination Examples",
+        description: "Based on 3 lengths (short, long, prolonged) × 3 tones (high, low, falling/neutral) × 2 nasal states (nasalized/non-nasalized), each phoneme theoretically has multiple variant forms.",
+        vowelExample: {
+          title: "Example: Phoneme combinations based on vowel अ a",
+          series: [
+            {
+              name: "High tone series (उदात्त udātta)",
+              examples: ["अ॑ a̍", "आ॑ ā̍", "आ॑३ ā̍³", "अँ॑ ã̍", "आँ॑ ā̃̍", "आँ॑३ ā̃̍³"]
+            },
+            {
+              name: "Low tone series (अनुदात्त anudātta)",
+              examples: ["अ॒ a̱", "आ॒ ā̱", "आ॒३ ā̱³", "अँ॒ ã̱", "आँ॒ ā̱̃", "आँ॒३ ā̱̃³"]
+            },
+            {
+              name: "Neutral series (Classical Sanskrit standard)",
+              examples: ["अ a", "आ ā", "आ३ ā³", "अँ ã", "आँ ā̃", "आँ३ ā̃³"]
+            }
+          ]
+        }
+      }
+    },
+    zh: {
+      lengthSystem: {
+        title: "音长系统 • काल kāla",
+        description: "梵语元音按音长分为三类：",
+        items: [
+          "短元音 ह्रस्व hrasva • 1音节单位（मात्रा mātrā） • 如：अ a、इ i、उ u",
+          "长元音 दीर्घ dīrgha • 2音节单位 • 如：आ ā、ई ī、ऊ ū",
+          "延长元音 प्लुत pluta • 3音节单位（主要用于吠陀文献） • 如：आ३ ā³"
+        ]
+      },
+      toneSystem: {
+        title: "音调系统 • स्वराः svarāḥ",
+        note: "注：古典梵语通常不标记音调，音调系统主要用于吠陀梵语（वैदिकसंस्कृतम्）。",
+        description: "吠陀梵语的三种基本音调：",
+        items: [
+          "高调 उदात्त udātta • 标记：॑（如：अ॑ a̍）",
+          "低调 अनुदात्त anudātta • 标记：॒（如：अ॒ a̱）",
+          "降调/复合调 स्वरित svarita • 无独立符号，由高调后自然降调形成"
+        ]
+      },
+      nasalization: {
+        title: "鼻音化 • आनुनासिक्यम् ānunāsikyam",
+        description: "所有梵语音素均可鼻音化，标记为 ँ（चन्द्रबिन्दु candra-bindu）。鼻音化可与其他语音特征（音长、音调）组合。"
+      },
+      phonemeExamples: {
+        title: "音素组合示例",
+        description: "基于3种音长（短、长、延长）× 3种音调（高调、低调、降调/中性）× 2种鼻音状态（鼻音化/非鼻音化），每个音素理论上存在多种变体形式。",
+        vowelExample: {
+          title: "示例：以元音 अ a 为基础的音素组合",
+          series: [
+            {
+              name: "高调系列（उदात्त udātta）",
+              examples: ["अ॑ a̍", "आ॑ ā̍", "आ॑३ ā̍³", "अँ॑ ã̍", "आँ॑ ā̃̍", "आँ॑३ ā̃̍³"]
+            },
+            {
+              name: "低调系列（अनुदात्त anudātta）",
+              examples: ["अ॒ a̱", "आ॒ ā̱", "आ॒३ ā̱³", "अँ॒ ã̱", "आँ॒ ā̱̃", "आँ॒३ ā̱̃³"]
+            },
+            {
+              name: "中性系列（古典梵语常规）",
+              examples: ["अ a", "आ ā", "आ३ ā³", "अँ ã", "आँ ā̃", "आँ३ ā̃³"]
+            }
+          ]
+        }
+      }
+    }
+  };
+
+  // 符号表数据
+  const symbolTableData = [
+    { symbol: "ँ", name: "चन्द्रबिन्दु candra-bindu", functionEn: "Nasalization mark", functionZh: "鼻音化标记" },
+    { symbol: "॑", name: "उदात्त udātta", functionEn: "High tone mark", functionZh: "高调标记" },
+    { symbol: "॒", name: "अनुदात्त anudātta", functionEn: "Low tone mark", functionZh: "低调标记" },
+    { symbol: "३", name: "प्लुत pluta", functionEn: "Prolongation mark", functionZh: "延长音标记" },
+    { symbol: "̍", name: "IPA high tone symbol", functionEn: "IPA high tone symbol", functionZh: "国际音标高调标记" },
+    { symbol: "̱", name: "IPA low tone symbol", functionEn: "IPA low tone symbol", functionZh: "国际音标低调标记" }
+  ];
+
+  // 脉轮数据
+  const chakrasData = {
+    en: [
+      {
+        name: "Crown Chakra (सहस्रार, ॐ, Thousand petals)",
+        letters: ["ॐ"],
+        description: "Sacred syllable, representing the primordial vibration of the universe and the highest state of consciousness"
+      },
+      {
+        name: "Brow Chakra (उँ, 2 petals)",
+        letters: ["ह्", "क्ष"],
+        description: "Glottal fricative and special conjunct consonant"
+      },
+      {
+        name: "Throat Chakra (हं, 16 petals)",
+        letters: ["अ", "इ", "उ", "ऋ", "ऌ", "आ", "ई", "ऊ", "ॠ", "ॡ", "ए", "ऐ", "ओ", "औ", "अं", "अः"],
+        description: "Sanskrit sixteen vowels"
+      },
+      {
+        name: "Heart Chakra (यं, 12 petals)",
+        letters: ["क्", "ख्", "ग्", "घ्", "ङ्", "च्", "छ्", "ज्", "झ्", "ञ्", "ट्", "ठ्"],
+        description: "Guttural and palatal consonants"
+      },
+      {
+        name: "Navel Chakra (रं, 10 petals)",
+        letters: ["ड्", "ढ्", "ण्", "त्", "थ्", "द्", "ध्", "न्", "प्", "फ्"],
+        description: "Retroflex, dental and some labial consonants"
+      },
+      {
+        name: "Sacral Chakra (वं, 6 petals)",
+        letters: ["ब्", "भ्", "म्", "य्", "र्", "ल्"],
+        description: "Voiced labial consonants and semivowels"
+      },
+      {
+        name: "Root Chakra (लं, 4 petals)",
+        letters: ["व्", "श्", "ष्", "स्"],
+        description: "Sibilants"
+      }
+    ],
+    zh: [
+      {
+        name: "顶轮 (सहस्रार, ॐ, 千瓣)",
+        letters: ["ॐ"],
+        description: "神圣音节，代表宇宙的原始振动和意识的最高状态"
+      },
+      {
+        name: "额轮 (उँ, 2 花瓣)",
+        letters: ["ह्", "क्ष"],
+        description: "喉擦音和特殊复合辅音"
+      },
+      {
+        name: "喉轮 (हं, 16 花瓣)",
+        letters: ["अ", "इ", "उ", "ऋ", "ऌ", "आ", "ई", "ऊ", "ॠ", "ॡ", "ए", "ऐ", "ओ", "औ", "अं", "अः"],
+        description: "梵语十六个元音"
+      },
+      {
+        name: "心轮 (यं, 12 花瓣)",
+        letters: ["क्", "ख्", "ग्", "घ्", "ङ्", "च्", "छ्", "ज्", "झ्", "ञ्", "ट्", "ठ्"],
+        description: "喉音和颚音辅音"
+      },
+      {
+        name: "脐轮 (रं, 10 花瓣)",
+        letters: ["ड्", "ढ्", "ण्", "त्", "थ्", "द्", "ध्", "न्", "प्", "फ्"],
+        description: "卷舌音、齿音和部分唇音"
+      },
+      {
+        name: "腹轮 (वं, 6 花瓣)",
+        letters: ["ब्", "भ्", "म्", "य्", "र्", "ल्"],
+        description: "浊唇音和半元音"
+      },
+      {
+        name: "根轮 (लं, 4 花瓣)",
+        letters: ["व्", "श्", "ष्", "स्"],
+        description: "擦音"
+      }
+    ]
+  };
+
+  // ============================================
+  // 3. 获取当前语言的内容
+  // ============================================
+  
+  const content = sanskritData[language as keyof typeof sanskritData];
+  const meta = content.meta;
+  const sections = content.sections;
+  const introText = sanskritIntroText[language as keyof typeof sanskritIntroText];
+  const phonology = phonologyData[language as keyof typeof phonologyData];
+  const chakras = chakrasData[language as keyof typeof chakrasData];
+
+  // ============================================
+  // 4. 标签页配置
+  // ============================================
+  
+  const sectionTabs = {
+    alphabet: sections.alphabet.tabTitle,
+    vowels: sections.vowels.tabTitle,
+    consonants: sections.consonants.tabTitle,
+    conjuncts: sections.conjuncts.tabTitle,
+    syllables: sections.syllables.tabTitle,
+    sandhi: sections.sandhi.tabTitle
+  };
+
+  // ============================================
+  // 5. 辅助渲染组件
+  // ============================================
+
+  // 字母卡片组件
+  const LetterCard = ({ devanagari, transliteration }: { devanagari: string, transliteration: string }) => (
+    <div className="aspect-square border border-gray-200 rounded flex flex-col items-center justify-center p-1 hover:bg-gray-50/30 transition-colors">
+      <div className="font-sans text-base sm:text-lg md:text-xl">{devanagari}</div>
+      <div className="text-xs italic text-gray-600 mt-0.5">{transliteration}</div>
+    </div>
+  );
+
+  // 音素示例卡片
+  const PhonemeCard = ({ example }: { example: string }) => (
+    <div className="border border-gray-200 rounded p-2 text-center">
+      <div className="font-sans mb-1">{example.split(' ')[0]}</div>
+      <div className="italic text-xs">{example.split(' ')[1]}</div>
+    </div>
+  );
+
+  // 符号表组件
+  const SymbolTable = () => (
+    <div className="overflow-x-auto">
+      <table className="w-full text-xs border border-gray-300">
+        <thead className="bg-gray-50">
+          <tr>
+            <th className="border border-gray-300 p-2 text-left">{language === 'zh' ? '符号' : 'Symbol'}</th>
+            <th className="border border-gray-300 p-2 text-left">{language === 'zh' ? '名称' : 'Name'}</th>
+            <th className="border border-gray-300 p-2 text-left">{language === 'zh' ? '功能' : 'Function'}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {symbolTableData.map((row, index) => (
+            <tr key={index}>
+              <td className="border border-gray-300 p-2 font-sans">{row.symbol}</td>
+              <td className="border border-gray-300 p-2">{row.name}</td>
+              <td className="border border-gray-300 p-2">{language === 'zh' ? row.functionZh : row.functionEn}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+
+  // ============================================
+  // 6. 主渲染函数
+  // ============================================
+  
   return (
     <>
       <Navigation />
+      
       <div className="min-h-screen bg-white pt-12">
-        {/* 文章标题部分 */}
+        {/* 页面头部 */}
         <div className="max-w-6xl mx-auto px-4 pt-4 pb-2 md:pt-6 md:pb-3">
           <h1 className="text-base md:text-lg font-medium text-gray-900 mb-1 tracking-tight">
-            {sanskritContent.title}
+            {meta.title}
           </h1>
           <p className="text-sm md:text-base text-gray-600 mb-1.5">
-            {sanskritContent.subtitle}
+            {meta.subtitle}
           </p>
           <p className="text-xs md:text-sm text-gray-700 mb-3 leading-snug">
-            {sanskritContent.intro}
+            {meta.intro}
           </p>
         </div>
 
-        {/* SectionTabs 组件 */}
+        {/* 标签页导航 */}
         <SectionTabs
           sections={sectionTabs}
           activeSection={activeSection}
           onSectionChange={setActiveSection}
         />
 
-        {/* 内容区域 */}
+        {/* 主内容区域 */}
         <div className="max-w-6xl mx-auto px-4 pb-6 md:pb-8">
+          
+          {/* 字母表标签页 */}
           {activeSection === 'alphabet' && (
-            <div>
-              <h2 className="text-sm md:text-base font-medium text-gray-800 mb-1.5">
-                {sanskritContent.sections.alphabet.content}
-              </h2>
+            <div className="space-y-8">
               
               {/* 梵语简介部分 */}
-              <div className="bg-gradient-to-r from-gray-50 to-white p-4 md:p-6 rounded-lg border border-gray-100 mb-6">
+              <div className="bg-gradient-to-r from-gray-50 to-white p-4 md:p-6 rounded-lg border border-gray-100">
                 <div className="space-y-4">
                   <div className="text-xs md:text-sm text-gray-700 leading-relaxed">
                     <div className="mb-2">
-                      <div className="font-sans text-sm mb-1">梵语 Sanskrit</div>
-                      <div className="font-sans text-sm mb-1">संस्कृतम् saṃskṛtam</div>
+                      <div className="font-sans text-sm mb-1">
+                        {language === 'zh' ? '梵语 Sanskrit' : 'Sanskrit'}
+                      </div>
                     </div>
                     <p className="mb-2">
-                      {language === 'zh'
-                        ? 'संस्कृत的字面意义为"精炼、净化、完善"，因此梵语被视为"神圣的言语"（देवभाषा devabhāṣā）。作为印欧语系印度-伊朗语族中最古老的语言之一，梵语是古代印度宗教、哲学、文学与科学的主要载体。'
-                        : 'The literal meaning of संस्कृत is "refined, purified, perfected," thus Sanskrit is called the "divine language" (देवभाषा devabhāṣā). As one of the oldest languages in the Indo-Iranian branch of the Indo-European language family, Sanskrit was the primary vehicle for ancient Indian religion, philosophy, literature, and science.'}
+                      {introText.sanskrit}
                     </p>
-                    <div className="mt-2 text-xs md:text-sm text-gray-700 leading-relaxed">
-                      {language === 'zh'
-                        ? '梵语字母表被称为 वर्णमाला varṇamālā（字面义"字母花环"）。传统梵语音系包含16个元音（स्वराः svarāḥ）与33个辅音（व्यञ्जनानि vyañjanāni）。'
-                        : 'The Sanskrit alphabet is called वर्णमाला varṇamālā (literally "garland of letters"). Traditional Sanskrit phonology contains 16 vowels (स्वराः svarāḥ) and 33 consonants (व्यञ्जनानि vyañjanāni).'}
+                    <div className="mt-2">
+                      {introText.alphabet}
                     </div>
                   </div>
                   
@@ -162,9 +450,7 @@ export default function SanskritAlphabetPage() {
                           {language === 'zh' ? '1. 天城文 Devanāgarī' : '1. Devanāgarī Script'}
                         </h5>
                         <p className="text-xs text-gray-700">
-                          {language === 'zh'
-                            ? 'देवनागरी devanāgarī 是书写梵语最常用的文字系统，亦用于书写印地语（हिन्दी hindī）、马拉地语（मराठी marāṭhī）、尼泊尔语（नेपाली nepālī）等多种现代印度语言。天城文为音节文字，每个字符代表一个音节，辅音字母默认包含短元音 अ（a）。'
-                            : 'देवनागरी devanāgarī is the most commonly used writing system for Sanskrit, also used for modern Indian languages such as Hindi (हिन्दी hindī), Marathi (मराठी marāṭhī), and Nepali (नेपाली nepālī). Devanāgarī is a syllabic script where each character represents a syllable, and consonants inherently include the short vowel अ (a).'}
+                          {introText.devanagari}
                         </p>
                       </div>
                       
@@ -173,22 +459,12 @@ export default function SanskritAlphabetPage() {
                           {language === 'zh' ? '2. 国际梵文转写标准' : '2. International Transliteration Standards'}
                         </h5>
                         <ul className="text-xs text-gray-700 space-y-1.5 ml-0.5">
-                          <li className="flex items-start">
-                            <span className="mr-1.5 mt-0.5">•</span>
-                            <span>
-                              {language === 'zh'
-                                ? 'IAST（International Alphabet of Sanskrit Transliteration）是学术领域最广泛采用的梵文拉丁转写方案，严格遵循"一音一符"原则，完整保留梵语音系特征。'
-                                : 'IAST (International Alphabet of Sanskrit Transliteration) is the most widely adopted Latin transliteration scheme for Sanskrit in academic fields, strictly following the "one sound, one symbol" principle and preserving complete Sanskrit phonological features.'}
-                            </span>
-                          </li>
-                          <li className="flex items-start">
-                            <span className="mr-1.5 mt-0.5">•</span>
-                            <span>
-                              {language === 'zh'
-                                ? 'ISO-15919 为国际标准化组织制定的转写规范，与IAST的主要区别包括：ṛ，ṝ，ḷ，ḹ，e，o，aṃ → r̥，r̥̄，l̥，l̥̄，ē，ō，aṁ'
-                                : 'ISO-15919 is an international standardization organization transliteration standard. Main differences from IAST include: ṛ，ṝ，ḷ，ḹ，e，o，aṃ → r̥，r̥̄，l̥，l̥̄，ē，ō，aṁ'}
-                            </span>
-                          </li>
+                          {introText.transliterationItems.map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <span className="mr-1.5 mt-0.5">•</span>
+                              <span>{item}</span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </div>
@@ -196,7 +472,7 @@ export default function SanskritAlphabetPage() {
                 </div>
               </div>
 
-                                            {/* 字母表格部分 */}
+                                            {/* 字母表格部分 - 完全恢复您原有的7列布局 */}
                                             <div className="space-y-6">
                                               {/* 元音卡片 - 严格保持7列正方形布局 */}
                                               <div>
@@ -431,224 +707,93 @@ export default function SanskritAlphabetPage() {
                                                 </div>
                                               </div>
                                             </div>
-              
+
               {/* 音系特征部分 */}
-              <div className="mt-8 pt-6 border-t border-gray-200">
+              <div className="pt-6 border-t border-gray-200">
                 <h3 className="text-sm font-medium text-gray-800 mb-6">
                   {language === 'zh' ? '音系特征' : 'Phonological Features'}
                 </h3>
                 
                 <div className="space-y-6">
+                  
                   {/* 音长系统 */}
                   <div className="space-y-3">
                     <h4 className="text-xs font-medium text-gray-700">
-                      {language === 'zh' ? '一、音长系统 • काल kāla' : 'I. Length System • काल kāla'}
+                      {phonology.lengthSystem.title}
                     </h4>
                     <p className="text-xs text-gray-700">
-                      {language === 'zh'
-                        ? '梵语元音按音长分为三类：'
-                        : 'Sanskrit vowels are classified into three categories by length:'}
+                      {phonology.lengthSystem.description}
                     </p>
                     <ul className="text-xs text-gray-700 space-y-1.5 ml-0.5">
-                      <li className="flex items-start">
-                        <span className="mr-1.5 mt-0.5">1.</span>
-                        <span>
-                          {language === 'zh'
-                            ? '短元音 ह्रस्व hrasva • 1音节单位（मात्रा mātrā） • 如：अ a、इ i、उ u'
-                            : 'Short vowels ह्रस्व hrasva • 1 syllable unit (मात्रा mātrā) • e.g.: अ a, इ i, उ u'}
-                        </span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="mr-1.5 mt-0.5">2.</span>
-                        <span>
-                          {language === 'zh'
-                            ? '长元音 दीर्घ dīrgha • 2音节单位 • 如：आ ā、ई ī、ऊ ū'
-                            : 'Long vowels दीर्घ dīrgha • 2 syllable units • e.g.: आ ā, ई ī, ऊ ū'}
-                        </span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="mr-1.5 mt-0.5">3.</span>
-                        <span>
-                          {language === 'zh'
-                            ? '延长元音 प्लुत pluta • 3音节单位（主要用于吠陀文献） • 如：आ३ ā³'
-                            : 'Prolonged vowels प्लुत pluta • 3 syllable units (mainly used in Vedic texts) • e.g.: आ३ ā³'}
-                        </span>
-                      </li>
+                      {phonology.lengthSystem.items.map((item, index) => (
+                        <li key={index} className="flex items-start">
+                          <span className="mr-1.5 mt-0.5">{index + 1}.</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                   
                   {/* 音调系统 */}
                   <div className="space-y-3">
                     <h4 className="text-xs font-medium text-gray-700">
-                      {language === 'zh' ? '二、音调系统 • स्वराः svarāḥ' : 'II. Tone System • स्वराः svarāḥ'}
+                      {phonology.toneSystem.title}
                     </h4>
                     <div className="text-xs text-gray-700 bg-gray-50 p-2 rounded mb-2">
-                      {language === 'zh'
-                        ? '注：古典梵语通常不标记音调，音调系统主要用于吠陀梵语（वैदिकसंस्कृतम्）。'
-                        : 'Note: Classical Sanskrit usually does not mark tones; the tone system is primarily used in Vedic Sanskrit (वैदिकसंस्कृतम्).'}
+                      {phonology.toneSystem.note}
                     </div>
                     <p className="text-xs text-gray-700">
-                      {language === 'zh'
-                        ? '吠陀梵语的三种基本音调：'
-                        : 'Three basic tones in Vedic Sanskrit:'}
+                      {phonology.toneSystem.description}
                     </p>
                     <ul className="text-xs text-gray-700 space-y-1.5 ml-0.5">
-                      <li className="flex items-start">
-                        <span className="mr-1.5 mt-0.5">1.</span>
-                        <span>
-                          {language === 'zh'
-                            ? '高调 उदात्त udātta • 标记：॑（如：अ॑ a̍）'
-                            : 'High tone उदात्त udātta • Mark: ॑ (e.g.: अ॑ a̍)'}
-                        </span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="mr-1.5 mt-0.5">2.</span>
-                        <span>
-                          {language === 'zh'
-                            ? '低调 अनुदात्त anudātta • 标记：॒（如：अ॒ a̱）'
-                            : 'Low tone अनुदात्त anudātta • Mark: ॒ (e.g.: अ॒ a̱)'}
-                        </span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="mr-1.5 mt-0.5">3.</span>
-                        <span>
-                          {language === 'zh'
-                            ? '降调/复合调 स्वरित svarita • 无独立符号，由高调后自然降调形成'
-                            : 'Falling/compound tone स्वरित svarita • No independent symbol, formed by natural falling after high tone'}
-                        </span>
-                      </li>
+                      {phonology.toneSystem.items.map((item, index) => (
+                        <li key={index} className="flex items-start">
+                          <span className="mr-1.5 mt-0.5">{index + 1}.</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                   
                   {/* 鼻音化 */}
                   <div className="space-y-3">
                     <h4 className="text-xs font-medium text-gray-700">
-                      {language === 'zh' ? '三、鼻音化 • आनुनासिक्यम् ānunāsikyam' : 'III. Nasalization • आनुनासिक्यम् ānunāsikyam'}
+                      {phonology.nasalization.title}
                     </h4>
                     <p className="text-xs text-gray-700">
-                      {language === 'zh'
-                        ? '所有梵语音素均可鼻音化，标记为 ँ（चन्द्रबिन्दु candra-bindu）。鼻音化可与其他语音特征（音长、音调）组合。'
-                        : 'All Sanskrit phonemes can be nasalized, marked with ँ (चन्द्रबिन्दु candra-bindu). Nasalization can combine with other phonetic features (length, tone).'}
+                      {phonology.nasalization.description}
                     </p>
                   </div>
                   
                   {/* 音素组合示例 */}
                   <div className="space-y-4 pt-4 border-t border-gray-200">
                     <h4 className="text-xs font-medium text-gray-700">
-                      {language === 'zh' ? '音素组合示例' : 'Phoneme Combination Examples'}
+                      {phonology.phonemeExamples.title}
                     </h4>
                     
                     <p className="text-xs text-gray-700">
-                      {language === 'zh'
-                        ? '基于3种音长（短、长、延长）× 3种音调（高调、低调、降调/中性）× 2种鼻音状态（鼻音化/非鼻音化），每个音素理论上存在多种变体形式。'
-                        : 'Based on 3 lengths (short, long, prolonged) × 3 tones (high, low, falling/neutral) × 2 nasal states (nasalized/non-nasalized), each phoneme theoretically has multiple variant forms.'}
+                      {phonology.phonemeExamples.description}
                     </p>
                     
                     <div className="space-y-4">
                       <div>
                         <h5 className="text-xs font-medium text-gray-700 mb-2">
-                          {language === 'zh' ? '示例：以元音 अ a 为基础的音素组合' : 'Example: Phoneme combinations based on vowel अ a'}
+                          {phonology.phonemeExamples.vowelExample.title}
                         </h5>
                         
                         <div className="space-y-3">
-                          {/* 高调系列 */}
-                          <div>
-                            <div className="text-xs font-medium text-gray-700 mb-1">
-                              {language === 'zh' ? '高调系列（उदात्त udātta）' : 'High tone series (उदात्त udātta)'}
-                            </div>
-                            <div className="grid grid-cols-3 md:grid-cols-6 gap-2 text-xs">
-                              <div className="border border-gray-200 rounded p-2 text-center">
-                                <div className="font-sans">अ॑</div>
-                                <div className="italic">a̍</div>
+                          {phonology.phonemeExamples.vowelExample.series.map((series, seriesIndex) => (
+                            <div key={seriesIndex}>
+                              <div className="text-xs font-medium text-gray-700 mb-1">
+                                {series.name}
                               </div>
-                              <div className="border border-gray-200 rounded p-2 text-center">
-                                <div className="font-sans">आ॑</div>
-                                <div className="italic">ā̍</div>
-                              </div>
-                              <div className="border border-gray-200 rounded p-2 text-center">
-                                <div className="font-sans">आ॑३</div>
-                                <div className="italic">ā̍³</div>
-                              </div>
-                              <div className="border border-gray-200 rounded p-2 text-center">
-                                <div className="font-sans">अँ॑</div>
-                                <div className="italic">ã̍</div>
-                              </div>
-                              <div className="border border-gray-200 rounded p-2 text-center">
-                                <div className="font-sans">आँ॑</div>
-                                <div className="italic">ā̃̍</div>
-                              </div>
-                              <div className="border border-gray-200 rounded p-2 text-center">
-                                <div className="font-sans">आँ॑३</div>
-                                <div className="italic">ā̃̍³</div>
+                              <div className="grid grid-cols-3 md:grid-cols-6 gap-2 text-xs">
+                                {series.examples.map((example, exampleIndex) => (
+                                  <PhonemeCard key={exampleIndex} example={example} />
+                                ))}
                               </div>
                             </div>
-                          </div>
-                          
-                          {/* 低调系列 */}
-                          <div>
-                            <div className="text-xs font-medium text-gray-700 mb-1">
-                              {language === 'zh' ? '低调系列（अनुदात्त anudātta）' : 'Low tone series (अनुदात्त anudātta)'}
-                            </div>
-                            <div className="grid grid-cols-3 md:grid-cols-6 gap-2 text-xs">
-                              <div className="border border-gray-200 rounded p-2 text-center">
-                                <div className="font-sans">अ॒</div>
-                                <div className="italic">a̱</div>
-                              </div>
-                              <div className="border border-gray-200 rounded p-2 text-center">
-                                <div className="font-sans">आ॒</div>
-                                <div className="italic">ā̱</div>
-                              </div>
-                              <div className="border border-gray-200 rounded p-2 text-center">
-                                <div className="font-sans">आ॒३</div>
-                                <div className="italic">ā̱³</div>
-                              </div>
-                              <div className="border border-gray-200 rounded p-2 text-center">
-                                <div className="font-sans">अँ॒</div>
-                                <div className="italic">ã̱</div>
-                              </div>
-                              <div className="border border-gray-200 rounded p-2 text-center">
-                                <div className="font-sans">आँ॒</div>
-                                <div className="italic">ā̱̃</div>
-                              </div>
-                              <div className="border border-gray-200 rounded p-2 text-center">
-                                <div className="font-sans">आँ॒३</div>
-                                <div className="italic">ā̱̃³</div>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          {/* 中性系列 */}
-                          <div>
-                            <div className="text-xs font-medium text-gray-700 mb-1">
-                              {language === 'zh' ? '中性系列（古典梵语常规）' : 'Neutral series (Classical Sanskrit standard)'}
-                            </div>
-                            <div className="grid grid-cols-3 md:grid-cols-6 gap-2 text-xs">
-                              <div className="border border-gray-200 rounded p-2 text-center">
-                                <div className="font-sans">अ</div>
-                                <div className="italic">a</div>
-                              </div>
-                              <div className="border border-gray-200 rounded p-2 text-center">
-                                <div className="font-sans">आ</div>
-                                <div className="italic">ā</div>
-                              </div>
-                              <div className="border border-gray-200 rounded p-2 text-center">
-                                <div className="font-sans">आ३</div>
-                                <div className="italic">ā³</div>
-                              </div>
-                              <div className="border border-gray-200 rounded p-2 text-center">
-                                <div className="font-sans">अँ</div>
-                                <div className="italic">ã</div>
-                              </div>
-                              <div className="border border-gray-200 rounded p-2 text-center">
-                                <div className="font-sans">आँ</div>
-                                <div className="italic">ā̃</div>
-                              </div>
-                              <div className="border border-gray-200 rounded p-2 text-center">
-                                <div className="font-sans">आँ३</div>
-                                <div className="italic">ā̃³</div>
-                              </div>
-                            </div>
-                          </div>
+                          ))}
                         </div>
                       </div>
                       
@@ -657,49 +802,7 @@ export default function SanskritAlphabetPage() {
                         <h5 className="text-xs font-medium text-gray-700 mb-2">
                           {language === 'zh' ? '标记符号说明' : 'Symbol Explanation'}
                         </h5>
-                        <div className="overflow-x-auto">
-                          <table className="w-full text-xs border border-gray-300">
-                            <thead className="bg-gray-50">
-                              <tr>
-                                <th className="border border-gray-300 p-2 text-left">{language === 'zh' ? '符号' : 'Symbol'}</th>
-                                <th className="border border-gray-300 p-2 text-left">{language === 'zh' ? '名称' : 'Name'}</th>
-                                <th className="border border-gray-300 p-2 text-left">{language === 'zh' ? '功能' : 'Function'}</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td className="border border-gray-300 p-2 font-sans">ँ</td>
-                                <td className="border border-gray-300 p-2">चन्द्रबिन्दु candra-bindu</td>
-                                <td className="border border-gray-300 p-2">{language === 'zh' ? '鼻音化标记' : 'Nasalization mark'}</td>
-                              </tr>
-                              <tr>
-                                <td className="border border-gray-300 p-2 font-sans">॑</td>
-                                <td className="border border-gray-300 p-2">उदात्त udātta</td>
-                                <td className="border border-gray-300 p-2">{language === 'zh' ? '高调标记' : 'High tone mark'}</td>
-                              </tr>
-                              <tr>
-                                <td className="border border-gray-300 p-2 font-sans">॒</td>
-                                <td className="border border-gray-300 p-2">अनुदात्त anudātta</td>
-                                <td className="border border-gray-300 p-2">{language === 'zh' ? '低调标记' : 'Low tone mark'}</td>
-                              </tr>
-                              <tr>
-                                <td className="border border-gray-300 p-2 font-sans">३</td>
-                                <td className="border border-gray-300 p-2">प्लुत pluta</td>
-                                <td className="border border-gray-300 p-2">{language === 'zh' ? '延长音标记' : 'Prolongation mark'}</td>
-                              </tr>
-                              <tr>
-                                <td className="border border-gray-300 p-2 italic">̍</td>
-                                <td className="border border-gray-300 p-2">IPA高调符号</td>
-                                <td className="border border-gray-300 p-2">{language === 'zh' ? '国际音标高调标记' : 'IPA high tone symbol'}</td>
-                              </tr>
-                              <tr>
-                                <td className="border border-gray-300 p-2 italic">̱</td>
-                                <td className="border border-gray-300 p-2">IPA低调符号</td>
-                                <td className="border border-gray-300 p-2">{language === 'zh' ? '国际音标低调标记' : 'IPA low tone symbol'}</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
+                        <SymbolTable />
                       </div>
                     </div>
                   </div>
@@ -707,173 +810,44 @@ export default function SanskritAlphabetPage() {
               </div>
               
               {/* 脉轮对应关系 */}
-              <div className="mt-8 pt-6 border-t border-gray-200">
+              <div className="pt-6 border-t border-gray-200">
                 <h3 className="text-sm font-medium text-gray-800 mb-6">
                   {language === 'zh' ? '脉轮对应关系' : 'Chakra Correspondence'}
                 </h3>
                 
                 <div className="space-y-4">
-                  {/* 顶轮 */}
-                  <div className="border border-gray-200 rounded p-3">
-                    <h4 className="text-xs font-medium text-gray-700 mb-2">
-                      {language === 'zh' ? '顶轮 (सहस्रार, ॐ, 千瓣)' : 'Crown Chakra (सहस्रार, ॐ, Thousand petals)'}
-                    </h4>
-                    <div className="mb-2">
-                      <div className="text-xs text-gray-600 mb-1">
-                        {language === 'zh' ? '对应字母：' : 'Corresponding letter：'}
+                  {chakras.map((chakra, index) => (
+                    <div key={index} className="border border-gray-200 rounded p-3">
+                      <h4 className="text-xs font-medium text-gray-700 mb-2">
+                        {chakra.name}
+                      </h4>
+                      <div className="mb-2">
+                        <div className="text-xs text-gray-600 mb-1">
+                          {language === 'zh' ? '对应字母：' : 'Corresponding letters：'}
+                        </div>
+                        <div className="flex flex-wrap gap-1">
+                          {chakra.letters.map((letter, letterIdx) => (
+                            <span key={letterIdx} className="font-sans text-xs bg-gray-100 px-1.5 py-0.5 rounded">
+                              {letter}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                      <div className="flex flex-wrap gap-1">
-                        <span className="font-sans text-xs bg-gray-100 px-1.5 py-0.5 rounded">ॐ</span>
-                      </div>
-                    </div>
-                    <div className="text-xs text-gray-600">
-                      {language === 'zh'
-                        ? '神圣音节，代表宇宙的原始振动和意识的最高状态'
-                        : 'Sacred syllable, representing the primordial vibration of the universe and the highest state of consciousness'}
-                    </div>
-                  </div>
-                  
-                  {/* 额轮 */}
-                  <div className="border border-gray-200 rounded p-3">
-                    <h4 className="text-xs font-medium text-gray-700 mb-2">
-                      {language === 'zh' ? '额轮 (उँ, 2 花瓣)' : 'Brow Chakra (उँ, 2 petals)'}
-                    </h4>
-                    <div className="mb-2">
-                      <div className="text-xs text-gray-600 mb-1">
-                        {language === 'zh' ? '对应字母：' : 'Corresponding letters：'}
-                      </div>
-                      <div className="flex flex-wrap gap-1">
-                        {['ह्', 'क्ष'].map((letter, letterIdx) => (
-                          <span key={letterIdx} className="font-sans text-xs bg-gray-100 px-1.5 py-0.5 rounded">
-                            {letter}
-                          </span>
-                        ))}
+                      <div className="text-xs text-gray-600">
+                        {chakra.description}
                       </div>
                     </div>
-                    <div className="text-xs text-gray-600">
-                      {language === 'zh' ? '喉擦音和特殊复合辅音' : 'Glottal fricative and special conjunct consonant'}
-                    </div>
-                  </div>
-                  
-                  {/* 喉轮 */}
-                  <div className="border border-gray-200 rounded p-3">
-                    <h4 className="text-xs font-medium text-gray-700 mb-2">
-                      {language === 'zh' ? '喉轮 (हं, 16 花瓣)' : 'Throat Chakra (हं, 16 petals)'}
-                    </h4>
-                    <div className="mb-2">
-                      <div className="text-xs text-gray-600 mb-1">
-                        {language === 'zh' ? '对应字母：' : 'Corresponding vowels：'}
-                      </div>
-                      <div className="flex flex-wrap gap-1">
-                        {['अ', 'इ', 'उ', 'ऋ', 'ऌ', 'आ', 'ई', 'ऊ', 'ॠ', 'ॡ', 'ए', 'ऐ', 'ओ', 'औ', 'अं', 'अः'].map((letter, letterIdx) => (
-                          <span key={letterIdx} className="font-sans text-xs bg-gray-100 px-1.5 py-0.5 rounded">
-                            {letter}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="text-xs text-gray-600">
-                      {language === 'zh' ? '梵语十六个元音' : 'Sanskrit sixteen vowels'}
-                    </div>
-                  </div>
-                  
-                  {/* 心轮 */}
-                  <div className="border border-gray-200 rounded p-3">
-                    <h4 className="text-xs font-medium text-gray-700 mb-2">
-                      {language === 'zh' ? '心轮 (यं, 12 花瓣)' : 'Heart Chakra (यं, 12 petals)'}
-                    </h4>
-                    <div className="mb-2">
-                      <div className="text-xs text-gray-600 mb-1">
-                        {language === 'zh' ? '对应字母：' : 'Corresponding letters：'}
-                      </div>
-                      <div className="flex flex-wrap gap-1">
-                        {['क्', 'ख्', 'ग्', 'घ्', 'ङ्', 'च्', 'छ्', 'ज्', 'झ्', 'ञ्', 'ट्', 'ठ्'].map((letter, letterIdx) => (
-                          <span key={letterIdx} className="font-sans text-xs bg-gray-100 px-1.5 py-0.5 rounded">
-                            {letter}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="text-xs text-gray-600">
-                      {language === 'zh' ? '喉音和颚音辅音' : 'Guttural and palatal consonants'}
-                    </div>
-                  </div>
-                  
-                  {/* 脐轮 */}
-                  <div className="border border-gray-200 rounded p-3">
-                    <h4 className="text-xs font-medium text-gray-700 mb-2">
-                      {language === 'zh' ? '脐轮 (रं, 10 花瓣)' : 'Navel Chakra (रं, 10 petals)'}
-                    </h4>
-                    <div className="mb-2">
-                      <div className="text-xs text-gray-600 mb-1">
-                        {language === 'zh' ? '对应字母：' : 'Corresponding letters：'}
-                      </div>
-                      <div className="flex flex-wrap gap-1">
-                        {['ड्', 'ढ्', 'ण्', 'त्', 'थ्', 'द्', 'ध्', 'न्', 'प्', 'फ्'].map((letter, letterIdx) => (
-                          <span key={letterIdx} className="font-sans text-xs bg-gray-100 px-1.5 py-0.5 rounded">
-                            {letter}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="text-xs text-gray-600">
-                      {language === 'zh' ? '卷舌音、齿音和部分唇音' : 'Retroflex, dental and some labial consonants'}
-                    </div>
-                  </div>
-                  
-                  {/* 腹轮 */}
-                  <div className="border border-gray-200 rounded p-3">
-                    <h4 className="text-xs font-medium text-gray-700 mb-2">
-                      {language === 'zh' ? '腹轮 (वं, 6 花瓣)' : 'Sacral Chakra (वं, 6 petals)'}
-                    </h4>
-                    <div className="mb-2">
-                      <div className="text-xs text-gray-600 mb-1">
-                        {language === 'zh' ? '对应字母：' : 'Corresponding letters：'}
-                      </div>
-                      <div className="flex flex-wrap gap-1">
-                        {['ब्', 'भ्', 'म्', 'य्', 'र्', 'ल्'].map((letter, letterIdx) => (
-                          <span key={letterIdx} className="font-sans text-xs bg-gray-100 px-1.5 py-0.5 rounded">
-                            {letter}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="text-xs text-gray-600">
-                      {language === 'zh' ? '浊唇音和半元音' : 'Voiced labial consonants and semivowels'}
-                    </div>
-                  </div>
-                  
-                  {/* 根轮 */}
-                  <div className="border border-gray-200 rounded p-3">
-                    <h4 className="text-xs font-medium text-gray-700 mb-2">
-                      {language === 'zh' ? '根轮 (लं, 4 花瓣)' : 'Root Chakra (लं, 4 petals)'}
-                    </h4>
-                    <div className="mb-2">
-                      <div className="text-xs text-gray-600 mb-1">
-                        {language === 'zh' ? '对应字母：' : 'Corresponding letters：'}
-                      </div>
-                      <div className="flex flex-wrap gap-1">
-                        {['व्', 'श्', 'ष्', 'स्'].map((letter, letterIdx) => (
-                          <span key={letterIdx} className="font-sans text-xs bg-gray-100 px-1.5 py-0.5 rounded">
-                            {letter}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="text-xs text-gray-600">
-                      {language === 'zh' ? '擦音' : 'Sibilants'}
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
           )}
 
-          {/* 其他标签页暂时留空 */}
+          {/* 其他标签页内容 */}
           {activeSection === 'vowels' && (
             <div>
               <h2 className="text-sm md:text-base font-medium text-gray-800 mb-1.5">
-                {sanskritContent.sections.vowels.content}
+                {sections.vowels.pageTitle}
               </h2>
               <p className="text-xs text-gray-500">
                 {language === 'zh' ? '元音内容待添加...' : 'Vowels content pending...'}
@@ -884,7 +858,7 @@ export default function SanskritAlphabetPage() {
           {activeSection === 'consonants' && (
             <div>
               <h2 className="text-sm md:text-base font-medium text-gray-800 mb-1.5">
-                {sanskritContent.sections.consonants.content}
+                {sections.consonants.pageTitle}
               </h2>
               <p className="text-xs text-gray-500">
                 {language === 'zh' ? '辅音内容待添加...' : 'Consonants content pending...'}
@@ -895,7 +869,7 @@ export default function SanskritAlphabetPage() {
           {activeSection === 'conjuncts' && (
             <div>
               <h2 className="text-sm md:text-base font-medium text-gray-800 mb-1.5">
-                {sanskritContent.sections.conjuncts.content}
+                {sections.conjuncts.pageTitle}
               </h2>
               <p className="text-xs text-gray-500">
                 {language === 'zh' ? '复合字母内容待添加...' : 'Compound letters content pending...'}
@@ -906,7 +880,7 @@ export default function SanskritAlphabetPage() {
           {activeSection === 'syllables' && (
             <div>
               <h2 className="text-sm md:text-base font-medium text-gray-800 mb-1.5">
-                {sanskritContent.sections.syllables.content}
+                {sections.syllables.pageTitle}
               </h2>
               <p className="text-xs text-gray-500">
                 {language === 'zh' ? '音节结构内容待添加...' : 'Syllable structure content pending...'}
@@ -917,7 +891,7 @@ export default function SanskritAlphabetPage() {
           {activeSection === 'sandhi' && (
             <div>
               <h2 className="text-sm md:text-base font-medium text-gray-800 mb-1.5">
-                {sanskritContent.sections.sandhi.content}
+                {sections.sandhi.pageTitle}
               </h2>
               <p className="text-xs text-gray-500">
                 {language === 'zh' ? '连音规则内容待添加...' : 'Sandhi rules content pending...'}
@@ -934,7 +908,7 @@ export default function SanskritAlphabetPage() {
               <svg className="w-2.5 h-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
-              {language === 'zh' ? '返回知识库' : 'Back to Knowledge Base'}
+              {meta.backButton}
             </a>
           </div>
         </div>

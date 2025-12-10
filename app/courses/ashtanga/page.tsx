@@ -29,19 +29,19 @@ export default function AshtangaPage() {
       <Navigation />
 
       {/* 蓝色标题区域 */}
-      <div className="w-full flex justify-center items-center bg-gradient-to-r from-gray-900 to-gray-800 text-white py-6 md:py-10">
-        <div className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-          <h1 className="text-2xl md:text-3xl font-light mb-4 md:mb-4 text-center">
-            {content.title}
-          </h1>
-          <p className="text-lg md:text-lg text-red-800 mb-3 md:mb-6 text-center">
-            {content.subtitle}
-          </p>
-          <p className="text-gray-300 text-base md:text-base max-w-2xl text-center mx-auto px-4">
-            {content.intro}
-          </p>
-        </div>
-      </div>
+          <div className="w-full flex justify-center items-center bg-gradient-to-r from-gray-900 to-gray-800 text-white py-6 md:py-10">
+            <div className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
+              <h1 className="text-2xl md:text-3xl font-light mb-4 md:mb-4">
+                {content.title}
+              </h1>
+              <p className="text-lg md:text-lg text-red-800 mb-3 md:mb-6">
+                {content.subtitle}
+              </p>
+              <p className="text-gray-300 text-sm md:text-base max-w-3xl mx-auto">
+                {content.intro}
+              </p>
+            </div>
+          </div>
 
       {/* 主要内容 */}
       <div className="w-full flex justify-center px-4 py-4 md:py-8">

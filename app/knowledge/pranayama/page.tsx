@@ -55,7 +55,6 @@ export default function UnderDevelopment({ pageTitle_en, pageTitle_zh, icon = '�
         </div>
       </div> {/* 主要内容区域结束 */}
       
-      {/* 修改3：Footer 现在会自然地贴在底部 */}
       <Footer />
     </div>
   );

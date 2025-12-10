@@ -150,7 +150,7 @@ export default function KnowledgePage() {
                   <Link
                     key={article.slug}
                     href={`/knowledge/${article.slug}`}
-                    className="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200 border border-gray-100 hover:border-red-200"
+                    className="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200 border border-gray-100 hover:border-green-800"
                   >
                     <div className="p-4 md:p-6">
                       <div className="flex flex-col md:flex-row justify-between items-start">

@@ -452,7 +452,7 @@ export default function PracticeMethodsPage() {
           <div className="mt-6 pt-4 border-t border-gray-200">
             <a
               href="/knowledge"
-              className="inline-flex items-center text-gray-700 hover:text-gray-900 font-medium text-xs"
+              className="inline-flex items-center text-red-800 hover:text-red-900 font-medium text-xs"
             >
               <svg className="w-2.5 h-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
