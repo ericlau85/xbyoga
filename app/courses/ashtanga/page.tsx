@@ -309,9 +309,6 @@ export default function AshtangaPage() {
                     timeText = '9:00-20:00';
                   }
                   
-                  // 过滤掉私教预约（单独显示）和休息日
-                  if (classType === 'Private Booking' || classType === '私教预约') return null;
-                  
                   return (
                     <div key={index} className="bg-gray-50 rounded-lg p-3">
                       <div className="flex justify-between items-center">
