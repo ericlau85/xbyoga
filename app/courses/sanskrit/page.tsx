@@ -38,7 +38,7 @@ export default function SanskritPage() {
                 <p className="text-lg md:text-lg text-red-800 mb-3 md:mb-6">
                   {content.subtitle}
                 </p>
-                <p className="text-gray-300 text-base md:text-base max-w-3xl mx-auto">
+                <p className="text-gray-300 text-sm md:text-base max-w-3xl mx-auto">
                   {content.intro}
                 </p>
               </div>
@@ -174,7 +174,6 @@ export default function SanskritPage() {
               </div>
             </section>
             
-            {/* 删除了报名按钮 */}
           </div>
         </div>
                         
