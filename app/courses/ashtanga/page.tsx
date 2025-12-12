@@ -306,16 +306,13 @@ export default function AshtangaPage() {
 
           {/* Rest days */}
           <section className="mb-8 md:mb-12">
-            <div className="bg-white rounded-lg shadow-md p-4 md:p-6 border border-gray-100 text-center">
-              <p className="text-gray-700 font-medium text-base md:text-base">
-                {t('restDays')}
-              </p>
-              <Link
-                href="/moon-calendar"
-                className="text-red-800 hover:text-red-900 underline underline-offset-2 transition-colors text-sm md:text-sm mt-2 inline-block"
-              >
-                {t('moonCalendarLink')}
-              </Link>
+            <div className="bg-white rounded-lg shadow-md p-4 md:p-6 border border-gray-100">
+              <div className="flex items-center justify-center text-gray-700">
+                <i className="fas fa-moon text-amber-500 mr-2"></i>
+                <p className="text-sm md:text-base font-medium">
+                  {t('restDays')}
+                </p>
+              </div>
             </div>
           </section>
 

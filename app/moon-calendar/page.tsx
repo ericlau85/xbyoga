@@ -96,7 +96,7 @@ export default function MoonCalendarPage() {
               </div>
             </div>
             
-            {/* 移动端表头 - 三列 */}
+            {/* 移动端表头 */}
             <div className="md:hidden border-b border-gray-200 bg-gray-50 p-3">
               <div className="grid grid-cols-12 gap-1">
                 <div className="col-span-2 font-semibold text-gray-800 text-sm text-center">
@@ -143,7 +143,6 @@ export default function MoonCalendarPage() {
                       {/* 满月列 - 增加宽度 */}
                       <div className="col-span-5">
                         {Array.isArray(month.fullMoons) ? (
-                          // 5月特殊情况：两个满月在一行显示，使用flex横向排列
                           <div className="flex justify-between items-center h-full">
                             {month.fullMoons.map((fullMoon, idx) => (
                               <div key={idx} className="flex-1 px-0.5">
@@ -194,7 +193,6 @@ export default function MoonCalendarPage() {
                     
                     <div className="w-2/5 p-3">
                       {Array.isArray(month.fullMoons) ? (
-                        // 桌面端：两个满月并排显示，减小间距
                         <div className="text-center">
                           <div className="flex justify-center">
                             {month.fullMoons.map((fullMoon, idx) => (
@@ -234,19 +232,6 @@ export default function MoonCalendarPage() {
               <sup className="text-red-800 mr-0.5 text-[8px]">*</sup>
               {content.legend}
             </p>
-          </div>
-
-          {/* 返回按钮 */}
-          <div className="flex justify-center pt-4 md:pt-6 border-t border-gray-200">
-            <Link
-              href="/courses/ashtanga"
-              className="inline-flex items-center px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-medium text-red-800 hover:text-red-900 hover:bg-red-50 rounded-lg transition-colors"
-            >
-              <svg className="w-3 h-3 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
-              {language === 'en' ? 'Back to Ashtanga' : '返回阿斯汤加课程'}
-            </Link>
           </div>
         </div>
       </div>

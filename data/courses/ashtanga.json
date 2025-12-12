@@ -82,7 +82,7 @@
         "description": "Theory · Q&A · Deep Understanding"
       },
       {
-        "icon": "fas fa-user-graduate",
+        "icon": "fas fa-comments",
         "title": "Private",
         "days": "Flexible Booking",
         "description": "Exclusive Time Customisation"
@@ -106,8 +106,8 @@
     "privateBookingTitle": "Private Booking",
     "privateBookingTime": "9:00-20:00",
     
-    "restDays": "Rest Days: Saturday & Moon Days",
-    "moonCalendarLink": "View Moon Calendar",
+    "icon": "fas fa-moon",
+    "restDays": "Traditional Practice Rhythm: Rest on Saturdays and Moon Days",
     
     "pricingTitle": "Course Fees",
     "pricingSubtitle": "Choose the yoga practice plan that suits you",
@@ -244,7 +244,7 @@
         "description": "理论 · 答疑 · 深化理解"
       },
       {
-        "icon": "fas fa-user-graduate",
+        "icon": "fas fa-comments",
         "title": "私教",
         "days": "灵活预约",
         "description": "时间专属定制"
@@ -268,8 +268,8 @@
     "privateBookingTitle": "私教预约",
     "privateBookingTime": "9:00-20:00",
     
-    "restDays": "休息日：每周六 & 新月/满月日",
-    "moonCalendarLink": "查看月相表",
+    "icon": "fas fa-moon",
+    "restDays": "传统练习节奏：每周六及新月/满月日休息",
     
     "pricingTitle": "课程费用",
     "pricingSubtitle": "选择适合您的练习计划",
