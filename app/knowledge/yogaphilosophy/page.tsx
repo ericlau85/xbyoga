@@ -660,7 +660,7 @@ export default function YogaPhilosophyPage() {
           {/* 返回按钮 */}
           <div className="mt-6 pt-4 border-t border-gray-200">
             <a
-              href="/Practice Guide"
+              href="/knowledge"
               className="inline-flex items-center text-red-800 hover:text-red-900 font-medium text-xs"
             >
               <svg className="w-2.5 h-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

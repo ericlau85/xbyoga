@@ -44,7 +44,7 @@ export default function UnderDevelopment({ pageTitle_en, pageTitle_zh, icon = '�
         {/* 返回按钮 */}
         <div className="text-center">
           <a
-            href="/Practice Guide"
+            href="/knowledge"
             className="inline-flex items-center px-5 py-2.5 text-base font-medium text-red-800 hover:text-red-900 hover:bg-red-50 rounded-lg transition-colors duration-150"
           >
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -87,15 +87,15 @@ export default function NavigationLayout({
               <span>{content.Practice Guide}</span>
               {isPractice GuideOpen && (
                 <div className="dropdown-menu">
-                  <Link href="/Practice Guide/yoga-foundation" className="dropdown-item">
+                  <Link href="/knowledge/yoga-foundation" className="dropdown-item">
                     <i className="fas fa-seedling"></i>
                     {content.yogaFoundation}
                   </Link>
-                  <Link href="/Practice Guide/sanskrit-wisdom" className="dropdown-item">
+                  <Link href="/knowledge/sanskrit-wisdom" className="dropdown-item">
                     <i className="fas fa-language"></i>
                     {content.sanskritWisdom}
                   </Link>
-                  <Link href="/Practice Guide/yoga-philosophy" className="dropdown-item">
+                  <Link href="/knowledge/yoga-philosophy" className="dropdown-item">
                     <i className="fas fa-book-open"></i>
                     {content.yogaPhilosophy}
                   </Link>
