@@ -10,7 +10,6 @@ import { useLanguage } from '../../../lib/language-context';
 export default function AshtangaPage() {
   const { language } = useLanguage();
   const [content, setContent] = useState<any>(null);
-  const [showWechat, setShowWechat] = useState(false);
 
   useEffect(() => {
     setContent(ashtangaData[language as keyof typeof ashtangaData]);
@@ -176,133 +175,149 @@ export default function AshtangaPage() {
                 {t('timetableTitle')}
               </h3>
               
-              {/* Desktop table */}
-              <div className="hidden md:block overflow-x-auto">
-                <table className="w-full min-w-full">
-                  <thead>
-                    <tr className="border-b border-gray-200">
-                      {(content.timeTable?.days || []).map((day: string, index: number) => (
-                        <th key={index} className="py-3 px-2 text-center text-sm font-medium text-gray-700">
-                          {day}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {/* First row: Class names */}
-                    <tr className="border-b border-gray-100">
-                      {(content.timeTable?.rows[0]?.classes || []).map((cls: string, colIndex: number) => {
-                        let textColor = 'text-gray-800';
-                        if (cls === 'Rest' || cls === '休息') textColor = 'text-gray-500';
-                        if (cls.includes('Workshop') || cls.includes('研习会')) textColor = 'text-amber-700';
-                        
-                        return (
-                          <td key={colIndex} className="py-3 px-2 text-center">
-                            <div className={`font-medium text-sm ${textColor}`}>
-                              {cls.replace('*', '')}
-                            </div>
-                          </td>
-                        );
-                      })}
-                    </tr>
-                    
-                    {/* Second row: Time slots */}
-                    <tr className="border-b border-gray-100">
-                      {(content.timeTable?.days || []).map((day: string, index: number) => {
-                        const classType = content.timeTable?.rows[0]?.classes[index] || '';
-                        let timeText = '';
-                        
-                        if (classType === 'Mysore' || classType === '领课') {
-                          timeText = '6:30-8:00';
-                        } else if (classType === 'Led Class') {
-                          timeText = '6:30-8:00';
-                        } else if (classType.includes('Workshop') || classType.includes('研习会')) {
-                          timeText = '8:00-9:00';
-                        } else if (classType === 'Rest' || classType === '休息') {
-                          timeText = '-';
-                        } else {
-                          timeText = '9:00-20:00';
-                        }
-                        
-                        return (
-                          <td key={index} className="py-2 px-2 text-center">
-                            <div className="text-xs text-gray-500">
-                              {timeText}
-                            </div>
-                          </td>
-                        );
-                      })}
-                    </tr>
-                    
-                    {/* Third row: Private booking */}
-                    <tr>
-                      <td colSpan={7} className="py-3 px-2 text-center border-t border-gray-100">
-                        <div className="text-gray-800 font-medium text-sm">
-                          {t('privateBookingTitle')}
-                        </div>
-                        <div className="text-xs text-gray-500 mt-1">
-                          {t('privateBookingTime')}
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              
-              {/* Mobile cards */}
-              <div className="md:hidden space-y-3">
-                {(content.timeTable?.days || []).map((day: string, index: number) => {
-                  const classType = content.timeTable?.rows[0]?.classes[index] || '';
-                  let timeText = '';
-                  
-                  if (classType === 'Mysore' || classType === '领课') {
-                    timeText = '6:30-8:00';
-                  } else if (classType === 'Led Class') {
-                    timeText = '6:30-8:00';
-                  } else if (classType.includes('Workshop') || classType.includes('研习会')) {
-                    timeText = '8:00-9:00';
-                  } else if (classType === 'Rest' || classType === '休息') {
-                    timeText = '-';
-                  } else {
-                    timeText = '9:00-20:00';
-                  }
-                  
-                  return (
-                    <div key={index} className="bg-gray-50 rounded-lg p-3">
-                      <div className="flex justify-between items-center">
-                        <div className="font-medium text-gray-800 text-sm">
-                          {day}
-                        </div>
-                        <div className={`px-2 py-1 rounded text-xs font-medium ${
+          {/* Desktop table */}
+          <div className="hidden md:block overflow-x-auto">
+            <table className="w-full min-w-full">
+              <thead>
+                <tr className="border-b border-gray-200">
+                  {(content.timeTable?.days || []).map((day: string, index: number) => (
+                    <th key={index} className="py-3 px-2 text-center text-sm font-medium text-gray-700">
+                      {day}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {/* 主课程行 */}
+                <tr className="border-b border-gray-100">
+                  {(content.timeTable?.days || []).map((day: string, index: number) => {
+                    const classType = content.timeTable?.rows[0]?.classes[index] || '';
+                    return (
+                      <td key={index} className="py-3 px-2 text-center align-top">
+                        {/* 课程名称 */}
+                        <div className={`font-medium text-sm ${
                           classType === 'Rest' || classType === '休息' 
-                            ? 'bg-gray-100 text-gray-500' 
-                            : 'bg-gray-100 text-gray-700'
+                            ? 'text-gray-500' 
+                            : 'text-gray-800'
                         }`}>
                           {classType.replace('*', '')}
                         </div>
-                      </div>
-                      <div className="mt-1 text-xs text-gray-600">
-                        {timeText !== '-'
-                          ? `${language === 'zh' ? '时间: ' : 'Time: '}${timeText}`
-                          : language === 'zh' ? '休息日' : 'Rest Day'
-                        }
-                      </div>
-                    </div>
-                  );
-                })}
-                
-                {/* Private booking card */}
-                <div className="bg-gray-50 rounded-lg p-3">
-                  <div className="font-medium text-gray-800 text-sm">
-                    {t('privateBookingTitle')}
-                  </div>
-                  <div className="text-sm text-gray-600">
-                    {t('privateBookingTime')} {language === 'zh' ? '(灵活预约)' : '(Flexible booking)'}
-                  </div>
+                        
+                        {/* 课程时间 */}
+                        <div className="text-xs text-gray-500 mt-1">
+                          {classType === 'Rest' || classType === '休息' ? '-' : '6:30-8:00'}
+                        </div>
+                        
+                        {/* 周日研习会 - 放在时间下面 */}
+                        {index === 0 && (
+                          <>
+                            <div className="text-xs text-gray-400 font-medium mt-2">
+                              {language === 'zh' ? '研习会' : 'Workshop'}
+                            </div>
+                            <div className="text-xs text-gray-400 mt-0.5">
+                              8:00-9:00
+                            </div>
+                          </>
+                        )}
+                      </td>
+                    );
+                  })}
+                </tr>
+              </tbody>
+            </table>
+            
+            {/* 备注显示 - 居左 */}
+            {content.timeTable?.note && (
+              <div className="mt1 pt-2">
+                <p className="text-xs text-gray-400 italic text-center"> {/* 改为text-left */}
+                  {content.timeTable.note}
+                </p>
+              </div>
+            )}
+            
+            {/* Private booking */}
+            <div className="mt-6 pt-6 border-t border-gray-100">
+              <div className="flex flex-col items-center">
+                <div className="text-gray-800 font-medium text-sm">
+                  {t('privateBookingTitle')}
+                </div>
+                <div className="text-xs text-gray-500 mt-1">
+                  {t('privateBookingTime')} {language === 'zh' ? '(灵活预约)' : '(Flexible booking)'}
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+          
+          {/* Mobile cards */}
+          <div className="md:hidden space-y-3">
+            {(content.timeTable?.days || []).map((day: string, index: number) => {
+              const classType = content.timeTable?.rows[0]?.classes[index] || '';
+              
+              return (
+                <div key={index} className="bg-gray-50 rounded-lg p-3">
+                  <div className="flex justify-between items-center mb-2">
+                    <div className="font-medium text-gray-800 text-sm">
+                      {day}
+                    </div>
+                    <div className="flex flex-col items-end">
+                      {/* 主课程 */}
+                      <div className={`px-2 py-1 rounded text-xs font-medium ${
+                        classType === 'Rest' || classType === '休息' 
+                          ? 'bg-gray-100 text-gray-500' 
+                          : 'bg-gray-100 text-gray-700'
+                      }`}>
+                        {classType.replace('*', '')}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* 时间 */}
+                  <div className="space-y-1">
+                    {/* 主课程时间 */}
+                    <div className="text-xs text-gray-600">
+                      {classType === 'Rest' || classType === '休息'
+                        ? (language === 'zh' ? '休息日' : 'Rest Day')
+                        : `${language === 'zh' ? '时间: ' : 'Time: '}6:30-8:00`
+                      }
+                    </div>
+                    
+                    {/* 周日研习会 - 小字号 */}
+                    {index === 0 && (
+                      <div className="space-y-0.5 mt-2">
+                        <div className="text-xs text-gray-400 font-medium">
+                          {language === 'zh' ? '研习会' : 'Workshop'}
+                        </div>
+                        <div className="text-xs text-gray-400">
+                          {language === 'zh' ? '时间: ' : 'Time: '}8:00-9:00
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+            
+            {/* 备注显示 - 移动版也居左 */}
+            {content.timeTable?.note && (
+              <div className="bg-gray-50 rounded-lg p-1 mt-1">
+                <p className="text-xs text-gray-400 italic text-left"> {/* 改为text-left */}
+                  {content.timeTable.note}
+                </p>
+              </div>
+            )}
+            
+            {/* Private booking card */}
+            <div className="bg-gray-50 rounded-lg p-3">
+              <div className="font-medium text-gray-800 text-sm">
+                {t('privateBookingTitle')}
+              </div>
+              <div className="text-sm text-gray-600">
+                {t('privateBookingTime')} {language === 'zh' ? '(灵活预约)' : '(Flexible booking)'}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
           {/* Rest days */}
           <section className="mb-8 md:mb-12">
@@ -398,40 +413,6 @@ export default function AshtangaPage() {
           
       {/* Footer */}
       <Footer />
-
-      {/* WeChat modal */}
-      {showWechat && (
-        <div
-          className="wechat-modal active"
-          onClick={() => setShowWechat(false)}
-        >
-          <div
-            className="wechat-modal-content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="wechat-close"
-              onClick={() => setShowWechat(false)}
-            >
-              &times;
-            </button>
-            <h3 className="text-lg md:text-lg font-bold text-gray-800 mb-1.5">
-              {language === 'en' ? 'Add WeChat' : '添加微信'}
-            </h3>
-            <p className="text-gray-600 mb-3 text-sm md:text-sm">
-              {language === 'en' ? 'Scan QR code to contact me' : '扫描二维码联系我'}
-            </p>
-            <img
-              src="/images/wechat-qr.jpg"
-              alt="WeChat QR Code"
-              className="wechat-image"
-            />
-            <p className="wechat-username">
-              WeChat ID: xbyogi
-            </p>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

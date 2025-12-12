@@ -82,7 +82,7 @@
         "description": "Theory · Q&A · Deep Understanding"
       },
       {
-        "icon": "fas fa-comments",
+        "icon": "fas fa-star",
         "title": "Private",
         "days": "Flexible Booking",
         "description": "Exclusive Time Customisation"
@@ -244,7 +244,7 @@
         "description": "理论 · 答疑 · 深化理解"
       },
       {
-        "icon": "fas fa-comments",
+        "icon": "fas fa-star",
         "title": "私教",
         "days": "灵活预约",
         "description": "时间专属定制"
