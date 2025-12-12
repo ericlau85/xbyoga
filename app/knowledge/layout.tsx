@@ -1,4 +1,4 @@
-// app/knowledge/layout.tsx
+// app/Knowledge/layout.tsx
 export default function KnowledgeLayout({
   children,
 }: {

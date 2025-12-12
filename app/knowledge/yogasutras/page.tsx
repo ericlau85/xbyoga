@@ -21,7 +21,7 @@ export default function YogaSutrasPage() {
         title: "Patanjali's Yoga Sutras",
         subtitle: "पतञ्जलि योग सूत्राणि",
         intro: "The Yoga Sutras are Patanjali's collection of 196 Sanskrit aphorisms on yoga theory and practice. Composed in the 2nd century BCE, they form the philosophical foundation of classical yoga.",
-        backButton: "Back to Knowledge Base"
+        backButton: "Back to Practice Guide Base"
       },
 
       // 标签页配置
@@ -106,28 +106,28 @@ export default function YogaSutrasPage() {
               verse: "1.6 • The Five Named",
               devanagari: "प्रमाणविपर्ययविकल्पनिद्रास्मृतयः ॥",
               sanskrit: "pramāṇa viparyaya vikalpa nidrā smṛtayaḥ ॥",
-              translation: "Right knowledge, error, imagination, sleep, and memory.",
+              translation: "Right Practice Guide, error, imagination, sleep, and memory.",
               meaning: "Valid cognition, misconception, conceptualization, sleep, and memory."
             },
             {
-              verse: "1.7 • Sources of Right Knowledge",
+              verse: "1.7 • Sources of Right Practice Guide",
               devanagari: "प्रत्यक्षानुमानागमाः प्रमाणानि ॥",
               sanskrit: "pratyakṣānumānāgamāḥ pramāṇāni ॥",
-              translation: "Direct perception, inference, and testimony are the sources of right knowledge.",
-              meaning: "Three valid means of acquiring correct knowledge."
+              translation: "Direct perception, inference, and testimony are the sources of right Practice Guide.",
+              meaning: "Three valid means of acquiring correct Practice Guide."
             },
             {
               verse: "1.8 • Error Defined",
               devanagari: "विपर्ययो मिथ्याज्ञानमतद्रूपप्रतिष्ठम् ॥",
               sanskrit: "viparyayo mithyājñānam atadrūpa pratiṣṭham ॥",
-              translation: "Error is false knowledge, not founded on the thing's true nature.",
+              translation: "Error is false Practice Guide, not founded on the thing's true nature.",
               meaning: "Misconception arises from incorrect understanding of reality."
             },
             {
               verse: "1.9 • Imagination's Nature",
               devanagari: "शब्दज्ञानानुपाती वस्तुशून्यो विकल्पः ॥",
               sanskrit: "śabdajñānānupātī vastu śūnyo vikalpaḥ ॥",
-              translation: "Imagination, following verbal knowledge, is devoid of substance.",
+              translation: "Imagination, following verbal Practice Guide, is devoid of substance.",
               meaning: "Conceptual thought based on words without actual substance."
             },
             {
@@ -244,7 +244,7 @@ export default function YogaSutrasPage() {
               devanagari: "तज्जयात् प्रज्ञालोकः ॥",
               sanskrit: "tajjayāt prajñālōkaḥ ॥",
               translation: "From mastery of that comes the light of wisdom.",
-              meaning: "Mastery of Samyama brings intuitive knowledge."
+              meaning: "Mastery of Samyama brings intuitive Practice Guide."
             },
             {
               verse: "3.6 • Application by Stages",
@@ -387,7 +387,7 @@ export default function YogaSutrasPage() {
         title: "帕坦伽利《瑜伽经》",
         subtitle: "पतञ्जलि योग सूत्राणि",
         intro: "《瑜伽经》是帕坦伽利关于瑜伽理论和实践的196条梵文箴言集。成书于公元前2世纪，构成了古典瑜伽的哲学基础，并为灵性实践和自我实现提供了系统指导。",
-        backButton: "返回知识库"
+        backButton: "返回练习指南"
       },
 
       // 标签页配置
@@ -939,7 +939,7 @@ export default function YogaSutrasPage() {
           {/* 返回按钮 */}
           <div className="mt-6 pt-4 border-t border-gray-200">
             <a
-              href="/knowledge"
+              href="/Practice Guide"
               className="inline-flex items-center text-red-800 hover:text-red-900 font-medium text-xs"
             >
               <svg className="w-2.5 h-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

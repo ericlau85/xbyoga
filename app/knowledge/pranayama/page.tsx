@@ -1,4 +1,4 @@
-// 文件路径: app/knowledge/UnderDevelopment.tsx
+// 文件路径: app/Practice Guide/UnderDevelopment.tsx
 'use client';
 
 import { useLanguage } from '../../../lib/language-context';
@@ -44,13 +44,13 @@ export default function UnderDevelopment({ pageTitle_en, pageTitle_zh, icon = '�
         {/* 返回按钮 */}
         <div className="text-center">
           <a
-            href="/knowledge"
+            href="/Practice Guide"
             className="inline-flex items-center px-5 py-2.5 text-base font-medium text-red-800 hover:text-red-900 hover:bg-red-50 rounded-lg transition-colors duration-150"
           >
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-            {language === 'zh' ? '返回知识库' : 'Back to Knowledge'}
+            {language === 'zh' ? '返回练习指南' : 'Back to Practice Guide'}
           </a>
         </div>
       </div> {/* 主要内容区域结束 */}

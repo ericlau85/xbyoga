@@ -1823,13 +1823,13 @@ export default function AsanaPage() {
             {/* 返回按钮 */}
             <div className="mt-6 pt-4 border-t border-gray-200">
               <a
-                href="/knowledge"
+                href="/Practice Guide"
                 className="inline-flex items-center text-red-800 hover:text-red-900 font-medium text-xs"
               >
                 <svg className="w-2.5 h-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
-                {language === 'zh' ? '返回知识库' : 'Back to Knowledge Base'}
+                {language === 'zh' ? '返回练习指南' : 'Back to Practice Guide Base'}
               </a>
             </div>
           </div>

@@ -4,14 +4,15 @@
   "en": {
     "title": "MYSORE PROGRAMME",
     "subtitle": "Ashtanga Yoga · Traditional Practice",
-    "intro": "Mysore style is the most traditional way to practice Ashtanga Yoga. Each student practises a fixed sequence at their own pace and from memory, whilst the teacher provides individualised guidance and adjustments.",
+    "intro": "Mysore style is the most traditional way to practise Ashtanga Yoga. Each student practises a fixed sequence at their own pace and from memory, whilst the teacher provides individualised guidance and adjustments.",
     
     "teacher": {
       "name": "Xibo Eric",
-      "title": "Discipline · Focus · Refined Guidance",
+      "title": "Discipline · Focus · Progressive Guidance",
       "intro": "Each practitioner embodies a unique inner landscape and individual rhythm of growth. My online classes are built upon daily practice, sharing insights and wisdom that emerge organically. As a fellow traveller, I walk alongside you on this journey of unifying knowledge and action, supporting yoga as it evolves from a mat-based practice into an art of living."
     },
     
+    "featuresTitle": "Course Features",
     "features": [
       {
         "icon": "fas fa-dharmachakra",
@@ -30,6 +31,7 @@
       }
     ],
     
+    "practiceStylesTitle": "Practice Styles",
     "practiceStyles": [
       {
         "icon": "fas fa-user-clock",
@@ -60,33 +62,55 @@
     "scheduleTitle": "Class Schedule",
     "scheduleSubtitle": "Online Classes · Flexible Participation",
     
+    "scheduleItems": [
+      {
+        "icon": "fas fa-user-clock",
+        "title": "Mysore",
+        "days": "Sun - Thu",
+        "description": "Self-Practice Time"
+      },
+      {
+        "icon": "fas fa-users",
+        "title": "Led Class",
+        "days": "Every Friday",
+        "description": "Guided with Sanskrit Count"
+      },
+      {
+        "icon": "fas fa-chalkboard-teacher",
+        "title": "Workshop",
+        "days": "Occasional Sundays",
+        "description": "Theory · Q&A · Deep Understanding"
+      },
+      {
+        "icon": "fas fa-user-graduate",
+        "title": "Private",
+        "days": "Flexible Booking",
+        "description": "Exclusive Time Customisation"
+      }
+    ],
+    
+    "timetableTitle": "Timetable",
     "timeTable": {
-      "title": "Weekly Schedule",
+      "title": "Weekly Timetable",
       "days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
       "rows": [
         {
           "title": "Mysore",
           "time": "6:30-8:00",
           "classes": ["Mysore", "Mysore", "Mysore", "Mysore", "Mysore", "Led Class", "Rest"]
-        },
-        {
-          "title": "Workshop",
-          "time": "8:00-9:00",
-          "classes": ["Workshop*", "-", "-", "-", "-", "-", "-"]
-        },
-        {
-          "title": "Private",
-          "time": "9:00-20:00",
-          "classes": ["Private Booking", "Private Booking", "Private Booking", "Private Booking", "Private Booking", "Private Booking", "Private Booking"]
         }
       ],
       "note": "* Workshop held occasionally on Sundays"
     },
     
+    "privateBookingTitle": "Private Booking",
+    "privateBookingTime": "9:00-20:00",
+    
     "restDays": "Rest Days: Saturday & Moon Days",
+    "moonCalendarLink": "View Moon Calendar",
     
     "pricingTitle": "Course Fees",
-    "pricingSubtitle": "Choose the yoga course package that suits you",
+    "pricingSubtitle": "Choose the yoga practice plan that suits you",
     "groupTitle": "Regular Courses",
     "groupSubtitle": "Group Classes · Flexible Options",
     
@@ -102,9 +126,9 @@
         "description": "Short-term trial of regular practice"
       },
       {
-        "title": "Monthly Pass (12 sessions)",
+        "title": "12-Session Monthly Pass",
         "price": "¥660",
-        "description": "For the adaptation phase"
+        "description": "Practice choice for the adaptation phase"
       },
       {
         "title": "Monthly Pass",
@@ -127,12 +151,12 @@
         "description": "75 minutes/session"
       },
       {
-        "title": "5 Session Package",
+        "title": "5-Session Package",
         "price": "¥1,760",
         "description": "Valid for 1 month"
       },
       {
-        "title": "10 Session Package",
+        "title": "10-Session Package",
         "price": "¥3,200",
         "description": "Valid for 2 months"
       }
@@ -142,7 +166,7 @@
   "zh": {
     "title": "迈索尔课程",
     "subtitle": "阿斯汤加瑜伽 · 传统练习",
-    "intro": "迈索尔风格是阿斯汤加瑜伽最传统的练习方式。每位学员按照自己的节奏和记忆练习固定序列，教师提供个性化的指导和调整。",
+    "intro": "迈索尔课程是阿斯汤加瑜伽最传统的练习方式。学员根据个人节奏与记忆练习固定序列，老师在此过程中提供个性化指导与辅助调整",
     
     "teacher": {
       "name": "希波 Eric",
@@ -150,6 +174,7 @@
       "intro": "每位练习者，都有其独特的内在风景与成长节奏。我的线上课程，以每日练习为土壤，分享由此生发的体悟与智慧。我以同行者之姿，陪伴你踏上这趟知行合一的探索之旅，让瑜伽从垫上的练习，成为生活的艺术。"
     },
     
+    "featuresTitle": "课程特色",
     "features": [
       {
         "icon": "fas fa-dharmachakra",
@@ -168,6 +193,7 @@
       }
     ],
     
+    "practiceStylesTitle": "练习方式",
     "practiceStyles": [
       {
         "icon": "fas fa-user-clock",
@@ -178,7 +204,7 @@
           "按照个人节奏记忆并练习固定序列",
           "教师根据个体情况提供实时调整",
           "培养自我练习能力和内在觉察",
-          "适合所有水平的练习者"
+          "适合不同阶段的练习者"
         ]
       },
       {
@@ -198,6 +224,34 @@
     "scheduleTitle": "课程安排",
     "scheduleSubtitle": "线上课程 · 灵活参与",
     
+    "scheduleItems": [
+      {
+        "icon": "fas fa-user-clock",
+        "title": "Mysore",
+        "days": "周日至周四",
+        "description": "自主练习时间"
+      },
+      {
+        "icon": "fas fa-users",
+        "title": "领课",
+        "days": "每周五",
+        "description": "统一口令引导"
+      },
+      {
+        "icon": "fas fa-chalkboard-teacher",
+        "title": "研习会",
+        "days": "周日不定期",
+        "description": "理论 · 答疑 · 深化理解"
+      },
+      {
+        "icon": "fas fa-user-graduate",
+        "title": "私教",
+        "days": "灵活预约",
+        "description": "时间专属定制"
+      }
+    ],
+    
+    "timetableTitle": "课程表",
     "timeTable": {
       "title": "每周课程表",
       "days": ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
@@ -206,25 +260,19 @@
           "title": "Mysore",
           "time": "6:30-8:00",
           "classes": ["Mysore", "Mysore", "Mysore", "Mysore", "Mysore", "领课", "休息"]
-        },
-        {
-          "title": "研习会",
-          "time": "8:00-9:00",
-          "classes": ["研习会*", "-", "-", "-", "-", "-", "-"]
-        },
-        {
-          "title": "私教",
-          "time": "9:00-20:00",
-          "classes": ["私教预约", "私教预约", "私教预约", "私教预约", "私教预约", "私教预约", "私教预约"]
         }
       ],
       "note": "* 研习会不定期在周日举行"
     },
     
+    "privateBookingTitle": "私教预约",
+    "privateBookingTime": "9:00-20:00",
+    
     "restDays": "休息日：每周六 & 新月/满月日",
+    "moonCalendarLink": "查看月相表",
     
     "pricingTitle": "课程费用",
-    "pricingSubtitle": "选择适合您的瑜伽课程套餐",
+    "pricingSubtitle": "选择适合您的练习计划",
     "groupTitle": "常规课程",
     "groupSubtitle": "团体课程 · 灵活选择",
     
@@ -240,7 +288,7 @@
         "description": "短期尝试规律练习"
       },
       {
-        "title": "月卡12次",
+        "title": "12次月卡",
         "price": "¥660",
         "description": "适应阶段的练习选择"
       },
@@ -267,12 +315,12 @@
       {
         "title": "5节套餐",
         "price": "¥1,760",
-        "description": "期限1个月"
+        "description": "有效期1个月"
       },
       {
         "title": "10节套餐",
         "price": "¥3,200",
-        "description": "期限2个月"
+        "description": "有效期2个月"
       }
     ]
   }

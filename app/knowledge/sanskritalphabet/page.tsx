@@ -20,7 +20,7 @@ export default function SanskritAlphabetPage() {
         title: "Sanskrit Alphabet System",
         subtitle: "संस्कृत अक्षर",
         intro: "A Sanskrit alphabet learning guide compiled for Ashtanga Yoga practitioners, covering pronunciation, writing, and basic grammar structure.",
-        backButton: "Back to Knowledge Base"
+        backButton: "Back to Practice Guide Base"
       },
       sections: {
         alphabet: { tabTitle: "Alphabet", pageTitle: "Comprehensive Sanskrit alphabet system" },
@@ -37,7 +37,7 @@ export default function SanskritAlphabetPage() {
         title: "梵语字母系统",
         subtitle: "संस्कृत अक्षर",
         intro: "为阿斯汤加瑜伽练习者编撰的梵语字母学习指南，包含发音、书写及简单的语法结构。",
-        backButton: "返回知识库"
+        backButton: "返回练习指南"
       },
       sections: {
         alphabet: { tabTitle: "字母表", pageTitle: "完整的梵语字母系统" },
@@ -902,7 +902,7 @@ export default function SanskritAlphabetPage() {
           {/* 返回按钮 */}
           <div className="mt-6 pt-4 border-t border-gray-200">
             <a
-              href="/knowledge"
+              href="/Practice Guide"
               className="inline-flex items-center text-red-800 hover:text-red-900 font-medium text-xs"
             >
               <svg className="w-2.5 h-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -10,7 +10,7 @@ export default function NavigationLayout({
   children: React.ReactNode;
 }) {
   const [language, setLanguage] = useState('en');
-  const [isKnowledgeOpen, setIsKnowledgeOpen] = useState(false);
+  const [isPractice GuideOpen, setIsPractice GuideOpen] = useState(false);
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function NavigationLayout({
       courses: "Courses",
       ashtanga: "Ashtanga",
       sanskrit: "Sanskrit",
-      knowledge: "Knowledge Base",
+      Practice Guide: "Practice Guide Base",
       yogaFoundation: "Yoga Foundation",
       sanskritWisdom: "Sanskrit Wisdom",
       yogaPhilosophy: "Yoga Philosophy"
@@ -38,7 +38,7 @@ export default function NavigationLayout({
       courses: "课程",
       ashtanga: "阿斯汤加",
       sanskrit: "梵语",
-      knowledge: "知识库",
+      Practice Guide: "练习指南",
       yogaFoundation: "瑜伽基础",
       sanskritWisdom: "梵语智慧",
       yogaPhilosophy: "瑜伽哲学"
@@ -78,24 +78,24 @@ export default function NavigationLayout({
               )}
             </div>
 
-            {/* 知识库下拉 */}
+            {/* 练习指南下拉 */}
             <div
               className="nav-item dropdown"
-              onMouseEnter={() => setIsKnowledgeOpen(true)}
-              onMouseLeave={() => setIsKnowledgeOpen(false)}
+              onMouseEnter={() => setIsPractice GuideOpen(true)}
+              onMouseLeave={() => setIsPractice GuideOpen(false)}
             >
-              <span>{content.knowledge}</span>
-              {isKnowledgeOpen && (
+              <span>{content.Practice Guide}</span>
+              {isPractice GuideOpen && (
                 <div className="dropdown-menu">
-                  <Link href="/knowledge/yoga-foundation" className="dropdown-item">
+                  <Link href="/Practice Guide/yoga-foundation" className="dropdown-item">
                     <i className="fas fa-seedling"></i>
                     {content.yogaFoundation}
                   </Link>
-                  <Link href="/knowledge/sanskrit-wisdom" className="dropdown-item">
+                  <Link href="/Practice Guide/sanskrit-wisdom" className="dropdown-item">
                     <i className="fas fa-language"></i>
                     {content.sanskritWisdom}
                   </Link>
-                  <Link href="/knowledge/yoga-philosophy" className="dropdown-item">
+                  <Link href="/Practice Guide/yoga-philosophy" className="dropdown-item">
                     <i className="fas fa-book-open"></i>
                     {content.yogaPhilosophy}
                   </Link>

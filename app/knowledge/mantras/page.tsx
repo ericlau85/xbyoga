@@ -21,7 +21,7 @@ export default function SanskritMantrasPage() {
         title: "Sanskrit Mantras in Ashtanga Yoga",
         subtitle: "अष्टाङ्गयोगे मन्त्राः",
         intro: "Sacred sounds in the Ashtanga Yoga tradition range from essential daily recitations to profound philosophical mantras that form the spiritual foundation of the practice.",
-        backButton: "Back to Knowledge Base"
+        backButton: "Back to Practice Guide Base"
       },
 
       // 标签页配置 - 按实践层级分类
@@ -60,7 +60,7 @@ export default function SanskritMantrasPage() {
             title: "Opening Invocation",
             devanagari: "वन्दे गुरूणां चरणारविन्दे संदर्शितस्वात्मसुखावबोधे ।\nनिःश्रेयसे जाङ्गलिकायमाने संसारहालाहलमोहशान्त्यै ॥",
             sanskrit: "vande gurūṇāṃ caraṇāravinde saṃdarśitasvātmasukhāvabodhe ।\nniḥśreyase jāṅgalikāyamāne saṃsārahālāhalamohaśāntyai ॥",
-            translation: "I bow to the lotus feet of the Guru, who reveals the knowledge of Self-bliss.\nWho acts as the jungle physician to eradicate the delusion poisoned by the worldly life.",
+            translation: "I bow to the lotus feet of the Guru, who reveals the Practice Guide of Self-bliss.\nWho acts as the jungle physician to eradicate the delusion poisoned by the worldly life.",
             explanation: "The mandatory opening mantra for Ashtanga practice. It establishes the student-teacher relationship (guru-śiṣya paramparā) and sets the intention of practice as a means to eradicate spiritual ignorance (avidyā)."
           },
           {
@@ -125,7 +125,7 @@ export default function SanskritMantrasPage() {
             devanagari: "गुरुर्ब्रह्मा गुरुर्विष्णुर्गुरुर्देवो महेश्वरः ।\nगुरुः साक्षात्परं ब्रह्म तस्मै श्रीगुरवे नमः ॥",
             sanskrit: "gurur-brahmā gurur-viṣṇur gurur-devo maheśvaraḥ ।\nguruḥ sākṣāt paraṃ brahma tasmai śrī-gurave namaḥ ॥",
             translation: "The Guru is Brahmā, the Guru is Viṣṇu, the Guru is Śiva.\nThe Guru is verily the Supreme Brahman; to that auspicious Guru, salutations.",
-            explanation: "Establishes the guru as the embodiment of the entire cosmic principle—creator (Brahmā), sustainer (Viṣṇu), and destroyer (Śiva). In Ashtanga, this mantra reinforces the importance of paramparā (lineage) as the living conduit of knowledge."
+            explanation: "Establishes the guru as the embodiment of the entire cosmic principle—creator (Brahmā), sustainer (Viṣṇu), and destroyer (Śiva). In Ashtanga, this mantra reinforces the importance of paramparā (lineage) as the living conduit of Practice Guide."
           },
           {
             title: "Homage to Patañjali",
@@ -144,7 +144,7 @@ export default function SanskritMantrasPage() {
         title: "阿斯汤加瑜伽中的梵语圣音",
         subtitle: "अष्टाङ्गयोगे मन्त्राः",
         intro: "始于垫上必修的念诵，终至作为灵性基石的哲学真言，贯穿着从身体实践到意识升华的完整次第。",
-        backButton: "返回知识库"
+        backButton: "返回练习指南"
       },
 
       // 标签页配置 - 按实践层级分类
@@ -372,7 +372,7 @@ export default function SanskritMantrasPage() {
           {/* 返回按钮 */}
           <div className="mt-6 pt-4 border-t border-gray-200">
             <a
-              href="/knowledge"
+              href="/Practice Guide"
               className="inline-flex items-center text-red-800 hover:text-red-900 font-medium text-xs"
             >
               <svg className="w-2.5 h-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

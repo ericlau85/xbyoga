@@ -121,7 +121,7 @@ export default function Navigation() {
                     ? 'text-red-800 font-bold border-b-2 border-red-800'
                     : 'text-gray-700 hover:text-red-800'}`}
                 >
-                  {language === 'zh' ? '知识库' : 'Knowledge'}
+                  {language === 'zh' ? '练习指南' : 'Practice Guide'}
                 </Link>
               </div>
 
@@ -208,7 +208,7 @@ export default function Navigation() {
                     : 'text-gray-700 hover:bg-gray-50'}`}
                   onClick={() => setShowMobileMenu(false)}
                 >
-                  {language === 'zh' ? '知识库' : 'Knowledge'}
+                  {language === 'zh' ? '练习指南' : 'Practice Guide'}
                 </Link>
                 
                 <div className="flex gap-3 pt-3 mt-3 border-t border-gray-100">

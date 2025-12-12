@@ -110,7 +110,7 @@ export default function KnowledgePage() {
       <div className="w-full flex justify-center items-center bg-gradient-to-r from-gray-900 to-gray-800 text-white py-6 md:py-10">
         <div className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <h1 className="text-2xl md:text-3xl font-light mb-3 md:mb-4 text-center px-2">
-            {language === 'zh' ? '瑜伽知识库' : 'YOGA KNOWLEDGE BASE'}
+            {language === 'zh' ? '瑜伽练习指南' : 'YOGA PRACTICE GUIDE'}
           </h1>
           <p className="text-lg md:text-lg text-red-800 mb-3 md:mb-6 text-center px-2">
             {language === 'zh' ? '从基础到深入的瑜伽学习指南' : 'Comprehensive Yoga Learning Resources'}
@@ -118,7 +118,7 @@ export default function KnowledgePage() {
           <p className="text-gray-300 text-sm md:text-base max-w-3xl text-center mx-auto px-2 leading-snug">
             {language === 'zh'
               ? '系统学习瑜伽体式、梵语、哲学与练习方法的完整知识体系'
-              : 'Complete knowledge system for systematic learning of yoga asanas, Sanskrit, philosophy and practice methods'
+              : 'Complete practice guide system for systematic learning of yoga asanas, sanskrit, philosophy and practice methods'
             }
           </p>
         </div>
