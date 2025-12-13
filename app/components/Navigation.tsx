@@ -216,11 +216,11 @@ export default function Navigation() {
                     onClick={handleLanguageToggle}
                     className="flex-1 px-4 py-3 text-xs border border-gray-300 rounded-lg hover:bg-gray-50"
                   >
-                    {language === 'zh' ? 'EN' : '中文'}
+                    {language === 'zh' ? 'English' : '简体中文'}
                   </button>
                   <button
                     onClick={handleWechatClick}
-                    className="flex-1 px-4 py-3 text-xs text-green-800 border-gray-300 rounded-lg hover:bg-green-50"
+                    className="flex-1 px-4 py-3 text-xs border border-gray-300 rounded-lg hover:bg-green-50"
                   >
                     <i className="fab fa-weixin mr-2 text-base"></i>
                     {language === 'zh' ? '微信' : 'WeChat'}
