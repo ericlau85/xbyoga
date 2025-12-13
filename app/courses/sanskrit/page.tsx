@@ -173,46 +173,10 @@ export default function SanskritPage() {
                 </div>
               </div>
             </section>
-            
           </div>
         </div>
                         
-        {/* 页脚 */}
-        <Footer />
-
-        {/* 微信弹窗 */}
-        {showWechat && (
-          <div
-            className="wechat-modal active"
-            onClick={() => setShowWechat(false)}
-          >
-            <div
-              className="wechat-modal-content"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                className="wechat-close"
-                onClick={() => setShowWechat(false)}
-              >
-                &times;
-              </button>
-              <h3 className="text-base md:text-lg font-bold text-gray-800 mb-1.5">
-                {language === 'en' ? 'Add WeChat' : '添加微信'}
-              </h3>
-              <p className="text-gray-600 mb-3 text-xs md:text-sm">
-                {language === 'en' ? 'Scan QR code to contact me' : '扫描二维码联系我'}
-              </p>
-              <img
-                src="/images/wechat-qr.jpg"
-                alt="WeChat QR Code"
-                className="wechat-image"
-              />
-              <p className="wechat-username">
-                WeChat ID: xbyogi
-              </p>
-            </div>
-          </div>
-        )}
+        <Footer />        
       </div>
     );
 }

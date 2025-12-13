@@ -20,7 +20,6 @@ export default function SanskritAlphabetPage() {
         title: "Sanskrit Alphabet System",
         subtitle: "संस्कृत अक्षर",
         intro: "A Sanskrit alphabet learning guide compiled for Ashtanga Yoga practitioners, covering pronunciation, writing, and basic grammar structure.",
-        backButton: "Back to Practice Guide Base"
       },
       sections: {
         alphabet: { tabTitle: "Alphabet", pageTitle: "Comprehensive Sanskrit alphabet system" },
@@ -37,7 +36,6 @@ export default function SanskritAlphabetPage() {
         title: "梵语字母系统",
         subtitle: "संस्कृत अक्षर",
         intro: "为阿斯汤加瑜伽练习者编撰的梵语字母学习指南，包含发音、书写及简单的语法结构。",
-        backButton: "返回练习指南"
       },
       sections: {
         alphabet: { tabTitle: "字母表", pageTitle: "完整的梵语字母系统" },

@@ -410,8 +410,6 @@ export default function AshtangaPage() {
           </section>
         </div>
       </div>
-          
-      {/* Footer */}
       <Footer />
     </div>
   );

@@ -21,7 +21,6 @@ export default function YogaPhilosophyPage() {
         title: "Yoga Philosophy: Classical Spiritual System and Modern Practice",
         subtitle: "योगदर्शनं",
         intro: "A systematic exploration of classical yoga philosophy, from its metaphysical foundations to its practical application in modern Ashtanga Yoga practice.",
-        backButton: "Back to Practice Guide Base"
       },
 
       // 标签页配置 - 按理论体系分类
@@ -291,7 +290,6 @@ export default function YogaPhilosophyPage() {
         title: "瑜伽哲学：古典灵性体系的理论架构与现代实践转化",
         subtitle: "योगदर्शनं",
         intro: "系统梳理古典瑜伽哲学的核心理论体系，从形而上学基础到在现代阿斯汤加瑜伽中的实践应用路径。",
-        backButton: "返回练习指南"
       },
 
       // 标签页配置 - 按理论体系分类

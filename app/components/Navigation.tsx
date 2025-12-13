@@ -65,9 +65,9 @@ export default function Navigation() {
     return (
       <div className="flex items-center gap-1 ml-1">
         {/* 小红点 */}
-        <div className="w-1.5 h-1.5 bg-red-600 rounded-full animate-pulse"></div>
+        <div className="w-1.5 h-1.5 bg-green-800 rounded-full animate-pulse"></div>
         {/* 文字标签 */}
-        <span className="text-red-700 text-[10px] font-medium bg-red-50 px-1.5 py-0.5 rounded">
+        <span className="text-green-800 text-[8px] font-medium px-1.5 py-0.5 rounded">
           {getBadgeText()}
         </span>
       </div>
@@ -136,13 +136,13 @@ export default function Navigation() {
               <div className="hidden md:flex items-center gap-3">
                 <button
                   onClick={handleLanguageToggle}
-                  className="px-3 py-1 text-xs border border-gray-300 rounded hover:bg-gray-50"
+                  className="px-3 py-1 text-xs border border-gray-300 rounded hover:bg-gray-100"
                 >
-                  {language === 'zh' ? 'EN' : '中文'}
+                  {language === 'zh' ? 'English' : '简体中文'}
                 </button>
                 <button
                   onClick={() => setShowWechat(true)}
-                  className="w-10 h-10 text-green-600 hover:text-green-700"
+                  className="w-10 h-10 text-green-800 hover:text-green-700"
                   aria-label="微信"
                 >
                   <i className="fab fa-weixin text-base"></i>
@@ -185,9 +185,9 @@ export default function Navigation() {
                     <span>{language === 'zh' ? '休息日' : 'Rest Days'}</span>
                     {isRestDay && (
                       <div className="flex items-center gap-1">
-                        <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse"></div>
+                        <div className="w-2 h-2 bg-green-800 rounded-full animate-pulse"></div>
                         {restDayType === 'saturday' && (
-                          <span className="text-red-600 text-[10px] font-medium">
+                          <span className="text-green-800 text-[10px] font-medium">
                             {language === 'zh' ? '周六休息' : 'Saturday'}
                           </span>
                         )}
@@ -220,7 +220,7 @@ export default function Navigation() {
                   </button>
                   <button
                     onClick={handleWechatClick}
-                    className="flex-1 px-4 py-3 text-xs text-green-600 border border-green-300 rounded-lg hover:bg-green-50"
+                    className="flex-1 px-4 py-3 text-xs text-green-800 border-gray-300 rounded-lg hover:bg-green-50"
                   >
                     <i className="fab fa-weixin mr-2 text-base"></i>
                     {language === 'zh' ? '微信' : 'WeChat'}

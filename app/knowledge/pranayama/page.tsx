@@ -21,7 +21,6 @@ export default function PranayamaPage() {
         title: "Pranayama: The Science of Breath Control",
         subtitle: "प्राणायाम प्राणायामः",
         intro: "The systematic practice of regulating life energy through conscious control of breath, forming the bridge between physical postures and meditative states in classical yoga.",
-        backButton: "Back to Knowledge Base"
       },
 
       // 标签页配置
@@ -277,7 +276,6 @@ export default function PranayamaPage() {
         title: "调息法：生命能量调控的科学",
         subtitle: "प्राणायाम प्राणायामः",
         intro: "通过有意识地调控呼吸来调节生命能量的系统练习，在古典瑜伽中构成连接体位法与冥想状态的桥梁。",
-        backButton: "返回知识库"
       },
 
       // 标签页配置

@@ -21,7 +21,6 @@ export default function YogaSutrasPage() {
         title: "Patanjali's Yoga Sutras",
         subtitle: "पतञ्जलि योग सूत्राणि",
         intro: "The Yoga Sutras are Patanjali's collection of 196 Sanskrit aphorisms on yoga theory and practice. Composed in the 2nd century BCE, they form the philosophical foundation of classical yoga.",
-        backButton: "Back to Practice Guide Base"
       },
 
       // 标签页配置
@@ -387,7 +386,6 @@ export default function YogaSutrasPage() {
         title: "帕坦伽利《瑜伽经》",
         subtitle: "पतञ्जलि योग सूत्राणि",
         intro: "《瑜伽经》是帕坦伽利关于瑜伽理论和实践的196条梵文箴言集。成书于公元前2世纪，构成了古典瑜伽的哲学基础，并为灵性实践和自我实现提供了系统指导。",
-        backButton: "返回练习指南"
       },
 
       // 标签页配置
