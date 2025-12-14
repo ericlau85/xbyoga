@@ -3,7 +3,7 @@ import { LanguageProvider } from '../lib/language-context';
 
 export const metadata = {
   title: 'Ashtanga Studio',
-  description: '希波的阿斯汤加瑜伽线上课，提供传统迈索尔课程和梵语学习',
+  description: 'Ashtanga Yoga Online Classes. Offering traditional Mysore-style courses for global practitioners.',
 };
 
 export default function RootLayout({
