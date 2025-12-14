@@ -39,7 +39,7 @@ export default function Home() {
             >
               <div className="w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-red-800"></div>
               <span className="text-white/90 text-xs md:text-sm font-light tracking-wide hover:text-white transition-colors">
-                {language === 'zh' ? '阿斯汤加' : 'Ashtanga'}
+                {language === 'zh' ? '阿斯汤加课程' : 'Ashtanga Yoga'}
               </span>
             </Link>
 
@@ -49,7 +49,7 @@ export default function Home() {
             >
               <div className="w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-amber-800"></div>
               <span className="text-white/90 text-xs md:text-sm font-light tracking-wide hover:text-white transition-colors">
-                {language === 'zh' ? '梵语' : 'Sanskrit'}
+                {language === 'zh' ? '梵语课程' : 'Sanskrit Studies'}
               </span>
             </Link>
 
