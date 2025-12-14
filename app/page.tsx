@@ -1,339 +1,162 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '../lib/language-context';
 
 export default function Home() {
   const { language, toggleLanguage } = useLanguage();
-  
-  // 微信弹窗函数保持不变
-  const showWechatQR = () => {
-    const modal = document.getElementById('wechatQRModal');
-    if (modal) {
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-  };
-
-  const closeWechatQR = (e?: React.MouseEvent) => {
-    if (e) {
-      e.stopPropagation();
-    }
-    const modal = document.getElementById('wechatQRModal');
-    if (modal) {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-  };
+  const [showWechat, setShowWechat] = useState(false);
 
   return (
-    <div className="home-container safe-top safe-bottom">
-      {/* 星空背景 */}
-      <div className="stars-container">
-        {Array.from({ length: 24 }).map((_, index) => {
-          const size = Math.random() * 3 + 1;
-          const delay = Math.random() * 2;
-          return (
-            <div key={index} className="star" style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${delay}s`,
-              width: `${size}px`,
-              height: `${size}px`,
-            }}></div>
-          );
-        })}
+    <div className="relative min-h-screen overflow-hidden">
+      <div className="fixed inset-0 z-0">
+        <img
+          src="/images/home.jpg"
+          alt="Yoga Studio"
+          className="w-full h-full object-cover object-center"
+        />
+        {/* 深色遮罩层 */}
+        <div className="absolute inset-0 bg-black/60"></div>
       </div>
-      
-      {/* 主要内容 */}
-      <main style={{
-        position: 'relative',
-        zIndex: 10,
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '1.5rem',
-        textAlign: 'center'
-      }}>
-        {/* 工作室名称 */}
-        <h1 style={{
-          fontSize: 'clamp(2.5rem, 8vw, 3.5rem)',
-          fontWeight: 300,
-          color: 'white',
-          marginBottom: '1rem',
-          letterSpacing: '2px'
-        }}>
-          {language === 'zh' ? '阿斯汤加工作室' : 'Ashtanga Studio'}
-        </h1>
-        
-        {/* 希波的名字 */}
-        <div style={{
-          fontSize: 'clamp(1rem, 4vw, 1.2rem)',
-          color: '#FFD700',
-          marginBottom: 'clamp(2rem, 6vw, 3rem)'
-        }}>
-          {language === 'zh' ? '希波' : 'Xibo'}
-        </div>
-        
-        {/* 核心链接 */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '1rem',
-          marginBottom: 'clamp(2rem, 6vw, 3rem)',
-          width: '100%',
-          maxWidth: '400px'
-        }}>
-          <Link
-            href="/courses/ashtanga"
-            style={{
-              width: '100%',
-              padding: 'clamp(0.875rem, 3vw, 1rem) clamp(1.5rem, 4vw, 2rem)',
-              background: 'rgba(139, 0, 0, 0.8)',
-              color: 'white',
-              textDecoration: 'none',
-              borderRadius: '8px',
-              border: '1px solid rgba(255,255,255,0.2)',
-              transition: 'all 0.3s ease',
-              fontSize: 'clamp(1rem, 3vw, 1.1rem)'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(139, 0, 0, 1)';
-              e.currentTarget.style.transform = 'translateY(-2px)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(139, 0, 0, 0.8)';
-              e.currentTarget.style.transform = 'translateY(0)';
-            }}
-          >
-            {language === 'zh' ? '阿斯汤加课程' : 'Ashtanga Course'}
-          </Link>
+
+      {/* 左侧垂直导航栏 */}
+      <nav className="fixed left-4 md:left-6 top-4 md:top-6 z-50">
+        <div className="flex flex-col items-start gap-3 md:gap-4">
           
-          <Link
-            href="/courses/sanskrit"
-            style={{
-              width: '100%',
-              padding: 'clamp(0.875rem, 3vw, 1rem) clamp(1.5rem, 4vw, 2rem)',
-              background: 'rgba(71, 88, 65, 0.8)',
-              color: 'white',
-              textDecoration: 'none',
-              borderRadius: '8px',
-              border: '1px solid rgba(255,255,255,0.2)',
-              transition: 'all 0.3s ease',
-              fontSize: 'clamp(1rem, 3vw, 1.1rem)'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(71, 88, 65, 1)';
-              e.currentTarget.style.transform = 'translateY(-2px)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(71, 88, 65, 0.8)';
-              e.currentTarget.style.transform = 'translateY(0)';
-            }}
-          >
-            {language === 'zh' ? '梵语课程' : 'Sanskrit Course'}
-          </Link>
-        </div>
-          
-        {/* 联系图标 */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: 'clamp(1rem, 3vw, 1.25rem)',
-          marginBottom: 'clamp(1.5rem, 4vw, 2rem)'
-        }}>
-          
-          {/* 邮箱图标 */}
-          <a
-            href="mailto:info@xbyoga.com"
-            style={{
-              width: 'clamp(42px, 10vw, 46px)',
-              height: 'clamp(42px, 10vw, 46px)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: 'rgba(255,255,255,0.08)',
-              color: 'white',
-              borderRadius: '50%',
-              textDecoration: 'none',
-              transition: 'all 0.3s ease',
-              border: '1px solid rgba(255,255,255,0.15)'
-            }}
-            onMouseEnter={(e) => {
-              const el = e.currentTarget;
-              el.style.color = '#4285F4';
-              el.style.background = 'rgba(255,255,255,0.15)';
-              el.style.borderColor = 'rgba(255,255,255,0.25)';
-              el.style.transform = 'scale(1.1)';
-            }}
-            onMouseLeave={(e) => {
-              const el = e.currentTarget;
-              el.style.color = 'white';
-              el.style.background = 'rgba(255,255,255,0.08)';
-              el.style.borderColor = 'rgba(255,255,255,0.15)';
-              el.style.transform = 'scale(1)';
-            }}
-            title="Email: info@xbyoga.com"
-          >
-            <i className="fas fa-envelope" style={{ fontSize: 'clamp(16px, 4vw, 18px)' }}></i>
-          </a>
-          
-          {/* 微信图标 */}
+          {/* Logo */}
+          <div className="mb-1 md:mb-2">
+            <h1 className="text-white text-sm md:text-base font-light tracking-wider">
+              {language === 'zh' ? '阿斯汤加工作室' : 'ASHTANGA STUDIO'}
+            </h1>
+          </div>
+
+          {/* 主要导航链接 */}
+          <div className="space-y-1.5 md:space-y-2">
+            <Link
+              href="/courses/ashtanga"
+              className="group flex items-center gap-1.5 md:gap-2"
+            >
+              <div className="w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-red-800"></div>
+              <span className="text-white/90 text-xs md:text-sm font-light tracking-wide hover:text-white transition-colors">
+                {language === 'zh' ? '阿斯汤加' : 'Ashtanga'}
+              </span>
+            </Link>
+
+            <Link
+              href="/courses/sanskrit"
+              className="group flex items-center gap-1.5 md:gap-2"
+            >
+              <div className="w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-amber-800"></div>
+              <span className="text-white/90 text-xs md:text-sm font-light tracking-wide hover:text-white transition-colors">
+                {language === 'zh' ? '梵语' : 'Sanskrit'}
+              </span>
+            </Link>
+
+            <Link
+              href="/knowledge"
+              className="group flex items-center gap-1.5 md:gap-2"
+            >
+              <div className="w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-green-800"></div>
+              <span className="text-white/90 text-xs md:text-sm font-light tracking-wide hover:text-white transition-colors">
+                {language === 'zh' ? '练习指南' : 'Practice Guide'}
+              </span>
+            </Link>
+          </div>
+
+          {/* 分割线 */}
+          <div className="w-full h-px bg-white/20 my-0.5 md:my-1"></div>
+
+          {/* 联系方式 */}
+          <div className="flex gap-2 md:gap-3">
+            <a
+              href="mailto:info@xbyoga.com"
+              className="group"
+              title="Email: info@xbyoga.com"
+            >
+              <i className="fas fa-envelope text-white/70 text-xs group-hover:text-blue-600 transition-colors"></i>
+            </a>
+
+            <button
+              onClick={() => setShowWechat(true)}
+              className="group"
+              title="WeChat: xbyogi"
+            >
+              <i className="fab fa-weixin text-white/70 text-xs group-hover:text-green-600 transition-colors"></i>
+            </button>
+
+            <a
+              href="https://instagram.com/xbyoga"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+              title="Instagram: @xbyoga"
+            >
+              <i className="fab fa-instagram text-white/70 text-xs group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:via-pink-500 group-hover:to-orange-400 group-hover:bg-clip-text group-hover:text-transparent transition-all"></i>
+            </a>
+          </div>
+
+          {/* 语言切换器 */}
           <button
-            onClick={showWechatQR}
-            style={{
-              width: 'clamp(42px, 10vw, 46px)',
-              height: 'clamp(42px, 10vw, 46px)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: 'rgba(255,255,255,0.08)',
-              color: 'white',
-              borderRadius: '50%',
-              border: '1px solid rgba(255,255,255,0.15)',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              const el = e.currentTarget;
-              el.style.color = '#07C160';
-              el.style.background = 'rgba(255,255,255,0.15)';
-              el.style.borderColor = 'rgba(255,255,255,0.25)';
-              el.style.transform = 'scale(1.1)';
-            }}
-            onMouseLeave={(e) => {
-              const el = e.currentTarget;
-              el.style.color = 'white';
-              el.style.background = 'rgba(255,255,255,0.08)';
-              el.style.borderColor = 'rgba(255,255,255,0.15)';
-              el.style.transform = 'scale(1)';
-            }}
-            title="WeChat: xbyogi"
+            onClick={toggleLanguage}
+            className="mt-0.5 md:mt-1 flex items-center gap-1 md:gap-1.5 group"
+            title={language === 'zh' ? 'Switch to English' : '切换到中文'}
           >
-            <i className="fab fa-weixin" style={{ fontSize: 'clamp(18px, 4vw, 20px)' }}></i>
+            {/* 使用public/images/globe.svg作为语言图标 */}
+            <img
+              src="/images/globe.svg"
+              alt="Language"
+              className="w-3 h-3 md:w-3 md:h-3 text-white/70 group-hover:text-white transition-colors filter brightness-0 invert opacity-70 group-hover:opacity-100"
+            />
+            
+            <span className="text-white/70 text-xs font-medium uppercase tracking-wider group-hover:text-white transition-colors">
+              {language === 'zh' ? 'English' : '简体中文'}
+            </span>
           </button>
-          
-          {/* Instagram图标 */}
-          <a
-            href="https://instagram.com/xbyoga"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              width: 'clamp(42px, 10vw, 46px)',
-              height: 'clamp(42px, 10vw, 46px)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: 'rgba(255,255,255,0.08)',
-              color: 'white',
-              borderRadius: '50%',
-              border: '1px solid rgba(255,255,255,0.15)',
-              textDecoration: 'none',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              const el = e.currentTarget;
-              el.style.background = 'rgba(255,255,255,0.15)';
-              el.style.borderColor = 'rgba(255,255,255,0.25)';
-              el.style.transform = 'scale(1.1)';
-              const icon = el.querySelector('i');
-              if (icon) {
-                icon.style.background = 'linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D)';
-                icon.style.WebkitBackgroundClip = 'text';
-                icon.style.WebkitTextFillColor = 'transparent';
-              }
-            }}
-            onMouseLeave={(e) => {
-              const el = e.currentTarget;
-              el.style.background = 'rgba(255,255,255,0.08)';
-              el.style.borderColor = 'rgba(255,255,255,0.15)';
-              el.style.transform = 'scale(1)';
-              const icon = el.querySelector('i');
-              if (icon) {
-                icon.style.background = '';
-                icon.style.WebkitBackgroundClip = '';
-                icon.style.WebkitTextFillColor = '';
-                icon.style.color = 'white';
-              }
-            }}
-            title="Instagram: @xbyoga"
-          >
-            <i className="fab fa-instagram" style={{ fontSize: 'clamp(18px, 4vw, 20px)' }}></i>
-          </a>
         </div>
-          
-        {/* 语言切换按钮 */}
-        <button
-          onClick={toggleLanguage}
-          style={{
-            padding: 'clamp(0.375rem, 2vw, 0.5rem) clamp(1.25rem, 4vw, 1.5rem)',
-            background: 'transparent',
-            border: '1px solid rgba(255,255,255,0.3)',
-            color: 'white',
-            borderRadius: '20px',
-            cursor: 'pointer',
-            fontSize: 'clamp(0.8rem, 3vw, 0.9rem)',
-            transition: 'all 0.3s ease',
-            marginBottom: 'clamp(1.5rem, 4vw, 2rem)'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'transparent';
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)';
-          }}
-        >
-          {language === 'zh' ? 'EN' : '中文'}
-        </button>
-        
-        {/* 联系信息 */}
-        <div style={{
-          color: 'rgba(255,255,255,0.7)',
-          fontSize: 'clamp(0.8rem, 3vw, 0.9rem)',
-          textAlign: 'center',
-          marginTop: '1rem'
-        }}>
-          <p style={{ marginTop: '0.5rem', fontSize: 'clamp(0.75rem, 2.5vw, 0.8rem)' }}>
-            {language === 'zh' ? '传统练习 · 个性化指导 · 线上便捷学习' : 'Traditional Practice · Personalized Guidance · Online Convenience'}
-          </p>
-        </div>
-      </main>
-      
-      {/* 微信二维码弹窗 */}
-      <div
-        id="wechatQRModal"
-        className="wechat-modal"
-        onClick={closeWechatQR}
-      >
+      </nav>
+
+      {/* 微信弹窗 - 优化手机端显示 */}
+      {showWechat && (
         <div
-          className="wechat-modal-content"
-          onClick={(e) => e.stopPropagation()}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4"
+          onClick={() => setShowWechat(false)}
         >
-          <button className="wechat-close" onClick={closeWechatQR}>
-            &times;
-          </button>
-          <h3 className="m-xl md:text-xl font-bold text-gray-800 mb-2">
-            {language === 'zh' ? '添加微信' : 'Add WeChat'}
-          </h3>
-          <p className="text-gray-600 mb-4 m-base md:text-base">
-            {language === 'zh' ? '扫描二维码联系我' : 'Scan QR code to contact me'}
-          </p>
-          <img
-            src="/images/wechat-qr.jpg"
-            alt="WeChat QR Code"
-            className="wechat-image"
-          />
-          <p className="wechat-username">
-            WeChat ID: xbyogi
-          </p>
+          <div
+            className="bg-gradient-to-b from-gray-900 to-black rounded-xl md:rounded-2xl p-6 md:p-8 w-full max-w-xs md:max-w-sm border border-white/20"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-3 md:top-4 right-3 md:right-4 text-white/60 hover:text-white text-xl md:text-2xl"
+              onClick={() => setShowWechat(false)}
+            >
+              &times;
+            </button>
+            <h3 className="text-lg md:text-xl font-bold text-white mb-2">
+              {language === 'zh' ? '添加微信' : 'Add WeChat'}
+            </h3>
+            <p className="text-white/70 mb-4 md:mb-6 text-sm md:text-base">
+              {language === 'zh' ? '扫描二维码联系我' : 'Scan QR code to contact me'}
+            </p>
+            <div className="bg-white p-3 md:p-4 rounded-lg mb-4 md:mb-6">
+              <img
+                src="/images/wechat-qr.jpg"
+                alt="WeChat QR Code"
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="text-white/80 text-xs md:text-sm text-center">
+              WeChat ID: <span className="text-green-600">xbyogi</span>
+            </p>
+          </div>
         </div>
-      </div>
+      )}
+
+      {/* 全局字体图标 */}
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
     </div>
   );
 }
