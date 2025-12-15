@@ -106,19 +106,19 @@ export default function KnowledgePage() {
       
       <Navigation />
       
-      {/* ============ 标题区域 - 紧凑 ============ */}
+      {/* ============ 标题区域 ============ */}
       <div className="w-full flex justify-center items-center bg-gradient-to-r from-gray-900 to-gray-800 text-white py-6 md:py-10">
         <div className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <h1 className="text-2xl md:text-3xl font-light mb-3 md:mb-4 text-center px-2">
-            {language === 'zh' ? '瑜伽练习指南' : 'YOGA PRACTICE GUIDE'}
+            {language === 'zh' ? '完整练习指南' : 'The Complete Practice Guide'}
           </h1>
-          <p className="text-lg md:text-lg text-red-800 mb-3 md:mb-6 text-center px-2">
-            {language === 'zh' ? '从基础到深入的瑜伽学习指南' : 'Comprehensive Yoga Learning Resources'}
-          </p>
+          <h2 className="text-lg md:text-lg text-gray-200 font-medium mb-3 md:mb-6 text-center px-2">
+            {language === 'zh' ? '构建从基础到精通的系统化练习路径' : 'A Structured Learning Path from Foundation to Mastery'}
+          </h2>
           <p className="text-gray-300 text-sm md:text-base max-w-3xl text-center mx-auto px-2 leading-snug">
             {language === 'zh'
-              ? '系统学习瑜伽体式、梵语、哲学与练习方法的完整知识体系'
-              : 'Complete practice guide system for systematic learning of yoga asanas, sanskrit, philosophy and practice methods'
+              ? '本指南将带你系统掌握阿斯汤加瑜伽体式、梵语、哲学与方法，建立完整的个人知识体系'
+              : 'This guide will lead you to systematically master Ashtanga Yoga asanas, Sanskrit, philosophy, and methodology, building a comprehensive personal knowledge framework.'
             }
           </p>
         </div>
@@ -150,14 +150,15 @@ export default function KnowledgePage() {
                   <Link
                     key={article.slug}
                     href={`/knowledge/${article.slug}`}
+                    aria-label={`Read article: ${language === 'zh' ? article.title_zh : article.title_en}`}
                     className="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200 border border-gray-100 hover:border-green-800"
                   >
                     <div className="p-4 md:p-6">
                       <div className="flex flex-col md:flex-row justify-between items-start">
                         <div className="flex-1 w-full">
-                          <h3 className="text-base md:text-lg font-semibold text-gray-800 mb-2 md:mb-3 group-hover:text-red-800 transition-colors">
+                          <div className="text-base md:text-lg font-semibold text-gray-800 mb-2 md:mb-3 group-hover:text-red-800 transition-colors">
                             {language === 'zh' ? article.title_zh : article.title_en}
-                          </h3>
+                          </div>
                           <p className="text-gray-600 text-xs md:text-sm leading-snug">
                             {language === 'zh' ? article.excerpt_zh : article.excerpt_en}
                           </p>

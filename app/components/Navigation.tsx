@@ -232,15 +232,39 @@ export default function Navigation() {
         </div>
       </nav>
 
-      {/* 微信弹窗 */}
+      {/* 微信弹窗 - 已升级为专业样式 */}
       {showWechat && (
-        <div className="wechat-modal active" onClick={() => setShowWechat(false)}>
-          <div className="wechat-modal-content" onClick={e => e.stopPropagation()}>
-            <button className="wechat-close" onClick={() => setShowWechat(false)}>×</button>
-            <h3 className="text-xl font-bold mb-2">{language === 'zh' ? '添加微信' : 'Add WeChat'}</h3>
-            <p className="text-gray-600 mb-4">{language === 'zh' ? '扫描二维码联系我' : 'Scan QR code'}</p>
-            <img src="/images/wechat-qr.jpg" alt="WeChat" className="wechat-image" />
-            <p className="wechat-username">WeChat ID: xbyogi</p>
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4"
+          onClick={() => setShowWechat(false)}
+        >
+          <div
+            className="bg-gradient-to-b from-gray-900 to-black rounded-xl md:rounded-2xl p-6 md:p-8 w-full max-w-xs md:max-w-sm border border-white/20"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-3 md:top-4 right-3 md:right-4 text-white/60 hover:text-white text-xl md:text-2xl"
+              onClick={() => setShowWechat(false)}
+            >
+              &times;
+            </button>
+            <h3 className="text-lg md:text-xl font-bold text-white mb-2 text-center">
+              {language === 'zh' ? '添加微信' : 'Add WeChat'}
+            </h3>
+            <p className="text-white/70 mb-4 md:mb-6 text-sm md:text-base text-center">
+              {language === 'zh' ? '扫描二维码联系我' : 'Scan QR code to contact me'}
+            </p>
+            <div className="bg-white p-3 md:p-4 rounded-lg mb-4 md:mb-6">
+              <img
+                src="/images/wechat-qr.jpg"
+                alt="WeChat QR Code"
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="text-white/80 text-xs md:text-sm text-center">
+              {language === 'zh' ? '微信号：' : 'WeChat ID: '}
+              <span className="text-green-600">xbyogi</span>
+            </p>
           </div>
         </div>
       )}

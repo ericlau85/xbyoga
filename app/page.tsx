@@ -17,7 +17,7 @@ export default function Home() {
           className="w-full h-full object-cover object-center"
         />
         {/* 深色遮罩层 */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
       {/* 左侧垂直导航栏 */}
@@ -102,7 +102,7 @@ export default function Home() {
             className="mt-0.5 md:mt-1 flex items-center gap-1 md:gap-1.5 group"
             title={language === 'zh' ? 'Switch to English' : '切换到中文'}
           >
-            {/* 使用public/images/globe.svg作为语言图标 */}
+            {/* 语言图标 */}
             <img
               src="/images/globe.svg"
               alt="Language"
@@ -132,10 +132,10 @@ export default function Home() {
             >
               &times;
             </button>
-            <h3 className="text-lg md:text-xl font-bold text-white mb-2">
+            <h3 className="text-lg md:text-xl font-bold text-white mb-2 text-center">
               {language === 'zh' ? '添加微信' : 'Add WeChat'}
             </h3>
-            <p className="text-white/70 mb-4 md:mb-6 text-sm md:text-base">
+            <p className="text-white/70 mb-4 md:mb-6 text-sm md:text-base text-center">
               {language === 'zh' ? '扫描二维码联系我' : 'Scan QR code to contact me'}
             </p>
             <div className="bg-white p-3 md:p-4 rounded-lg mb-4 md:mb-6">
@@ -146,7 +146,8 @@ export default function Home() {
               />
             </div>
             <p className="text-white/80 text-xs md:text-sm text-center">
-              WeChat ID: <span className="text-green-600">xbyogi</span>
+              {language === 'zh' ? '微信号：' : 'WeChat ID: '}
+              <span className="text-green-600">xbyogi</span>
             </p>
           </div>
         </div>

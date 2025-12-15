@@ -29,15 +29,17 @@ export default function SanskritPage() {
         <Navigation />
 
         {/* ==================== 页面内容 ==================== */}
-        {/* 蓝色标题区域 - 紧凑 */}
+            {/* 蓝色标题区域 - 修改后 */}
             <div className="w-full flex justify-center items-center bg-gradient-to-r from-gray-900 to-gray-800 text-white py-6 md:py-10">
               <div className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
-                <h1 className="text-2xl md:text-3xl font-light mb-4 md:mb-4">
+                <h1 className="text-2xl md:text-3xl font-light mb-3 md:mb-4 text-center px-2">
                   {content.title}
                 </h1>
-                <p className="text-lg md:text-lg text-red-800 mb-3 md:mb-6">
+                {/* 副标题改为H2 */}
+                <h2 className="text-lg md:text-lg text-gray-200 font-medium mb-3 md:mb-6 text-center px-2">
                   {content.subtitle}
-                </p>
+                </h2>
+                {/* 介绍正文提升字号和对比度 */}
                 <p className="text-gray-300 text-sm md:text-base max-w-3xl mx-auto">
                   {content.intro}
                 </p>
@@ -47,24 +49,22 @@ export default function SanskritPage() {
         {/* 主要内容 */}
         <div className="w-full flex justify-center px-4 py-4 md:py-8">
           <div className="w-full max-w-6xl">
-            {/* 课程特色 */}
+            {/* 课程特色部分 - 修改后 */}
             <section className="mb-8 md:mb-12">
               <h2 className="text-xl md:text-2xl text-center text-gray-800 mb-6 md:mb-8 font-medium">
-                {content.whyTitle}
+                {content.whyTitle} {/* 这个保持为H2 */}
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 {content.features.map((feature: any, index: number) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-lg shadow-md p-4 md:p-6 hover:shadow-lg transition-all duration-200 border border-gray-100"
-                  >
+                  <div key={index} className="...">
                     <div className="text-2xl md:text-3xl text-red-800 mb-3 md:mb-4 flex justify-center">
                       <i className={feature.icon}></i>
                     </div>
-                    <h3 className="text-lg md:text-lg font-semibold text-gray-800 mb-3 md:mb-4 text-center px-2">
+                    {/* 这里改为普通加粗文本，不是H3！ */}
+                    <div className="text-lg md:text-lg font-semibold text-gray-800 mb-3 md:mb-4 text-center px-2">
                       {feature.title}
-                    </h3>
+                    </div>
                     <p className="text-gray-600 leading-snug text-center px-2 text-xs md:text-sm">
                       {feature.description}
                     </p>
@@ -87,9 +87,9 @@ export default function SanskritPage() {
                         <i className={style.icon}></i>
                       </div>
                       <div>
-                        <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-1 md:mb-1">
+                        <div className="text-lg md:text-xl font-bold text-gray-800 mb-1 md:mb-1">
                           {style.title}
-                        </h3>
+                        </div>
                         <p className="text-gray-600 text-xs md:text-sm">{style.subtitle}</p>
                       </div>
                     </div>
@@ -124,9 +124,10 @@ export default function SanskritPage() {
                     <div className="text-2xl md:text-3xl text-red-800 mb-2 md:mb-3">
                       <i className={item.icon}></i>
                     </div>
-                    <h4 className="text-base md:text-lg font-bold text-gray-800 mb-1 md:mb-1">
+                    {/* 将这里的 <h4> 改为普通的 <div> */}
+                    <div className="text-base md:text-lg font-bold text-gray-800 mb-1 md:mb-1">
                       {item.title}
-                    </h4>
+                    </div>
                     <p className="text-gray-600 mb-1 md:mb-2 text-xs md:text-sm">{item.time}</p>
                     <p className="text-gray-700 text-xs md:text-sm">{item.description}</p>
                   </div>
@@ -164,7 +165,7 @@ export default function SanskritPage() {
                             {price.description}
                           </div>
                         </div>
-                        <div className="text-xl md:text-xl font-bold text-red-800 whitespace-nowrap">
+                        <div className="text-base md:text-base font-bold text-red-800 whitespace-nowrap">
                           {price.price}
                         </div>
                       </div>
@@ -175,7 +176,6 @@ export default function SanskritPage() {
             </section>
           </div>
         </div>
-                        
         <Footer />        
       </div>
     );

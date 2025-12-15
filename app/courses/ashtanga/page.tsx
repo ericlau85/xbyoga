@@ -35,12 +35,12 @@ export default function AshtangaPage() {
       {/* Blue title section */}
       <div className="w-full flex justify-center items-center bg-gradient-to-r from-gray-900 to-gray-800 text-white py-6 md:py-10">
         <div className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-2xl md:text-3xl font-light mb-4 md:mb-4">
+          <h1 className="text-2xl md:text-3xl font-light mb-3 md:mb-4 text-center px-2">
             {t('title')}
           </h1>
-          <p className="text-lg md:text-lg text-red-800 mb-3 md:mb-6">
+          <h2 className="text-lg md:text-lg text-gray-200 font-medium mb-3 md:mb-6 text-center px-2">
             {t('subtitle')}
-          </p>
+          </h2>
           <p className="text-gray-300 text-sm md:text-base max-w-3xl mx-auto">
             {t('intro')}
           </p>
@@ -65,9 +65,9 @@ export default function AshtangaPage() {
                   </div>
                 </div>
                 <div className="flex-1 text-center md:text-left mt-2 md:mt-0">
-                  <h3 className="text-lg md:text-lg font-bold text-gray-800 mb-2 md:mb-2">
+                  <div className="text-lg md:text-lg font-bold text-gray-800 mb-2 md:mb-2">
                     {content.teacher?.name || ''}
-                  </h3>
+                  </div>
                   <p className="text-red-800 font-medium mb-3 md:mb-4 text-sm md:text-base">
                     {content.teacher?.title || ''}
                   </p>
@@ -93,9 +93,9 @@ export default function AshtangaPage() {
                   <div className="text-2xl md:text-3xl text-red-800 mb-3 md:mb-4 flex justify-center">
                     <i className={feature.icon}></i>
                   </div>
-                  <h3 className="text-lg md:text-lg font-semibold text-gray-800 mb-3 md:mb-4 text-center px-2">
+                  <div className="text-lg md:text-lg font-semibold text-gray-800 mb-3 md:mb-4 text-center px-2">
                     {feature.title}
-                  </h3>
+                  </div>
                   <p className="text-gray-600 leading-snug text-center px-2 text-xs md:text-sm">
                     {feature.description}
                   </p>
@@ -104,20 +104,20 @@ export default function AshtangaPage() {
             </div>
           </section>
           
-          {/* Practice styles */}
+          {/* Practice Formats */}
           <section className="mb-8 md:mb-12">
             <h2 className="text-xl md:text-2xl text-center text-gray-800 mb-6 md:mb-8 font-medium">
-              {t('practiceStylesTitle')}
+              {t('practiceFormatsTitle')}
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-              {(content.practiceStyles || []).map((style: any, index: number) => (
+              {(content.practiceFormats || []).map((style: any, index: number) => (
                 <div key={index} className="bg-white rounded-xl shadow-md p-4 md:p-6 hover:shadow-lg transition-all duration-200">
                   <div className="text-2xl md:text-3xl text-red-800 mb-3 md:mb-4 flex justify-center">
                     <i className={style.icon}></i>
                   </div>
-                  <h3 className="text-xl md:text-xl font-bold text-gray-800 mb-1 md:mb-1 text-center">
+                  <div className="text-xl md:text-xl font-bold text-gray-800 mb-1 md:mb-1 text-center">
                     {style.title}
-                  </h3>
+                  </div>
                   <p className="text-red-800 text-base md:text-base font-medium mb-3 md:mb-4 text-center">
                     {style.subtitle}
                   </p>
@@ -141,9 +141,6 @@ export default function AshtangaPage() {
             <h2 className="text-xl md:text-2xl text-center text-gray-800 mb-6 md:mb-8 font-medium">
               {t('scheduleTitle')}
             </h2>
-            <p className="text-gray-600 text-center text-base md:text-base mb-4 md:mb-8 max-w-3xl mx-auto">
-              {t('scheduleSubtitle')}
-            </p>
             
             <div className="bg-white rounded-lg shadow-md p-4 md:p-6 border border-gray-100">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -153,9 +150,9 @@ export default function AshtangaPage() {
                     <div className="text-2xl md:text-3xl text-red-800 mb-3 md:mb-4 flex justify-center">
                       <i className={item.icon}></i>
                     </div>
-                    <h3 className="text-lg md:text-lg font-semibold text-gray-800 mb-2 text-center">
+                    <div className="text-lg md:text-lg font-semibold text-gray-800 mb-2 text-center">
                       {item.title}
-                    </h3>
+                    </div>
                     <p className="text-gray-600 text-sm md:text-sm text-center mb-3">
                       {item.days}
                     </p>
@@ -171,9 +168,9 @@ export default function AshtangaPage() {
           {/* Timetable */}
           <section className="mb-8 md:mb-12">
             <div className="bg-white rounded-lg shadow-md p-4 md:p-6 border border-gray-100">
-              <h3 className="text-lg md:text-lg font-semibold text-gray-800 mb-4 text-center">
+              <h2 className="text-lg md:text-lg font-semibold text-gray-800 mb-4 text-center">
                 {t('timetableTitle')}
-              </h3>
+              </h2>
               
           {/* Desktop table */}
           <div className="hidden md:block overflow-x-auto">
@@ -242,7 +239,7 @@ export default function AshtangaPage() {
                   {t('privateBookingTitle')}
                 </div>
                 <div className="text-xs text-gray-500 mt-1">
-                  {t('privateBookingTime')} {language === 'zh' ? '(灵活预约)' : '(Flexible booking)'}
+                  {t('privateBookingTime')}
                 </div>
               </div>
             </div>
@@ -312,7 +309,7 @@ export default function AshtangaPage() {
                 {t('privateBookingTitle')}
               </div>
               <div className="text-sm text-gray-600">
-                {t('privateBookingTime')} {language === 'zh' ? '(灵活预约)' : '(Flexible booking)'}
+                {t('privateBookingTime')}
               </div>
             </div>
           </div>
@@ -366,7 +363,7 @@ export default function AshtangaPage() {
                           {price.description}
                         </div>
                       </div>
-                      <div className="text-base md:text-lg font-bold text-red-800 whitespace-nowrap">
+                      <div className="text-base md:text-base font-bold text-red-800 whitespace-nowrap">
                         {price.price}
                       </div>
                     </div>
@@ -399,7 +396,7 @@ export default function AshtangaPage() {
                           {price.description}
                         </div>
                       </div>
-                      <div className="text-base md:text-lg font-bold text-red-800 whitespace-nowrap">
+                      <div className="text-base md:text-base font-bold text-red-800 whitespace-nowrap">
                         {price.price}
                       </div>
                     </div>
