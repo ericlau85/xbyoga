@@ -50,19 +50,47 @@ export default function YogaSutrasPage() {
       // 经文内容 - 使用 \n 处理换行
       verses: {
         introduction: [
+            {
+              verse: "",
+              devanagari: "श्री पतञ्जलि ध्यानं श्लोकम्",
+              sanskrit: "śrī Patañjali dhyānaṃ ślokam",
+              translation: "The Contemplative Verses on Śrī Patañjali",
+              meaning: ""
+            },
+            {
+              verse: "📃",
+              devanagari: "ॐ श्रीमत् पतञ्जलि महामुनये नमः ॥",
+              sanskrit: "om śrīmat patañjali mahāmunaye namah ॥",
+              translation: "Om. Salutations to the most venerable great sage, Patañjali.",
+              meaning: "An initial invocation, using the primordial sound 'Om' to offer reverent homage to Patañjali, establishing a sacred connection."
+            },
+            {
+              verse: "📃",
+              devanagari: "यस्त्यक्त्वा रूपमाद्यं प्रभवति जगतोऽनेकधानुग्रहाय ।\nप्रक्षीणक्लेशराशिर्विषमविषधरोऽनेकवक्त्रः सुभोगी ।\nसर्वज्ञानप्रसूतिर्भुजगपरिकरः प्रीतये यस्य नित्यं ।\nदेवोऽहीशः स वोऽव्यात्सितविमलतनुर्योगदो योगयुक्तः ॥",
+              sanskrit: "yastyaktvā rūpamādyaṃ prabhavati jagato'nekadhānugrahāya ।\nprakṣīṇakleśarāśirviṣamaviṣadharo'nekavaktraḥ subhogī ।\nsarvajñānaprasūtirbhujagaparikaraḥ prītaye yasya nityaṃ ।\ndevo'hīśaḥ sa vo'vyātsitavimalatanuryogado yogayuktaḥ ॥",
+              translation: "He who, abandoning his primal form, manifests in manifold ways for the grace of the world; whose mass of afflictions is destroyed, who bears the uneven venom (of worldly existence), is multi-faced and of sublime enjoyments; from whom all knowledge proceeds, who is surrounded by serpent hosts and for whose pleasure they ever exist; that divine Lord of Serpents, of impeccably pure and white form, the giver of Yoga and the one united in Yoga—to Him I bow.",
+              meaning: "This verse glorifies Patañjali's divine origin as an incarnation of Ādiśeṣa, the cosmic serpent. It describes him as having assumed a form to bless the world, free from all suffering, omnipotent, the source of all wisdom, and the perfect master who both bestows and embodies the state of Yoga."
+            },
           {
             verse: "📃",
             devanagari: "योगेन चित्तस्य पदेन वाचां ।\nमलं शरीरस्य च वैद्यकेन ॥\nयोऽपाकरोत्तमं प्रवरं मुनीनां ।\nपतञ्जलिं प्राञ्जलिरानतोऽस्मि ॥",
             sanskrit: "yogena cittasya padena vācāṁ ।\nmalaṁ śarīrasya ca vaidyakena ॥\nyo'pākarottamaṁ pravaraṁ munīnāṁ ।\npatañjaliṁ prāñjalirānato'smi ॥",
-            translation: "I bow with folded hands unto Patanjali,\nMost excellent of sages, who bestowed\nThrough Yoga, purity of mind;\nThrough Grammar, purity of speech; Through Medicine, purity of body.",
-            meaning: "This invocation honors Patanjali as the master of three sacred sciences: Yoga for mental purification, Grammar for linguistic purity, and Ayurveda for physical health."
+            translation: "To Patañjali, the supreme and most excellent of sages, who removed the impurities of the mind through Yoga, of speech through Grammar, and of the body through Medicine—to him I bow with folded hands.",
+            meaning: "This invocation honours Patañjali as the master of three sacred sciences (Śāstras): Yoga for mental purification, Grammar (Vyākaraṇa) for linguistic clarity, and Medicine (Āyurveda) for physical health. He is revered as the foremost among sages for bestowing these gifts."
           },
           {
             verse: "📃",
             devanagari: "आबाहुपुरुषाकारं शङ्खचक्रासिधारिणम् ।\nसहस्रशिरसं श्वेतं प्रणमामि पतञ्जलिम् ॥",
             sanskrit: "ābāhupuruṣākāraṃ śaṅkhacakrāsidhāriṇam ।\nsahasraśirasaṃ śvetaṃ praṇamāmi patañjalim ॥",
-            translation: "I prostrate before Patanjali,\nWhite-complexioned, with thousand radiant heads,\nIn human form above the shoulders,\nBearing the conch, discus, and sword.",
-            meaning: "A visual description of Patanjali as a divine being with multiple heads, holding sacred weapons and symbols."
+            translation: "I bow to Patañjali, who has a human form down to the shoulders, who holds a conch, a discus, and a sword, who has a thousand white-hooded heads.",
+            meaning: "A visual description for meditation. Patañjali is depicted with a divine, half-human, half-serpent form. The conch (śaṅkha) symbolises the sacred sound Om, the discus (cakra) cosmic law and time, and the sword (asi) the discriminating power of wisdom to cut through ignorance."
+          },
+          {
+            verse: "📃",
+            devanagari: "श्रीमते अनन्ताय नागराजाय नमो नमः ॥",
+            sanskrit: "śrīmate anantāya nāgarājāya namo namaḥ ॥",
+            translation: "Salutations again and again to the glorious Ananta, the King of Serpents.",
+            meaning: "The final salutation returns to the worship of Patañjali's ultimate source—Ananta (the Infinite), the cosmic serpent upon whom Viṣṇu rests. It concludes the hymn by acknowledging the eternal, limitless ground of all manifestation."
           }
         ],
         samadhi: [
@@ -415,19 +443,47 @@ export default function YogaSutrasPage() {
       // 经文内容 - 使用 \n 处理换行
       verses: {
         introduction: [
+            {
+              verse: "",
+              devanagari: "श्री पतञ्जलि ध्यानं श्लोकम्",
+              sanskrit: "śrī Patañjali dhyānaṃ ślokam",
+              translation: "帕坦伽利禅定颂",
+              meaning: ""
+            },
+            {
+              verse: "📃",
+              devanagari: "ॐ श्रीमत् पतञ्जलि महामुनये नमः ॥",
+              sanskrit: "om śrīmat patañjali mahāmunaye namah ॥",
+              translation: "嗡声礼敬尊贵帕坦伽利圣哲前",
+              meaning: "以宇宙元音“ॐ”及敬语祈请，确立礼拜的虔敬与神圣联结。"
+            },
+            {
+              verse: "📃",
+              devanagari: "यस्त्यक्त्वा रूपमाद्यं प्रभवति जगतोऽनेकधानुग्रहाय ।\nप्रक्षीणक्लेशराशिर्विषमविषधरोऽनेकवक्त्रः सुभोगी ।\nसर्वज्ञानप्रसूतिर्भुजगपरिकरः प्रीतये यस्य नित्यं ।\nदेवोऽहीशः स वोऽव्यात्सितविमलतनुर्योगदो योगयुक्तः ॥",
+              sanskrit: "yastyaktvā rūpamādyaṃ prabhavati jagato'nekadhānugrahāya ।\nprakṣīṇakleśarāśirviṣamaviṣadharo'nekavaktraḥ subhogī ।\nsarvajñānaprasūtirbhujagaparikaraḥ prītaye yasya nityaṃ ।\ndevo'hīśaḥ sa vo'vyātsitavimalatanuryogado yogayuktaḥ ॥",
+              translation: "舍初形为化现世间，慈悲济众方便多门；\n众苦永尽毒龙尊者，千首庄严妙乐深臻。\n全知智慧本源流注，蛇众围绕恒常欢欣；\n天神龙主洁白无垢，赐予瑜伽圆成自身。",
+              meaning: "此颂揭示帕坦伽利非凡本源：为利益众生，舍离原初形相，化现为支撑宇宙的千首蛇王（阿南塔），已断尽烦恼，是全知与瑜伽的源头与化身"
+            },
           {
             verse: "📃",
             devanagari: "योगेन चित्तस्य पदेन वाचां ।\nमलं शरीरस्य च वैद्यकेन ॥\nयोऽपाकरोत्तमं प्रवरं मुनीनां ।\nपतञ्जलिं प्राञ्जलिरानतोऽस्मि ॥",
             sanskrit: "yogena cittasya padena vācāṁ ।\nmalaṁ śarīrasya ca vaidyakena ॥\nyo'pākarottamaṁ pravaraṁ munīnāṁ ।\npatañjaliṁ prāñjalirānato'smi ॥",
             translation: "瑜伽涤心，文法正言，\n医方洁身，三学乃全。\n至圣至尊，帕坦伽利，\n我今稽首，恭行大礼。",
-            meaning: "此颂赞颂帕坦伽利为三明圣学之主：瑜伽净化心灵，文法纯净语言，阿育吠陀健康身体。"
+            meaning: "此颂赞颂帕坦伽利为三明圣学之主：瑜伽净化心灵，文法纯净语言，阿育吠陀健康身体。圣贤之中最为尊胜，故以至诚顶礼。"
           },
           {
             verse: "📃",
             devanagari: "आबाहुपुरुषाकारं शङ्खचक्रासिधारिणम् ।\nसहस्रशिरसं श्वेतं प्रणमामि पतञ्जलिम् ॥",
             sanskrit: "ābāhupuruṣākāraṃ śaṅkhacakrāsidhāriṇam ।\nsahasraśirasaṃ śvetaṃ praṇamāmi patañjalim ॥",
             translation: "上身人形，持法器明，\n螺轮剑戟，威德自生。\n首戴千蛇，皎若水晶，\n敬礼圣哲，帕坦伽利。",
-            meaning: "虔敬顶礼，表达对圣哲帕坦伽利及其圆满智慧的深切敬意。"
+            meaning: "虔敬顶礼，表达对圣哲帕坦伽利及其圆满智慧的深切敬意。海螺（Śaṅkha）象征唤醒无明的神圣之音“ॐ”；轮盘（Cakra）象征宇宙正法与时间循环；宝剑（Asi）象征斩断无明的智慧。"
+          },
+          {
+            verse: "📃",
+            devanagari: "श्रीमते अनन्ताय नागराजाय नमो नमः ॥",
+            sanskrit: "śrīmate anantāya nāgarājāya namo namaḥ ॥",
+            translation: "礼敬荣耀无限者，蛇族之王赐吉祥！",
+            meaning: "礼敬帕坦伽利的神圣本源——荣耀的“无限者”（阿南塔），亦即支撑宇宙的蛇王。将一切礼敬最终归于这永恒、无限的终极实相。"
           }
         ],
         samadhi: [

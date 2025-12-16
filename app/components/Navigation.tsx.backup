@@ -131,7 +131,7 @@ export default function Navigation() {
                 {/* 休息日链接 - 包含徽章 */}
                 <Link href="/moon-calendar" className={`px-3 py-1 text-xs flex items-center ${isCurrent('/moon-calendar') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
                   {language === 'zh' ? '休息日' : 'Rest Days'}
-                  {isRestDay && <span className="ml-1.5 px-1.5 py-0.5 text-[10px] font-bold bg-green-100 text-green-700 rounded-full">●</span>}
+                  {isRestDay {true && <span className="ml-1.5 px-1.5 py-0.5 text-[10px] font-bold bg-red-100 text-red-800 rounded-full">●</span>}{true && <span className="ml-1.5 px-1.5 py-0.5 text-[10px] font-bold bg-red-100 text-red-800 rounded-full">●</span>} <span className="ml-1.5 px-1.5 py-0.5 text-[10px] font-bold bg-green-100 text-green-700 rounded-full">●</span>}
                 </Link>
                 
                 <Link href="/knowledge" className={`px-3 py-1.5 text-xs ${isCurrent('/knowledge') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
@@ -214,35 +214,28 @@ export default function Navigation() {
                   {language === 'zh' ? '梵语课程' : 'Sanskrit Studies'}
                 </Link>
                 
-                              {/* 移动端休息日链接 */}
-                              <Link
-                                href="/moon-calendar"
-                                className={`px-3 py-2 text-xs rounded-lg flex items-center justify-between ${isCurrent('/moon-calendar') 
-                                  ? 'text-red-800 font-bold bg-gray-100'
-                                  : 'text-gray-700 hover:bg-gray-50'}`}
-                                onClick={() => setShowMobileMenu(false)}
-                              >
-                                <div className="flex items-center gap-2">
-                                  <span>{language === 'zh' ? '休息日' : 'Rest Days'}</span>
-                                  {isRestDay && (
-                                    <div className="flex items-center gap-1">
-                                      <div className="w-2 h-2 bg-green-800 rounded-full animate-pulse"></div>
-                                      {restDayType === 'saturday' && (
-                                        <span className="text-green-800 text-[10px] font-medium">
-                                          {language === 'zh' ? '周六休息' : 'Saturday'}
-                                        </span>
-                                      )}
-                                      {(restDayType === 'new_moon' || restDayType === 'full_moon') && (
-                                        <span className="text-red-600 text-[10px] font-medium">
-                                          {restDayType === 'new_moon'
-                                            ? (language === 'zh' ? '新月' : 'New Moon')
-                                            : (language === 'zh' ? '满月' : 'Full Moon')}
-                                        </span>
-                                      )}
-                                    </div>
-                                  )}
-                                </div>
-                              </Link>
+                {/* 移动端休息日链接 */}
+                <Link
+                  href="/moon-calendar"
+                  className={`px-3 py-2 text-xs rounded-lg flex items-center justify-between ${isCurrent('/moon-calendar') 
+                    ? 'text-red-800 font-bold bg-gray-100'
+                    : 'text-gray-700 hover:bg-gray-50'}`}
+                  onClick={() => setShowMobileMenu(false)}
+                >
+                  <div className="flex items-center gap-2">
+                    <span>{language === 'zh' ? '休息日' : 'Rest Days'}</span>
+                    )}
+                      <div className="flex items-center gap-1">
+                        <div className="w-2 h-2 bg-green-800 rounded-full animate-pulse"></div>
+                        {restDayType === 'saturday' && (
+                          <span className="text-green-800 text-[10px] font-medium">
+                            {language === 'zh' ? '周六休息' : 'Saturday'}
+                          </span>
+                        )}
+                        {(restDayType === 'new_moon' || restDayType === 'full_moon') && (
+                          <span className="text-red-600 text-[10px] font-medium">
+                  </div>
+                </Link>
                 
                 <Link href="/knowledge" className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/knowledge') ? 'text-red-800 font-bold bg-gray-100' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setShowMobileMenu(false)}>
                   {language === 'zh' ? '练习指南' : 'Practice Guide'}
