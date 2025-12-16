@@ -2,9 +2,9 @@
   "id": "moon-calendar",
   "type": "calendar",
   "en": {
-    "title": "2025-2026 Moon Phase Calendar",
-    "subtitle": "Plan Your Practice with Traditional Lunar Rhythm",
-    "intro": "Traditional Ashtanga yoga practice observes rest days on new moon and full moon days. This calendar provides accurate new moon (Amavasya) and full moon (Purnima) timings in both local (GMT+8) and UTC to help you schedule your practice.",
+    "title": "Moon Phase Calendar",
+    "subtitle": "Align Your Practice with Lunar Rhythms",
+    "intro": "Traditional Ashtanga yoga practice observes rest on New Moon (Amavasya) and Full Moon (Purnima) days. This calendar provides precise timings in both Coordinated Universal Time (UTC) and UTC+8, helping you plan your practice schedule accordingly.",
     "tableHeaders": {
       "month": "Month",
       "newMoon": "New Moon (GMT+8)",
@@ -148,9 +148,9 @@
     ]
   },
   "zh": {
-    "title": "2025-2026年月相日历",
-    "subtitle": "遵循传统月相节奏安排练习",
-    "intro": "传统阿斯汤加瑜伽练习在新月与满月日休息。此日历提供精确的新月（Amavasya）和满月（Purnima）时间（东八区与UTC），助您规划练习日程。",
+    "title": "月相日历",
+    "subtitle": "遵循月相节奏安排练习",
+    "intro": "传统阿斯汤加瑜伽练习在新月与满月日休息。此日历提供精确的世界协调时与东八区新月（Amavasya）和满月（Purnima）时间，助您规划练习日程。",
     "tableHeaders": {
       "month": "月份",
       "newMoon": "新月 (GMT+8)",

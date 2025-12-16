@@ -17,7 +17,7 @@ export default function SectionTabs({ sections, activeSection, onSectionChange }
             onClick={() => onSectionChange(key)}
             className={`px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-medium whitespace-nowrap transition-all duration-200 rounded-t-lg border ${
               activeSection === key
-                ? 'text-gray-900 bg-white border-gray-300 border-b-white -mb-px'
+                ? 'text-red-800 bg-white border-gray-300 border-b-white -mb-px'
                 : 'text-gray-500 border-transparent hover:text-gray-700 hover:bg-gray-50'
             }`}
           >

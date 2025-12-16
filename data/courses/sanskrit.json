@@ -2,9 +2,9 @@
   "id": "sanskrit",
   "type": "course",
   "en": {
-    "title": "SANSKRIT COURSES",
-    "subtitle": "Online Sanskrit for Yoga · The Cultural Foundation of Yoga",
-    "intro": "Sanskrit (संस्कृतम्) is the sacred mother tongue of yoga philosophy, scripture, and practice. This course will guide you to systematically master Devanagari script reading and writing, precise pronunciation, and core terminology, enabling you to read selected passages from the Yoga Sūtras and integrate authentic chanting into your daily practice, thereby laying a solid foundation for a deeper engagement with the yogic cultural tradition.",
+    "title": "SANSKRIT STUDIES",
+    "subtitle": "Online Sanskrit · Classical Foundation",
+    "intro": "This course enables practitioners to systematically master reading and writing in the Devanagari script, accurate pronunciation, and key terminology. It integrates authentic chanting into daily practice, establishing the linguistic foundation of yoga culture.",
     "whyTitle": "Course Features",
     "practiceTitle": "Syllabus",
     "features": [
@@ -92,8 +92,8 @@
   },
   "zh": {
     "title": "梵语课程",
-    "subtitle": "在线瑜伽梵语课 · 瑜伽的文化根基",
-    "intro": "梵语（संस्कृतम्）是瑜伽哲学、经典与修行的神圣母语。本课程将带您系统掌握天城文读写、精准发音与核心术语，实现直读《瑜伽经》选段，并将纯正唱诵融入日常练习，为您深入瑜伽文化传统奠定坚实基础。",
+    "subtitle": "在线梵语 · 经典入门",
+    "intro": "本课程让练习者系统掌握天城文读写、精准发音与核心术语，并将纯正唱诵融入日常练习，奠定瑜伽文化的语言根基。",
     "whyTitle": "课程特色",
     "practiceTitle": "学习大纲",
     "features": [
