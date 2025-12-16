@@ -225,13 +225,6 @@ export default function Navigation() {
                 >
                   <div className="flex items-center gap-2">
                     <span>{language === 'zh' ? '休息日' : 'Rest Days'}</span>
-                        )}
-                        {(restDayType === 'new_moon' || restDayType === 'full_moon') && (
-                          <span className="text-red-600 text-[10px] font-medium">
-                            {language === 'zh' ? '月相休息' : 'Moon Day'}
-                          </span>
-                        )}
-                      </div>
                     )}
                   </div>
                 </Link>
