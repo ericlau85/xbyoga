@@ -2,6 +2,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import RestDayBadge from './RestDayBadge';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '../../lib/language-context';
@@ -224,13 +225,6 @@ export default function Navigation() {
                 >
                   <div className="flex items-center gap-2">
                     <span>{language === 'zh' ? '休息日' : 'Rest Days'}</span>
-                    {isRestDay && (
-                      <div className="flex items-center gap-1">
-                        <div className="w-2 h-2 bg-green-800 rounded-full animate-pulse"></div>
-                        {restDayType === 'saturday' && (
-                          <span className="text-green-800 text-[10px] font-medium">
-                            {language === 'zh' ? '周六休息' : 'Saturday'}
-                          </span>
                         )}
                         {(restDayType === 'new_moon' || restDayType === 'full_moon') && (
                           <span className="text-red-600 text-[10px] font-medium">
