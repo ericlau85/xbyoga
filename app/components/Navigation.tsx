@@ -2,7 +2,6 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import RestDayBadge from './RestDayBadge';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '../../lib/language-context';
@@ -132,7 +131,7 @@ export default function Navigation() {
                 {/* 休息日链接 - 包含徽章 */}
                 <Link href="/moon-calendar" className={`px-3 py-1 text-xs flex items-center ${isCurrent('/moon-calendar') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
                   {language === 'zh' ? '休息日' : 'Rest Days'}
-                  {true && <span className="ml-1.5 px-1.5 py-0.5 text-[10px] font-bold bg-red-100 text-red-800 rounded-full">●</span>}
+                  {isRestDay {true && <span className="ml-1.5 px-1.5 py-0.5 text-[10px] font-bold bg-red-100 text-red-800 rounded-full">●</span>}{true && <span className="ml-1.5 px-1.5 py-0.5 text-[10px] font-bold bg-red-100 text-red-800 rounded-full">●</span>} <span className="ml-1.5 px-1.5 py-0.5 text-[10px] font-bold bg-green-100 text-green-700 rounded-full">●</span>}
                 </Link>
                 
                 <Link href="/knowledge" className={`px-3 py-1.5 text-xs ${isCurrent('/knowledge') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
@@ -226,6 +225,15 @@ export default function Navigation() {
                   <div className="flex items-center gap-2">
                     <span>{language === 'zh' ? '休息日' : 'Rest Days'}</span>
                     )}
+                      <div className="flex items-center gap-1">
+                        <div className="w-2 h-2 bg-green-800 rounded-full animate-pulse"></div>
+                        {restDayType === 'saturday' && (
+                          <span className="text-green-800 text-[10px] font-medium">
+                            {language === 'zh' ? '周六休息' : 'Saturday'}
+                          </span>
+                        )}
+                        {(restDayType === 'new_moon' || restDayType === 'full_moon') && (
+                          <span className="text-red-600 text-[10px] font-medium">
                   </div>
                 </Link>
                 
