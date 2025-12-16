@@ -5,7 +5,6 @@ import { useLanguage } from '../../lib/language-context';
 import moonData from '../../data/moon-calendar.json';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import Link from 'next/link';
 
 export default function MoonCalendarPage() {
   const { language } = useLanguage();
@@ -47,12 +46,12 @@ export default function MoonCalendarPage() {
         <div className="w-full max-w-6xl">
           
           {/* 年份切换选项卡 */}
-          <div className="mb-6 md:mb-12 flex justify-center space-x-2 md:space-x-4 overflow-x-auto py-2">
+          <div className="mb-4 md:mb-12 flex justify-center space-x-1 md:space-x-4 overflow-x-auto py-2">
             {content.years.map((yearObj) => (
               <button
                 key={yearObj.year}
                 onClick={() => setActiveYear(yearObj.year)}
-                className={`px-4 md:px-6 py-1.5 md:py-2 text-xs md:text-sm font-medium rounded-lg border transition-all duration-200 flex-shrink-0 ${activeYear === yearObj.year 
+                className={`px-3 md:px-6 py-1 md:py-2 text-sm md:text-xs font-medium rounded-lg border transition-all duration-200 flex-shrink-0 ${activeYear === yearObj.year 
                   ? 'bg-red-800 text-white border-red-800 shadow-sm' 
                   : 'text-gray-700 bg-white border-gray-300 hover:border-gray-400 hover:bg-gray-50'}`}
               >
@@ -63,7 +62,7 @@ export default function MoonCalendarPage() {
 
           {/* 当前年份标题 */}
           <div className="mb-4 md:mb-6 text-center">
-            <h2 className="text-xl md:text-2xl font-light text-gray-800">
+            <h2 className="text-base md:text-base font-light text-gray-800">
               {activeYear}
             </h2>
           </div>
@@ -96,23 +95,23 @@ export default function MoonCalendarPage() {
               </div>
             </div>
             
-            {/* 移动端表头 */}
-            <div className="md:hidden border-b border-gray-200 bg-gray-50 p-3">
-              <div className="grid grid-cols-12 gap-1">
-                <div className="col-span-2 font-semibold text-gray-800 text-sm text-center">
+            {/* 移动端表头 - 更紧凑 */}
+            <div className="md:hidden border-b border-gray-200 bg-gray-50 p-2">
+              <div className="grid grid-cols-12 gap-0.5">
+                <div className="col-span-2 font-semibold text-gray-800 text-[10px] text-center flex items-center justify-center">
                   {content.tableHeaders.month}
                 </div>
-                <div className="col-span-5 font-semibold text-gray-800 text-sm text-center">
+                <div className="col-span-5 font-semibold text-gray-800 text-[10px] text-center">
                   🌑 {content.tableHeaders.newMoon.split('(')[0].trim()}
                 </div>
-                <div className="col-span-5 font-semibold text-gray-800 text-sm text-center">
+                <div className="col-span-5 font-semibold text-gray-800 text-[10px] text-center">
                   🌕 {content.tableHeaders.fullMoon.split('(')[0].trim()}
                 </div>
               </div>
-              <div className="grid grid-cols-12 gap-1 mt-1">
-                <div className="col-span-2 text-xs text-gray-500 text-center"></div>
-                <div className="col-span-5 text-xs text-gray-500 text-center">GMT+8 | UTC</div>
-                <div className="col-span-5 text-xs text-gray-500 text-center">GMT+8 | UTC</div>
+              <div className="grid grid-cols-12 gap-0.5 mt-0.5">
+                <div className="col-span-2 text-[9px] text-gray-500 text-center"></div>
+                <div className="col-span-5 text-[9px] text-gray-500 text-center">GMT+8 / UTC</div>
+                <div className="col-span-5 text-[9px] text-gray-500 text-center">GMT+8 / UTC</div>
               </div>
             </div>
 
@@ -121,48 +120,58 @@ export default function MoonCalendarPage() {
               {yearData.months.map((month, index) => (
                 <div key={index} className="hover:bg-gray-50 transition-colors">
                   
-                  {/* 移动端：三列显示 */}
-                  <div className="md:hidden p-3 border-b border-gray-100 last:border-0">
-                    <div className="grid grid-cols-12 gap-1">
-                      {/* 月份列 - 缩小宽度 */}
-                      <div className="col-span-2 font-medium text-gray-800 text-sm text-center flex items-center justify-center">
+                  {/* 移动端：更紧凑的三列布局 */}
+                  <div className="md:hidden p-1 border-b border-gray-100 last:border-0">
+                    <div className="grid grid-cols-12 gap-0.5 items-center">
+                      {/* 月份列 */}
+                      <div className="col-span-2 font-medium text-gray-800 text-[10px] text-center flex items-center justify-center h-full">
                         {month.month}
                       </div>
                       
                       {/* 新月列 */}
-                      <div className="col-span-5">
-                        <div className="font-medium text-gray-800 text-xs text-center">
+                      <div className="col-span-5 px-0.5">
+                        <div className="text-gray-800 text-[9px] text-center font-medium leading-tight">
                           {month.newMoon.local.split(' ')[0]} {month.newMoon.local.split(' ')[1]}
-                          {month.newMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[8px]">*</sup>}
+                          {month.newMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[6px]">*</sup>}
                         </div>
-                        <div className="text-xs text-gray-500 text-center">
+                        <div className="text-[8px] text-gray-500 text-center leading-tight">
                           {month.newMoon.utc}
                         </div>
                       </div>
                       
-                      {/* 满月列 - 增加宽度 */}
-                      <div className="col-span-5">
+                      {/* 满月列 - 特别处理双满月情况 */}
+                      <div className="col-span-5 px-0.5">
                         {Array.isArray(month.fullMoons) ? (
-                          <div className="flex justify-between items-center h-full">
-                            {month.fullMoons.map((fullMoon, idx) => (
-                              <div key={idx} className="flex-1 px-0.5">
-                                <div className="font-medium text-gray-800 text-[9px] text-center leading-none mb-0.5">
-                                  {fullMoon.local.split(' ')[0]} {fullMoon.local.split(' ')[1]}
-                                  {fullMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[6px]">*</sup>}
+                          <div className="flex flex-col space-y-0.5">
+                            {/* 第一行：两个日期 */}
+                            <div className="flex justify-between items-center">
+                              {month.fullMoons.map((fullMoon, idx) => (
+                                <div key={idx} className="flex-1 text-center px-0.5">
+                                  <div className="text-gray-800 text-[9px] font-medium leading-tight">
+                                    {fullMoon.local.split(' ')[0]} {fullMoon.local.split(' ')[1]}
+                                    {fullMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[6px]">*</sup>}
+                                  </div>
                                 </div>
-                                <div className="text-[8px] text-gray-500 text-center leading-tight">
-                                  {fullMoon.utc}
+                              ))}
+                            </div>
+                            {/* 第二行：两个UTC时间 */}
+                            <div className="flex justify-between items-center">
+                              {month.fullMoons.map((fullMoon, idx) => (
+                                <div key={idx} className="flex-1 text-center px-0.5">
+                                  <div className="text-[8px] text-gray-500 leading-tight">
+                                    {fullMoon.utc}
+                                  </div>
                                 </div>
-                              </div>
-                            ))}
+                              ))}
+                            </div>
                           </div>
                         ) : (
-                          <div className="space-y-1">
-                            <div className="font-medium text-gray-800 text-xs text-center">
+                          <div className="space-y-0.5">
+                            <div className="text-gray-800 text-[9px] text-center font-medium leading-tight">
                               {month.fullMoon.local.split(' ')[0]} {month.fullMoon.local.split(' ')[1]}
-                              {month.fullMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[8px]">*</sup>}
+                              {month.fullMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[6px]">*</sup>}
                             </div>
-                            <div className="text-xs text-gray-500 text-center">
+                            <div className="text-[8px] text-gray-500 text-center leading-tight">
                               {month.fullMoon.utc}
                             </div>
                           </div>
@@ -171,7 +180,7 @@ export default function MoonCalendarPage() {
                     </div>
                   </div>
                   
-                  {/* 桌面端 */}
+                  {/* 桌面端 - 保持不变 */}
                   <div className="hidden md:flex">
                     <div className="w-1/5 p-3 flex items-center justify-center border-r border-gray-200">
                       <span className="font-medium text-gray-800 text-base">
@@ -227,9 +236,9 @@ export default function MoonCalendarPage() {
           </div>
 
           {/* 图例说明 */}
-          <div className="mb-6 md:mb-8 p-3 md:p-4 bg-gray-50 rounded-lg border border-gray-200">
-            <p className="text-gray-700 text-center text-[10px] md:text-xs">
-              <sup className="text-red-800 mr-0.5 text-[8px]">*</sup>
+          <div className="mb-6 md:mb-8 p-1.5 md:p-4 bg-gray-50 rounded-lg border border-gray-200">
+            <p className="text-gray-700 text-center text-[9px] md:text-xs leading-relaxed">
+              <sup className="text-red-800 mr-0.5 text-[7px]">*</sup>
               {content.legend}
             </p>
           </div>

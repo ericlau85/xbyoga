@@ -110,7 +110,7 @@ export default function KnowledgePage() {
       <div className="w-full flex justify-center items-center bg-gradient-to-r from-gray-900 to-gray-800 text-white py-6 md:py-10">
         <div className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <h1 className="text-2xl md:text-3xl font-light mb-3 md:mb-4 text-center px-2">
-            {language === 'zh' ? '完整练习指南' : 'The Complete Practice Guide'}
+            {language === 'zh' ? '完整练习指南' : 'THE COMPLETE PRACTICE GUIDE'}
           </h1>
           <h2 className="text-lg md:text-lg text-gray-200 font-medium mb-3 md:mb-6 text-center px-2">
             {language === 'zh' ? '构建从基础到精通的系统化练习路径' : 'A Structured Learning Path from Foundation to Mastery'}
