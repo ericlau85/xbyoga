@@ -131,7 +131,7 @@ export default function Navigation() {
                 {/* 休息日链接 - 包含徽章 */}
                 <Link href="/moon-calendar" className={`px-3 py-1 text-xs flex items-center ${isCurrent('/moon-calendar') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
                   {language === 'zh' ? '休息日' : 'Rest Days'}
-                  {isRestDay && <RestDayBadge />}
+                  {true && <span className="ml-1.5 px-1.5 py-0.5 text-[10px] font-bold bg-red-100 text-red-800 rounded-full">●</span>}
                 </Link>
                 
                 <Link href="/knowledge" className={`px-3 py-1.5 text-xs ${isCurrent('/knowledge') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
