@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '../../lib/language-context';
+import { getRestDayInfo } from '../../lib/rest-day-utils';
 
 export default function Navigation() {
   const { language, setLanguage } = useLanguage();
@@ -12,6 +13,9 @@ export default function Navigation() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   const [showMobileLanguageSheet, setShowMobileLanguageSheet] = useState(false);
+  const [isRestDay, setIsRestDay] = useState(false);
+  const [restDayType, setRestDayType] = useState<'saturday' | 'new_moon' | 'full_moon' | null>(null);
+  
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -32,6 +36,50 @@ export default function Navigation() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  // 获取休息日信息
+  useEffect(() => {
+    const info = getRestDayInfo(language === 'zh' ? 'zh' : 'en');
+    setIsRestDay(info.isRestDay);
+    setRestDayType(info.type);
+    
+    // 字体图标
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+    document.head.appendChild(link);
+    
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, [language]);
+
+  // 休息日徽章组件
+  const RestDayBadge = () => {
+    if (!isRestDay) return null;
+    
+    const getBadgeText = () => {
+      switch(restDayType) {
+        case 'saturday':
+          return language === 'zh' ? '周六休' : 'Sat';
+        case 'new_moon':
+          return language === 'zh' ? '新月' : 'New';
+        case 'full_moon':
+          return language === 'zh' ? '满月' : 'Full';
+        default:
+          return language === 'zh' ? '休息' : 'Rest';
+      }
+    };
+    
+    return (
+      <div className="flex items-center gap-1 ml-1">
+        <div className="w-1.5 h-1.5 bg-green-800 rounded-full animate-pulse"></div>
+        <span className="text-green-800 text-[8px] font-medium px-1.5 py-0.5 rounded">
+          {getBadgeText()}
+        </span>
+      </div>
+    );
+  };
 
   // 选择语言函数
   const handleLanguageSelect = (langCode: string) => {
@@ -71,7 +119,7 @@ export default function Navigation() {
 
             <div className="flex items-center gap-2">
               
-              {/* 桌面端导航链接 */}
+              {/* 桌面端导航链接 - 包含休息日徽章 */}
               <div className="hidden md:flex items-center gap-4 mr-4">
                 <Link href="/courses/ashtanga" className={`px-3 py-1 text-xs ${isCurrent('/courses/ashtanga') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
                   {language === 'zh' ? '阿斯汤加' : 'Ashtanga'}
@@ -79,17 +127,20 @@ export default function Navigation() {
                 <Link href="/courses/sanskrit" className={`px-3 py-1.5 text-xs ${isCurrent('/courses/sanskrit') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
                   {language === 'zh' ? '梵语课程' : 'Sanskrit Studies'}
                 </Link>
-                <Link href="/moon-calendar" className={`px-3 py-1 text-xs ${isCurrent('/moon-calendar') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
+                
+                {/* 休息日链接 - 包含徽章 */}
+                <Link href="/moon-calendar" className={`px-3 py-1 text-xs flex items-center ${isCurrent('/moon-calendar') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
                   {language === 'zh' ? '休息日' : 'Rest Days'}
+                  {isRestDay && <RestDayBadge />}
                 </Link>
+                
                 <Link href="/knowledge" className={`px-3 py-1.5 text-xs ${isCurrent('/knowledge') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
                   {language === 'zh' ? '练习指南' : 'Practice Guide'}
                 </Link>
               </div>
 
-              {/* 🎯 移动端：三个图标并排 (菜单、语言、微信) */}
+              {/* 移动端：三个图标并排 */}
               <div className="md:hidden flex items-center gap-3">
-                {/* 菜单按钮 */}
                 <button
                   onClick={() => setShowMobileMenu(!showMobileMenu)}
                   className="w-8 h-8 flex items-center justify-center text-gray-700"
@@ -98,7 +149,6 @@ export default function Navigation() {
                   {showMobileMenu ? '✕' : '☰'}
                 </button>
                 
-                {/* 语言图标 */}
                 <button
                   onClick={() => setShowMobileLanguageSheet(true)}
                   className="w-8 h-8 flex items-center justify-center text-gray-700"
@@ -107,7 +157,6 @@ export default function Navigation() {
                   <img src="/images/globe.svg" alt="Language" className="w-4 h-4" />
                 </button>
                 
-                {/* 微信图标 */}
                 <button
                   onClick={() => setShowWechat(true)}
                   className="w-8 h-8 flex items-center justify-center text-green-800"
@@ -117,9 +166,8 @@ export default function Navigation() {
                 </button>
               </div>
 
-              {/* 🎯 桌面端：语言图标 + 微信图标 */}
+              {/* 桌面端：语言图标 + 微信图标 */}
               <div className="hidden md:flex items-center gap-3">
-                {/* 语言切换 */}
                 <div className="relative" ref={dropdownRef}>
                   <button
                     onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
@@ -129,14 +177,13 @@ export default function Navigation() {
                     <img src="/images/globe.svg" alt="Language" className="w-3.5 h-3.5" />
                   </button>
                   
-                  {/* 下拉菜单 */}
                   {showLanguageDropdown && (
                     <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 bg-white border border-gray-200 rounded-lg shadow-xl py-1 min-w-[110px] z-50">
                       {languageOptions.map((lang) => (
                         <button
                           key={lang.code}
                           onClick={() => handleLanguageSelect(lang.code)}
-                          className={`w-full text-left px-3 py-1.5 text-[11px] hover:bg-gray-50 transition-colors ${language === lang.code ? 'text-red-800 font-medium' : 'text-gray-700'}`}
+                          className={`w-full text-left px-3 py-1.5 text-[11px] hover:bg-gray-50 transition-colors ${language === lang.code ? 'text-red-900 font-medium' : 'text-gray-700'}`}
                         >
                           {lang.name}
                         </button>
@@ -145,7 +192,6 @@ export default function Navigation() {
                   )}
                 </div>
                 
-                {/* 微信图标 */}
                 <button
                   onClick={() => setShowWechat(true)}
                   className="w-8 h-8 flex items-center justify-center text-green-800 hover:text-green-700"
@@ -167,9 +213,35 @@ export default function Navigation() {
                 <Link href="/courses/sanskrit" className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/courses/sanskrit') ? 'text-red-800 font-bold bg-gray-100' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setShowMobileMenu(false)}>
                   {language === 'zh' ? '梵语课程' : 'Sanskrit Studies'}
                 </Link>
-                <Link href="/moon-calendar" className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/moon-calendar') ? 'text-red-800 font-bold bg-gray-100' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setShowMobileMenu(false)}>
-                  {language === 'zh' ? '休息日' : 'Rest Days'}
+                
+                {/* 移动端休息日链接 */}
+                <Link
+                  href="/moon-calendar"
+                  className={`px-3 py-2 text-xs rounded-lg flex items-center justify-between ${isCurrent('/moon-calendar') 
+                    ? 'text-red-800 font-bold bg-gray-100'
+                    : 'text-gray-700 hover:bg-gray-50'}`}
+                  onClick={() => setShowMobileMenu(false)}
+                >
+                  <div className="flex items-center gap-2">
+                    <span>{language === 'zh' ? '休息日' : 'Rest Days'}</span>
+                    {isRestDay && (
+                      <div className="flex items-center gap-1">
+                        <div className="w-2 h-2 bg-green-800 rounded-full animate-pulse"></div>
+                        {restDayType === 'saturday' && (
+                          <span className="text-green-800 text-[10px] font-medium">
+                            {language === 'zh' ? '周六休息' : 'Saturday'}
+                          </span>
+                        )}
+                        {(restDayType === 'new_moon' || restDayType === 'full_moon') && (
+                          <span className="text-red-600 text-[10px] font-medium">
+                            {language === 'zh' ? '月相休息' : 'Moon Day'}
+                          </span>
+                        )}
+                      </div>
+                    )}
+                  </div>
                 </Link>
+                
                 <Link href="/knowledge" className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/knowledge') ? 'text-red-800 font-bold bg-gray-100' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setShowMobileMenu(false)}>
                   {language === 'zh' ? '练习指南' : 'Practice Guide'}
                 </Link>
@@ -179,32 +251,28 @@ export default function Navigation() {
         </div>
       </nav>
 
-      {/* 🎯 移动端语言选择底部弹窗 */}
+      {/* 移动端语言选择 */}
       {showMobileLanguageSheet && (
         <>
-          {/* 背景遮罩 */}
           <div
             className="fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm md:hidden"
             onClick={() => setShowMobileLanguageSheet(false)}
           />
           
-          {/* 底部弹窗 */}
           <div className="fixed bottom-0 left-0 right-0 z-[70] bg-white rounded-t-2xl shadow-2xl md:hidden animate-slide-up max-h-[70vh]">
             <div className="p-1">
-              {/* 拖拽手柄 */}
               <div className="flex justify-center py-3">
                 <div className="w-12 h-1 bg-gray-300 rounded-full"></div>
               </div>
               
-              {/* 语言选项列表 */}
               <div className="px-2 pb-4">
                 {languageOptions.map((lang) => (
                   <button
                     key={lang.code}
                     onClick={() => handleLanguageSelect(lang.code)}
-                    className={`w-full text-left px-3 py-1.5 text-[11px] hover:bg-gray-50 transition-colors ${language === lang.code ? 'text-red-800 font-medium' : 'text-gray-700'}`}
+                    className={`w-full text-left px-3 py-1.5 text-[11px] hover:bg-gray-50 transition-colors ${language === lang.code ? 'text-red-900 font-medium' : 'text-gray-700'}`}
                   >
-                    <span className={`font-medium ${language === lang.code ? 'text-red-800' : 'text-gray-800'}`}>
+                    <span className={`font-medium ${language === lang.code ? 'text-red-900' : 'text-gray-800'}`}>
                       {lang.name}
                     </span>
                   </button>
@@ -239,7 +307,6 @@ export default function Navigation() {
         </div>
       )}
 
-      {/* 全局样式 */}
       <style jsx global>{`
         @keyframes slide-up {
           from { transform: translateY(100%); }
