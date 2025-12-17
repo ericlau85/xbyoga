@@ -4,13 +4,13 @@
   "en": {
     "title": "MOON PHASE CALENDAR",
     "subtitle": "Align Your Practice with Lunar Rhythms",
-    "intro": "Traditional Ashtanga yoga practice observes rest on New Moon (Amavasya) and Full Moon (Purnima) days. This calendar provides precise timings in both Coordinated Universal Time (UTC) and UTC+8, helping you plan your practice schedule accordingly.",
+    "intro": "This calendar provides precise Coordinated Universal Time and UTC+8 timings for New Moon and Full Moon, assisting you in planning your practice schedule and calculating rest days.",
     "tableHeaders": {
       "month": "Month",
       "newMoon": "New Moon (GMT+8)",
       "fullMoon": "Full Moon (GMT+8)"
     },
-    "legend": "* Dates are based on the Gregorian calendar, times are in Greenwich Mean Time. Other cities may calculate based on their local time zones, consecutive rest days may occur.",
+    "legend": "Moon phase dates are based on the Gregorian calendar for UTC+8 and calculated according to Greenwich Mean Time. Consecutive rest days may occur.",
     "years": [
       {
         "year": "2025",
@@ -150,13 +150,13 @@
   "zh": {
     "title": "月相日历",
     "subtitle": "遵循月相节奏安排练习",
-    "intro": "传统阿斯汤加瑜伽练习在新月与满月日休息。此日历提供精确的世界协调时与东八区新月（Amavasya）和满月（Purnima）时间，助您规划练习日程。",
+    "intro": "此日历提供精确的世界协调时与东八区新月和满月时间，助您规划练习日程和推算休息日。",
     "tableHeaders": {
       "month": "月份",
       "newMoon": "新月 (GMT+8)",
       "fullMoon": "满月 (GMT+8)"
     },
-    "legend": "* 表格为日期基于公历的东八区及世界协调时月相，其他城市可依格林威治标准时间推算，可能出现连休。",
+    "legend": "月相日期基于公历东八区及依格林威治标准时间推算，可能出现连休。",
     "years": [
       {
         "year": "2025",

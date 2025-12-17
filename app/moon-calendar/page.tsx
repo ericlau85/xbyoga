@@ -95,90 +95,109 @@ export default function MoonCalendarPage() {
               </div>
             </div>
             
-            {/* 移动端表头 - 更紧凑 */}
-            <div className="md:hidden border-b border-gray-200 bg-gray-50 p-2">
-              <div className="grid grid-cols-12 gap-0.5">
-                <div className="col-span-2 font-semibold text-gray-800 text-[10px] text-center flex items-center justify-center">
+          {/* 移动端表头 - 使用flex精确控制宽度 */}
+          <div className="md:hidden border-b border-gray-200 bg-gray-50 p-1.5">
+            <div className="flex items-center justify-between">
+              {/* 月份列 - 8%宽度，居中对齐 */}
+              <div className="w-[8%] flex items-center justify-center">
+                <span className="font-semibold text-gray-800 text-[10px]">
                   {content.tableHeaders.month}
-                </div>
-                <div className="col-span-5 font-semibold text-gray-800 text-[10px] text-center">
-                  🌑 {content.tableHeaders.newMoon.split('(')[0].trim()}
-                </div>
-                <div className="col-span-5 font-semibold text-gray-800 text-[10px] text-center">
-                  🌕 {content.tableHeaders.fullMoon.split('(')[0].trim()}
-                </div>
+                </span>
               </div>
-              <div className="grid grid-cols-12 gap-0.5 mt-0.5">
-                <div className="col-span-2 text-[9px] text-gray-500 text-center"></div>
-                <div className="col-span-5 text-[9px] text-gray-500 text-center">GMT+8 / UTC</div>
-                <div className="col-span-5 text-[9px] text-gray-500 text-center">GMT+8 / UTC</div>
+              {/* 新月列 - 46%宽度 */}
+              <div className="w-[46%] flex items-center justify-center">
+                <span className="font-semibold text-gray-800 text-[10px]">
+                  🌑 {content.tableHeaders.newMoon.split('(')[0].trim()}
+                </span>
+              </div>
+              {/* 满月列 - 46%宽度 */}
+              <div className="w-[46%] flex items-center justify-center">
+                <span className="font-semibold text-gray-800 text-[10px]">
+                  🌕 {content.tableHeaders.fullMoon.split('(')[0].trim()}
+                </span>
               </div>
             </div>
+            <div className="flex items-center justify-between mt-0.5">
+              <div className="w-[8%] flex items-center justify-center">
+                <span className="text-[9px] text-gray-500">&nbsp;</span>
+              </div>
+              <div className="w-[46%] flex items-center justify-center">
+                <span className="text-[9px] text-gray-500">GMT+8 / UTC</span>
+              </div>
+              <div className="w-[46%] flex items-center justify-center">
+                <span className="text-[9px] text-gray-500">GMT+8 / UTC</span>
+              </div>
+            </div>
+          </div>
 
-            {/* 表格内容 */}
-            <div className="divide-y divide-gray-100">
-              {yearData.months.map((month, index) => (
-                <div key={index} className="hover:bg-gray-50 transition-colors">
-                  
-                  {/* 移动端：更紧凑的三列布局 */}
-                  <div className="md:hidden p-1 border-b border-gray-100 last:border-0">
-                    <div className="grid grid-cols-12 gap-0.5 items-center">
-                      {/* 月份列 */}
-                      <div className="col-span-2 font-medium text-gray-800 text-[10px] text-center flex items-center justify-center h-full">
+          {/* 表格内容 */}
+          <div className="divide-y divide-gray-100">
+            {yearData.months.map((month, index) => (
+              <div key={index} className="hover:bg-gray-50 transition-colors">
+                
+                {/* 移动端：使用flex布局精确控制宽度 */}
+                <div className="md:hidden p-2 border-b border-gray-100 last:border-0">
+                  <div className="flex items-center justify-between">
+                    {/* 月份列 - 8%宽度，居中对齐 */}
+                    <div className="w-[8%] flex items-center justify-center h-full">
+                      <span className="font-medium text-gray-800 text-[11px]">
                         {month.month}
-                      </div>
-                      
-                      {/* 新月列 */}
-                      <div className="col-span-5 px-0.5">
-                        <div className="text-gray-800 text-[9px] text-center font-medium leading-tight">
+                      </span>
+                    </div>
+                    
+                    {/* 新月列 - 46%宽度 */}
+                    <div className="w-[46%] px-1">
+                      <div className="flex flex-col items-center">
+                        <div className="text-gray-800 text-[11px] font-medium leading-tight mb-1 text-center">
                           {month.newMoon.local.split(' ')[0]} {month.newMoon.local.split(' ')[1]}
-                          {month.newMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[6px]">*</sup>}
+                          {month.newMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[8px]">*</sup>}
                         </div>
-                        <div className="text-[8px] text-gray-500 text-center leading-tight">
+                        <div className="text-[10px] text-gray-500 leading-tight text-center">
                           {month.newMoon.utc}
                         </div>
                       </div>
-                      
-                      {/* 满月列 - 特别处理双满月情况 */}
-                      <div className="col-span-5 px-0.5">
-                        {Array.isArray(month.fullMoons) ? (
-                          <div className="flex flex-col space-y-0.5">
-                            {/* 第一行：两个日期 */}
-                            <div className="flex justify-between items-center">
-                              {month.fullMoons.map((fullMoon, idx) => (
-                                <div key={idx} className="flex-1 text-center px-0.5">
-                                  <div className="text-gray-800 text-[9px] font-medium leading-tight">
-                                    {fullMoon.local.split(' ')[0]} {fullMoon.local.split(' ')[1]}
-                                    {fullMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[6px]">*</sup>}
-                                  </div>
+                    </div>
+                    
+                    {/* 满月列 - 46%宽度 */}
+                    <div className="w-[46%] px-1">
+                      {Array.isArray(month.fullMoons) ? (
+                        <div className="flex flex-col items-center">
+                          {/* 第一行：两个日期 */}
+                          <div className="flex justify-between w-full mb-0.5">
+                            {month.fullMoons.map((fullMoon, idx) => (
+                              <div key={idx} className="flex-1 flex justify-center px-0.5">
+                                <div className="text-gray-800 text-[11px] font-medium leading-tight text-center">
+                                  {fullMoon.local.split(' ')[0]} {fullMoon.local.split(' ')[1]}
+                                  {fullMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[8px]">*</sup>}
                                 </div>
-                              ))}
-                            </div>
-                            {/* 第二行：两个UTC时间 */}
-                            <div className="flex justify-between items-center">
-                              {month.fullMoons.map((fullMoon, idx) => (
-                                <div key={idx} className="flex-1 text-center px-0.5">
-                                  <div className="text-[8px] text-gray-500 leading-tight">
-                                    {fullMoon.utc}
-                                  </div>
+                              </div>
+                            ))}
+                          </div>
+                          {/* 第二行：两个UTC时间 */}
+                          <div className="flex justify-between w-full">
+                            {month.fullMoons.map((fullMoon, idx) => (
+                              <div key={idx} className="flex-1 flex justify-center px-0.5">
+                                <div className="text-[10px] text-gray-500 leading-tight text-center">
+                                  {fullMoon.utc}
                                 </div>
-                              ))}
-                            </div>
+                              </div>
+                            ))}
                           </div>
-                        ) : (
-                          <div className="space-y-0.5">
-                            <div className="text-gray-800 text-[9px] text-center font-medium leading-tight">
-                              {month.fullMoon.local.split(' ')[0]} {month.fullMoon.local.split(' ')[1]}
-                              {month.fullMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[6px]">*</sup>}
-                            </div>
-                            <div className="text-[8px] text-gray-500 text-center leading-tight">
-                              {month.fullMoon.utc}
-                            </div>
+                        </div>
+                      ) : (
+                        <div className="flex flex-col items-center">
+                          <div className="text-gray-800 text-[11px] font-medium leading-tight mb-1 text-center">
+                            {month.fullMoon.local.split(' ')[0]} {month.fullMoon.local.split(' ')[1]}
+                            {month.fullMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[8px]">*</sup>}
                           </div>
-                        )}
-                      </div>
+                          <div className="text-[10px] text-gray-500 leading-tight text-center">
+                            {month.fullMoon.utc}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
+                </div>
                   
                   {/* 桌面端 - 保持不变 */}
                   <div className="hidden md:flex">
@@ -236,7 +255,7 @@ export default function MoonCalendarPage() {
           </div>
 
           {/* 图例说明 */}
-          <div className="mb-6 md:mb-8 p-1.5 md:p-4 bg-gray-50 rounded-lg border border-gray-200">
+          <div className="mb-6 md:mb-8 p-1.5 md:p-4 border-t border-gray-200 text-center">
             <p className="text-gray-700 text-center text-[9px] md:text-xs leading-relaxed">
               <sup className="text-red-800 mr-0.5 text-[7px]">*</sup>
               {content.legend}

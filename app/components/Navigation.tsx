@@ -112,10 +112,28 @@ export default function Navigation() {
         <div className="w-full px-4">
           <div className="flex justify-between items-center h-12">
             
-            {/* 网站标题 - 保持原大小 */}
-            <Link href="/" className="text-base font-light text-gray-800">
-              {language === 'zh' ? '阿斯汤加工作室' : 'ASHTANGA STUDIO'}
-            </Link>
+            {/* 左侧：移动端菜单按钮 + Logo */}
+            <div className="flex items-center gap-3">
+              {/* 移动端菜单按钮 - 放在Logo左侧 */}
+              <div className="md:hidden">
+                <button
+                  onClick={() => setShowMobileMenu(!showMobileMenu)}
+                  className="relative w-5 h-5 flex items-center justify-center text-gray-700 focus:outline-none"
+                  aria-label={language === 'zh' ? '菜单' : 'Menu'}
+                >
+                  <span className="absolute inset-0 flex items-center justify-center">
+                    <span className={`text-base leading-none transform transition-transform ${showMobileMenu ? 'rotate-90' : ''}`}>
+                      {showMobileMenu ? '✕' : '☰'}
+                    </span>
+                  </span>
+                </button>
+              </div>
+              
+              {/* 网站标题 */}
+              <Link href="/" className="text-base font-light text-gray-800">
+                {language === 'zh' ? '阿斯汤加工作室' : 'ASHTANGA STUDIO'}
+              </Link>
+            </div>
 
             <div className="flex items-center gap-1">
               
@@ -139,22 +157,9 @@ export default function Navigation() {
                 </Link>
               </div>
 
-          {/* 移动端：三个图标并排 - 缩小版 */}
+          {/* 移动端：两个图标并排 - 放在右侧 */}
           <div className="md:hidden flex items-center gap-1">
-            {/* 菜单按钮 - 缩小 */}
-            <button
-              onClick={() => setShowMobileMenu(!showMobileMenu)}
-              className="relative w-5 h-5 flex items-center justify-center text-gray-700 focus:outline-none"
-              aria-label={language === 'zh' ? '菜单' : 'Menu'}
-            >
-              <span className="absolute inset-0 flex items-center justify-center">
-                <span className={`text-base leading-none transform transition-transform ${showMobileMenu ? 'rotate-90' : ''}`}>
-                  {showMobileMenu ? '✕' : '☰'}
-                </span>
-              </span>
-            </button>
-            
-            {/* 语言切换按钮 - 缩小 */}
+            {/* 语言切换按钮 */}
             <button
               onClick={() => setShowMobileLanguageSheet(true)}
               className="relative w-5 h-5 flex items-center justify-center text-gray-700 focus:outline-none"
@@ -174,7 +179,7 @@ export default function Navigation() {
               </span>
             </button>
             
-            {/* 微信按钮 - 缩小 */}
+            {/* 微信按钮 */}
             <button
               onClick={() => setShowWechat(true)}
               className="relative w-5 h-5 flex items-center justify-center text-green-800 focus:outline-none"
@@ -186,7 +191,7 @@ export default function Navigation() {
             </button>
           </div>
 
-              {/* 桌面端：语言图标 + 微信图标 - 缩小 */}
+              {/* 桌面端：语言图标 + 微信图标 */}
               <div className="hidden md:flex items-center gap-2">
                 <div className="relative" ref={dropdownRef}>
                   <button

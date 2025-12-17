@@ -12,12 +12,12 @@ const homepageContent = {
     imageSubtitle: '专业指导 · 灵活时间',
         
     // 核心价值陈述
-    coreValue: '自2020年起，我专注于提供灵活便捷的线上阿斯汤加瑜伽指导。无论您想节省通勤时间，还是享受居家练习的专注，都能获得个性化的实时教学，让瑜伽融入您的生活节奏。'
+    coreValue: '自2020年起，为使瑜伽练习更便捷普及，我转向线上教学，提供个性化实时指导，帮助您居家专注练习，节省通勤时间，让瑜伽轻松融入日常生活。'
   },
   en: {
     imageTitle: 'Online Ashtanga Yoga',
     imageSubtitle: 'Professional Guidance · Flexible Schedule',
-    coreValue: 'Since 2020, I have specialised in providing flexible and accessible online Ashtanga yoga guidance. Whether you wish to save commute time or enjoy the focus of practising at home, you can receive personalised, real-time instruction, allowing yoga to integrate seamlessly into the rhythm of your life.'
+    coreValue: 'Since 2020, to make yoga practice more accessible and widespread, I have transitioned to online teaching, providing personalised real-time guidance. This helps you practise with focus at home, save commuting time, and integrate yoga smoothly into daily life.'
   }
 };
 
