@@ -106,7 +106,7 @@ export default function KnowledgePage() {
       
       <Navigation />
       
-      {/* ============ 标题区域 ============ */}
+      {/* 蓝色标题区域 */}
       <div className="w-full flex justify-center items-center bg-gradient-to-r from-gray-900 to-gray-800 text-white py-6 md:py-10">
         <div className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <h1 className="text-2xl md:text-3xl font-light mb-3 md:mb-4 text-center px-2">
@@ -124,19 +124,19 @@ export default function KnowledgePage() {
         </div>
       </div>
       
-      {/* ============ 主要内容 ============ */}
-      <div className="w-full flex justify-center px-3 sm:px-4 py-6 md:py-12">
+      {/* 主要内容 - 更紧凑 */}
+      <div className="w-full flex justify-center px-3 sm:px-4 py-4 md:py-8">
         <div className="w-full max-w-4xl lg:max-w-6xl">
           
           {/* 分类循环 */}
           {categories.map((category) => (
-            <section key={category.id} className="mb-8 md:mb-16 last:mb-0">
-              {/* 分类标题 */}
-              <div className="mb-4 md:mb-8 text-center px-2">
-                <h2 className="text-xl md:text-2xl font-medium text-gray-800 mb-2 md:mb-3">
+            <section key={category.id} className="mb-6 md:mb-12 last:mb-0">
+              {/* 分类标题 - 更紧凑 */}
+              <div className="mb-3 md:mb-6 text-center px-2">
+                <h2 className="text-xl md:text-2xl font-medium text-gray-800 mb-1 md:mb-2">
                   {language === 'zh' ? category.title_zh : category.title_en}
                 </h2>
-                <p className="text-base md:text-lg text-red-800 mb-2 md:mb-4">
+                <p className="text-base md:text-lg text-red-800 mb-1 md:mb-3">
                   {language === 'zh' ? category.subtitle_zh : category.subtitle_en}
                 </p>
                 <p className="text-gray-600 text-xs md:text-sm max-w-3xl mx-auto leading-snug">
@@ -144,36 +144,34 @@ export default function KnowledgePage() {
                 </p>
               </div>
               
-              {/* 文章列表 - 每行一个 */}
-              <div className="space-y-3 md:space-y-6">
+              {/* 文章列表 - 更紧凑 */}
+              <div className="space-y-2 md:space-y-4">
                 {category.articles.map((article) => (
                   <Link
                     key={article.slug}
                     href={`/knowledge/${article.slug}`}
                     aria-label={`Read article: ${language === 'zh' ? article.title_zh : article.title_en}`}
-                    className="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200 border border-gray-100 hover:border-green-800"
+                    className="group block p-3 md:p-4 border-b border-gray-100 last:border-b-0 hover:bg-gray-50 transition-colors"
                   >
-                    <div className="p-4 md:p-6">
-                      <div className="flex flex-col md:flex-row justify-between items-start">
-                        <div className="flex-1 w-full">
-                          <div className="text-base md:text-lg font-semibold text-gray-800 mb-2 md:mb-3 group-hover:text-red-800 transition-colors">
-                            {language === 'zh' ? article.title_zh : article.title_en}
-                          </div>
-                          <p className="text-gray-600 text-xs md:text-sm leading-snug">
-                            {language === 'zh' ? article.excerpt_zh : article.excerpt_en}
-                          </p>
+                    <div className="flex flex-col md:flex-row justify-between items-start">
+                      <div className="flex-1 w-full">
+                        <div className="text-base md:text-lg font-semibold text-gray-800 mb-1 md:mb-2 group-hover:text-red-800 transition-colors">
+                          {language === 'zh' ? article.title_zh : article.title_en}
                         </div>
-                        <div className="mt-3 md:mt-0 md:ml-6 flex-shrink-0 self-start">
-                          <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-red-50 group-hover:bg-red-100 transition-colors">
-                            <svg
-                              className="w-4 h-4 md:w-5 md:h-5 text-red-800 transform group-hover:translate-x-1 transition-transform"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                          </div>
+                        <p className="text-gray-600 text-xs md:text-sm leading-snug">
+                          {language === 'zh' ? article.excerpt_zh : article.excerpt_en}
+                        </p>
+                      </div>
+                      <div className="mt-2 md:mt-0 md:ml-4 flex-shrink-0 self-start">
+                        <div className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center">
+                          <svg
+                            className="w-3 h-3 md:w-4 md:h-4 text-red-800 transform group-hover:translate-x-1 transition-transform"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          </svg>
                         </div>
                       </div>
                     </div>

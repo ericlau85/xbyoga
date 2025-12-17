@@ -100,14 +100,11 @@
           "classes": ["Mysore", "Mysore", "Mysore", "Mysore", "Mysore", "Led Class", "Rest"]
         }
       ],
-      "note": "* Workshop held occasionally on Sundays"
+      "note": "* Workshop held occasionally on Sundays",
+      "privateBooking": "Private Courses",
+      "privateTime": "available 9:00am - 8:00pm",
+      "restDays": "Rest Days: Saturday and Moon Days"
     },
-    
-    "privateBookingTitle": "Private Booking",
-    "privateBookingTime": "Flexible slots, 9:00-20:00",
-    
-    "icon": "fas fa-moon",
-    "restDays": "Traditional Practice Rhythm: Rest on Saturdays and Moon Days",
     
     "pricingTitle": "Course Fees",
     "pricingSubtitle": "Choose the yoga practice plan that suits you",
@@ -262,14 +259,11 @@
           "classes": ["Mysore", "Mysore", "Mysore", "Mysore", "Mysore", "领课", "休息"]
         }
       ],
-      "note": "* 研习会不定期在周日举行"
+      "note": "* 研习会不定期在周日举行",
+      "privateBooking": "私教课程",
+      "privateTime": "可预约时段：9:00-20:00",
+      "restDays": "休息日：周六及新月/满月日"
     },
-    
-    "privateBookingTitle": "私教预约",
-    "privateBookingTime": "可预约时段：9:00-20:00",
-    
-    "icon": "fas fa-moon",
-    "restDays": "传统练习节奏：每周六及新月/满月日休息",
     
     "pricingTitle": "课程费用",
     "pricingSubtitle": "选择适合您的练习计划",

@@ -46,7 +46,7 @@ export default function MoonCalendarPage() {
         <div className="w-full max-w-6xl">
           
           {/* 年份切换选项卡 */}
-          <div className="mb-4 md:mb-12 flex justify-center space-x-1 md:space-x-4 overflow-x-auto py-2">
+          <div className="mb-6 md:mb-12 flex justify-center space-x-1 md:space-x-4 overflow-x-auto py-2">
             {content.years.map((yearObj) => (
               <button
                 key={yearObj.year}
@@ -61,7 +61,7 @@ export default function MoonCalendarPage() {
           </div>
 
           {/* 当前年份标题 */}
-          <div className="mb-4 md:mb-6 text-center">
+          <div className="mb-3 md:mb-6 text-center">
             <h2 className="text-base md:text-base font-light text-gray-800">
               {activeYear}
             </h2>
@@ -255,7 +255,7 @@ export default function MoonCalendarPage() {
           </div>
 
           {/* 图例说明 */}
-          <div className="mb-6 md:mb-8 p-1.5 md:p-4 border-t border-gray-200 text-center">
+          <div className="mb-4 md:mb-8 p-1.5 md:p-4 border-t border-gray-200 text-center">
             <p className="text-gray-700 text-center text-[9px] md:text-xs leading-relaxed">
               <sup className="text-red-800 mr-0.5 text-[7px]">*</sup>
               {content.legend}
