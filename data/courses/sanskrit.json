@@ -4,179 +4,88 @@
   "en": {
     "title": "SANSKRIT STUDIES",
     "subtitle": "Online Sanskrit · Classical Foundation",
-    "intro": "This course enables practitioners to systematically master reading and writing in the Devanagari script, accurate pronunciation, and key terminology. It integrates authentic chanting into daily practice, establishing the linguistic foundation of yoga culture.",
-    "whyTitle": "Course Features",
-    "practiceTitle": "Syllabus",
-    "features": [
-      {
-        "icon": "fas fa-microphone-alt",
-        "title": "Phonetic Foundation",
-        "description": "Systematically learn Devanagari script and Latin transliteration"
-      },
-      {
-        "icon": "fas fa-book-open",
-        "title": "Yoga Terminology",
-        "description": "Master common yoga terms, asana names, and precise meanings"
-      },
-      {
-        "icon": "fas fa-music",
-        "title": "Core Chants",
-        "description": "Accurately recite essential mantras to enrich your practice"
-      }
-    ],
-    "practiceStyles": [
-      {
-        "icon": "fas fa-language",
-        "title": "Gateway to Sanskrit",
-        "subtitle": "Phonetics & Reading",
-        "features": [
-          "Introduction to Devanagari and Latin transliteration",
-          "Learning vowels, consonants and standard pronunciation rules",
-          "Building reading confidence",
-          "Overcoming pronunciation challenges",
-          "Interactive phonetic exercises"
-        ]
-      },
-      {
-        "icon": "fas fa-seedling",
-        "title": "Foundation of Wisdom",
-        "subtitle": "Numbers & Philosophy",
-        "features": [
-          "Learning Sanskrit numerals",
-          "Introduction to Yoga Sutras core terminology",
-          "Understanding philosophical concepts",
-          "Connecting language with practice",
-          "Cultural context exploration"
-        ]
-      }
-    ],
-    "scheduleTitle": "Learning Modules",
-    "scheduleSubtitle": "Structured 4-Week Programme",
-    "scheduleItems": [
-      {
-        "icon": "fas fa-language",
-        "title": "Module 1",
-        "time": "Week 1",
-        "description": "Gateway to Sanskrit · Phonetics & Reading"
-      },
-      {
-        "icon": "fas fa-book",
-        "title": "Module 2",
-        "time": "Week 2",
-        "description": "Foundation of Wisdom · Numbers & Philosophy"
-      },
-      {
-        "icon": "fas fa-yin-yang",
-        "title": "Module 3",
-        "time": "Week 3",
-        "description": "Asana Analysis · Names & Meanings"
-      },
-      {
-        "icon": "fas fa-hands-praying",
-        "title": "Module 4",
-        "time": "Week 4",
-        "description": "Devotional Chanting · Hymns & Prayers"
-      }
-    ],
-    "restDays": "Flexible review sessions and Q&A included",
-    "pricingTitle": "Course Fees",
-    "groupTitle": "Sanskrit Course",
-    "groupSubtitle": "4 Sessions · All Materials Included",
-    "groupPrices": [
-      {
-        "title": "Standard Course",
-        "price": "¥290",
-        "description": "4 online sessions + learning materials + support"
-      }
-    ]
+    "intro": "Systematically master Devanagari script reading and writing, accurate pronunciation, and core terminology with common chants, establishing the linguistic foundation of yoga culture.",
+    
+    "modules": {
+      "title": "Course Content",
+      "subtitle": "4-week systematic learning",
+      "items": [
+        {
+          "week": "Week 1",
+          "title": "Sanskrit Gateway",
+          "subtitle": "Phonetics & Reading",
+          "description": "Devanagari script, Latin transliteration, pronunciation rules"
+        },
+        {
+          "week": "Week 2",
+          "title": "Wisdom Foundation",
+          "subtitle": "Numbers & Philosophy",
+          "description": "Sanskrit numerals, Yoga Sutras core terminology"
+        },
+        {
+          "week": "Week 3",
+          "title": "Asana Analysis",
+          "subtitle": "Names & Meanings",
+          "description": "Understanding asana names and precise meanings"
+        },
+        {
+          "week": "Week 4",
+          "title": "Classical Chanting",
+          "subtitle": "Hymns & Prayers",
+          "description": "Mastering essential mantras and chants"
+        }
+      ]
+    },
+    
+    "pricing": {
+      "title": "Course Fee",
+      "course": "Sanskrit Course",
+      "description": "4 sessions · All materials included",
+      "price": "¥290"
+    }
   },
+  
   "zh": {
     "title": "梵语课程",
     "subtitle": "在线梵语 · 经典入门",
-    "intro": "本课程让练习者系统掌握天城文读写、精准发音与核心术语，并将纯正唱诵融入日常练习，奠定瑜伽文化的语言根基。",
-    "whyTitle": "课程特色",
-    "practiceTitle": "学习大纲",
-    "features": [
-      {
-        "icon": "fas fa-microphone-alt",
-        "title": "语音根基",
-        "description": "系统学习天城文书写与拉丁转写"
-      },
-      {
-        "icon": "fas fa-book-open",
-        "title": "瑜伽术语",
-        "description": "精通瑜伽常用术语、体式名称"
-      },
-      {
-        "icon": "fas fa-music",
-        "title": "核心唱诵",
-        "description": "精准念诵必要咒语，丰富练习内涵"
-      }
-    ],
-    "practiceStyles": [
-      {
-        "icon": "fas fa-language",
-        "title": "梵语之门",
-        "subtitle": "语音与拼读",
-        "features": [
-          "认识天城文与拉丁转写",
-          "学习元音、辅音及其标准发音规则",
-          "建立阅读自信心",
-          "突破发音难关",
-          "互动式语音练习"
-        ]
-      },
-      {
-        "icon": "fas fa-seedling",
-        "title": "智慧基石",
-        "subtitle": "计数与哲学",
-        "features": [
-          "学习梵语数字",
-          "初探《瑜伽经》核心术语",
-          "理解哲学概念",
-          "连接语言与练习",
-          "文化背景探索"
-        ]
-      }
-    ],
-    "scheduleTitle": "学习模块",
-    "scheduleSubtitle": "结构化4周课程",
-    "scheduleItems": [
-      {
-        "icon": "fas fa-language",
-        "title": "模块一",
-        "time": "第1周",
-        "description": "梵语之门 · 语音与拼读"
-      },
-      {
-        "icon": "fas fa-book",
-        "title": "模块二",
-        "time": "第2周",
-        "description": "智慧基石 · 计数与哲学"
-      },
-      {
-        "icon": "fas fa-yin-yang",
-        "title": "模块三",
-        "time": "第3周",
-        "description": "体式精解 · 名称与内涵"
-      },
-      {
-        "icon": "fas fa-hands-praying",
-        "title": "模块四",
-        "time": "第4周",
-        "description": "经典唱诵 · 颂赞与祷文"
-      }
-    ],
-    "restDays": "包含灵活复习课程和答疑时间",
-    "pricingTitle": "课程费用",
-    "groupTitle": "梵语课程",
-    "groupSubtitle": "4节课程 · 包含所有资料",
-    "groupPrices": [
-      {
-        "title": "标准课程",
-        "price": "¥290",
-        "description": "4节在线课程 + 学习资料 + 课后支持"
-      }
-    ]
+    "intro": "系统掌握天城文读写、精准发音与核心术语，常见念诵，奠定瑜伽文化的语言根基。",
+    
+    "modules": {
+      "title": "课程内容",
+      "subtitle": "4周系统学习",
+      "items": [
+        {
+          "week": "第1周",
+          "title": "梵语之门",
+          "subtitle": "语音与拼读",
+          "description": "学习天城文、拉丁转写、标准发音规则"
+        },
+        {
+          "week": "第2周",
+          "title": "智慧基石",
+          "subtitle": "计数与哲学",
+          "description": "梵语数字、《瑜伽经》核心术语"
+        },
+        {
+          "week": "第3周",
+          "title": "体式精解",
+          "subtitle": "名称与内涵",
+          "description": "理解体式名称的精确含义"
+        },
+        {
+          "week": "第4周",
+          "title": "经典唱诵",
+          "subtitle": "颂赞与祷文",
+          "description": "掌握核心咒语与经典唱诵"
+        }
+      ]
+    },
+    
+    "pricing": {
+      "title": "课程费用",
+      "course": "梵语课程",
+      "description": "4节课程 · 包含所有资料",
+      "price": "¥290"
+    }
   }
 }

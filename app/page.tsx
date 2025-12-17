@@ -44,9 +44,9 @@ export default function Home() {
 
       <main className="pt-12">
         {/* 单张高质量图片 */}
-        <div className="w-full px-4 py-8 md:py-12">
-          <div className="max-w-6xl mx-auto">
-            <div className="relative w-full h-[70vh] min-h-[600px] rounded-xl overflow-hidden shadow-xl">
+        <div className="w-full px-4 py-8 md:py-9">
+          <div className="max-w-4xl mx-auto">
+            <div className="relative w-full h-[50vh] min-h-[360px] rounded-xl overflow-hidden shadow-xl">
               {/* 加载状态 */}
               <div className={`absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 transition-opacity duration-700 ${imageLoaded ? 'opacity-0' : 'opacity-100'}`}>
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -91,8 +91,8 @@ export default function Home() {
         </div>
 
         {/* 唯一的文字内容*/}
-        <div className="w-full px-4 pb-16 md:pb-24">
-          <div className="max-w-4xl mx-auto">
+        <div className="w-full px-4 pb-16 md:pb-10">
+          <div className="max-w-3xl mx-auto">
             <p className="text-gray-700 text-base md:text-base leading-relaxed text-center font-light">
               {content.coreValue}
             </p>

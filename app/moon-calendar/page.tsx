@@ -28,7 +28,7 @@ export default function MoonCalendarPage() {
       
       {/* 标题部分 */}
       <div className="w-full flex justify-center items-center bg-gradient-to-r from-gray-900 to-gray-800 text-white py-6 md:py-10">
-        <div className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 mx-auto text-center">
+        <div className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto text-center">
           <h1 className="text-2xl md:text-3xl font-light mb-3 md:mb-4 text-center px-2">
             {content.title}
           </h1>
@@ -43,7 +43,7 @@ export default function MoonCalendarPage() {
 
       {/* 主要内容容器 */}
       <div className="w-full flex justify-center px-4 py-4 md:py-8">
-        <div className="w-full max-w-6xl">
+        <div className="w-full max-w-4xl">
           
           {/* 年份切换选项卡 */}
           <div className="mb-6 md:mb-12 flex justify-center space-x-1 md:space-x-4 overflow-x-auto py-2">

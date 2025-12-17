@@ -113,7 +113,7 @@ export default function KnowledgePage() {
             {language === 'zh' ? '练习指南' : 'PRACTICE GUIDE'}
           </h1>
           <h2 className="text-lg md:text-lg text-gray-200 font-medium mb-3 md:mb-6 text-center px-2">
-            {language === 'zh' ? '构建从基础到精通的系统化练习路径' : 'A Structured Learning Path from Foundation to Mastery'}
+            {language === 'zh' ? '构建系统化练习路径' : 'Establish a structured practice pathway'}
           </h2>
           <p className="text-gray-300 text-sm md:text-base max-w-3xl text-center mx-auto px-2 leading-snug">
             {language === 'zh'
@@ -126,7 +126,7 @@ export default function KnowledgePage() {
       
       {/* 主要内容 - 更紧凑 */}
       <div className="w-full flex justify-center px-3 sm:px-4 py-4 md:py-8">
-        <div className="w-full max-w-4xl lg:max-w-6xl">
+        <div className="w-full max-w-4xl lg:max-w-4xl">
           
           {/* 分类循环 */}
           {categories.map((category) => (

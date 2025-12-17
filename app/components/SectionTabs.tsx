@@ -9,7 +9,7 @@ interface SectionTabsProps {
 
 export default function SectionTabs({ sections, activeSection, onSectionChange }: SectionTabsProps) {
   return (
-    <div className="max-w-6xl mx-auto px-4 md:px-6 border-b border-gray-200 mb-3">
+    <div className="max-w-4xl mx-auto px-4 md:px-6 border-b border-gray-200 mb-3">
       <div className="flex flex-wrap gap-1 md:gap-2 -mb-px">
         {(Object.entries(sections) as [string, string][]).map(([key, title]) => (
           <button

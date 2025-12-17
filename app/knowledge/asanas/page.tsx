@@ -1714,7 +1714,7 @@ export default function AsanaPage() {
         <Navigation />
         <div className="min-h-screen bg-white pt-12">
           {/* 文章标题部分 */}
-          <div className="max-w-6xl mx-auto px-4 pt-4 pb-2 md:pt-6 md:pb-3">
+          <div className="max-w-4xl mx-auto px-4 pt-4 pb-2 md:pt-6 md:pb-3">
             <h1 className="text-base md:text-lg font-medium text-gray-900 mb-1 tracking-tight">
               {asanaContent.title}
             </h1>
@@ -1734,7 +1734,7 @@ export default function AsanaPage() {
           />
 
           {/* 内容区域 */}
-          <div className="max-w-6xl mx-auto px-4 pb-6 md:pb-8">
+          <div className="max-w-4xl mx-auto px-4 pb-6 md:pb-8">
             {activeSection === 'list' && (
               <div>
                 <h2 className="text-sm md:text-base font-medium text-gray-800 mb-1.5">

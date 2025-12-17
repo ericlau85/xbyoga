@@ -1078,7 +1078,7 @@ export default function SanskritMantrasPage() {
       
       <div className="min-h-screen bg-white pt-12">
         {/* 页面头部 */}
-        <div className="max-w-6xl mx-auto px-4 pt-4 pb-2 md:pt-6 md:pb-3">
+        <div className="max-w-4xl mx-auto px-4 pt-4 pb-2 md:pt-6 md:pb-3">
           <h1 className="text-base md:text-lg font-medium text-gray-900 mb-1 tracking-tight">
             {meta.title}
           </h1>
@@ -1098,7 +1098,7 @@ export default function SanskritMantrasPage() {
         />
 
         {/* 主内容区域 */}
-        <div className="max-w-6xl mx-auto px-4 pb-6 md:pb-8">
+        <div className="max-w-4xl mx-auto px-4 pb-6 md:pb-8">
           {/* 当前激活的分类页面 */}
           {Object.keys(sections).map((sectionKey) => (
             activeSection === sectionKey && (
