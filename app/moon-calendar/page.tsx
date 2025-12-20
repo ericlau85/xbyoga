@@ -26,20 +26,20 @@ export default function MoonCalendarPage() {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white safe-top safe-bottom pt-12">
       <Navigation />
       
-      {/* 标题部分 */}
-      <div className="w-full flex justify-center items-center bg-gradient-to-r from-gray-900 to-gray-800 text-white py-6 md:py-10">
-        <div className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto text-center">
-          <h1 className="text-2xl md:text-3xl font-light mb-3 md:mb-4 text-center px-2">
-            {content.title}
-          </h1>
-          <h2 className="text-lg md:text-lg text-gray-200 font-medium mb-3 md:mb-6 text-center px-2">
-            {content.subtitle}
-          </h2>
-          <p className="text-gray-300 text-sm md:text-base max-w-3xl mx-auto">
-            {content.intro}
-          </p>
-        </div>
-      </div>
+          {/* 蓝色标题区域 */}
+          <div className="w-full bg-gradient-to-r from-gray-900 to-gray-800 text-white py-8 md:py-12">
+            <div className="w-full max-w-4xl mx-auto px-4">
+              <h1 className="text-2xl md:text-3xl font-light mb-3 text-center">
+                {content.title}
+              </h1>
+              <h2 className="text-lg text-gray-200 font-medium mb-4 text-center">
+                {content.subtitle}
+              </h2>
+              <p className="text-gray-300 text-base text-center max-w-3xl mx-auto">
+                {content.intro}
+              </p>
+            </div>
+          </div>
 
       {/* 主要内容容器 */}
       <div className="w-full flex justify-center px-4 py-4 md:py-8">

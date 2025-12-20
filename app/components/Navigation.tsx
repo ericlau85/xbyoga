@@ -1,4 +1,3 @@
-// app/components/Navigation.tsx
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
@@ -9,7 +8,7 @@ import { getRestDayInfo } from '../../lib/rest-day-utils';
 
 export default function Navigation() {
   const { language, setLanguage } = useLanguage();
-  const [showWechat, setShowWechat] = useState(false);
+  // 删除 showWechat 状态
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   const [showMobileLanguageSheet, setShowMobileLanguageSheet] = useState(false);
@@ -43,7 +42,7 @@ export default function Navigation() {
     setIsRestDay(info.isRestDay);
     setRestDayType(info.type);
     
-    // 字体图标
+    // 字体图标 - 可以保留，因为可能其他地方会用到
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
@@ -142,14 +141,27 @@ export default function Navigation() {
                 <Link href="/courses/ashtanga" className={`px-2 py-1 text-xs ${isCurrent('/courses/ashtanga') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
                   {language === 'zh' ? '阿斯汤加' : 'Ashtanga'}
                 </Link>
-                <Link href="/courses/sanskrit" className={`px-2 py-1 text-xs ${isCurrent('/courses/sanskrit') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
-                  {language === 'zh' ? '梵语课程' : 'Sanskrit Studies'}
+                <Link href="/special-courses" className={`px-2 py-1 text-xs ${isCurrent('/special-courses') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
+                  {language === 'zh' ? '特别课程' : 'Special Courses'}
                 </Link>
                 
                 {/* 休息日链接 - 包含徽章 */}
                 <Link href="/moon-calendar" className={`px-2 py-1 text-xs flex items-center ${isCurrent('/moon-calendar') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
                   {language === 'zh' ? '休息日' : 'Rest Days'}
-                  {isRestDay && <span className="ml-1 px-1 py-0.5 text-[9px] font-bold bg-green-100 text-green-700 rounded-full">●</span>}
+                  {isRestDay && (
+                    <span className="ml-1 flex items-center gap-1">
+                      <div className="w-1.5 h-1.5 bg-green-800 rounded-full animate-pulse"></div>
+                      <span className="text-green-800 text-[8px] font-medium px-1.5 py-0.5 rounded">
+                        {restDayType === 'saturday'
+                          ? (language === 'zh' ? '周六' : 'Sat')
+                          : restDayType === 'new_moon'
+                          ? (language === 'zh' ? '新月' : 'New')
+                          : restDayType === 'full_moon'
+                          ? (language === 'zh' ? '满月' : 'Full')
+                          : (language === 'zh' ? '休息' : 'Rest')}
+                      </span>
+                    </span>
+                  )}
                 </Link>
                 
                 <Link href="/knowledge" className={`px-2 py-1 text-xs ${isCurrent('/knowledge') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
@@ -157,42 +169,31 @@ export default function Navigation() {
                 </Link>
               </div>
 
-          {/* 移动端：两个图标并排 - 放在右侧 */}
-          <div className="md:hidden flex items-center gap-1">
-            {/* 语言切换按钮 */}
-            <button
-              onClick={() => setShowMobileLanguageSheet(true)}
-              className="relative w-5 h-5 flex items-center justify-center text-gray-700 focus:outline-none"
-              aria-label={language === 'zh' ? '切换语言' : 'Change language'}
-            >
-              <span className="absolute inset-0 flex items-center justify-center">
-                <img
-                  src="/images/globe.svg"
-                  alt={language === 'zh' ? '语言' : 'Language'}
-                  className="w-3.5 h-3.5 object-contain"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.onerror = null;
-                    target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iNy41IiBzdHJva2U9IiM0QTU1NjkiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik04IDEuNUMxMS4wMzYgMS41IDEzLjUgMy45NjQgMTMuNSA3SDE1QzE1IDMuMTM0IDExLjg2NiAwIDggMFYxLjVaIiBmaWxsPSIjNEE1NTY5Ii8+PHBhdGggZD0iTTggMTQuNUM0Ljk2NCAxNC41IDIuNSAxMi4wMzYgMi41IDlIMEMwIDEyLjg2NiAzLjEzNCAxNiA4IDE2VjE0LjVaIiBmaWxsPSIjNEE1NTY5Ii8+PC9zdmc+';
-                  }}
-                />
-              </span>
-            </button>
-            
-            {/* 微信按钮 */}
-            <button
-              onClick={() => setShowWechat(true)}
-              className="relative w-5 h-5 flex items-center justify-center text-green-800 focus:outline-none"
-              aria-label={language === 'zh' ? '微信' : 'WeChat'}
-            >
-              <span className="absolute inset-0 flex items-center justify-center">
-                <i className="fab fa-weixin text-base leading-none" aria-hidden="true"></i>
-              </span>
-            </button>
-          </div>
+              {/* 移动端：只保留语言切换按钮 */}
+              <div className="md:hidden">
+                {/* 语言切换按钮 */}
+                <button
+                  onClick={() => setShowMobileLanguageSheet(true)}
+                  className="relative w-5 h-5 flex items-center justify-center text-gray-700 focus:outline-none"
+                  aria-label={language === 'zh' ? '切换语言' : 'Change language'}
+                >
+                  <span className="absolute inset-0 flex items-center justify-center">
+                    <img
+                      src="/images/globe.svg"
+                      alt={language === 'zh' ? '语言' : 'Language'}
+                      className="w-3.5 h-3.5 object-contain"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.onerror = null;
+                        target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iNy41IiBzdHJva2U9IiM0QTU1NjkiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik04IDEuNUMxMS4wMzYgMS41IDEzLjUgMy45NjQgMTMuNSA3SDE1QzE1IDMuMTM0IDExLjg2NiAwIDggMFYxLjVaIiBmaWxsPSIjNEE1NTY5Ii8+PHBhdGggZD0iTTggMTQuNUM0Ljk2NCAxNC41IDIuNSAxMi4wMzYgMi41IDlIMEMwIDEyLjg2NiAzLjEzNCAxNiA4IDE2VjE0LjVaIiBmaWxsPSIjNEE1NTY5Ii8+PC9zdmc+';
+                      }}
+                    />
+                  </span>
+                </button>
+              </div>
 
-              {/* 桌面端：语言图标 + 微信图标 */}
-              <div className="hidden md:flex items-center gap-2">
+              {/* 桌面端：只保留语言图标 */}
+              <div className="hidden md:flex items-center">
                 <div className="relative" ref={dropdownRef}>
                   <button
                     onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
@@ -216,14 +217,7 @@ export default function Navigation() {
                     </div>
                   )}
                 </div>
-                
-                <button
-                  onClick={() => setShowWechat(true)}
-                  className="w-5 h-5 flex items-center justify-center text-green-800 hover:text-green-700"
-                  aria-label="微信"
-                >
-                  <i className="fab fa-weixin text-[0.9rem]"></i>
-                </button>
+                {/* 删除了微信按钮 */}
               </div>
             </div>
           </div>
@@ -235,8 +229,8 @@ export default function Navigation() {
                 <Link href="/courses/ashtanga" className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/courses/ashtanga') ? 'text-red-800 font-bold bg-gray-100' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setShowMobileMenu(false)}>
                   {language === 'zh' ? '阿斯汤加' : 'Ashtanga'}
                 </Link>
-                <Link href="/courses/sanskrit" className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/courses/sanskrit') ? 'text-red-800 font-bold bg-gray-100' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setShowMobileMenu(false)}>
-                  {language === 'zh' ? '梵语课程' : 'Sanskrit Studies'}
+                <Link href="/special-courses" className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/special-courses') ? 'text-red-800 font-bold bg-gray-100' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setShowMobileMenu(false)}>
+                  {language === 'zh' ? '特别课程' : 'Special Courses'}
                 </Link>
                 
                 {/* 移动端休息日链接 */}
@@ -308,30 +302,6 @@ export default function Navigation() {
             </div>
           </div>
         </>
-      )}
-
-      {/* 微信弹窗 */}
-      {showWechat && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4" onClick={() => setShowWechat(false)}>
-          <div className="bg-gradient-to-b from-gray-900 to-black rounded-xl md:rounded-2xl p-6 md:p-8 w-full max-w-xs md:max-w-sm border border-white/20" onClick={(e) => e.stopPropagation()}>
-            <button className="absolute top-3 md:top-4 right-3 md:right-4 text-white/60 hover:text-white text-xl md:text-2xl" onClick={() => setShowWechat(false)}>
-              &times;
-            </button>
-            <h3 className="text-lg md:text-xl font-bold text-white mb-2 text-center">
-              {language === 'zh' ? '添加微信' : 'Add WeChat'}
-            </h3>
-            <p className="text-white/70 mb-4 md:mb-6 text-sm md:text-base text-center">
-              {language === 'zh' ? '扫描二维码联系我' : 'Scan QR code to contact me'}
-            </p>
-            <div className="bg-white p-3 md:p-4 rounded-lg mb-4 md:mb-6">
-              <img src="/images/wechat-qr.jpg" alt="WeChat QR Code" className="w-full h-auto" />
-            </div>
-            <p className="text-white/80 text-xs md:text-sm text-center">
-              {language === 'zh' ? '微信号：' : 'WeChat ID: '}
-              <span className="text-green-600">xbyogi</span>
-            </p>
-          </div>
-        </div>
       )}
 
       <style jsx global>{`

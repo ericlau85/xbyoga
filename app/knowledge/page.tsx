@@ -107,15 +107,15 @@ export default function KnowledgePage() {
       <Navigation />
       
       {/* 蓝色标题区域 */}
-      <div className="w-full flex justify-center items-center bg-gradient-to-r from-gray-900 to-gray-800 text-white py-6 md:py-10">
-        <div className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-          <h1 className="text-2xl md:text-3xl font-light mb-3 md:mb-4 text-center px-2">
+      <div className="w-full bg-gradient-to-r from-gray-900 to-gray-800 text-white py-8 md:py-12">
+        <div className="w-full max-w-4xl mx-auto px-4">
+          <h1 className="text-2xl md:text-3xl font-light mb-3 text-center">
             {language === 'zh' ? '练习指南' : 'PRACTICE GUIDE'}
           </h1>
-          <h2 className="text-lg md:text-lg text-gray-200 font-medium mb-3 md:mb-6 text-center px-2">
+          <h2 className="text-lg text-gray-200 font-medium mb-4 text-center">
             {language === 'zh' ? '构建系统化练习路径' : 'Establish a structured practice pathway'}
           </h2>
-          <p className="text-gray-300 text-sm md:text-base max-w-3xl text-center mx-auto px-2 leading-snug">
+          <p className="text-gray-300 text-base text-center max-w-3xl mx-auto">
             {language === 'zh'
               ? '本指南将带你系统掌握阿斯汤加瑜伽体式、梵语、哲学与方法，建立完整的个人知识体系'
               : 'This guide will lead you to systematically master Ashtanga Yoga asanas, Sanskrit, philosophy, and methodology, building a comprehensive personal knowledge framework.'
