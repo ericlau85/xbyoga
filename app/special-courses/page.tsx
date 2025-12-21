@@ -165,7 +165,7 @@ function CourseCard({ course, language }: { course: any; language: string }) {
         </span>
       </div>
       
-      <p className="text-base text-red-700 font-medium mb-3">
+      <p className="text-base text-green-800 font-medium mb-3">
         {language === 'zh' ? course.subtitle_zh : course.subtitle_en}
       </p>
       

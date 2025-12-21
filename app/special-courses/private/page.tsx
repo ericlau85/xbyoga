@@ -54,8 +54,8 @@ export default function PrivatePage() {
             {content.features.items.map((feature: any, index: number) => (
               <div key={index} className="border border-gray-200 rounded-lg p-5 hover:border-gray-300 transition-colors">
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-red-50 rounded-full flex items-center justify-center">
-                    <i className={`${feature.icon} text-red-700`}></i>
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center">
+                    <i className={`${feature.icon} text-red-800`}></i>
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-gray-900 mb-2">

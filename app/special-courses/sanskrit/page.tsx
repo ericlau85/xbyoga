@@ -64,7 +64,7 @@ export default function SanskritPage() {
                 <div className="text-lg font-bold text-gray-900 mb-2">
                   {module.title}
                 </div>
-                <div className="text-sm text-red-700 font-medium mb-3">
+                <div className="text-sm text-green-800 font-medium mb-3">
                   {module.subtitle}
                 </div>
                 <p className="text-gray-600 text-sm leading-relaxed">
