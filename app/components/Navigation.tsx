@@ -130,7 +130,7 @@ export default function Navigation() {
               
               {/* 网站标题 */}
               <Link href="/" className="text-base font-light text-gray-800">
-                {language === 'zh' ? '阿斯汤加工作室' : 'ASHTANGA STUDIO'}
+                {language === 'zh' ? 'XBYOGA' : 'XBYOGA'}
               </Link>
             </div>
 

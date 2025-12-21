@@ -111,7 +111,7 @@ export default function Home() {
                         
             {/* 工作室署名 */}
             <p className="text-gray-500 text-center mt-6 text-xs">
-                {language === 'zh' ? '— 阿斯汤加工作室 —' : '— Ashtanga Studio —'}
+                {language === 'zh' ? '— XBYOGA —' : '— XBYOGA —'}
                </p>
              </div>
             </div>

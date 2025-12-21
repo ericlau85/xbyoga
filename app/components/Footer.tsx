@@ -17,8 +17,8 @@ export default function Footer() {
         {/* 左侧：版权信息 */}
         <p className="text-gray-500 text-[10px] m-0">
           {language === 'zh'
-            ? '© 2025 阿斯汤加工作室'
-            : '© 2025 ASHTANGA STUDIO'
+            ? '© 2025 XBYOGA'
+            : '© 2025 XBYOGA'
           }
         </p>
         

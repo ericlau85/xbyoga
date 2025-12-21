@@ -8,7 +8,21 @@ import Link from 'next/link';
 
 // Special courses data
 const specialCourses = [
-  {
+    {
+      slug: 'private',
+      title_en: 'PRIVATE YOGA',
+      title_zh: '私教瑜伽',
+      subtitle_en: 'One-on-One Instruction · Personalised Practice',
+      subtitle_zh: '一对一指导 · 个性化练习',
+      description_en: 'Tailored one-on-one yoga sessions designed specifically for your individual needs, goals, and practice level.',
+      description_zh: '根据您的个人需求、目标及练习水平量身定制的瑜伽课程，一对一专业指导。',
+      duration_en: '75 minutes · Flexible scheduling',
+      duration_zh: '75分钟课程 · 灵活安排时间',
+      price: '¥380起',
+      available: true,
+      type: 'course'
+    },
+    {
     slug: 'sanskrit',
     title_en: 'SANSKRIT STUDIES',
     title_zh: '梵语课程',
@@ -137,7 +151,8 @@ export default function SpecialCoursesPage() {
 
 // Available course card component
 function CourseCard({ course, language }: { course: any; language: string }) {
-  const hasPage = course.slug === 'sanskrit';
+  // 更新：私教课程也有独立的页面
+  const hasPage = course.slug === 'sanskrit' || course.slug === 'private';
   
   const CardContent = () => (
     <div className="flex flex-col h-full">
