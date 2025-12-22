@@ -2,8 +2,8 @@ import './globals.css';
 import { LanguageProvider } from '../lib/language-context';
 
 export const metadata = {
-  title: 'Ashtanga Studio',
-  description: 'Ashtanga Yoga Online Classes. Offering traditional Mysore-style courses for global practitioners.',
+  title: 'XBYOGA',
+  description: 'XBYOGA Online Classes. Offering traditional Mysore-style courses for global practitioners.',
 };
 
 export default function RootLayout({

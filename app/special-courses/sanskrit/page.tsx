@@ -23,10 +23,10 @@ export default function SanskritPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 safe-top safe-bottom pt-12">
+    <div className="min-h-screen safe-top safe-bottom pt-12">
       <Navigation />
 
-      {/* 蓝色标题区域 - 与其他页面统一 */}
+      {/* 蓝色标题区域 */}
       <div className="w-full bg-gradient-to-r from-gray-900 to-gray-800 text-white py-8 md:py-12">
         <div className="w-full max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-2xl md:text-3xl font-light mb-3">
@@ -35,7 +35,7 @@ export default function SanskritPage() {
           <h2 className="text-lg text-gray-200 font-medium mb-4">
             {content.subtitle}
           </h2>
-          <p className="text-gray-300 text-base max-w-2xl mx-auto">
+          <p className="text-gray-300 text-base max-w-3xl mx-auto">
             {content.intro}
           </p>
         </div>
@@ -44,30 +44,28 @@ export default function SanskritPage() {
       {/* 主要内容 */}
       <div className="w-full max-w-4xl mx-auto px-4 py-8 md:py-12">
         
-        {/* 课程模块卡片 */}
-        <div className="bg-white rounded-lg border border-gray-200 p-6 mb-8">
-          <div className="mb-6">
-            <h2 className="text-xl font-medium text-gray-900">
-              {content.modules.title}
-            </h2>
-            <p className="text-gray-600 text-sm mt-1">
-              {content.modules.subtitle}
-            </p>
-          </div>
+        {/* 课程模块 */}
+        <div className="mb-10">
+          <h2 className="text-lg font-medium text-gray-900 mb-4">
+            {content.modules.title}
+          </h2>
+          <p className="text-gray-600 text-sm mb-4">
+            {content.modules.subtitle}
+          </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {content.modules.items.map((module: any, index: number) => (
-              <div key={index} className="border border-gray-200 rounded-lg p-5 hover:border-gray-300 transition-colors">
-                <div className="text-sm text-gray-500 mb-2">
+              <div key={index} className="p-3 border-l-2 border-green-800 hover:bg-gray-50 transition-colors">
+                <div className="text-xs text-gray-500 mb-1">
                   {module.week}
                 </div>
-                <div className="text-lg font-bold text-gray-900 mb-2">
+                <div className="text-base font-bold text-gray-900 mb-2">
                   {module.title}
                 </div>
-                <div className="text-sm text-green-800 font-medium mb-3">
+                <div className="text-sm text-green-800 font-medium mb-2">
                   {module.subtitle}
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-600 text-xs leading-relaxed">
                   {module.description}
                 </p>
               </div>
@@ -75,47 +73,35 @@ export default function SanskritPage() {
           </div>
         </div>
 
-        {/* 课程费用卡片 */}
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
-          <h2 className="text-xl font-medium text-gray-900 mb-6">
+        {/* 课程费用 - 简化版 */}
+        <div className="mb-10 pt-8 border-t border-gray-200">
+          <h2 className="text-lg font-medium text-gray-900 mb-4">
             {content.pricing.title}
           </h2>
           
-          <div className="border border-gray-200 rounded-lg overflow-hidden">
-            <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <div>
-                  <div className="text-lg font-bold text-gray-900 mb-1">
-                    {content.pricing.course}
-                  </div>
-                  <p className="text-gray-600 text-sm">
-                    {content.pricing.description}
-                  </p>
-                </div>
+          <div className="flex items-center justify-between py-3 border-b border-gray-100">
+            <div>
+              <div className="font-medium text-gray-900 text-sm mb-1">
+                {content.pricing.course}
               </div>
+              <p className="text-gray-500 text-xs">
+                {content.pricing.description}
+              </p>
             </div>
-            
-            <div className="px-6 py-6">
-              <div className="flex flex-col items-center text-center">
-                <div className="text-lg font-bold text-red-800 mb-2">
-                  {content.pricing.price}
-                </div>
-                <p className="text-gray-500 text-sm">
-                  {language === 'zh' ? '4周系统学习 · 包含所有学习资料' : '4-week systematic learning · All materials included'}
-                </p>
-              </div>
+            <div className="font-bold text-red-800 text-sm">
+              {content.pricing.price}
             </div>
           </div>
         </div>
 
-        {/* 常见问题 */}
-        <div className="mt-8 p-4 bg-gray-50 border border-gray-200 rounded-lg">
-          <h4 className="font-medium text-gray-900 mb-2">
+        {/* 常见问题 - 简化版 */}
+        <div className="pt-8 border-t border-gray-200">
+          <h4 className="font-medium text-gray-900 mb-3 text-sm">
             {language === 'zh' ? '常见问题' : 'FAQ'}
           </h4>
-          <div className="space-y-2 text-sm text-gray-600">
+          <div className="space-y-1 text-xs text-gray-600">
             <p className="flex items-start">
-              <span className="text-gray-400 mr-2">•</span>
+              <span className="text-gray-400 mr-1">•</span>
               <span>
                 {language === 'zh'
                   ? '课程为实时在线教学，包含练习与互动环节'
@@ -123,7 +109,7 @@ export default function SanskritPage() {
               </span>
             </p>
             <p className="flex items-start">
-              <span className="text-gray-400 mr-2">•</span>
+              <span className="text-gray-400 mr-1">•</span>
               <span>
                 {language === 'zh'
                   ? '课程资料报名后提供，包含天城文字帖、发音指南等'
@@ -131,7 +117,7 @@ export default function SanskritPage() {
               </span>
             </p>
             <p className="flex items-start">
-              <span className="text-gray-400 mr-2">•</span>
+              <span className="text-gray-400 mr-1">•</span>
               <span>
                 {language === 'zh'
                   ? '课程适合瑜伽教师、练习者及对梵语文化感兴趣者'

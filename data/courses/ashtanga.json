@@ -17,26 +17,21 @@
       {
         "icon": "fas fa-user-clock",
         "title": "Mysore",
-        "subtitle": "Self-Practice, Individualised Adjustments, Suitable for practitioners of all levels"
+        "subtitle": "Self-Practice, Individual Adjustments, Practitioners of all levels welcome"
       },
       {
         "icon": "fas fa-users",
         "title": "Led Class",
-        "subtitle": "Unified Pace, Guided Practice, Suitable for practitioners with a foundation"
+        "subtitle": "Unified Pace, Guided Practice, Requires Mysore practice foundation"
       }
     ],
     
-    "timetableTitle": "Timetable",
     "timeTable": {
       "days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-      "classes": ["Mysore", "Mysore", "Mysore", "Mysore", "Mysore", "Led Class", "Rest"],
-      "privateBooking": "Private Courses",
-      "privateTime": "available 9:00am - 8:00pm",
-      "restDays": "Rest Days: Saturday and Moon Days"
+      "classes": ["Mysore", "Mysore", "Mysore", "Mysore", "Mysore", "Led Class", "Rest"]
     },
     
     "pricingTitle": "Course Fees",
-    "groupTitle": "Regular Courses",
     "groupPrices": [
       {
         "title": "Single Session",
@@ -58,22 +53,6 @@
         "title": "Quarterly Pass",
         "price": "¥2,680"
       }
-    ],
-    
-    "privateTitle": "Private Courses",
-    "privatePrices": [
-      {
-        "title": "Single Session / 75 minutes",
-        "price": "¥380"
-      },
-      {
-        "title": "5 Sessions / Valid for 1 month",
-        "price": "¥1,760"
-      },
-      {
-        "title": "10 Sessions / Valid for 2 months",
-        "price": "¥3,200"
-      }
     ]
   },
   
@@ -92,27 +71,22 @@
     "practiceFormats": [
       {
         "icon": "fas fa-user-clock",
-        "title": "Mysore",
-        "subtitle": "自主练习、个体化调整、适合不同阶段的练习者"
+        "title": "迈场 Mysore",
+        "subtitle": "自主练习、个体化调整、任何阶段练习者都可以参加"
       },
       {
         "icon": "fas fa-users",
-        "title": "领课",
-        "subtitle": "统一节奏、引导式练习、适合有基础的练习者"
+        "title": "领课 Led class",
+        "subtitle": "统一节奏、引导式练习、需要有迈场 Mysore练习基础"
       }
     ],
     
-    "timetableTitle": "课程表",
     "timeTable": {
       "days": ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
-      "classes": ["Mysore", "Mysore", "Mysore", "Mysore", "Mysore", "领课", "休息"],
-      "privateBooking": "私教课程",
-      "privateTime": "可预约时段：9:00-20:00",
-      "restDays": "休息日：周六及新月/满月日"
+      "classes": ["迈场 Mysore", "迈场 Mysore", "迈场 Mysore", "迈场 Mysore", "迈场 Mysore", "领课 Led class", "休息"]
     },
     
     "pricingTitle": "课程费用",
-    "groupTitle": "常规课程",
     "groupPrices": [
       {
         "title": "单次",
@@ -133,22 +107,6 @@
       {
         "title": "季卡",
         "price": "¥2,680"
-      }
-    ],
-    
-    "privateTitle": "私教课程",
-    "privatePrices": [
-      {
-        "title": "单节 / 75分钟",
-        "price": "¥380"
-      },
-      {
-        "title": "5节 / 有效期1个月",
-        "price": "¥1,760"
-      },
-      {
-        "title": "10节 / 有效期2个月",
-        "price": "¥3,200"
       }
     ]
   }

@@ -1,4 +1,3 @@
-// app/special-courses/page.tsx
 'use client';
 
 import { useLanguage } from '../../lib/language-context';
@@ -8,21 +7,21 @@ import Link from 'next/link';
 
 // Special courses data
 const specialCourses = [
-    {
-      slug: 'private',
-      title_en: 'PRIVATE YOGA',
-      title_zh: '私教瑜伽',
-      subtitle_en: 'One-on-One Instruction · Personalised Practice',
-      subtitle_zh: '一对一指导 · 个性化练习',
-      description_en: 'Tailored one-on-one yoga sessions designed specifically for your individual needs, goals, and practice level.',
-      description_zh: '根据您的个人需求、目标及练习水平量身定制的瑜伽课程，一对一专业指导。',
-      duration_en: '75 minutes · Flexible scheduling',
-      duration_zh: '75分钟课程 · 灵活安排时间',
-      price: '¥380起',
-      available: true,
-      type: 'course'
-    },
-    {
+  {
+    slug: 'private',
+    title_en: 'PRIVATE YOGA',
+    title_zh: '私教瑜伽',
+    subtitle_en: 'One-on-One Instruction · Personalised Practice',
+    subtitle_zh: '一对一指导 · 个性化练习',
+    description_en: 'Tailored one-on-one yoga sessions designed specifically for your individual needs, goals, and practice level.',
+    description_zh: '根据您的个人需求、目标及练习水平量身定制的瑜伽课程，一对一专业指导。',
+    duration_en: '75 minutes · Flexible scheduling',
+    duration_zh: '75分钟课程 · 灵活安排时间',
+    price: '¥380起',
+    available: true,
+    type: 'course'
+  },
+  {
     slug: 'sanskrit',
     title_en: 'SANSKRIT STUDIES',
     title_zh: '梵语课程',
@@ -72,19 +71,19 @@ export default function SpecialCoursesPage() {
   const { language } = useLanguage();
   
   return (
-    <div className="min-h-screen bg-gray-50 safe-top safe-bottom pt-12">
+    <div className="min-h-screen safe-top safe-bottom pt-12">
       <Navigation />
       
       {/* Blue header section - consistent with other pages */}
       <div className="w-full bg-gradient-to-r from-gray-900 to-gray-800 text-white py-8 md:py-12">
-        <div className="w-full max-w-4xl mx-auto px-4">
-          <h1 className="text-2xl md:text-3xl font-light mb-3 text-center">
+        <div className="w-full max-w-4xl mx-auto px-4 text-center">
+          <h1 className="text-2xl md:text-3xl font-light mb-3">
             {language === 'zh' ? '特别课程' : 'SPECIAL COURSES'}
           </h1>
-          <h2 className="text-lg text-gray-200 font-medium mb-4 text-center">
+          <h2 className="text-lg text-gray-200 font-medium mb-4">
             {language === 'zh' ? '精选专题课程' : 'Selected Special Courses'}
           </h2>
-          <p className="text-gray-300 text-base text-center max-w-3xl mx-auto">
+          <p className="text-gray-300 text-base max-w-3xl mx-auto">
             {language === 'zh'
               ? '包含专题课程及特别时段练习，为不同需求的练习者提供更多选择。'
               : 'Includes special topic courses and particular time sessions, offering more options for practitioners with varying needs.'}
@@ -96,10 +95,10 @@ export default function SpecialCoursesPage() {
       <div className="w-full max-w-4xl mx-auto px-4 py-8 md:py-12">
         {/* Currently available courses */}
         <div className="mb-10">
-          <h2 className="text-xl font-medium text-gray-900 mb-6">
+          <h2 className="text-lg font-medium text-gray-900 mb-4">
             {language === 'zh' ? '当前可报名课程' : 'Currently Available'}
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-4">
             {specialCourses
               .filter(course => course.available)
               .map((course) => (
@@ -109,11 +108,11 @@ export default function SpecialCoursesPage() {
         </div>
         
         {/* Planned courses */}
-        <div>
-          <h2 className="text-xl font-medium text-gray-900 mb-6">
+        <div className="pt-6 border-t border-gray-200">
+          <h2 className="text-lg font-medium text-gray-900 mb-4">
             {language === 'zh' ? '计划中的课程' : 'Planned Courses'}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {specialCourses
               .filter(course => !course.available)
               .map((course) => (
@@ -122,9 +121,9 @@ export default function SpecialCoursesPage() {
           </div>
         </div>
         
-        {/* Information notes */}
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <div className="space-y-3 text-sm text-gray-600">
+        {/* Information notes - 更紧凑 */}
+        <div className="mt-8 pt-6 border-t border-gray-200">
+          <div className="space-y-1 text-sm text-gray-600">
             <p>
               {language === 'zh'
                 ? '• 晚间迈场课程特别为下班后的练习者设计，帮助放松身心，培养晚间练习习惯'
@@ -156,33 +155,33 @@ function CourseCard({ course, language }: { course: any; language: string }) {
   
   const CardContent = () => (
     <div className="flex flex-col h-full">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-        <h3 className="text-lg md:text-xl font-semibold text-gray-900 group-hover:text-red-800 transition-colors">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+        <h3 className="text-base md:text-lg font-semibold text-gray-900 group-hover:text-red-800 transition-colors">
           {language === 'zh' ? course.title_zh : course.title_en}
         </h3>
-        <span className={`text-lg font-bold ${course.price === 'Coming Soon' ? 'text-gray-500' : 'text-red-800'}`}>
+        <span className={`text-base font-bold ${course.price === 'Coming Soon' ? 'text-gray-500' : 'text-red-800'}`}>
           {course.price}
         </span>
       </div>
       
-      <p className="text-base text-green-800 font-medium mb-3">
+      <p className="text-sm text-green-800 font-medium mb-2">
         {language === 'zh' ? course.subtitle_zh : course.subtitle_en}
       </p>
       
-      <p className="text-gray-600 text-sm md:text-base mb-4 leading-relaxed flex-1">
+      <p className="text-gray-600 text-sm mb-3 leading-relaxed flex-1">
         {language === 'zh' ? course.description_zh : course.description_en}
       </p>
       
-      <div className="flex items-center gap-2 text-sm text-gray-500">
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="flex items-center gap-2 text-xs text-gray-500">
+        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
         <span>{language === 'zh' ? course.duration_zh : course.duration_en}</span>
       </div>
       
-      <div className="mt-4 flex justify-end">
+      <div className="mt-2 flex justify-end">
         <svg
-          className="w-5 h-5 text-red-800 transform group-hover:translate-x-1 transition-transform"
+          className="w-4 h-4 text-red-800 transform group-hover:translate-x-1 transition-transform"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -197,7 +196,7 @@ function CourseCard({ course, language }: { course: any; language: string }) {
     return (
       <Link
         href={`/special-courses/${course.slug}`}
-        className="group block p-6 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"
+        className="group block p-3 border-b border-gray-100 hover:bg-gray-50 transition-colors"
       >
         <CardContent />
       </Link>
@@ -207,7 +206,7 @@ function CourseCard({ course, language }: { course: any; language: string }) {
   return (
     <a
       href="/enroll"
-      className="group block p-6 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"
+      className="group block p-3 border-b border-gray-100 hover:bg-gray-50 transition-colors"
     >
       <CardContent />
     </a>
@@ -217,52 +216,51 @@ function CourseCard({ course, language }: { course: any; language: string }) {
 // Coming soon card component
 function ComingSoonCard({ course, language }: { course: any; language: string }) {
   return (
-    <div className="p-6 border border-gray-200 rounded-xl bg-gray-50">
+    <div className="p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
       <div className="flex flex-col h-full">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
           <div className="flex items-center gap-2">
-            <h3 className="text-lg md:text-xl font-semibold text-gray-900">
+            <h3 className="text-base font-semibold text-gray-900">
               {language === 'zh' ? course.title_zh : course.title_en}
             </h3>
-            <span className="px-2 py-0.5 bg-gray-200 text-gray-700 text-xs rounded-full">
+            <span className="px-1.5 py-0.5 bg-gray-100 text-gray-700 text-xs rounded">
               {language === 'zh' ? '计划中' : 'Planned'}
             </span>
           </div>
-          <span className="text-lg font-bold text-gray-500">
+          <span className="text-base font-medium text-gray-500">
             {course.price}
           </span>
         </div>
         
-        <p className="text-base text-gray-700 font-medium mb-3">
+        <p className="text-sm text-gray-700 font-medium mb-2">
           {language === 'zh' ? course.subtitle_zh : course.subtitle_en}
         </p>
         
-        <p className="text-gray-600 text-sm md:text-base mb-4 leading-relaxed flex-1">
+        <p className="text-gray-600 text-xs mb-3 leading-relaxed flex-1">
           {language === 'zh' ? course.description_zh : course.description_en}
         </p>
         
-        <div className="space-y-2">
-          <div className="flex items-center gap-2 text-sm text-gray-500">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="space-y-1">
+          <div className="flex items-center gap-2 text-xs text-gray-500">
+            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span>{language === 'zh' ? course.duration_zh : course.duration_en}</span>
           </div>
           
           {course.teacher && (
-            <div className="flex items-center gap-2 text-sm text-gray-500">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex items-center gap-2 text-xs text-gray-500">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
               <span>
-                {language === 'zh' ? '指导老师：' : 'Instructor: '}
-                {course.teacher}
+                {language === 'zh' ? `指导老师：${course.teacher}` : 'Instructor: Guest Teacher'}
               </span>
             </div>
           )}
         </div>
         
-        <div className="mt-4 pt-4 border-t border-gray-200">
+        <div className="mt-2 pt-2 border-t border-gray-100">
           <p className="text-xs text-gray-500">
             {language === 'zh'
               ? '课程正在筹备中，具体安排待公布'

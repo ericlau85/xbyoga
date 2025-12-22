@@ -9,15 +9,15 @@ const homepageContent = {
   zh: {
     // 图片上的主标题
     imageTitle: '线上阿斯汤加瑜伽',
-    imageSubtitle: '专业指导 · 灵活时间',
+    imageSubtitle: '专业指导 · 灵活安排',
         
     // 核心价值陈述
-    coreValue: '自2020年起，为使瑜伽练习更便捷普及，我转向线上教学，提供个性化实时指导，帮助您居家专注练习，节省通勤时间，让瑜伽轻松融入日常生活。'
+    coreValue: '我们专注于线上阿斯汤加瑜伽教学，让您在任何地点接受个性化指导。自2020年至今，已帮助众多练习者建立稳定、精进的线上练习习惯。'
   },
   en: {
-    imageTitle: 'Online Ashtanga Yoga',
-    imageSubtitle: 'Professional Guidance · Flexible Schedule',
-    coreValue: 'Since 2020, to make yoga practice more accessible and widespread, I have transitioned to online teaching, providing personalised real-time guidance. This helps you practise with focus at home, save commuting time, and integrate yoga smoothly into daily life.'
+    imageTitle: 'Ashtanga Yoga Online',
+    imageSubtitle: 'Professional Guidance · Flexible Practice',
+    coreValue: 'We specialise in online Ashtanga yoga instruction, providing personalised guidance wherever you are. Since 2020, we have helped practitioners establish consistent, progressive online practice routines.'
   }
 };
 
