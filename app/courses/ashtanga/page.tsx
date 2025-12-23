@@ -434,15 +434,22 @@ export default function AshtangaPage() {
             ))}
           </div>
           
-          <div className="pt-2">
-            <div className="text-xs text-gray-600 leading-relaxed">
-              {language === 'zh'
-                ? '实时在线教学，没有录播回放。请按自然周期预付，详细政策请咨询。'
-                : 'Real-time online teaching, no recordings. Please prepay per natural cycle, detailed policies available upon consultation.'}
+          <div className="pt-4 border-t border-gray-200">
+              <div className="text-xs text-gray-600 leading-relaxed">
+                {language === 'zh'
+                  ? '所有课程均为收费项目，暂无免费体验。详细请查阅'
+                  : 'All sessions are paid. Free trials are not currently offered. For details, refer to '}
+                <a
+                  href="/policies/fees"
+                  className="text-red-800 hover:text-blue-800 hover:underline font-medium"
+                >
+                  《{language === 'zh' ? '费用政策' : 'Fee Policy'}》
+                </a>
+                。
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+          </div>
       
       <Footer />
     </div>
