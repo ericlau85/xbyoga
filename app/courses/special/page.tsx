@@ -1,12 +1,12 @@
 'use client';
 
-import { useLanguage } from '../../lib/language-context';
-import Footer from '../components/Footer';
-import Navigation from '../components/Navigation';
+import { useLanguage } from '../../../lib/language-context';
+import Footer from '../../components/Footer';
+import Navigation from '../../components/Navigation';
 import Link from 'next/link';
 
-// Special courses data
-const specialCourses = [
+// Special data
+const CoursesSpecial = [
   {
     slug: 'private',
     title_en: 'PRIVATE YOGA',
@@ -67,7 +67,7 @@ const specialCourses = [
   }
 ];
 
-export default function SpecialCoursesPage() {
+export default function CoursesSpecialPage() {
   const { language } = useLanguage();
   
   return (
@@ -99,7 +99,7 @@ export default function SpecialCoursesPage() {
             {language === 'zh' ? '当前可报名课程' : 'Currently Available'}
           </h2>
           <div className="space-y-4">
-            {specialCourses
+            {CoursesSpecial
               .filter(course => course.available)
               .map((course) => (
                 <CourseCard key={course.slug} course={course} language={language} />
@@ -113,7 +113,7 @@ export default function SpecialCoursesPage() {
             {language === 'zh' ? '计划中的课程' : 'Planned Courses'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {specialCourses
+            {CoursesSpecial
               .filter(course => !course.available)
               .map((course) => (
                 <ComingSoonCard key={course.slug} course={course} language={language} />
@@ -195,7 +195,7 @@ function CourseCard({ course, language }: { course: any; language: string }) {
   if (hasPage) {
     return (
       <Link
-        href={`/special-courses/${course.slug}`}
+        href={`/courses/special/${course.slug}`}
         className="group block p-3 border-b border-gray-100 hover:bg-gray-50 transition-colors"
       >
         <CardContent />

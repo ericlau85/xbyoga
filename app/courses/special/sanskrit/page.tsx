@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import sanskritData from '../../../data/courses/sanskrit.json';
-import Footer from '../../components/Footer';
-import Navigation from '../../components/Navigation';
-import { useLanguage } from '../../../lib/language-context';
+import sanskritData from '../../../../data/courses/sanskrit.json';
+import Footer from '../../../components/Footer';
+import Navigation from '../../../components/Navigation';
+import { useLanguage } from '../../../../lib/language-context';
 
 export default function SanskritPage() {
   const { language } = useLanguage();

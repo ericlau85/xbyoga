@@ -434,22 +434,38 @@ export default function AshtangaPage() {
             ))}
           </div>
           
-          <div className="pt-4 border-t border-gray-200">
-              <div className="text-xs text-gray-600 leading-relaxed">
-                {language === 'zh'
-                  ? '所有课程均为收费项目，暂无免费体验。详细请查阅'
-                  : 'All sessions are paid. Free trials are not currently offered. For details, refer to '}
+          <div className="text-xs text-gray-600 leading-relaxed">
+            {language === 'zh'
+              ? '所有课程均为收费项目，暂无免费体验。请仔细阅读：'
+              : 'All sessions are paid. Free trials are not currently offered. Please read carefully:'}
+            
+            <div className="mt-2 space-y-1">
+              <div>
                 <a
                   href="/policies/fees"
                   className="text-red-800 hover:text-blue-800 hover:underline font-medium"
                 >
-                  《{language === 'zh' ? '费用政策' : 'Fee Policy'}》
+                  • 《{language === 'zh' ? '费用与服务协议' : 'Fee & Service Agreement'}》
                 </a>
-                。
+                <span className="text-gray-500 text-xs ml-2">
+                  {language === 'zh' ? '（课程购买与使用条款）' : '(Course purchase and usage terms)'}
+                </span>
+              </div>
+              <div>
+                <a
+                  href="/policies/agreement"
+                  className="text-red-800 hover:text-blue-800 hover:underline font-medium"
+                >
+                  • 《{language === 'zh' ? '阿斯汤加瑜伽练习指南' : 'Ashtanga Yoga Practice Guide'}》
+                </a>
+                <span className="text-gray-500 text-xs ml-2">
+                  {language === 'zh' ? '（传统精要与课堂规范）' : '(Traditional essence and class norms)'}
+                </span>
               </div>
             </div>
           </div>
-          </div>
+        </div>
+      </div>
       
       <Footer />
     </div>

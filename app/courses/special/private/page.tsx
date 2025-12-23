@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import privateData from '../../../data/courses/private.json';
-import Footer from '../../components/Footer';
-import Navigation from '../../components/Navigation';
-import { useLanguage } from '../../../lib/language-context';
+import privateData from '../../../../data/courses/private.json';
+import Footer from '../../../components/Footer';
+import Navigation from '../../../components/Navigation';
+import { useLanguage } from '../../../../lib/language-context';
 
 export default function PrivatePage() {
   const { language } = useLanguage();
