@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useLanguage } from '@/lib/language-context';
 import Navigation from '@/app/components/Navigation';
-import Footer from '@/app/components/Footer';
+import Footer from '../../components/Footer';
 
 const communityGuideData = {
   en: {
