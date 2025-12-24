@@ -46,7 +46,7 @@ const feesContent = {
       {
         title: '第四部分："练习回馈"计划（如适用）',
         items: [
-          '为鼓励持续、规律的练习，教学方可能对特定课程（如阿斯汤加Mysore）设立回馈计划。例如：',
+          '为鼓励持续、规律的练习，教学方可能对特定课程设立回馈计划。例如：',
           '- 在Mysore时段每次出勤可获得5元回馈额度。',
           '- 参加特定活动可获得2元回馈额度。',
           '此额度可用于下一周期续费时直接抵扣。此为鼓励机制，具体细则以当期课程通知为准。'
@@ -125,7 +125,7 @@ const feesContent = {
       {
         title: 'Part 4: "Practice Reward" Program (If Applicable)',
         items: [
-          'To encourage consistent, regular practice, the teaching party may establish reward programs for specific courses (e.g., Ashtanga Mysore). For example:',
+          'To encourage consistent, regular practice, the teaching party may establish reward programs for specific courses. For example:',
           '- Each attendance during Mysore sessions earns 5 yuan reward credit.',
           '- Participation in specific activities earns 2 yuan reward credit.',
           'This credit can be directly deducted from next period\'s renewal fees. This is an encouragement mechanism; specific details are subject to current course notifications.'
@@ -245,18 +245,18 @@ export default function FeesPage() {
         </div>
         
         {/* 重要声明卡片 */}
-        <div className="mt-10 bg-yellow-50 border border-yellow-200 rounded-lg p-5">
+        <div className="mt-10 bg-gray-50 border border-gray-200 rounded-lg p-5">
           <div className="flex items-start">
             <div className="flex-shrink-0 pt-0.5">
-              <svg className="w-4 h-4 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
               </svg>
             </div>
             <div className="ml-3">
-              <h4 className="text-xs font-medium text-yellow-800 mb-2">
+              <h4 className="text-xs font-medium text-gray-800 mb-2">
                 {content.noticeTitle}
               </h4>
-              <div className="text-xs text-yellow-700 leading-relaxed space-y-1">
+              <div className="text-xs text-gray-700 leading-relaxed space-y-1">
                 <p>
                   {language === 'zh'
                     ? '请确认您已完整阅读并理解本协议的全部条款。'

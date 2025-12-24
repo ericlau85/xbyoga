@@ -66,7 +66,7 @@ export default function SanskritMantrasPage() {
                     title: "Opening Invocation",
                     devanagari: "वन्दे गुरूणां चरणारविन्दे संदर्शितस्वात्मसुखावबोधे ।\nनिःश्रेयसे जाङ्गलिकायमाने संसारहालाहलमोहशान्त्यै ॥",
                     sanskrit: "vande gurūṇāṃ caraṇāravinde saṃdarśitasvātmasukhāvabodhe ।\nniḥśreyase jāṅgalikāyamāne saṃsārahālāhalamohaśāntyai ॥",
-                    translation: "I bow to the lotus feet of the Guru, which reveal the blissful awakening of the Self.",
+                    translation: "I bow to the lotus feet of the Guru, which reveal the blissful awakening of the Self. Who, as a physician of the wilderness, administereth the antidote to the poison of delusion in worldly existence, bestowing the highest good.",
                     explanation: "This opening verse from the Ashtanga tradition establisheth the sacred student-teacher lineage and setteth forth the noble intention of rooting out spiritual ignorance.",
                     type: "Guru Prayer",
                     usage: "Recited at the very beginning of one's practice to connect with the lineage and clarify one's aim."

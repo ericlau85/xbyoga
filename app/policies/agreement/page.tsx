@@ -24,30 +24,30 @@ const guideContent = {
           {
             title: '1.1 传统精髓',
             items: [
-              '阿斯汤加瑜伽是一套通过固定体式、呼吸与凝视点三者协同（Tristhāna）以实现身心净化的系统。',
+              '阿斯汤加瑜伽是一套通过固定体式、呼吸与凝视点三者协同（tristhāna）以实现身心净化的系统。',
               '在线课程恪守其核心教学法——迈场（Mysore），即在集体环境中按个人节奏练习，老师进行一对一指导。这种方式确保了教学的个性化与渐进性，其深意在于：在独处中建立自律，在熟悉中创造神圣，在距离中建立连接。'
             ]
           },
           {
             title: '1.2 哲学根基：八支瑜伽的垫上实践',
             items: [
-              '阿斯汤加（Aṣṭāṅga）意为"八支"，源自帕坦伽利《瑜伽经》。每一次体式练习，都是八支瑜伽的完整微观实践：',
-              '禁制（Yama）：在集体中保持专注边界，是"不伤害"；不超前练习，是"不偷盗"与谦卑。',
-              '劝制（Niyama）：清洁空间与心意，是"清净"；持续练习，是"自律"；接纳当下，是"满足"。',
-              '坐法（Āsana）：身体成为祭坛，呼吸成为祭品，意识成为祭司。',
-              '调息（Prāṇāyāma）：呼吸连接身体与能量，冲刷意识的岸边。',
-              '制感（Pratyāhāra）：凝视点（Dṛṣṭi）是感官收摄的"锚点"，为心意回归提供支点。',
-              '专注（Dhāraṇā）：在重复序列中，意识安住于一处，不再散乱。',
-              '禅定（Dhyāna）：当体式、呼吸、凝视点融为一体，动作成为"通过我发生"的流动静默。',
-              '三昧（Samādhi）：偶尔瞥见练习者、练习与被练习之物无分别合一，是瑜伽的终极指向。'
+              '阿斯汤加（aṣṭāṅga）意为"八支"，源自帕坦伽利《瑜伽经》。每一次体式练习，都是八支瑜伽的完整微观实践：',
+              '禁制（yama）：在集体中保持专注边界，是"不伤害"；不超前练习，是"不偷盗"与谦卑。',
+              '劝制（niyama）：清洁空间与心意，是"清净"；持续练习，是"自律"；接纳当下，是"满足"。',
+              '坐法（āsana）：身体成为祭坛，呼吸成为祭品，意识成为祭司。',
+              '调息（prāṇāyāma）：呼吸连接身体与能量，冲刷意识的岸边。',
+              '制感（pratyāhāra）：凝视点（dṛṣṭi）是感官收摄的"锚点"，为心意回归提供支点。',
+              '专注（dhāraṇā）：在重复序列中，意识安住于一处，不再散乱。',
+              '禅定（dhyāna）：当体式、呼吸、凝视点融为一体，动作成为"通过我发生"的流动静默。',
+              '三昧（samādhi）：偶尔瞥见练习者、练习与被练习之物无分别合一，是瑜伽的终极指向。'
             ]
           },
           {
             title: '1.3 重要梵语术语',
             items: [
-              '基础术语：Aṣṭāṅga（八支）, Vinyāsa（串联）, Tristhāna（三位一体）, Sūrya Namaskāra（拜日）, Bandha（收束）, Dṛṣṭi（凝视点）',
-              '哲学概念：Prāṇa（生命能量）, Avidyā（无明）, Ahiṃsā（不伤害）, Tapas（自律）',
-              '身心层次：Śarīra（身体）, Manas（心意）, Buddhi（理智）, Ahaṃkāra（自我）'
+              '基础术语：aṣṭāṅga（八支）, vinyāsa（串联）, sūrya namaskāra（拜日）, bandha（收束）, dṛṣṭi（凝视点）',
+              '哲学概念：prāṇa（生命能量）, avidyā（无明）, ahiṃsā（不伤害）, tapas（自律）',
+              '身心层次：śarīra（身体）, manas（心意）, buddhi（理智）, ahaṃkāra（自我）'
             ]
           },
           {
@@ -84,10 +84,11 @@ const guideContent = {
             ]
           },
           {
-            title: '2.3 休息安排',
+            title: '2.3 关于休息',
             items: [
-              '固定休息日：每周六，以及新月、满月日。以使身心与自然节律同步。',
-              '自主休息：因生理期（前三天建议休息）、感冒或个人事务需休息，提前简单告知即可。'
+              '序列休息：完整练习务必包含练习前的静心准备，以及最后至少5-10分钟的平躺休息，这是整合练习效果的重要环节。',
+              '自主休息：女性生理期（前三天建议休息，在结束之前应避免倒置和收束练习）、因感冒或个人事务需休息，提前简单告知即可。',
+              '固定休息日：每周六，以及新月、满月日。以使身心与自然节律同步，实现深度恢复。'
             ]
           }
         ]
@@ -97,21 +98,27 @@ const guideContent = {
         subtitle: '体式 • 呼吸 • 凝视点的精密协同',
         sections: [
           {
-            title: '3.1 体式（Āsana）与串联（Vinyāsa）',
+            title: '3.1 体式（āsana）与串联（vinyāsa）',
             items: [
-              '体式通过Vinyāsa串联成具有疗愈逻辑的固定序列，依次侧重身体调整、能量净化与神经系统平衡。按序练习能让意识从记忆中解脱，更深地沉浸于当下。'
+              '体式是练习的物理容器，通过Vinyāsa串联成具有疗愈逻辑的固定序列。持续的体式练习在体内产生清洁的热能（tapas），改善循环，润滑关节，促进身体的净化。这些序列依次侧重身体调整、排毒、能量净化与神经系统平衡。按序练习能让意识从记忆中解脱，更深入地沉浸于呼吸与觉知。'
             ]
           },
           {
-            title: '3.2 调息（Prāṇāyāma）与收束（Bandha）',
+            title: '3.2 调息（prāṇāyāma）与收束（bandha）',
             items: [
-              '呼吸引领动作的速度与幅度，并通过喉部轻柔的呼吸声锚定意识。轻微的喉部调控协同上提盆底、内收下腹，以此稳定核心、保护关节并引导能量上行。收束应在老师指导下逐步建立。'
+              '调息是生命能量的调控艺术，在动态体式练习中，每个动作必须跟随呼吸的节律，由呼吸引领动作（vinyasa），其深度决定了动作的速度与幅度，体式的稳定来自收束（bandha）的支撑——生命之锁。上提盆底(mūla bandha)、内收下腹(uḍḍīyāna bandha)协同喉部调控(jālandhara bandha)，这些身体内部的“锁印”为体式提供内在稳定的支撑和轻盈感 ，并引导生命能量（prāṇa）向上流动，滋养更高层的能量中心。轻微的喉锁产生平稳和均匀的呼吸声，成为意识的锚点。'
             ]
           },
           {
-            title: '3.3 凝视点（Dṛṣṭi）',
+            title: '3.3 凝视点（dṛṣṭi）与计数（vinyāsa Count）',
             items: [
-              '每个体式或动作都有指定凝视点（如鼻尖、眉心、脐部等），用以收摄视觉感官，防止心意散乱。即使在闭眼体式中，也需保持内在的凝视点意识。'
+              '每个体式的进入、保持和退出都有对应的计数和凝视点（如鼻尖nāsāgre、眉心bhrūmadhye、脐部nābhou等）。在练习中跟随计数指引（如1 ekam、2 dve、3 trīṇi）并柔和地将目光投向指定方向，以保持清晰的意识。凝视的目的是引导能量流动，避免心意散乱————气动意动，气散心散，正是体式与调息练习的精髓。即使在闭眼体式中，也需保持内在的凝视意识，为专注与禅定奠定基础。'
+            ]
+          },
+          {
+            title: '三位一体（tristhāna）',
+            items: [
+              '体式、调息与凝视三者协同，共同指向身、息、意的整合，同步契合瑜伽修习的精进次第：体式建立身体稳定（sthira）；调息实现能量平衡（prāṇa-samyaṃ）；凝视点确保意识专注（ekāgratā）。'
             ]
           }
         ]
@@ -120,14 +127,24 @@ const guideContent = {
         title: '第四章：唱诵、哲学与社群精神',
         subtitle: '超越体式的更深层修行',
         sections: [
-          {
-            title: '4.1 唱诵的意义',
-            items: [
-              '开场唱诵：礼敬上师与帕坦伽利，设定练习意向，帮助身心过渡。',
-              '结束唱诵：将练习功德回向所有众生，体现瑜伽的联结与奉献精神。',
-              '即使不熟悉梵语，也可感受唱诵振动带来的平静与专注。'
-            ]
-          },
+            {
+              title: '4.1 唱诵的意义',
+              items: [
+                '开场唱诵',
+                '开场唱诵礼敬上师，设定以根除无明为目标的练习意向。即使不理解梵文词汇，感受声音的振动，专注呼吸与声音的协调，也能帮助我们从日常生活进入练习状态。',
+                'वन्दे गुरूणां चरणारविन्दे संदर्शितस्वात्मसुखावबोधे । निःश्रेयसे जाङ्गलिकायमाने संसारहालाहलमोहशान्त्यै ॥',
+                'vande gurūṇāṃ caraṇāravinde saṃdarśitasvātmasukhāvabodhe । niḥśreyase jāṅgalikāyamāne saṃsārahālāhalamohaśāntyai ॥',
+                '敬礼师尊莲足前，开示真我安乐禅；为求解脱施良药，灭尽痴毒醒迷眠。',
+                'आबाहुपुरुषाकारं शङ्खचक्रासिधारिणम् । सहस्रशिरसं श्वेतं प्रणमामि पतञ्जलिम् ॥',
+                'ābāhupuruṣākāraṃ śaṅkhacakrāsidhāriṇam । sahasraśirasaṃ śvetaṃ praṇamāmi patañjalim ॥',
+                '上身人形持法器，螺轮剑戟威德全；头顶皎洁千蛇冠，敬礼帕坦伽利前。',
+                '结束唱诵',
+                '结束唱诵将个人练习的功德回向众生，体现瑜伽的联结与奉献本质，从个体修行扩展到对世界的关怀。即使独自在家练习，也鼓励低声唱诵，以此作为进入和退出练习圣地的仪式。',
+                'स्वस्तिप्रजाभ्यः परिपालयन्तां न्यायेन मार्गेण महीं महीशाः । गोब्राह्मणेभ्यः शुभमस्तु नित्यं लोकाः समस्ताः सुखिनो भवन्तु ॥',
+                'svasti prajābhyaḥ paripālayantāṃ nyāyena mārgeṇa mahīṃ mahīśāḥ । go brāhmaṇebhyaḥ śubhamastu nityaṃ lokāḥ samastāḥ sukhino bhavantu ॥',
+                '愿王正法护苍生，公正治国天下平；牛智恒昌得吉祥，众生安乐离苦情。'
+              ]
+            },
           {
             title: '4.2 社群共同约定',
             items: [
@@ -172,7 +189,7 @@ const guideContent = {
     
     teacherInfo: {
       name: '希波 Eric',
-      note: '（本指南基于阿斯汤加瑜伽传统教学原则编写，具体练习细节请遵循授课老师的即时指导。）'
+      note: '（以上内容基于传统教学原则编写，具体练习细节请遵循授课老师的即时指导。）'
     },
     
     contactTitle: '联系方式',
@@ -200,30 +217,30 @@ const guideContent = {
           {
             title: '1.1 Traditional Essence',
             items: [
-              'Ashtanga yoga is a system that achieves purification of body and mind through the coordinated trinity (Tristhāna) of fixed postures, breath, and gaze points.',
+              'Ashtanga yoga is a system that achieves purification of body and mind through the coordinated trinity (tristhāna) of fixed postures, breath, and gaze points.',
               'Online courses adhere to its core teaching method—Mysore, where practitioners practice at their own pace in a collective environment while the teacher provides one-on-one guidance. This ensures personalized and progressive teaching. Its deeper meaning lies in: building discipline in solitude, creating sacredness in familiarity, and establishing connection across distance.'
             ]
           },
           {
             title: '1.2 Philosophical Foundation: Eight Limbs on the Mat',
             items: [
-              'Ashtanga (Aṣṭāṅga) means "eight limbs", derived from Patañjali\'s Yoga Sūtras. Each posture practice is a complete micro-practice of the eight-limbed yoga:',
-              'Restraints (Yama): Maintaining focus boundaries in a group is "non-violence"; not practising ahead is "non-stealing" and humility.',
-              'Observances (Niyama): Cleaning space and mind is "purity"; consistent practice is "discipline"; accepting the present is "contentment".',
-              'Posture (Āsana): The body becomes the altar, breath the offering, consciousness the priest.',
-              'Breath Control (Prāṇāyāma): Breath connects body and energy, washing the shores of awareness.',
-              'Sense Withdrawal (Pratyāhāra): The gaze point (Dṛṣṭi) is the "anchor" for sense withdrawal, providing a foothold for the mind\'s return.',
-              'Concentration (Dhāraṇā): In repeated sequences, consciousness abides in one place, no longer scattered.',
-              'Meditation (Dhyāna): When postures, breath, and gaze points merge, movement becomes flowing silence that "happens through me".',
-              'Samādhi (Absorption): Occasionally glimpsing non-dual unity of practitioner, practice, and the practised is the ultimate direction of yoga.'
+              'Ashtanga (aṣṭāṅga) means "eight limbs", derived from Patañjali\'s Yoga Sūtras. Each posture practice is a complete micro-practice of the eight-limbed yoga:',
+              'Restraints (yama): Maintaining focus boundaries in a group is "non-violence"; not practising ahead is "non-stealing" and humility.',
+              'Observances (niyama): Cleaning space and mind is "purity"; consistent practice is "discipline"; accepting the present is "contentment".',
+              'Posture (āsana): The body becomes the altar, breath the offering, consciousness the priest.',
+              'Breath Control (prāṇāyāma): Breath connects body and energy, washing the shores of awareness.',
+              'Sense Withdrawal (pratyāhāra): The gaze point (dṛṣṭi) is the "anchor" for sense withdrawal, providing a foothold for the mind\'s return.',
+              'Concentration (dhāraṇā): In repeated sequences, consciousness abides in one place, no longer scattered.',
+              'Meditation (dhyāna): When postures, breath, and gaze points merge, movement becomes flowing silence that "happens through me".',
+              'Samadhi (Absorption): Occasionally glimpsing non-dual unity of practitioner, practice, and the practised is the ultimate direction of yoga.'
             ]
           },
           {
             title: '1.3 Important Sanskrit Terms',
             items: [
-              'Basic terms: Aṣṭāṅga (eight limbs), Vinyāsa (flow), Tristhāna (trinity), Sūrya Namaskāra (Sun Salutation), Bandha (lock), Dṛṣṭi (gaze point)',
-              'Philosophical concepts: Prāṇa (life force), Avidyā (ignorance), Ahiṃsā (non-violence), Tapas (discipline)',
-              'Body-mind levels: Śarīra (body), Manas (mind), Buddhi (intellect), Ahaṃkāra (ego)'
+              'Basic terms: aṣṭāṅga (eight limbs), vinyāsa (flow), sūrya namaskāra (Sun Salutation), bandha (lock), dṛṣṭi (gaze point)',
+              'Philosophical concepts: prāṇa (life force), avidyā (ignorance), ahiṃsā (non-violence), tapas (discipline)',
+              'Body-mind levels: śarīra (body), manas (mind), buddhi (intellect), ahaṃkāra (ego)'
             ]
           },
           {
@@ -262,8 +279,9 @@ const guideContent = {
           {
             title: '2.3 Rest Arrangements',
             items: [
-              'Fixed rest days: Every Saturday, plus new moon and full moon days, to synchronize body and mind with natural rhythms.',
-              'Personal rest: For menstrual periods (rest recommended first three days), colds, or personal matters requiring rest, simply inform in advance.'
+              'Sequence Rest: A complete practice must include quiet mental preparation beforehand, and at least 5-10 minutes of supine rest (Śavāsana) at the end. This is an essential component for integrating the effects of practice.',
+              'Personal Rest: For menstrual periods (rest recommended during the first three days; avoid inversions and bandha practice until completion), colds, or personal matters requiring rest, simply inform in advance.',
+              'Fixed Rest Days: Every Saturday, plus new moon and full moon days, allowing body and mind to synchronise with natural rhythms for deep recovery.'
             ]
           }
         ]
@@ -273,21 +291,27 @@ const guideContent = {
         subtitle: 'Precise Coordination of Posture • Breath • Gaze Point',
         sections: [
           {
-            title: '3.1 Posture (Āsana) & Flow (Vinyāsa)',
+            title: '3.1 Posture (āsana) & Flow (vinyāsa)',
             items: [
-              'Postures are connected through Vinyāsa into fixed sequences with therapeutic logic, successively emphasizing body adjustment, energy purification, and nervous system balance. Practicing in order frees consciousness from memory, immersing deeper into the present.'
+              'Postures are the physical vessels of practice, connected through Vinyāsa into fixed sequences with therapeutic logic. Sustained posture practice generates purifying heat (tapas) within the body, improving circulation, lubricating joints, and promoting physical purification. These sequences successively emphasise body adjustment, detoxification, energy purification, and nervous system balance. Practising in order frees consciousness from memory, allowing deeper immersion into breath and awareness.'
             ]
           },
           {
-            title: '3.2 Breath Control (Prāṇāyāma) & Locks (Bandha)',
+            title: '3.2 Breath Control (prāṇāyāma) & Locks (bandha)',
             items: [
-              'Breath leads movement speed and amplitude, anchoring awareness through soft throat sound. Gentle throat regulation coordinates with lifting pelvic floor and drawing in lower abdomen, thus stabilizing core, protecting joints, and guiding energy upward. Bandhas should be gradually established under teacher guidance.'
+              'Breath control is the art of regulating life force energy. In dynamic posture practice, each movement must follow the rhythm of breath—led by breath (vinyasa), its depth determining the speed and amplitude of movement. Postural stability derives from the support of bandhas—the "locks of life". Lifting the pelvic floor (mūla bandha), drawing the lower abdomen inward (uḍḍīyāna bandha), and coordinating with throat regulation (jālandhara bandha), these internal "seals" provide intrinsic stable support and lightness to postures, guiding life force energy (prāṇa) upward to nourish higher energy centres. The gentle throat lock produces steady, even breath sounds, becoming the anchor of awareness.'
             ]
           },
           {
-            title: '3.3 Gaze Point (Dṛṣṭi)',
+            title: '3.3 Gaze Point (dṛṣṭi) & Count (vinyāsa Count)',
             items: [
-              'Each posture or movement has a designated gaze point (e.g., nose tip, eyebrow center, navel, etc.), used to withdraw visual senses and prevent mind distraction. Even in closed-eye postures, maintain inner gaze point awareness.'
+              'Each posture\'s entry, hold, and exit have corresponding counts and gaze points (e.g., nose tip nāsāgre, eyebrow centre bhrūmadhye, navel nābhou, etc.). During practice, follow the count guidance (e.g., 1 ekam, 2 dve, 3 trīṇi) and gently direct your gaze toward the specified direction to maintain clear awareness. The purpose of gazing is to guide energy flow and prevent mental distraction—where breath moves, mind moves; where breath scatters, mind scatters—this is the essence of posture and breath practice. Even in closed-eye postures, maintain inner gazing awareness to establish the foundation for concentration and meditation.'
+            ]
+          },
+          {
+            title: 'Threefold Method (tristhāna)',
+            items: [
+              'Posture, breath control, and gaze work in harmony, jointly directing the integration of body, breath, and mind, synchronously aligning with the progressive stages of yoga practice: posture establishes bodily steadiness (sthira); breath control achieves energy equilibrium (prāṇa-samyaṃ); the gaze point ensures mental focus (ekāgratā).'
             ]
           }
         ]
@@ -296,14 +320,24 @@ const guideContent = {
         title: 'Chapter 4: Chanting, Philosophy & Community Spirit',
         subtitle: 'Deeper Practice Beyond Postures',
         sections: [
-          {
-            title: '4.1 Meaning of Chanting',
-            items: [
-              'Opening chant: Honors the teacher lineage and sage Patañjali, sets practice intention, helps transition body and mind.',
-              'Closing chant: Dedicates merit of practice to all beings, embodying yoga\'s connection and devotion.',
-              'Even if unfamiliar with Sanskrit, feel the calm and focus brought by chanting vibrations.'
-            ]
-          },
+            {
+              title: '4.1 Meaning of Chanting',
+              items: [
+                'Opening Chant',
+                'The opening chant honours the teacher lineage, establishing practice intention aimed at eradicating ignorance (avidyā). Even without understanding the Sanskrit words, feeling the vibration of the sounds and focusing on the coordination of breath and voice can help transition from daily life into practice state.',
+                'वन्दे गुरूणां चरणारविन्दे संदर्शितस्वात्मसुखावबोधे । निःश्रेयसे जाङ्गलिकायमाने संसारहालाहलमोहशान्त्यै ॥',
+                'vande gurūṇāṃ caraṇāravinde saṃdarśitasvātmasukhāvabodhe । niḥśreyase jāṅgalikāyamāne saṃsārahālāhalamohaśāntyai ॥',
+                'I bow to the lotus feet of the teachers, who reveal the joy of knowing the true Self; who act as physicians administering the remedy for liberation, extinguishing the poison of delusion in worldly existence.',
+                'आबाहुपुरुषाकारं शङ्खचक्रासिधारिणम् । सहस्रशिरसं श्वेतं प्रणमामि पतञ्जलिम् ॥',
+                'ābāhupuruṣākāraṃ śaṅkhacakrāsidhāriṇam । sahasraśirasaṃ śvetaṃ praṇamāmi patañjalim ॥',
+                'With upper body in human form, holding conch, disc, and sword; with a thousand white-hooded heads, I bow to Patañjali.',
+                'Closing Chant',
+                'The closing chant dedicates the merit of personal practice to all beings, embodying the connective and devotional essence of yoga, expanding from individual practice to care for the world. Even when practising alone at home, quiet chanting is encouraged as a ritual for entering and leaving the sacred space of practice.',
+                'स्वस्तिप्रजाभ्यः परिपालयन्तां न्यायेन मार्गेण महीं महीशाः । गोब्राह्मणेभ्यः शुभमस्तु नित्यं लोकाः समस्ताः सुखिनो भवन्तु ॥',
+                'svasti prajābhyaḥ paripālayantāṃ nyāyena mārgeṇa mahīṃ mahīśāḥ । go brāhmaṇebhyaḥ śubhamastu nityaṃ lokāḥ samastāḥ sukhino bhavantu ॥',
+                'May the rulers protect the people according to law; may there always be auspiciousness for cows and sages; may all beings in all worlds be happy.'
+              ]
+            },
           {
             title: '4.2 Community Agreements',
             items: [
@@ -348,7 +382,7 @@ const guideContent = {
     
     teacherInfo: {
       name: 'Xibo Eric',
-      note: '(This guide is based on traditional Ashtanga yoga teaching principles. Specific practice details should follow the real-time guidance of the teaching teacher.)'
+      note: '(The above content is based on traditional teaching principles. Specific practice details should follow the real-time guidance of the teaching teacher.)'
     },
     
     contactTitle: 'Contact Information',
@@ -397,8 +431,8 @@ export default function PracticeGuidePage() {
         {/* 指南内容 */}
         <div className="prose prose-xs md:prose-sm max-w-none">
           {content.parts.map((part: any, index: number) => (
-            <section key={index} className="mb-8 last:mb-4">
-              <h2 className="text-lg font-medium text-gray-900 mb-3 border-b border-gray-200 pb-2">
+            <section key={index} className="mb-6 last:mb-4">
+              <h2 className="text-base font-medium text-gray-900 mb-3 border-b border-gray-200 pb-2">
                 {part.title}
               </h2>
               
@@ -406,8 +440,8 @@ export default function PracticeGuidePage() {
                 <div className={`
                   ${part.title === '序言' || part.title === 'Preamble' || 
                     part.title === '结语' || part.title === 'Conclusion'
-                    ? 'text-gray-700 leading-relaxed mb-4 text-sm'
-                    : 'text-gray-600 italic mb-4 text-xs'
+                    ? 'text-gray-700 leading-relaxed mb-3 text-sm md:text-sm'
+                    : 'text-gray-600 italic mb-3 text-xs'
                   }
                 `}>
                   {part.content}
@@ -415,34 +449,27 @@ export default function PracticeGuidePage() {
               )}
               
               {part.subtitle && (
-                <p className="text-gray-600 italic mb-4 text-xs">
+                <p className="text-gray-600 italic mb-3 text-xs">
                   {part.subtitle}
                 </p>
               )}
               
-              {part.sections && part.sections.map((section: any, sectionIndex: number) => (
-                <div key={sectionIndex} className="mb-6">
-                  <h3 className="text-base font-medium text-gray-800 mb-2">
-                    {section.title}
-                  </h3>
-                  <ul className="space-y-2 text-gray-700">
-                    {section.items.map((item: string, itemIndex: number) => (
-                      <li key={itemIndex} className="flex items-start">
-                        {item.match(/^\d+\./) ? (
-                          <span className="text-red-800 mr-2 mt-0.5 flex-shrink-0 text-xs font-medium">
-                            {item.split('.')[0]}.
-                          </span>
-                        ) : (
-                          <span className="text-red-800 mr-2 mt-0.5 flex-shrink-0 text-xs">—</span>
-                        )}
-                        <span className="leading-relaxed text-sm">
-                          {item}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+                                                            {part.sections && part.sections.map((section: any, sectionIndex: number) => (
+                                                              <div key={sectionIndex} className="mb-4">
+                                                                <h3 className="text-sm font-medium text-gray-800 mb-1">
+                                                                  {section.title}
+                                                                </h3>
+                                                                <ul className="space-y-1 text-gray-700">
+                                                                  {section.items.map((item: string, itemIndex: number) => (
+                                                                    <li key={itemIndex} className="flex items-start">
+                                                                      <span className="leading-relaxed text-xs md:text-sm text-gray-700">
+                                                                        {item}
+                                                                      </span>
+                                                                    </li>
+                                                                  ))}
+                                                                </ul>
+                                                              </div>
+                                                            ))}
             </section>
           ))}
         </div>
@@ -487,8 +514,8 @@ export default function PracticeGuidePage() {
           <div className="mt-4 pt-4 border-t border-gray-100">
             <p className="text-gray-600 text-xs leading-relaxed">
               {language === 'zh'
-                ? '本指南为阿斯汤加瑜伽在线练习的指导手册。关于课程费用、支付方式、取消退款等具体服务条款，请参阅《在线教学服务协议》。'
-                : 'This guide is an instruction manual for Ashtanga yoga online practice. For specific service terms regarding course fees, payment methods, cancellations, refunds, etc., please refer to the "Online Teaching Service Agreement".'}
+                ? '本指南为阿斯汤加瑜伽在线练习的指导手册。关于课程费用、支付、取消等具体服务条款，请参阅《在线教学服务协议》。'
+                : 'This guide serves as the practice manual for Ashtanga yoga online instruction. For specific service terms regarding course fees, payment, cancellation, etc., please refer to the "Online Teaching Service Agreement".'}
             </p>
           </div>
         </div>
