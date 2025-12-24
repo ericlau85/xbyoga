@@ -71,7 +71,7 @@ const guideContent = {
               '空间：准备一个安全、整洁、防滑且无障碍物的区域、光线充足，摄像头可拍摄全身。',
               '设备：摄像头置于侧方，练习时麦克风静音。建议开启扬声器以确保听清指导。',
               '个人：穿着贴身、便于观察身体顺位的练习服，保持练习前3-4小时空腹。',
-              '时间：Mysore课可提前进入，自行开始拜日，无需等待；领课提前10分钟上线准备，避免匆忙开始。'
+              '时间：迈场Mysore课可提前进入，自行开始拜日，无需等待；领课提前10分钟上线准备，避免匆忙开始。'
             ]
           },
           {
@@ -100,19 +100,19 @@ const guideContent = {
           {
             title: '3.1 体式（āsana）与串联（vinyāsa）',
             items: [
-              '体式是练习的物理容器，通过Vinyāsa串联成具有疗愈逻辑的固定序列。持续的体式练习在体内产生清洁的热能（tapas），改善循环，润滑关节，促进身体的净化。这些序列依次侧重身体调整、排毒、能量净化与神经系统平衡。按序练习能让意识从记忆中解脱，更深入地沉浸于呼吸与觉知。'
+              '体式是练习的物理容器，通过vinyāsa串联成具有疗愈逻辑的固定序列。持续的体式练习在体内产生清洁的热能（tapas），改善循环，润滑关节，促进身体的净化。这些序列依次侧重身体调整、排毒、能量净化与神经系统平衡。按序练习能让意识从记忆中解脱，更深入地沉浸于呼吸与觉知。'
             ]
           },
           {
             title: '3.2 调息（prāṇāyāma）与收束（bandha）',
             items: [
-              '调息是生命能量的调控艺术，在动态体式练习中，每个动作必须跟随呼吸的节律，由呼吸引领动作（vinyasa），其深度决定了动作的速度与幅度，体式的稳定来自收束（bandha）的支撑——生命之锁。上提盆底(mūla bandha)、内收下腹(uḍḍīyāna bandha)协同喉部调控(jālandhara bandha)，这些身体内部的“锁印”为体式提供内在稳定的支撑和轻盈感 ，并引导生命能量（prāṇa）向上流动，滋养更高层的能量中心。轻微的喉锁产生平稳和均匀的呼吸声，成为意识的锚点。'
+              '调息是生命能量的调控艺术，在动态体式练习中，每个动作必须跟随呼吸的节律，由呼吸引领动作（vinyasa），其深度决定了动作的速度与幅度，体式的稳定来自收束（bandha）的支撑——生命之锁。上提盆底（mūla bandha）、内收下腹（uḍḍīyāna bandha）协同喉部调控（jālandhara bandha），这些身体内部的“锁印”为体式提供内在稳定的支撑和轻盈感 ，并引导生命能量（prāṇa）向上流动，滋养更高层的能量中心。轻微的喉锁产生平稳和均匀的呼吸声，成为意识的锚点。'
             ]
           },
           {
             title: '3.3 凝视点（dṛṣṭi）与计数（vinyāsa Count）',
             items: [
-              '每个体式的进入、保持和退出都有对应的计数和凝视点（如鼻尖nāsāgre、眉心bhrūmadhye、脐部nābhou等）。在练习中跟随计数指引（如1 ekam、2 dve、3 trīṇi）并柔和地将目光投向指定方向，以保持清晰的意识。凝视的目的是引导能量流动，避免心意散乱————气动意动，气散心散，正是体式与调息练习的精髓。即使在闭眼体式中，也需保持内在的凝视意识，为专注与禅定奠定基础。'
+              '每个体式的进入、保持和退出都有对应的计数和凝视点，如：鼻尖（nāsāgre）、眉心（bhrūmadhye）、脐部（nābhou）等。在练习中跟随计数指引，如：1 ekam、2 dve、3 trīṇi、...，并柔和地将目光投向指定方向，以保持清晰的意识。凝视的目的是引导能量流动，避免心意散乱————气动意动，气散心散，正是体式与调息练习的精髓。即使在闭眼体式中，也需保持内在的凝视意识，为专注与禅定奠定基础。'
             ]
           },
           {
@@ -305,7 +305,7 @@ const guideContent = {
           {
             title: '3.3 Gaze Point (dṛṣṭi) & Count (vinyāsa Count)',
             items: [
-              'Each posture\'s entry, hold, and exit have corresponding counts and gaze points (e.g., nose tip nāsāgre, eyebrow centre bhrūmadhye, navel nābhou, etc.). During practice, follow the count guidance (e.g., 1 ekam, 2 dve, 3 trīṇi) and gently direct your gaze toward the specified direction to maintain clear awareness. The purpose of gazing is to guide energy flow and prevent mental distraction—where breath moves, mind moves; where breath scatters, mind scatters—this is the essence of posture and breath practice. Even in closed-eye postures, maintain inner gazing awareness to establish the foundation for concentration and meditation.'
+              'Each posture\'s entry, hold, and exit correspond to specific counts and gaze points—for example, nose tip (nāsāgre), eyebrow centre (bhrūmadhye), navel (nābhou), and so forth. During practice, follow the count guidance (such as 1 ekam, 2 dve, 3 trīṇi, ...) and gently direct your gaze toward the specified direction to maintain clear awareness. The purpose of gazing is to guide energy flow and prevent mental distraction—where breath moves, mind moves; where breath scatters, mind scatters—this is the essence of posture and breath practice. Even in closed-eye postures, maintain inner gazing awareness to establish the foundation for concentration and meditation.'
             ]
           },
           {
