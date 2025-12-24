@@ -445,7 +445,7 @@ export default function AshtangaPage() {
                   href="/policies/fees"
                   className="text-red-800 hover:text-blue-800 hover:underline font-medium"
                 >
-                  • 《{language === 'zh' ? '费用与服务协议' : 'Fee & Service Agreement'}》
+                  • 《{language === 'zh' ? '在线教学服务协议' : 'Online Teaching Service Agreement'}》
                 </a>
                 <span className="text-gray-500 text-xs ml-2">
                   {language === 'zh' ? '（课程购买与使用条款）' : '(Course purchase and usage terms)'}
@@ -456,7 +456,7 @@ export default function AshtangaPage() {
                   href="/policies/agreement"
                   className="text-red-800 hover:text-blue-800 hover:underline font-medium"
                 >
-                  • 《{language === 'zh' ? '阿斯汤加瑜伽练习指南' : 'Ashtanga Yoga Practice Guide'}》
+                  • 《{language === 'zh' ? '阿斯汤加瑜伽在线练习指南' : 'Ashtanga Yoga Online Practice Guide'}》
                 </a>
                 <span className="text-gray-500 text-xs ml-2">
                   {language === 'zh' ? '（传统精要与课堂规范）' : '(Traditional essence and class norms)'}
