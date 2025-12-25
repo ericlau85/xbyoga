@@ -46,7 +46,8 @@ const CoursesSpecial = [
     description_zh: '专为职场人士设计的晚间迈场练习，由经验丰富的阿斯汤加老师带领。',
     duration_en: 'Mon/Wed/Fri · 18:30-19:45',
     duration_zh: '周一/三/五 · 18:30-19:45',
-    price: 'Coming Soon',
+    price_zh: '即将推出',
+    price_en: 'Coming Soon',
     available: false,
     type: 'evening',
     teacher: '特邀老师'
@@ -61,7 +62,8 @@ const CoursesSpecial = [
     description_zh: '深入的周末研习，专注于调息法技巧、瑜伽哲学探讨与禅定实践。',
     duration_en: 'Saturday · 18:30-19:45',
     duration_zh: '周六 · 18:30-19:45',
-    price: 'Coming Soon',
+    price_zh: '即将推出',
+    price_en: 'Coming Soon',
     available: false,
     type: 'workshop',
     teacher: '特邀老师'
@@ -229,7 +231,7 @@ function ComingSoonCard({ course, language }: { course: any; language: string })
             </span>
           </div>
           <span className="text-base font-medium text-gray-500">
-            {course.price}
+          {language === 'zh' ? course.price_zh : course.price_en}
           </span>
         </div>
         
