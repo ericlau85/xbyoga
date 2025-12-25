@@ -140,7 +140,7 @@ export default function Home() {
             </a>
             <p className="mt-4 text-gray-500 text-sm">
               {content.ctaSubtext}
-              <a href="/special-courses" className="text-amber-600 hover:text-amber-800 ml-1 underline">
+              <a href="/courses/special" className="text-amber-600 hover:text-amber-800 ml-1 underline">
                 {content.ctaLinkText}
               </a>
             </p>
