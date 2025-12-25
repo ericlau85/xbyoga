@@ -17,7 +17,7 @@ const CoursesSpecial = [
     description_zh: '根据您的个人需求、目标及练习水平量身定制的瑜伽课程，一对一专业指导。',
     duration_en: '75 minutes · Flexible scheduling',
     duration_zh: '75分钟课程 · 灵活安排时间',
-    price: '¥380起',
+    price_zh: '¥380起',
     price_en: 'From ¥380',
     available: true,
     type: 'course'
