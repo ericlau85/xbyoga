@@ -32,7 +32,8 @@ const CoursesSpecial = [
     description_zh: '系统掌握天城文读写、精准发音与核心术语，常见念诵，奠定瑜伽文化的语言根基。',
     duration_en: '4 weeks · Complete materials',
     duration_zh: '4周系统学习 · 包含所有资料',
-    price: '¥290',
+    price_zh: '¥290',
+    price_en: '¥290',
     available: true,
     type: 'course'
   },
@@ -153,8 +154,11 @@ export default function CoursesSpecialPage() {
 
 // Available course card component
 function CourseCard({ course, language }: { course: any; language: string }) {
-  // 更新：私教课程也有独立的页面
-  const hasPage = course.slug === 'sanskrit' || course.slug === 'private';
+  const price = language === 'zh' ? course.price_zh : course.price_en;
+  const isComingSoon = price === 'Coming Soon' || price === '即将推出';
+  
+  // 判断是否有详情页面：只有可用的普通课程才有详情页
+  const hasDetailPage = course.available && (course.type === 'course' || course.type === 'private');
   
   const CardContent = () => (
     <div className="flex flex-col h-full">
@@ -162,8 +166,8 @@ function CourseCard({ course, language }: { course: any; language: string }) {
         <h3 className="text-base md:text-lg font-semibold text-gray-900 group-hover:text-red-800 transition-colors">
           {language === 'zh' ? course.title_zh : course.title_en}
         </h3>
-        <span className={`text-base font-bold ${course.price === 'Coming Soon' ? 'text-gray-500' : 'text-red-800'}`}>
-          {course.price}
+        <span className={`text-base font-bold ${isComingSoon ? 'text-gray-500' : 'text-red-800'}`}>
+          {price}
         </span>
       </div>
       
@@ -195,7 +199,7 @@ function CourseCard({ course, language }: { course: any; language: string }) {
     </div>
   );
 
-  if (hasPage) {
+  if (hasDetailPage) {
     return (
       <Link
         href={`/courses/special/${course.slug}`}
@@ -206,18 +210,21 @@ function CourseCard({ course, language }: { course: any; language: string }) {
     );
   }
 
+  // 对于没有详情页的课程，直接跳转到报名页面
   return (
-    <a
-      href="/enroll"
+    <Link
+      href={`/enroll?course=${course.slug}`}
       className="group block p-3 border-b border-gray-100 hover:bg-gray-50 transition-colors"
     >
       <CardContent />
-    </a>
+    </Link>
   );
 }
 
 // Coming soon card component
 function ComingSoonCard({ course, language }: { course: any; language: string }) {
+  const price = language === 'zh' ? course.price_zh : course.price_en;
+  
   return (
     <div className="p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
       <div className="flex flex-col h-full">
@@ -231,7 +238,7 @@ function ComingSoonCard({ course, language }: { course: any; language: string })
             </span>
           </div>
           <span className="text-base font-medium text-gray-500">
-          {language === 'zh' ? course.price_zh : course.price_en}
+            {price}
           </span>
         </div>
         
