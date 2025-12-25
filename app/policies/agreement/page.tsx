@@ -78,7 +78,7 @@ const guideContent = {
             title: '2.2 课堂礼仪、安全与沟通',
             items: [
               '专注：全程专注于自身的练习。除非经老师明确要求，请勿在屏幕前观察他人练习。',
-              '安全自护流程：您是对自身安全负责的第一人。如出现剧痛、头晕或关节失控：1. 立即缓慢退出当前体式。2. 进入婴儿式或仰卧休息。3. 平静注视摄像头（老师看到后会给予关注）。',
+              '安全自护：练习中请始终觉察身体信号。如出现剧痛、头晕或关节失控，请缓慢退出当前体式，进入婴儿式或仰卧休息或平静注视摄像头（老师看到后会给予关注）。',
               '课堂沟通：练习中如遇设备问题或需紧急示意，可短暂开启麦克风做简短说明。复杂问题请于课后与老师单独沟通。',
               '课堂隐私：未经老师及所有出镜同修许可，严禁对课堂进行任何形式的录音、录像、截图及内容传播。'
             ]
@@ -271,7 +271,7 @@ const guideContent = {
             title: '2.2 Class Etiquette, Safety & Communication',
             items: [
               'Focus: Maintain full focus on your own practice. Unless explicitly requested by teacher, avoid observing others\' practice on screen.',
-              'Safety self-care process: You are the primary person responsible for your safety. If sharp pain, dizziness, or joint instability occurs: 1. Immediately slowly exit current posture. 2. Rest in Child\'s Pose or supine position. 3. Calmly look at camera (teacher will provide attention upon noticing).',
+              'Safety Awareness: During practice, please remain attentive to bodily signals. If sharp pain, dizziness, or joint instability occurs, slowly exit the current posture and rest in Child\'s Pose or supine position, or calmly look at the camera (the teacher will provide attention upon noticing).',
               'Class communication: During practice, for equipment issues or urgent signals, briefly activate microphone for short explanation. Complex issues should be discussed with teacher separately after class.',
               'Class privacy: Without permission from teacher and all visible participants, any form of recording, videoing, screenshotting, or dissemination of class content is strictly prohibited.'
             ]
