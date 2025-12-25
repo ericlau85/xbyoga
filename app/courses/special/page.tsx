@@ -18,6 +18,7 @@ const CoursesSpecial = [
     duration_en: '75 minutes · Flexible scheduling',
     duration_zh: '75分钟课程 · 灵活安排时间',
     price: '¥380起',
+    price_en: 'From ¥380',
     available: true,
     type: 'course'
   },
