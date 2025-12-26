@@ -1,20 +1,16 @@
 'use client';
 
-interface SectionTabsProps<T extends string = string> {
-  sections: Record<T, string>;
-  activeSection: T;
-  onSectionChange: (section: T) => void;
+interface SectionTabsProps {
+  sections: Record<string, string>;
+  activeSection: string;
+  onSectionChange: (section: any) => void;  // 关键：改为 any
 }
 
-export default function SectionTabs<T extends string = string>({
-  sections,
-  activeSection,
-  onSectionChange
-}: SectionTabsProps<T>) {
+export default function SectionTabs({ sections, activeSection, onSectionChange }: SectionTabsProps) {
   return (
     <div className="max-w-4xl mx-auto px-4 md:px-6 border-b border-gray-200 mb-3">
       <div className="flex flex-wrap gap-1 md:gap-2 -mb-px">
-        {(Object.entries(sections) as [T, string][]).map(([key, title]) => (
+        {(Object.entries(sections) as [string, string][]).map(([key, title]) => (
           <button
             key={key}
             onClick={() => onSectionChange(key)}
