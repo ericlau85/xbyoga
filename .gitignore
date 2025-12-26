@@ -3,3 +3,11 @@ node_modules/
 .DS_Store
 final-deploy/
 deploy.tar.gz
+*~
+*.tsx~
+*.js~
+.swp
+.swo
+*~
+.*.swp
+.*.swo

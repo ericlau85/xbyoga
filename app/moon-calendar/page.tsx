@@ -246,8 +246,8 @@ export default function MoonCalendarPage() {
 
         {/* 图例说明 */}
         <div className="pt-4 border-t border-gray-200">
-          <p className="text-gray-500 text-[10px] sm:text-xs text-center leading-tight">
-            <sup className="text-red-800 mr-0.5 text-[8px] sm:text-[10px]">*</sup>
+          <p className="text-gray-500 text-[9px] sm:text-[10px] text-center leading-tight">
+            <sup className="text-red-800 mr-0.5 text-[8px] sm:text-[9px]">*</sup>
             {content.legend}
           </p>
         </div>
@@ -257,3 +257,4 @@ export default function MoonCalendarPage() {
     </div>
   );
 }
+
