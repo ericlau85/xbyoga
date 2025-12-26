@@ -125,27 +125,27 @@ export default function CoursesSpecialPage() {
           </div>
         </div>
         
-        {/* Information notes - 更紧凑 */}
-        <div className="mt-8 pt-6 border-t border-gray-200">
-          <div className="space-y-1 text-sm text-gray-600">
-            <p>
-              {language === 'zh'
-                ? '• 晚间迈场课程特别为下班后的练习者设计，帮助放松身心，培养晚间练习习惯'
-                : '• Evening Mysore sessions are specially designed for post-work practitioners, aiding relaxation and cultivating evening practice habits.'}
-            </p>
-            <p>
-              {language === 'zh'
-                ? '• 周末研习会将深入探讨调息法与瑜伽哲学，包含禅定实践指导'
-                : '• Weekend workshops will delve deeply into pranayama techniques and yoga philosophy, including meditation practice guidance.'}
-            </p>
-            <p>
-              {language === 'zh'
-                ? '• 所有计划课程的具体安排将在确定后公布，课程时间可能会调整'
-                : '• All specific arrangements for planned courses will be announced once confirmed; schedules may be adjusted.'}
-            </p>
+          {/* Information notes - 更紧凑 */}
+          <div className="mt-8 pt-6 border-t border-gray-200">
+            <div className="space-y-1 text-xs text-gray-600">  {/* 修改这里：text-sm → text-xs */}
+              <p className="text-[11px] sm:text-xs">  {/* 或者更小的字号 */}
+                {language === 'zh'
+                  ? '• 晚间迈场课程特别为下班后的练习者设计，帮助放松身心，培养晚间练习习惯'
+                  : '• Evening Mysore sessions are specially designed for post-work practitioners, aiding relaxation and cultivating evening practice habits.'}
+              </p>
+              <p className="text-[11px] sm:text-xs">
+                {language === 'zh'
+                  ? '• 周末研习会将深入探讨调息法与瑜伽哲学，包含禅定实践指导'
+                  : '• Weekend workshops will delve deeply into pranayama techniques and yoga philosophy, including meditation practice guidance.'}
+              </p>
+              <p className="text-[11px] sm:text-xs">
+                {language === 'zh'
+                  ? '• 所有计划课程的具体安排将在确定后公布，课程时间可能会调整'
+                  : '• All specific arrangements for planned courses will be announced once confirmed; schedules may be adjusted.'}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
       
       <Footer />
     </div>
