@@ -3118,7 +3118,7 @@ export default function YogaSutrasPage() {
                 <div className="mb-3 md:mb-3.5">
                   {/* 中文部分 */}
                   <div className="text-xs text-gray-800 mb-0.5">
-                    {(sections[activeSection] as any).chapterHeader.chapter}
+                    {sections[activeSection].chapterHeader.chapter}
                   </div>
                 </div>
               )}
