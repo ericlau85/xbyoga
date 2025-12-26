@@ -83,7 +83,7 @@ export default function Navigation() {
   // 选择语言函数
   const handleLanguageSelect = (langCode: string) => {
     if (langCode !== language) {
-      setLanguage(langCode as "zh" | "en");
+      setLanguage(langCode);
     }
     setShowLanguageDropdown(false);
     setShowMobileLanguageSheet(false);

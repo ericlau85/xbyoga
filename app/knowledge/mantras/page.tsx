@@ -1094,7 +1094,7 @@ export default function SanskritMantrasPage() {
         <SectionTabs
           sections={sectionTabs}
           activeSection={activeSection}
-          onSectionChange={setActiveSection}
+          onSectionChange={(section) => setActiveSection(section as "devotional" | "practice" | "wisdom" | "ritual")}
         />
 
         {/* 主内容区域 */}

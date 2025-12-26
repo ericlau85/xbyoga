@@ -1730,7 +1730,7 @@ export default function AsanaPage() {
           <SectionTabs
             sections={sectionTabs}
             activeSection={activeSection}
-            onSectionChange={(section) => setActiveSection(section as "list" | "meanings")}
+            onSectionChange={setActiveSection}
           />
 
           {/* 内容区域 */}
