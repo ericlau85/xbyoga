@@ -45,7 +45,7 @@ const guideContent = {
           {
             title: '1.3 重要梵语术语',
             items: [
-              '基础术语：aṣṭāṅga（八支）, vinyāsa（串联）, sūrya namaskāra（拜日）, bandha（收束）, dṛṣṭi（凝视点）',
+              '基础术语：āsana（体式）, vinyāsa（串联）, sūrya namaskāra（拜日）, dṛṣṭi（凝视点）, namaste（合十礼）',
               '哲学概念：prāṇa（生命能量）, avidyā（无明）, ahiṃsā（不伤害）, tapas（自律）',
               '身心层次：śarīra（身体）, manas（心意）, buddhi（理智）, ahaṃkāra（自我）'
             ]
@@ -238,7 +238,7 @@ const guideContent = {
           {
             title: '1.3 Important Sanskrit Terms',
             items: [
-              'Basic terms: aṣṭāṅga (eight limbs), vinyāsa (flow), sūrya namaskāra (Sun Salutation), bandha (lock), dṛṣṭi (gaze point)',
+              'Basic terms: āsana (postures), vinyāsa (sequential movement), sūrya namaskāra (sun salutation), dṛṣṭi (gaze point), namaste (salutation gesture)',
               'Philosophical concepts: prāṇa (life force), avidyā (ignorance), ahiṃsā (non-violence), tapas (discipline)',
               'Body-mind levels: śarīra (body), manas (mind), buddhi (intellect), ahaṃkāra (ego)'
             ]
