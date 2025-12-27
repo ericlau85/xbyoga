@@ -138,6 +138,9 @@ export default function Navigation() {
               
               {/* 桌面端导航链接 - 包含休息日徽章 */}
               <div className="hidden md:flex items-center gap-3 mr-3">
+          <Link href="/about" className={`px-2 py-1 text-xs ${isCurrent('/about') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
+              {language === 'zh' ? '关于' : 'About'}
+            </Link>
                 <Link href="/courses/ashtanga" className={`px-2 py-1 text-xs ${isCurrent('/courses/ashtanga') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
                   {language === 'zh' ? '阿斯汤加' : 'Ashtanga'}
                 </Link>
@@ -167,6 +170,7 @@ export default function Navigation() {
                 <Link href="/knowledge" className={`px-2 py-1 text-xs ${isCurrent('/knowledge') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
                   {language === 'zh' ? '练习指南' : 'Practice Guide'}
                 </Link>
+          
               </div>
 
               {/* 移动端：只保留语言切换按钮 */}
@@ -226,6 +230,9 @@ export default function Navigation() {
           {showMobileMenu && (
             <div className="md:hidden border-t border-gray-100 bg-white py-3">
               <div className="flex flex-col gap-1 px-2">
+                              <Link href="/about" className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/about') ? 'text-red-800 font-bold bg-gray-100' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setShowMobileMenu(false)}>
+                                      {language === 'zh' ? '关于' : 'About'}
+                                    </Link>
                 <Link href="/courses/ashtanga" className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/courses/ashtanga') ? 'text-red-800 font-bold bg-gray-100' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setShowMobileMenu(false)}>
                   {language === 'zh' ? '阿斯汤加' : 'Ashtanga'}
                 </Link>

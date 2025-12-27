@@ -3,7 +3,7 @@
 interface SectionTabsProps {
   sections: Record<string, string>;
   activeSection: string;
-  onSectionChange: (section: any) => void;  // 关键：改为 any
+  onSectionChange: (section: any) => void;
 }
 
 export default function SectionTabs({ sections, activeSection, onSectionChange }: SectionTabsProps) {

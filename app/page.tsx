@@ -61,7 +61,7 @@ export default function Home() {
             <div className="relative w-full h-[50vh] min-h-[400px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/home.jpg"
-                alt={language === 'zh' ? '阿斯汤加瑜伽练习' : 'Ashtanga Yoga Practice'}
+                alt={language === 'zh' ? '希波' : 'Eric'}
                 fill
                 priority
                 quality={90}
