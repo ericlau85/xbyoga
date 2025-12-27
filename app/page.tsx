@@ -89,7 +89,7 @@ export default function Home() {
         {/* 2. 核心价值陈述 */}
         <div className="w-full px-4 pb-12 md:pb-16">
           <div className="max-w-3xl mx-auto">
-            <p className="text-gray-800 text-lg md:text-xl leading-relaxed text-center font-light px-4">
+            <p className="text-gray-800 text-base md:text-xl leading-relaxed text-center font-light px-4">
               <span className="text-amber-700 font-medium">
                 {language === 'zh' ? "专注线上教学" : "Specialized Online Instruction"}
               </span>
@@ -150,7 +150,7 @@ export default function Home() {
           <div className="max-w-2xl mx-auto">
             <div className="pt-8 border-t border-gray-200">
               <div className="text-center">
-                <p className="text-gray-700 text-lg font-light italic mb-6">
+                <p className="text-gray-700 text-sm font-light italic mb-6">
                   {content.thankYou}
                 </p>
                 

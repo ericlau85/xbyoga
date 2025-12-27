@@ -42,8 +42,8 @@ export default function AboutPage() {
             <div className="mb-6">
               <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-green-800">
                 <img
-                  src="/images/profile.jpg"
-                  alt={language === 'zh' ? '希波老师' : 'Teacher XiBo'}
+                  src="/images/rishikesh-eric.jpg"
+                  alt={language === 'zh' ? '希波老师' : 'Teacher Eric'}
                   className="w-full h-full object-cover"
                 />
               </div>

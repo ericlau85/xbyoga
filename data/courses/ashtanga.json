@@ -26,9 +26,24 @@
       }
     ],
     
+    "restDays": {
+      "title": "Rest Days Schedule",
+      "saturday": {
+        "title": "Every Saturday",
+        "description": "According to Ashtanga tradition, one fixed rest day each week."
+      },
+      "moonDays": {
+        "title": "Moon Days",
+        "description": "Rest days according to lunar cycle."
+      },
+      "note": "Rest days according to lunar cycle. Practitioners worldwide rest on local dates."
+    },
+    
     "timeTable": {
+      "title": "Weekly Practice Schedule",
       "days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-      "classes": ["Mysore", "Mysore", "Mysore", "Mysore", "Mysore", "Led Class", "Rest"]
+      "classes": ["Mysore", "Mysore", "Mysore", "Mysore", "Mysore", "Led Class", "Rest"],
+      "times": ["6:30-8:00", "6:30-8:00", "6:30-8:00", "6:30-8:00", "6:30-8:00", "6:30-8:00", "-"]
     },
     
     "pricingTitle": "Course Fees",
@@ -81,9 +96,24 @@
       }
     ],
     
+    "restDays": {
+      "title": "休息日安排",
+      "saturday": {
+        "title": "每周六",
+        "description": "根据阿斯汤加传统，每周固定休息一天。"
+      },
+      "moonDays": {
+        "title": "新月与满月日",
+        "description": "根据月相周期，新月与满月日为休息日。"
+      },
+      "note": "休息日是阿斯汤加传统的重要部分，让身心得以恢复，整合练习效果。"
+    },
+    
     "timeTable": {
+      "title": "每周练习时间表",
       "days": ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
-      "classes": ["迈场 Mysore", "迈场 Mysore", "迈场 Mysore", "迈场 Mysore", "迈场 Mysore", "领课 Led class", "休息"]
+      "classes": ["迈场 Mysore", "迈场 Mysore", "迈场 Mysore", "迈场 Mysore", "迈场 Mysore", "领课 Led class", "休息"],
+      "times": ["6:30-8:00", "6:30-8:00", "6:30-8:00", "6:30-8:00", "6:30-8:00", "6:30-8:00", "-"]
     },
     
     "pricingTitle": "课程费用",

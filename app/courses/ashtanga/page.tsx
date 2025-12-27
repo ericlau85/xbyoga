@@ -5,14 +5,61 @@ import ashtangaData from '../../../data/courses/ashtanga.json';
 import Footer from '../../components/Footer';
 import Navigation from '../../components/Navigation';
 import { useLanguage } from '../../../lib/language-context';
+import { getRestDayInfo } from '../../../lib/rest-day-utils';
 
 export default function AshtangaPage() {
   const { language } = useLanguage();
   const [content, setContent] = useState<any>(null);
+  const [isRestDay, setIsRestDay] = useState(false);
+  const [restDayType, setRestDayType] = useState<'saturday' | 'new_moon' | 'full_moon' | null>(null);
 
   useEffect(() => {
     setContent(ashtangaData[language as keyof typeof ashtangaData]);
+    
+    const info = getRestDayInfo(language === 'zh' ? 'zh' : 'en');
+    setIsRestDay(info.isRestDay);
+    setRestDayType(info.type);
   }, [language]);
+
+  // 休息日徽章组件 - 改进版：明确显示"今日"
+  const RestDayBadge = () => {
+    if (!isRestDay) return null;
+    
+    const getBadgeText = () => {
+      switch(restDayType) {
+        case 'saturday':
+          return language === 'zh' ? '今日周六，休息' : 'Today: Saturday Rest';
+        case 'new_moon':
+          return language === 'zh' ? '今日新月，休息' : 'Today: New Moon Rest';
+        case 'full_moon':
+          return language === 'zh' ? '今日满月，休息' : 'Today: Full Moon Rest';
+        default:
+          return language === 'zh' ? '今日休息' : 'Today: Rest Day';
+      }
+    };
+    
+    const getBadgeColor = () => {
+      switch(restDayType) {
+        case 'saturday':
+          return 'bg-blue-50 text-blue-800 border-blue-200';
+        case 'new_moon':
+          return 'bg-purple-50 text-purple-800 border-purple-200';
+        case 'full_moon':
+          return 'bg-amber-50 text-amber-800 border-amber-200';
+        default:
+          return 'bg-gray-50 text-gray-800 border-gray-200';
+      }
+    };
+    
+    return (
+      <div className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border ${getBadgeColor()}`}>
+        <div className="w-1.5 h-1.5 rounded-full bg-current animate-pulse"></div>
+        <span className="font-medium text-xs">
+          {getBadgeText()}
+        </span>
+      </div>
+    );
+  };
 
   if (!content) {
     return (
@@ -44,13 +91,13 @@ export default function AshtangaPage() {
       {/* 主要内容 */}
       <div className="w-full max-w-4xl mx-auto px-4 py-8 md:py-12">
         
-        {/* 教师介绍 - 简洁版 */}
+        {/* 教师介绍 */}
         <div className="mb-12">
           <div className="flex flex-col md:flex-row items-start gap-6">
             <div className="flex-shrink-0">
               <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-red-800">
                 <img
-                  src="/images/profile-eric.jpg"
+                  src="/images/studio-eric.jpg"
                   alt={content.teacher?.name || 'Teacher'}
                   className="w-full h-full object-cover"
                 />
@@ -58,7 +105,7 @@ export default function AshtangaPage() {
             </div>
             <div className="flex-1">
               <div className="text-xl font-bold text-gray-900 mb-1">
-                {language === 'zh'? '希波 Eric' : 'Eric Xibo'}
+                希波 Eric
               </div>
               <p className="text-red-800 font-medium text-base mb-3">
                 {language === 'zh'
@@ -84,89 +131,146 @@ export default function AshtangaPage() {
           </div>
         </div>
 
-        {/* 课程形式与时间表 */}
-        <div className="mb-8">
-          {/* 课程形式 - 移动设备在上 */}
-          <div className="md:hidden mb-8">
-            <h3 className="text-lg font-medium text-gray-900 mb-4">
-              {content.practiceFormatsTitle || (language === 'zh' ? '课程形式' : 'Practice Formats')}
-            </h3>
-            
-            <div className="space-y-6">
-              {content.practiceFormats.map((item: any, index: number) => (
-                <div key={index} className="border-l-2 border-red-800 pl-4">
-                  <div className="text-lg font-bold text-gray-900 mb-1">
-                    {item.title}
-                  </div>
-                  <p className="text-gray-600 text-sm">
-                    {item.subtitle}
-                  </p>
+        {/* 课程形式 */}
+        <div className="mb-12">
+          <h3 className="text-lg font-medium text-gray-900 mb-6">
+            {content.practiceFormatsTitle}
+          </h3>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            {content.practiceFormats.map((item: any, index: number) => (
+              <div key={index} className="border-l-2 border-red-800 pl-4">
+                <div className="text-lg font-bold text-gray-900 mb-1">
+                  {item.title}
                 </div>
-              ))}
+                <p className="text-gray-600 text-sm">
+                  {item.subtitle}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 休息日安排 */}
+        <div className="mb-12">
+          <div className="flex items-center justify-between mb-6">
+            <h3 className="text-lg font-medium text-gray-900">
+              {content.restDays.title}
+            </h3>
+            <RestDayBadge />
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-4 mb-4">
+            {/* 每周休息卡片 */}
+            <div className="border border-gray-200 rounded p-4 hover:shadow-sm transition-shadow">
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="font-medium text-gray-900">
+                  {content.restDays.saturday.title}
+                </h4>
+                <span className="px-2 py-1 text-xs text-gray-500 font-medium">
+                  {language === 'zh' ? '休息' : 'Rest'}
+                </span>
+              </div>
+              <p className="text-gray-600 text-sm">
+                {content.restDays.saturday.description}
+              </p>
+            </div>
+            
+            {/* 新月满月休息卡片 */}
+            <div className="border border-gray-200 rounded p-4 hover:shadow-sm transition-shadow">
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="font-medium text-gray-900">
+                  {content.restDays.moonDays.title}
+                </h4>
+                <span className="px-2 py-1 text-xs text-gray-500 font-medium">
+                  {language === 'zh' ? '休息' : 'Rest'}
+                </span>
+              </div>
+              <p className="text-gray-600 text-sm mb-3">
+                {content.restDays.moonDays.description}
+              </p>
+              <a
+                href="/moon-calendar"
+                className="inline-flex items-center text-red-800 hover:text-red-900 text-xs font-medium"
+              >
+                {language === 'zh' ? '查看全年月相表 →' : 'View Annual Moon Calendar →'}
+              </a>
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* 左侧：桌面显示课程形式，移动隐藏 */}
-            <div className="hidden md:block">
-              <h3 className="text-lg font-medium text-gray-900 mb-4">
-                {content.practiceFormatsTitle || (language === 'zh' ? '课程形式' : 'Practice Formats')}
-              </h3>
+          {/* 休息日说明 */}
+          <div className="text-xs text-gray-600">
+            <p>{content.restDays.note}</p>
+          </div>
+        </div>
+
+        {/* 每周时间表 */}
+        <div className="mb-12">
+          <h3 className="text-lg font-medium text-gray-900 mb-6">
+            {content.timeTable.title}
+          </h3>
+          
+          <div className="border border-gray-200 rounded overflow-hidden">
+            {content.timeTable.days.map((day: string, index: number) => {
+              const isRest = content.timeTable.classes[index] === 'Rest' || content.timeTable.classes[index] === '休息';
+              const isSunday = index === 0;
               
-              <div className="space-y-6">
-                {content.practiceFormats.map((item: any, index: number) => (
-                  <div key={index} className="border-l-2 border-red-800 pl-4">
-                    <div className="text-lg font-bold text-gray-900 mb-1">
-                      {item.title}
-                    </div>
-                    <p className="text-gray-600 text-sm">
-                      {item.subtitle}
-                    </p>
+              return (
+                <div
+                  key={index}
+                  className={`flex items-center py-3 px-4 border-b border-gray-100 last:border-0 ${
+                    isRest ? 'bg-gray-50' : 'hover:bg-gray-50 transition-colors'
+                  }`}
+                >
+                  {/* 星期 */}
+                  <div className="w-20 font-medium text-gray-900 text-sm">
+                    {day}
                   </div>
-                ))}
-              </div>
-            </div>
-            
-            {/* 右侧：时间表 */}
-            <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-4">
-                {language === 'zh' ? '每周时间表' : 'Weekly Schedule'}
-              </h3>
-              
-              <div className="space-y-3">
-                {content.timeTable.days.map((day: string, index: number) => {
-                  const isRest = content.timeTable.classes[index] === 'Rest' || content.timeTable.classes[index] === '休息';
-                  const isSunday = index === 0;
                   
-                  return (
-                    <div key={index} className="flex items-center py-2 border-b border-gray-200 last:border-0">
-                      <div className="w-24 font-medium text-gray-900 text-sm">
-                        {day}
-                      </div>
-                      <div className="flex-1">
-                        <div className="text-sm font-medium text-gray-900">
+                  {/* 课程信息 */}
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className={`text-sm font-medium ${
+                          isRest ? 'text-gray-500' : 'text-gray-900'
+                        }`}>
                           {content.timeTable.classes[index]}
                         </div>
                         <div className="text-xs text-gray-500">
-                          {isRest ? '-' : '6:30-8:00'}
+                          {content.timeTable.times[index]}
                         </div>
-                        {isSunday && (
-                          <div className="text-xs text-gray-500 mt-1">
-                            {language === 'zh' ? '研习会（不定期）' : 'Workshop (occasional)'}
-                          </div>
+                      </div>
+                      
+                      {/* 状态标签 */}
+                      <div>
+                        {isRest ? (
+                          <span className="px-2 py-1 text-xs text-gray-500 rounded">
+                            {language === 'zh' ? '休息' : 'Rest'}
+                          </span>
+                        ) : (
+                          <span className="px-2 py-1 text-xs text-green-800 rounded">
+                            {language === 'zh' ? '练习' : 'Practice'}
+                          </span>
                         )}
                       </div>
                     </div>
-                  );
-                })}
-              </div>
-            </div>
+                    
+                    {/* 周日特别说明 */}
+                    {isSunday && (
+                      <div className="mt-1 text-xs text-gray-500">
+                        {language === 'zh' ? '研习会（不定期）' : 'Workshop (occasional)'}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
         {/* 课程费用 */}
-        <div className="mt-8 pt-8 border-t border-gray-200 md:border-t-0 md:mt-12">
-          <h2 className="text-lg font-medium text-gray-900 mb-4">
+        <div className="pt-8 border-t border-gray-200">
+          <h2 className="text-lg font-medium text-gray-900 mb-6">
             {content.pricingTitle}
           </h2>
           
@@ -186,7 +290,7 @@ export default function AshtangaPage() {
             ))}
           </div>
           
-          <div className="text-sm text-gray-600">
+          <div className="text-xs text-gray-600">
             <p className="mb-4">
               {language === 'zh'
                 ? '所有课程均为收费项目，目前不提供免费体验。'

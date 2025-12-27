@@ -4,16 +4,12 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '../../lib/language-context';
-import { getRestDayInfo } from '../../lib/rest-day-utils';
 
 export default function Navigation() {
   const { language, setLanguage } = useLanguage();
-  // 删除 showWechat 状态
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   const [showMobileLanguageSheet, setShowMobileLanguageSheet] = useState(false);
-  const [isRestDay, setIsRestDay] = useState(false);
-  const [restDayType, setRestDayType] = useState<'saturday' | 'new_moon' | 'full_moon' | null>(null);
   
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -36,13 +32,8 @@ export default function Navigation() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // 获取休息日信息
+  // 字体图标
   useEffect(() => {
-    const info = getRestDayInfo(language === 'zh' ? 'zh' : 'en');
-    setIsRestDay(info.isRestDay);
-    setRestDayType(info.type);
-    
-    // 字体图标 - 可以保留，因为可能其他地方会用到
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
@@ -51,34 +42,7 @@ export default function Navigation() {
     return () => {
       document.head.removeChild(link);
     };
-  }, [language]);
-
-  // 休息日徽章组件
-  const RestDayBadge = () => {
-    if (!isRestDay) return null;
-    
-    const getBadgeText = () => {
-      switch(restDayType) {
-        case 'saturday':
-          return language === 'zh' ? '周六休' : 'Sat';
-        case 'new_moon':
-          return language === 'zh' ? '新月' : 'New';
-        case 'full_moon':
-          return language === 'zh' ? '满月' : 'Full';
-        default:
-          return language === 'zh' ? '休息' : 'Rest';
-      }
-    };
-    
-    return (
-      <div className="flex items-center gap-1 ml-1">
-        <div className="w-1.5 h-1.5 bg-green-800 rounded-full animate-pulse"></div>
-        <span className="text-green-800 text-[8px] font-medium px-1.5 py-0.5 rounded">
-          {getBadgeText()}
-        </span>
-      </div>
-    );
-  };
+  }, []);
 
   // 选择语言函数
   const handleLanguageSelect = (langCode: string) => {
@@ -136,46 +100,24 @@ export default function Navigation() {
 
             <div className="flex items-center gap-1">
               
-              {/* 桌面端导航链接 - 包含休息日徽章 */}
+              {/* 桌面端导航链接 */}
               <div className="hidden md:flex items-center gap-3 mr-3">
-          <Link href="/about" className={`px-2 py-1 text-xs ${isCurrent('/about') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
-              {language === 'zh' ? '关于' : 'About'}
-            </Link>
+                <Link href="/about" className={`px-2 py-1 text-xs ${isCurrent('/about') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
+                  {language === 'zh' ? '关于' : 'About'}
+                </Link>
                 <Link href="/courses/ashtanga" className={`px-2 py-1 text-xs ${isCurrent('/courses/ashtanga') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
                   {language === 'zh' ? '阿斯汤加' : 'Ashtanga'}
                 </Link>
                 <Link href="/courses/special" className={`px-2 py-1 text-xs ${isCurrent('/special-courses') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
                   {language === 'zh' ? '特别课程' : 'Special Courses'}
                 </Link>
-                
-                {/* 休息日链接 - 包含徽章 */}
-                <Link href="/moon-calendar" className={`px-2 py-1 text-xs flex items-center ${isCurrent('/moon-calendar') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
-                  {language === 'zh' ? '休息日' : 'Rest Days'}
-                  {isRestDay && (
-                    <span className="ml-1 flex items-center gap-1">
-                      <div className="w-1.5 h-1.5 bg-green-800 rounded-full animate-pulse"></div>
-                      <span className="text-green-800 text-[8px] font-medium px-1.5 py-0.5 rounded">
-                        {restDayType === 'saturday'
-                          ? (language === 'zh' ? '周六' : 'Sat')
-                          : restDayType === 'new_moon'
-                          ? (language === 'zh' ? '新月' : 'New')
-                          : restDayType === 'full_moon'
-                          ? (language === 'zh' ? '满月' : 'Full')
-                          : (language === 'zh' ? '休息' : 'Rest')}
-                      </span>
-                    </span>
-                  )}
-                </Link>
-                
                 <Link href="/knowledge" className={`px-2 py-1 text-xs ${isCurrent('/knowledge') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
-                  {language === 'zh' ? '练习指南' : 'Practice Guide'}
+                  {language === 'zh' ? '学习资源' : 'Learning Resources'}
                 </Link>
-          
               </div>
 
               {/* 移动端：只保留语言切换按钮 */}
               <div className="md:hidden">
-                {/* 语言切换按钮 */}
                 <button
                   onClick={() => setShowMobileLanguageSheet(true)}
                   className="relative w-5 h-5 flex items-center justify-center text-gray-700 focus:outline-none"
@@ -221,7 +163,6 @@ export default function Navigation() {
                     </div>
                   )}
                 </div>
-                {/* 删除了微信按钮 */}
               </div>
             </div>
           </div>
@@ -230,48 +171,17 @@ export default function Navigation() {
           {showMobileMenu && (
             <div className="md:hidden border-t border-gray-100 bg-white py-3">
               <div className="flex flex-col gap-1 px-2">
-                              <Link href="/about" className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/about') ? 'text-red-800 font-bold bg-gray-100' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setShowMobileMenu(false)}>
-                                      {language === 'zh' ? '关于' : 'About'}
-                                    </Link>
+                <Link href="/about" className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/about') ? 'text-red-800 font-bold bg-gray-100' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setShowMobileMenu(false)}>
+                  {language === 'zh' ? '关于' : 'About'}
+                </Link>
                 <Link href="/courses/ashtanga" className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/courses/ashtanga') ? 'text-red-800 font-bold bg-gray-100' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setShowMobileMenu(false)}>
                   {language === 'zh' ? '阿斯汤加' : 'Ashtanga'}
                 </Link>
                 <Link href="/courses/special" className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/special-courses') ? 'text-red-800 font-bold bg-gray-100' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setShowMobileMenu(false)}>
                   {language === 'zh' ? '特别课程' : 'Special Courses'}
                 </Link>
-                
-                {/* 移动端休息日链接 */}
-                <Link
-                  href="/moon-calendar"
-                  className={`px-3 py-2 text-xs rounded-lg flex items-center justify-between ${isCurrent('/moon-calendar') 
-                    ? 'text-red-800 font-bold bg-gray-100'
-                    : 'text-gray-700 hover:bg-gray-50'}`}
-                  onClick={() => setShowMobileMenu(false)}
-                >
-                  <div className="flex items-center gap-2">
-                    <span>{language === 'zh' ? '休息日' : 'Rest Days'}</span>
-                    {isRestDay && (
-                      <div className="flex items-center gap-1">
-                        <div className="w-2 h-2 bg-green-800 rounded-full animate-pulse"></div>
-                        {restDayType === 'saturday' && (
-                          <span className="text-green-800 text-[10px] font-medium">
-                            {language === 'zh' ? '周六休息' : 'Saturday'}
-                          </span>
-                        )}
-                        {(restDayType === 'new_moon' || restDayType === 'full_moon') && (
-                          <span className="text-red-600 text-[10px] font-medium">
-                            {restDayType === 'new_moon'
-                              ? (language === 'zh' ? '新月' : 'New Moon')
-                              : (language === 'zh' ? '满月' : 'Full Moon')}
-                          </span>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                </Link>
-                
                 <Link href="/knowledge" className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/knowledge') ? 'text-red-800 font-bold bg-gray-100' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setShowMobileMenu(false)}>
-                  {language === 'zh' ? '练习指南' : 'Practice Guide'}
+                  {language === 'zh' ? '学习资源' : 'Learning Resources'}
                 </Link>
               </div>
             </div>
