@@ -3,14 +3,14 @@
   "type": "calendar",
   "en": {
     "title": "MOON PHASE CALENDAR",
-    "subtitle": "Align Your Practice with Lunar Rhythms",
-    "intro": "This calendar provides precise Coordinated Universal Time and UTC+8 timings for New Moon and Full Moon, assisting you in planning your practice schedule and calculating rest days.",
+    "subtitle": "Practise in harmony with the moon",
+    "intro": "This table provides new and full moon dates in both Greenwich Mean Time (GMT) and UTC+8, helping you plan your practice schedule and determine rest days",
     "tableHeaders": {
       "month": "Month",
       "newMoon": "New Moon (GMT+8)",
       "fullMoon": "Full Moon (GMT+8)"
     },
-    "legend": "Moon phase dates are based on the Gregorian calendar for UTC+8 and calculated according to Greenwich Mean Time. Consecutive rest days may occur.",
+    "legend": "Based on Gregorian calendar dates in UTC+8. Other time zones may have consecutive rest days.",
     "years": [
       {
         "year": "2025",
@@ -149,14 +149,14 @@
   },
   "zh": {
     "title": "月相日历",
-    "subtitle": "遵循月相节奏安排练习",
-    "intro": "此日历提供精确的世界协调时与东八区新月和满月时间，助您规划练习日程和推算休息日。",
+    "subtitle": "顺应月相，安排练习",
+    "intro": "此表格提供格林威治时间(GMT)及东八区的新月和满月，助您规划练习日程，推算休息日。",
     "tableHeaders": {
       "month": "月份",
       "newMoon": "新月 (GMT+8)",
       "fullMoon": "满月 (GMT+8)"
     },
-    "legend": "月相日期基于公历东八区及依格林威治标准时间推算，可能出现连休。",
+    "legend": "基于东八区公历时间计算，其他时区可能出现连休。",
     "years": [
       {
         "year": "2025",
