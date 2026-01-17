@@ -2,38 +2,88 @@
   "id": "sanskrit",
   "type": "course",
   "en": {
-    "title": "SANSKRIT STUDIES",
-    "subtitle": "Online Sanskrit · Classical Foundation",
-    "intro": "Systematically master Devanagari script reading and writing, accurate pronunciation, and core terminology with common chants, establishing the linguistic foundation of yoga culture.",
+    "title": "Sanskrit Fundamentals",
+    "subtitle": "Devanagari Reading & Writing · Phonetics Foundation",
+    "intro": "Systematically learn Sanskrit phonetics and Devanagari script, establishing foundation for reading yoga classical texts.",
     
-    "modules": {
-      "title": "Course Content",
-      "subtitle": "4-week systematic learning",
+    "overview": {
+      "title": "Course Overview",
+      "items": [
+        "Introductory Sanskrit linguistics course for yoga teachers and practitioners",
+        "Systematic teaching of Devanagari script and Sanskrit phonetics foundation",
+        "Based on traditional Sanskrit teaching system with modern linguistic methods",
+        "Focus on pronunciation accuracy and text analysis skills"
+      ]
+    },
+    
+    "objectives": {
+      "title": "Learning Objectives",
+      "items": [
+        "Master Sanskrit phonetic system (16 vowels, 33 consonants, sound changes)",
+        "Establish Devanagari reading and writing ability",
+        "Analyze compound word formation in asana names",
+        "Acquire basic reading ability for Yoga Sutras texts"
+      ]
+    },
+    
+    "syllabus": {
+      "title": "Course Syllabus",
       "items": [
         {
-          "week": "Week 1",
-          "title": "Sanskrit Gateway",
-          "subtitle": "Phonetics & Reading",
-          "description": "Devanagari script, Latin transliteration, pronunciation rules"
+          "title": "Session 1: Sanskrit Phonetics Foundation",
+          "content": "Devanagari script; vowel system (short, long, compound); consonant system (5 groups); pronunciation practice"
         },
         {
-          "week": "Week 2",
-          "title": "Wisdom Foundation",
-          "subtitle": "Numbers & Philosophy",
-          "description": "Sanskrit numerals, Yoga Sutras core terminology"
+          "title": "Session 2: Sanskrit Numeral System & Classical Citations",
+          "content": "Cardinal and ordinal numbers; classical text citation format; Yoga Sutras core verses grammatical analysis"
         },
         {
-          "week": "Week 3",
-          "title": "Asana Analysis",
-          "subtitle": "Names & Meanings",
-          "description": "Understanding asana names and precise meanings"
+          "title": "Session 3: Morphological Analysis of Yoga Terminology",
+          "content": "Compound word formation in asana names; etymological analysis; energy system terms (prāṇa, nāḍī, cakra, bandha)"
         },
         {
-          "week": "Week 4",
-          "title": "Classical Chanting",
-          "subtitle": "Hymns & Prayers",
-          "description": "Mastering essential mantras and chants"
+          "title": "Session 4: Linguistic Features of Mantra Texts",
+          "content": "Mantra grammatical structure and semantic analysis; common mantra text intensive reading; phonetic rules"
         }
+      ]
+    },
+    
+    "methods": {
+      "title": "Teaching Methods",
+      "items": [
+        "Linguistics-oriented: Emphasis on phonemic analysis and pronunciation accuracy",
+        "Text-centered: Using Yoga Sutras, asana names, mantras as learning materials",
+        "Progressive: From phonetics to vocabulary, from vocabulary to sentences",
+        "Practice-integrated: Each session includes pronunciation correction and text analysis exercises"
+      ]
+    },
+    
+    "audience": {
+      "title": "Target Audience",
+      "items": [
+        "Yoga teachers: Accurate use of Sanskrit terminology in teaching",
+        "Yoga practitioners: Understanding original meanings of classical texts",
+        "Language learners: Interested in classical Indo-European languages"
+      ]
+    },
+    
+    "materials": {
+      "title": "Teaching Materials",
+      "items": [
+        "Sanskrit Phonetics Handout",
+        "Yoga Sanskrit Glossary (with IAST transliteration and explanations)",
+        "Selected Yoga Sutras Texts (with vocabulary notes)",
+        "Pronunciation demonstration audio"
+      ]
+    },
+    
+    "info": {
+      "title": "Course Information",
+      "items": [
+        { "label": "Format", "value": "Online live teaching (Tencent Meeting)" },
+        { "label": "Duration", "value": "4 sessions, 60 minutes each" },
+        { "label": "Teaching Language", "value": "Chinese (Sanskrit terminology)" },
+        { "label": "Materials", "value": "Complete teaching materials provided after enrollment" }
       ]
     },
     
@@ -46,38 +96,88 @@
   },
   
   "zh": {
-    "title": "梵语课程",
-    "subtitle": "在线梵语 · 经典入门",
-    "intro": "系统掌握天城文读写、精准发音与核心术语，常见念诵，奠定瑜伽文化的语言根基。",
+    "title": "梵语入门",
+    "subtitle": "天城文读写 · 语音学基础",
+    "intro": "系统学习梵语语音学与天城文书写，掌握瑜伽经典文本的阅读基础。",
     
-    "modules": {
-      "title": "课程内容",
-      "subtitle": "4周系统学习",
+    "overview": {
+      "title": "课程概述",
+      "items": [
+        "面向瑜伽教师与练习者的梵语语言学入门课程",
+        "系统讲授天城文书写系统与梵语语音学基础",
+        "教学内容基于传统梵语教学体系，结合现代语言学方法",
+        "注重发音准确性与文本分析能力的培养"
+      ]
+    },
+    
+    "objectives": {
+      "title": "教学目标",
+      "items": [
+        "掌握梵语语音系统（16元音、33辅音、音变规则）",
+        "建立天城文读写能力",
+        "解析瑜伽体式名称的复合词构成",
+        "具备《瑜伽经》基础文本的阅读能力"
+      ]
+    },
+    
+    "syllabus": {
+      "title": "教学大纲",
       "items": [
         {
-          "week": "第1周",
-          "title": "梵语之门",
-          "subtitle": "语音与拼读",
-          "description": "学习天城文、拉丁转写、标准发音规则"
+          "title": "第一讲：梵语语音学基础",
+          "content": "天城文书写系统；元音系统（短、长、复合元音）；辅音系统（五组分类）；发音练习与听音辨字"
         },
         {
-          "week": "第2周",
-          "title": "智慧基石",
-          "subtitle": "计数与哲学",
-          "description": "梵语数字、《瑜伽经》核心术语"
+          "title": "第二讲：梵语数字系统与经典引用",
+          "content": "基数词与序数词；经典文本引用格式；《瑜伽经》核心经文语法分析；阿斯汤加计数实践"
         },
         {
-          "week": "第3周",
-          "title": "体式精解",
-          "subtitle": "名称与内涵",
-          "description": "理解体式名称的精确含义"
+          "title": "第三讲：瑜伽术语的形态学分析",
+          "content": "体式名称复合词构成；词源学分析；能量系统术语（prāṇa, nāḍī, cakra, bandha）"
         },
         {
-          "week": "第4周",
-          "title": "经典唱诵",
-          "subtitle": "颂赞与祷文",
-          "description": "掌握核心咒语与经典唱诵"
+          "title": "第四讲：咒语文本的语言特征",
+          "content": "Mantra语法结构与语义分析；常用咒语文本精读；音韵规则与诵读实践"
         }
+      ]
+    },
+    
+    "methods": {
+      "title": "教学方法",
+      "items": [
+        "语言学导向：重视音位分析与发音准确性",
+        "文本中心：以《瑜伽经》、体式名称、咒语为学习材料",
+        "循序渐进：从语音到词汇，从词汇到句子",
+        "实践结合：每课包含发音矫正、文本解析练习"
+      ]
+    },
+    
+    "audience": {
+      "title": "适合人群",
+      "items": [
+        "瑜伽教师：准确使用梵语术语进行教学",
+        "瑜伽练习者：理解经典文本原始含义",
+        "语言学习者：对古典印欧语系语言感兴趣"
+      ]
+    },
+    
+    "materials": {
+      "title": "教学资料",
+      "items": [
+        "《梵语语音学讲义》",
+        "《瑜伽梵语术语表》（含IAST转写与解释）",
+        "《瑜伽经》选读文本（附词汇注释）",
+        "发音示范音频"
+      ]
+    },
+    
+    "info": {
+      "title": "课程信息",
+      "items": [
+        { "label": "课程形式", "value": "线上直播教学（腾讯会议）" },
+        { "label": "课程时长", "value": "4讲，每讲60分钟" },
+        { "label": "教学语言", "value": "中文（梵语专业术语）" },
+        { "label": "课程资料", "value": "报名后提供完整教学资料" }
       ]
     },
     
