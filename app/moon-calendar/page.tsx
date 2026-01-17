@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 
 export default function MoonCalendarPage() {
   const { language } = useLanguage();
-  const [activeYear, setActiveYear] = useState('2025');
+  const [activeYear, setActiveYear] = useState('2026');
   
   const content = moonData[language as keyof typeof moonData];
   if (typeof content === 'string' || !content) {
@@ -137,16 +137,44 @@ export default function MoonCalendarPage() {
                       </span>
                     </div>
                     
+                    {/* 新月部分 - 添加 newMoons 数组检查 */}
                     <div className="w-[46%] text-center">
-                      <div className="font-medium text-gray-800 text-xs mb-1">
-                        {month.newMoon.local.split(' ')[0]} {month.newMoon.local.split(' ')[1]}
-                        {month.newMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[8px]">*</sup>}
-                      </div>
-                      <div className="text-[10px] text-gray-500">
-                        {month.newMoon.utc}
-                      </div>
+                      {Array.isArray(month.newMoons) ? (
+                        <div>
+                          <div className="flex justify-between mb-1">
+                            {month.newMoons.map((newMoon, idx) => (
+                              <div key={idx} className="w-1/2 px-1">
+                                <div className="font-medium text-gray-800 text-xs">
+                                  {newMoon.local.split(' ')[0]} {newMoon.local.split(' ')[1]}
+                                  {newMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[8px]">*</sup>}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                          <div className="flex justify-between">
+                            {month.newMoons.map((newMoon, idx) => (
+                              <div key={idx} className="w-1/2 px-1">
+                                <div className="text-[10px] text-gray-500">
+                                  {newMoon.utc}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        <div>
+                          <div className="font-medium text-gray-800 text-xs mb-1">
+                            {month.newMoon.local.split(' ')[0]} {month.newMoon.local.split(' ')[1]}
+                            {month.newMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[8px]">*</sup>}
+                          </div>
+                          <div className="text-[10px] text-gray-500">
+                            {month.newMoon.utc}
+                          </div>
+                        </div>
+                      )}
                     </div>
                     
+                    {/* 满月部分 - 保持不变 */}
                     <div className="w-[46%] text-center">
                       {Array.isArray(month.fullMoons) ? (
                         <div>
@@ -193,16 +221,44 @@ export default function MoonCalendarPage() {
                     </span>
                   </div>
                   
+                  {/* 新月部分 - 添加 newMoons 数组检查 */}
                   <div className="w-2/5 p-3 text-center border-r border-gray-200">
-                    <div className="font-medium text-gray-800 text-sm mb-1">
-                      {month.newMoon.local.split(' ')[0]} {month.newMoon.local.split(' ')[1]}
-                      {month.newMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[10px]">*</sup>}
-                    </div>
-                    <div className="text-xs text-gray-500">
-                      {month.newMoon.utc}
-                    </div>
+                    {Array.isArray(month.newMoons) ? (
+                      <div>
+                        <div className="flex justify-center space-x-4 mb-1">
+                          {month.newMoons.map((newMoon, idx) => (
+                            <div key={idx}>
+                              <div className="font-medium text-gray-800 text-sm">
+                                {newMoon.local.split(' ')[0]} {newMoon.local.split(' ')[1]}
+                                {newMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[10px]">*</sup>}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="flex justify-center space-x-4">
+                          {month.newMoons.map((newMoon, idx) => (
+                            <div key={idx}>
+                              <div className="text-xs text-gray-500">
+                                {newMoon.utc}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <div>
+                        <div className="font-medium text-gray-800 text-sm mb-1">
+                          {month.newMoon.local.split(' ')[0]} {month.newMoon.local.split(' ')[1]}
+                          {month.newMoon.nextDay && <sup className="text-red-800 ml-0.5 text-[10px]">*</sup>}
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          {month.newMoon.utc}
+                        </div>
+                      </div>
+                    )}
                   </div>
                   
+                  {/* 满月部分 - 保持不变 */}
                   <div className="w-2/5 p-3 text-center">
                     {Array.isArray(month.fullMoons) ? (
                       <div>
@@ -257,4 +313,3 @@ export default function MoonCalendarPage() {
     </div>
   );
 }
-

@@ -13,71 +13,6 @@
     "legend": "Based on Gregorian calendar dates in UTC+8. Other time zones may have consecutive rest days.",
     "years": [
       {
-        "year": "2025",
-        "months": [
-          {
-            "month": "Jan",
-            "newMoon": {"local": "Wed 29 20:35", "utc": "Wed 29 12:35", "nextDay": false},
-            "fullMoon": {"local": "Wed 14 06:26", "utc": "Tue 13 22:26", "nextDay": true}
-          },
-          {
-            "month": "Feb",
-            "newMoon": {"local": "Fri 28 08:44", "utc": "Fri 28 00:44", "nextDay": false},
-            "fullMoon": {"local": "Wed 12 21:53", "utc": "Wed 12 13:53", "nextDay": false}
-          },
-          {
-            "month": "Mar",
-            "newMoon": {"local": "Sat 29 18:57", "utc": "Sat 29 10:57", "nextDay": false},
-            "fullMoon": {"local": "Fri 14 14:54", "utc": "Fri 14 06:54", "nextDay": false}
-          },
-          {
-            "month": "Apr",
-            "newMoon": {"local": "Mon 28 04:31", "utc": "Sun 27 20:31", "nextDay": true},
-            "fullMoon": {"local": "Sun 13 09:22", "utc": "Sun 13 01:22", "nextDay": false}
-          },
-          {
-            "month": "May",
-            "newMoon": {"local": "Tue 27 12:02", "utc": "Tue 27 04:02", "nextDay": false},
-            "fullMoon": {"local": "Tue 13 01:55", "utc": "Mon 12 17:55", "nextDay": true}
-          },
-          {
-            "month": "Jun",
-            "newMoon": {"local": "Wed 25 19:31", "utc": "Wed 25 11:31", "nextDay": false},
-            "fullMoon": {"local": "Wed 11 16:43", "utc": "Wed 11 08:43", "nextDay": false}
-          },
-          {
-            "month": "Jul",
-            "newMoon": {"local": "Fri 25 04:11", "utc": "Thu 24 20:11", "nextDay": true},
-            "fullMoon": {"local": "Fri 11 05:36", "utc": "Thu 10 21:36", "nextDay": true}
-          },
-          {
-            "month": "Aug",
-            "newMoon": {"local": "Sat 23 15:06", "utc": "Sat 23 07:06", "nextDay": false},
-            "fullMoon": {"local": "Sat 09 16:55", "utc": "Sat 09 08:55", "nextDay": false}
-          },
-          {
-            "month": "Sep",
-            "newMoon": {"local": "Mon 22 04:54", "utc": "Sun 21 20:54", "nextDay": true},
-            "fullMoon": {"local": "Mon 08 03:08", "utc": "Sun 07 19:08", "nextDay": true}
-          },
-          {
-            "month": "Oct",
-            "newMoon": {"local": "Tue 21 21:25", "utc": "Tue 21 13:25", "nextDay": false},
-            "fullMoon": {"local": "Tue 07 12:47", "utc": "Tue 07 04:47", "nextDay": false}
-          },
-          {
-            "month": "Nov",
-            "newMoon": {"local": "Thu 20 14:47", "utc": "Thu 20 06:47", "nextDay": false},
-            "fullMoon": {"local": "Wed 05 21:19", "utc": "Wed 05 13:19", "nextDay": false}
-          },
-          {
-            "month": "Dec",
-            "newMoon": {"local": "Sat 20 09:43", "utc": "Sat 20 01:43", "nextDay": false},
-            "fullMoon": {"local": "Fri 05 07:14", "utc": "Thu 04 23:14", "nextDay": true}
-          }
-        ]
-      },
-      {
         "year": "2026",
         "months": [
           {
@@ -144,6 +79,77 @@
             "fullMoon": {"local": "Thu 24 09:28", "utc": "Thu 24 01:28", "nextDay": false}
           }
         ]
+      },
+      {
+        "year": "2027",
+        "months": [
+          {
+            "month": "Jan",
+            "newMoon": {"local": "Fri 8 04:24", "utc": "Thu 7 20:24", "nextDay": true},
+            "fullMoon": {"local": "Fri 22 20:17", "utc": "Fri 22 12:17", "nextDay": false}
+          },
+          {
+            "month": "Feb",
+            "newMoon": {"local": "Sat 6 23:56", "utc": "Sat 6 15:56", "nextDay": false},
+            "fullMoon": {"local": "Sun 21 07:23", "utc": "Sat 20 23:23", "nextDay": true}
+          },
+          {
+            "month": "Mar",
+            "newMoon": {"local": "Mon 8 17:29", "utc": "Mon 8 09:29", "nextDay": false},
+            "fullMoon": {"local": "Mon 22 18:43", "utc": "Mon 22 10:43", "nextDay": false}
+          },
+          {
+            "month": "Apr",
+            "newMoon": {"local": "Wed 7 08:51", "utc": "Wed 7 00:51", "nextDay": false},
+            "fullMoon": {"local": "Wed 21 07:27", "utc": "Tue 20 23:27", "nextDay": true}
+          },
+          {
+            "month": "May",
+            "newMoon": {"local": "Thu 6 19:58", "utc": "Thu 6 11:58", "nextDay": false},
+            "fullMoon": {"local": "Thu 20 19:59", "utc": "Thu 20 11:59", "nextDay": false}
+          },
+          {
+            "month": "Jun",
+            "newMoon": {"local": "Sat 5 04:40", "utc": "Fri 4 20:40", "nextDay": true},
+            "fullMoon": {"local": "Sat 19 09:44", "utc": "Sat 19 01:44", "nextDay": false}
+          },
+          {
+            "month": "Jul",
+            "newMoon": {"local": "Sun 4 12:02", "utc": "Sun 4 04:02", "nextDay": false},
+            "fullMoon": {"local": "Sun 18 23:44", "utc": "Sun 18 16:44", "nextDay": false}
+          },
+          {
+            "month": "Aug",
+            "newMoons": [
+              {"local": "Mon 2 19:05", "utc": "Mon 2 11:05", "nextDay": false},
+              {"local": "", "utc": "Tue 31 18:41", "nextDay": false}
+            ],
+            "fullMoon": {"local": "Tue 17 16:28", "utc": "Tue 17 08:28", "nextDay": false}
+          },
+          {
+            "month": "Sep",
+            "newMoons": [
+              {"local": "Wed 1 02:41", "nextDay": true},
+              {"local": "Thu 30 11:36", "utc": "Thu 30 03:36", "nextDay": false}
+            ],
+            "fullMoon": {"local": "Thu 16 08:03", "utc": "Thu 16 00:03", "nextDay": false}
+          },
+          {
+            "month": "Oct",
+            "newMoon": {"local": "Fri 29 22:36", "utc": "Fri 29 14:36", "nextDay": false},
+            "fullMoon": {"local": "Fri 15 22:47", "utc": "Fri 15 14:47", "nextDay": false}
+          },
+          {
+            "month": "Nov",
+            "newMoon": {"local": "Sun 28 11:24", "utc": "Sun 28 03:24", "nextDay": false},
+            "fullMoon": {"local": "Sun 14 11:25", "utc": "Sun 14 03:25", "nextDay": false}
+          },
+          {
+            "month": "Dec",
+            "newMoon": {"local": "Tue 28 04:12", "utc": "Mon 27 20:12", "nextDay": true},
+            "fullMoon": {"local": "Tue 14 00:08", "utc": "Mon 13 16:08", "nextDay": true}
+          }
+        ]
       }
     ]
   },
@@ -158,71 +164,6 @@
     },
     "legend": "基于东八区公历时间计算，其他时区可能出现连休。",
     "years": [
-      {
-        "year": "2025",
-        "months": [
-          {
-            "month": "1月",
-            "newMoon": {"local": "周三 29 20:35", "utc": "周三 29 12:35", "nextDay": false},
-            "fullMoon": {"local": "周三 14 06:26", "utc": "周二 13 22:26", "nextDay": true}
-          },
-          {
-            "month": "2月",
-            "newMoon": {"local": "周五 28 08:44", "utc": "周五 28 00:44", "nextDay": false},
-            "fullMoon": {"local": "周三 12 21:53", "utc": "周三 12 13:53", "nextDay": false}
-          },
-          {
-            "month": "3月",
-            "newMoon": {"local": "周六 29 18:57", "utc": "周六 29 10:57", "nextDay": false},
-            "fullMoon": {"local": "周五 14 14:54", "utc": "周五 14 06:54", "nextDay": false}
-          },
-          {
-            "month": "4月",
-            "newMoon": {"local": "周一 28 04:31", "utc": "周日 27 20:31", "nextDay": true},
-            "fullMoon": {"local": "周日 13 09:22", "utc": "周日 13 01:22", "nextDay": false}
-          },
-          {
-            "month": "5月",
-            "newMoon": {"local": "周二 27 12:02", "utc": "周二 27 04:02", "nextDay": false},
-            "fullMoon": {"local": "周二 13 01:55", "utc": "周一 12 17:55", "nextDay": true}
-          },
-          {
-            "month": "6月",
-            "newMoon": {"local": "周三 25 19:31", "utc": "周三 25 11:31", "nextDay": false},
-            "fullMoon": {"local": "周三 11 16:43", "utc": "周三 11 08:43", "nextDay": false}
-          },
-          {
-            "month": "7月",
-            "newMoon": {"local": "周五 25 04:11", "utc": "周四 24 20:11", "nextDay": true},
-            "fullMoon": {"local": "周五 11 05:36", "utc": "周四 10 21:36", "nextDay": true}
-          },
-          {
-            "month": "8月",
-            "newMoon": {"local": "周六 23 15:06", "utc": "周六 23 07:06", "nextDay": false},
-            "fullMoon": {"local": "周六 09 16:55", "utc": "周六 09 08:55", "nextDay": false}
-          },
-          {
-            "month": "9月",
-            "newMoon": {"local": "周一 22 04:54", "utc": "周日 21 20:54", "nextDay": true},
-            "fullMoon": {"local": "周一 08 03:08", "utc": "周日 07 19:08", "nextDay": true}
-          },
-          {
-            "month": "10月",
-            "newMoon": {"local": "周二 21 21:25", "utc": "周二 21 13:25", "nextDay": false},
-            "fullMoon": {"local": "周二 07 12:47", "utc": "周二 07 04:47", "nextDay": false}
-          },
-          {
-            "month": "11月",
-            "newMoon": {"local": "周四 20 14:47", "utc": "周四 20 06:47", "nextDay": false},
-            "fullMoon": {"local": "周三 05 21:19", "utc": "周三 05 13:19", "nextDay": false}
-          },
-          {
-            "month": "12月",
-            "newMoon": {"local": "周六 20 09:43", "utc": "周六 20 01:43", "nextDay": false},
-            "fullMoon": {"local": "周五 05 07:14", "utc": "周四 04 23:14", "nextDay": true}
-          }
-        ]
-      },
       {
         "year": "2026",
         "months": [
@@ -288,6 +229,77 @@
             "month": "12月",
             "newMoon": {"local": "周三 09 08:51", "utc": "周三 09 00:51", "nextDay": false},
             "fullMoon": {"local": "周四 24 09:28", "utc": "周四 24 01:28", "nextDay": false}
+          }
+        ]
+      },
+      {
+        "year": "2027",
+        "months": [
+          {
+            "month": "1月",
+            "newMoon": {"local": "周五 8 04:24", "utc": "周四 7 20:24", "nextDay": true},
+            "fullMoon": {"local": "周五 22 20:17", "utc": "周五 22 12:17", "nextDay": false}
+          },
+          {
+            "month": "2月",
+            "newMoon": {"local": "周六 6 23:56", "utc": "周六 6 15:56", "nextDay": false},
+            "fullMoon": {"local": "周日 21 07:23", "utc": "周六 20 23:23", "nextDay": true}
+          },
+          {
+            "month": "3月",
+            "newMoon": {"local": "周一 8 17:29", "utc": "周一 8 09:29", "nextDay": false},
+            "fullMoon": {"local": "周一 22 18:43", "utc": "周一 22 10:43", "nextDay": false}
+          },
+          {
+            "month": "4月",
+            "newMoon": {"local": "周三 7 08:51", "utc": "周三 7 00:51", "nextDay": false},
+            "fullMoon": {"local": "周三 21 07:27", "utc": "周二 20 23:27", "nextDay": true}
+          },
+          {
+            "month": "5月",
+            "newMoon": {"local": "周四 6 19:58", "utc": "周四 6 11:58", "nextDay": false},
+            "fullMoon": {"local": "周四 20 19:59", "utc": "周四 20 11:59", "nextDay": false}
+          },
+          {
+            "month": "6月",
+            "newMoon": {"local": "周六 5 04:40", "utc": "周五 4 20:40", "nextDay": true},
+            "fullMoon": {"local": "周六 19 09:44", "utc": "周六 19 01:44", "nextDay": false}
+          },
+          {
+            "month": "7月",
+            "newMoon": {"local": "周日 4 12:02", "utc": "周日 4 04:02", "nextDay": false},
+            "fullMoon": {"local": "周日 18 23:44", "utc": "周日 18 16:44", "nextDay": false}
+          },
+          {
+                "month": "8月",
+                "newMoons": [
+                  {"local": "周一 2 19:05", "utc": "周一 2 11:05", "nextDay": false},
+                  {"local": "", "utc": "周二 31 18:41", "nextDay": false}
+                ],
+                "fullMoon": {"local": "周二 17 16:28", "utc": "周二 17 08:28", "nextDay": false}
+              },
+          {
+            "month": "9月",
+            "newMoons": [
+              {"local": "周三 1 02:41", "nextDay": true},
+              {"local": "周四 30 11:36", "utc": "周四 30 03:36", "nextDay": false}
+            ],
+            "fullMoon": {"local": "周四 16 08:03", "utc": "周四 16 00:03", "nextDay": false}
+          },
+          {
+            "month": "10月",
+            "newMoon": {"local": "周五 29 22:36", "utc": "周五 29 14:36", "nextDay": false},
+            "fullMoon": {"local": "周五 15 22:47", "utc": "周五 15 14:47", "nextDay": false}
+          },
+          {
+            "month": "11月",
+            "newMoon": {"local": "周日 28 11:24", "utc": "周日 28 03:24", "nextDay": false},
+            "fullMoon": {"local": "周日 14 11:25", "utc": "周日 14 03:25", "nextDay": false}
+          },
+          {
+            "month": "12月",
+            "newMoon": {"local": "周二 28 04:12", "utc": "周一 27 20:12", "nextDay": true},
+            "fullMoon": {"local": "周二 14 00:08", "utc": "周一 13 16:08", "nextDay": true}
           }
         ]
       }
