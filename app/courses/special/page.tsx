@@ -11,10 +11,10 @@ const CoursesSpecial = [
     slug: 'private',
     title_en: 'PRIVATE YOGA',
     title_zh: '私教瑜伽',
-    subtitle_en: 'One-on-One Instruction · Personalised Practice',
+    subtitle_en: 'One-on-One Guidance · Individual Practice',
     subtitle_zh: '一对一指导 · 个性化练习',
-    description_en: 'Tailored one-on-one yoga sessions designed specifically for your individual needs, goals, and practice level.',
-    description_zh: '根据您的个人需求、目标及练习水平量身定制的瑜伽课程，一对一专业指导。',
+    description_en: 'Yoga sessions adapted to your individual needs and practice experience, guided one-on-one by an experienced Ashtanga practitioner.',
+    description_zh: '根据您的个人需求与练习经验调整的瑜伽课程，由经验丰富的阿斯汤加练习者一对一指导。',
     duration_en: '75 minutes · Flexible scheduling',
     duration_zh: '75分钟课程 · 灵活安排时间',
     price_zh: '¥380起',
@@ -26,11 +26,11 @@ const CoursesSpecial = [
     slug: 'sanskrit',
     title_en: 'SANSKRIT STUDIES',
     title_zh: '梵语课程',
-    subtitle_en: 'Online Sanskrit · Classical Foundation',
+    subtitle_en: 'Online Sanskrit · Classical Introduction',
     subtitle_zh: '在线梵语 · 经典入门',
-    description_en: 'Systematically master Devanagari script reading and writing, accurate pronunciation, and core terminology with common chants.',
+    description_en: 'Systematically learn Devanagari script reading and writing, accurate pronunciation, and core terminology, including common chants.',
     description_zh: '系统掌握天城文读写、精准发音与核心术语，常见念诵，奠定瑜伽文化的语言根基。',
-    duration_en: '4 weeks · Complete materials',
+    duration_en: '4 sessions · All materials included',
     duration_zh: '4周系统学习 · 包含所有资料',
     price_zh: '¥290',
     price_en: '¥290',
@@ -39,14 +39,12 @@ const CoursesSpecial = [
   },
   {
     slug: 'evening-mysore',
-    title_en: 'EVENING MYSORE',
-    title_zh: '晚间迈场',
-    subtitle_en: 'Post-Work Practice',
-    subtitle_zh: '下班后练习',
-    description_en: 'Evening Mysore practice sessions designed for working professionals, guided by an experienced Ashtanga teacher.',
-    description_zh: '专为职场人士设计的晚间迈场练习，由经验丰富的阿斯汤加老师带领。',
-    duration_en: 'Mon/Wed/Fri · 18:30-19:45',
-    duration_zh: '周一/三/五 · 18:30-19:45',
+    title_en: 'EVENING PRACTICE',
+    title_zh: '晚间练习',
+    description_en: 'Evening practice sessions designed for working professionals, guided by an experienced yoga teacher.',
+    description_zh: '专为职场人士设计的晚间练习，由经验丰富的瑜伽老师带领。',
+    duration_en: 'Schedule to be announced',
+    duration_zh: '时间待定',
     price_zh: '即将推出',
     price_en: 'Coming Soon',
     available: false,
@@ -57,12 +55,10 @@ const CoursesSpecial = [
     slug: 'weekend-workshop',
     title_en: 'WEEKEND WORKSHOP',
     title_zh: '周末研习会',
-    subtitle_en: 'Deep Dive into Pranayama & Philosophy',
-    subtitle_zh: '深度研习调息与哲学',
-    description_en: 'Intensive weekend workshop focusing on pranayama techniques, yoga philosophy discussions, and meditation practices.',
+    description_en: 'Intensive weekend workshop focusing on pranayama techniques, yoga philosophy discussions, and meditation practice.',
     description_zh: '深入的周末研习，专注于调息法技巧、瑜伽哲学探讨与禅定实践。',
-    duration_en: 'Saturday · 18:30-19:45',
-    duration_zh: '周六 · 18:30-19:45',
+    duration_en: 'Schedule to be announced',
+    duration_zh: '时间待定',
     price_zh: '即将推出',
     price_en: 'Coming Soon',
     available: false,
@@ -78,7 +74,7 @@ export default function CoursesSpecialPage() {
     <div className="min-h-screen safe-top safe-bottom pt-12">
       <Navigation />
       
-      {/* Blue header section - consistent with other pages */}
+      {/* Blue header section */}
       <div className="w-full bg-gradient-to-r from-gray-900 to-gray-800 text-white py-8 md:py-12">
         <div className="w-full max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-2xl md:text-3xl font-light mb-3">
@@ -100,7 +96,7 @@ export default function CoursesSpecialPage() {
         {/* Currently available courses */}
         <div className="mb-10">
           <h2 className="text-lg font-medium text-gray-900 mb-4">
-            {language === 'zh' ? '当前可报名课程' : 'Currently Available'}
+            {language === 'zh' ? '当前可报名课程' : 'Currently Available Courses'}
           </h2>
           <div className="space-y-4">
             {CoursesSpecial
@@ -125,27 +121,7 @@ export default function CoursesSpecialPage() {
           </div>
         </div>
         
-          {/* Information notes - 更紧凑 */}
-          <div className="mt-8 pt-6 border-t border-gray-200">
-            <div className="space-y-1 text-xs text-gray-600">  {/* 修改这里：text-sm → text-xs */}
-              <p className="text-[11px] sm:text-xs">  {/* 或者更小的字号 */}
-                {language === 'zh'
-                  ? '• 晚间迈场课程特别为下班后的练习者设计，帮助放松身心，培养晚间练习习惯'
-                  : '• Evening Mysore sessions are specially designed for post-work practitioners, aiding relaxation and cultivating evening practice habits.'}
-              </p>
-              <p className="text-[11px] sm:text-xs">
-                {language === 'zh'
-                  ? '• 周末研习会将深入探讨调息法与瑜伽哲学，包含禅定实践指导'
-                  : '• Weekend workshops will delve deeply into pranayama techniques and yoga philosophy, including meditation practice guidance.'}
-              </p>
-              <p className="text-[11px] sm:text-xs">
-                {language === 'zh'
-                  ? '• 所有计划课程的具体安排将在确定后公布，课程时间可能会调整'
-                  : '• All specific arrangements for planned courses will be announced once confirmed; schedules may be adjusted.'}
-              </p>
-            </div>
-          </div>
-        </div>
+      </div>
       
       <Footer />
     </div>
@@ -157,7 +133,6 @@ function CourseCard({ course, language }: { course: any; language: string }) {
   const price = language === 'zh' ? course.price_zh : course.price_en;
   const isComingSoon = price === 'Coming Soon' || price === '即将推出';
   
-  // 判断是否有详情页面：只有可用的普通课程才有详情页
   const hasDetailPage = course.available && (course.type === 'course' || course.type === 'private');
   
   const CardContent = () => (
@@ -171,9 +146,11 @@ function CourseCard({ course, language }: { course: any; language: string }) {
         </span>
       </div>
       
-      <p className="text-sm text-green-800 font-medium mb-2">
-        {language === 'zh' ? course.subtitle_zh : course.subtitle_en}
-      </p>
+      {course.subtitle_zh && course.subtitle_en && (
+        <p className="text-sm text-green-800 font-medium mb-2">
+          {language === 'zh' ? course.subtitle_zh : course.subtitle_en}
+        </p>
+      )}
       
       <p className="text-gray-600 text-sm mb-3 leading-relaxed flex-1">
         {language === 'zh' ? course.description_zh : course.description_en}
@@ -203,18 +180,17 @@ function CourseCard({ course, language }: { course: any; language: string }) {
     return (
       <Link
         href={`/courses/special/${course.slug}`}
-        className="group block p-3 border-b border-gray-100 hover:bg-gray-50 transition-colors"
+        className="group block p-3 border-b border-gray-100 transition-colors"
       >
         <CardContent />
       </Link>
     );
   }
 
-  // 对于没有详情页的课程，直接跳转到报名页面
   return (
     <Link
       href={`/enroll?course=${course.slug}`}
-      className="group block p-3 border-b border-gray-100 hover:bg-gray-50 transition-colors"
+      className="group block p-3 border-b border-gray-100 transition-colors"
     >
       <CardContent />
     </Link>
@@ -226,7 +202,7 @@ function ComingSoonCard({ course, language }: { course: any; language: string })
   const price = language === 'zh' ? course.price_zh : course.price_en;
   
   return (
-    <div className="p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+    <div className="p-3 border border-gray-200 rounded-lg">
       <div className="flex flex-col h-full">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
           <div className="flex items-center gap-2">
@@ -237,14 +213,10 @@ function ComingSoonCard({ course, language }: { course: any; language: string })
               {language === 'zh' ? '计划中' : 'Planned'}
             </span>
           </div>
-          <span className="text-base font-medium text-gray-500">
+          <span className={`text-sm font-medium ${price === '即将推出' || price === 'Coming Soon' ? 'text-gray-500' : 'text-gray-900'}`}>
             {price}
           </span>
         </div>
-        
-        <p className="text-sm text-gray-700 font-medium mb-2">
-          {language === 'zh' ? course.subtitle_zh : course.subtitle_en}
-        </p>
         
         <p className="text-gray-600 text-xs mb-3 leading-relaxed flex-1">
           {language === 'zh' ? course.description_zh : course.description_en}
@@ -264,18 +236,10 @@ function ComingSoonCard({ course, language }: { course: any; language: string })
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
               <span>
-                {language === 'zh' ? `指导老师：${course.teacher}` : 'Instructor: Guest Teacher'}
+                {language === 'zh' ? course.teacher : 'Guest Teacher'}
               </span>
             </div>
           )}
-        </div>
-        
-        <div className="mt-2 pt-2 border-t border-gray-100">
-          <p className="text-xs text-gray-500">
-            {language === 'zh'
-              ? '课程正在筹备中，具体安排待公布'
-              : 'Course under preparation, specific arrangements to be announced'}
-          </p>
         </div>
       </div>
     </div>
