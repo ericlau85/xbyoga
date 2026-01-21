@@ -3,66 +3,60 @@
   "type": "course",
   "en": {
     "title": "PRIVATE YOGA",
-    "subtitle": "One-on-One Instruction · Personalised Practice",
-    "intro": "Customised yoga sessions tailored to your individual needs, goals, and practice level, guided one-on-one by an experienced Ashtanga teacher.",
+    "subtitle": "One-on-One Guidance · Individual Practice",
+    "intro": "Yoga sessions adapted to your individual needs and practice experience, guided one-on-one by an experienced Ashtanga practitioner.",
     
     "features": {
-      "title": "Course Features",
+      "title": "Session Features",
       "items": [
         {
-          "icon": "fas fa-bullseye",
-          "title": "Personalised Planning",
-          "description": "Develop a customised practice plan based on your physical condition, goals, and schedule"
+          "title": "Individual Adaptation",
+          "description": "Practice content arranged based on your physical condition and available time"
         },
         {
-          "icon": "fas fa-chart-line",
-          "title": "Progressive Teaching",
-          "description": "Step-by-step guidance ensuring safe progress and a solid foundation"
+          "title": "Gradual Development",
+          "description": "Step-by-step guidance focusing on safety and sustainable progress"
         },
         {
-          "icon": "fas fa-hands-helping",
-          "title": "Real-Time Feedback",
-          "description": "Immediate corrections for postures and breathing techniques"
+          "title": "Focused Attention",
+          "description": "Timely observations and suggestions on posture and breathing details"
         },
         {
-          "icon": "fas fa-calendar-check",
-          "title": "Flexible Scheduling",
-          "description": "Arrange session times according to your schedule, available 9:00-20:00 daily"
+          "title": "Flexible Timing",
+          "description": "Arrange sessions according to your schedule"
         }
       ]
     },
     
     "suitableFor": {
-      "title": "Who is it suitable for",
+      "title": "Suitable For",
       "items": [
         {
-          "title": "Beginners",
-          "description": "Establish correct posture practice and breathing foundations"
+          "title": "Starting to Build Practice",
+          "description": "Want to begin from the basics and gradually develop personal practice habits"
         },
         {
-          "title": "Busy Professionals",
-          "description": "Flexible scheduling options to fit work schedules"
+          "title": "Irregular Schedules",
+          "description": "Need to adjust practice times based on work or life rhythms"
         },
         {
-          "title": "Individuals with Special Needs",
-          "description": "Those with injury history or physical limitations"
+          "title": "Specific Physical Conditions",
+          "description": "Have previous injuries, physical limitations, or aspects requiring special attention"
         },
         {
-          "title": "Privacy-Seeking Practitioners",
-          "description": "Individuals who prefer not to practice in group settings"
+          "title": "Prefer Private Environment",
+          "description": "Prefer to focus on practice in a quiet, undisturbed space"
         }
       ]
     },
     
     "pricing": {
-      "title": "Course Fees",
-      "course": "Private Yoga Instruction",
-      "description": "75-minute one-on-one sessions, all materials included",
+      "title": "Session Options",
       "packages": [
         {
           "title": "Single Session",
           "price": "¥380",
-          "note": "flexible timing"
+          "note": "75 minutes"
         },
         {
           "title": "5 Sessions",
@@ -81,65 +75,59 @@
   "zh": {
     "title": "私教瑜伽",
     "subtitle": "一对一指导 · 个性化练习",
-    "intro": "根据您的个人需求、目标及练习水平量身定制的瑜伽课程，由经验丰富的阿斯汤加老师一对一指导。",
+    "intro": "根据您的个人需求与练习经验调整的瑜伽课程，由经验丰富的阿斯汤加练习者一对一指导。",
     
     "features": {
       "title": "课程特色",
       "items": [
         {
-          "icon": "fas fa-bullseye",
-          "title": "个性化规划",
-          "description": "基于您的身体状况、目标与时间安排，制定专属练习计划"
+          "title": "个人化调整",
+          "description": "基于您的身体状况与可用时间，安排适合的练习内容"
         },
         {
-          "icon": "fas fa-chart-line",
           "title": "渐进式教学",
-          "description": "循序渐进指导，确保安全进步与扎实基础"
+          "description": "循序渐进地引导，关注安全与可持续的进步"
         },
         {
-          "icon": "fas fa-hands-helping",
           "title": "实时反馈",
-          "description": "即时纠正体式与呼吸技巧"
+          "description": "在体式与呼吸细节上提供及时的观察与建议"
         },
         {
-          "icon": "fas fa-calendar-check",
-          "title": "灵活排课",
-          "description": "根据您的时间安排课程，每日9:00-20:00可选"
+          "title": "时间灵活",
+          "description": "根据您的时间安排课程"
         }
       ]
     },
     
     "suitableFor": {
-      "title": "适合人群",
+      "title": "适合情况",
       "items": [
         {
-          "title": "初学者",
-          "description": "建立体式练习与呼吸基础"
+          "title": "开始建立练习",
+          "description": "希望从基础开始，逐渐形成个人练习习惯"
         },
         {
-          "title": "繁忙工作者",
-          "description": "可根据工作时间灵活安排"
+          "title": "时间安排不固定",
+          "description": "需要根据工作或生活节奏调整练习时间"
         },
         {
-          "title": "特殊需求者",
-          "description": "有伤病史或身体限制的人群"
+          "title": "身体有特别状况",
+          "description": "有旧伤、身体限制或需要特别注意的方面"
         },
         {
-          "title": "隐私需求者",
-          "description": "不便集体练习的人群"
+          "title": "偏好私密环境",
+          "description": "希望在安静、不受干扰的空间中专注练习"
         }
       ]
     },
     
     "pricing": {
       "title": "课程费用",
-      "course": "私教瑜伽课程",
-      "description": "75分钟一对一指导，包含所有材料",
       "packages": [
         {
           "title": "单节",
           "price": "¥380",
-          "note": "时间灵活"
+          "note": "75分钟"
         },
         {
           "title": "5节课程",
