@@ -54,7 +54,13 @@ export default function Navigation() {
     setShowMobileMenu(false);
   };
 
-  const isCurrent = (path: string) => pathname.startsWith(path);
+  // 修正：特别课程的路径应该是 /courses/special
+  const isCurrent = (path: string) => {
+    if (path === '/courses/special') {
+      return pathname.startsWith('/courses/special');
+    }
+    return pathname.startsWith(path);
+  };
 
   // 防止滚动穿透
   useEffect(() => {
@@ -108,7 +114,7 @@ export default function Navigation() {
                 <Link href="/courses/ashtanga" className={`px-2 py-1 text-xs ${isCurrent('/courses/ashtanga') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
                   {language === 'zh' ? '阿斯汤加' : 'Ashtanga'}
                 </Link>
-                <Link href="/courses/special" className={`px-2 py-1 text-xs ${isCurrent('/special-courses') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
+                <Link href="/courses/special" className={`px-2 py-1 text-xs ${isCurrent('/courses/special') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
                   {language === 'zh' ? '特别课程' : 'Special Courses'}
                 </Link>
                 <Link href="/knowledge" className={`px-2 py-1 text-xs ${isCurrent('/knowledge') ? 'text-red-800 font-bold border-b-2 border-red-800' : 'text-gray-700 hover:text-red-800'}`}>
@@ -177,7 +183,7 @@ export default function Navigation() {
                 <Link href="/courses/ashtanga" className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/courses/ashtanga') ? 'text-red-800 font-bold bg-gray-100' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setShowMobileMenu(false)}>
                   {language === 'zh' ? '阿斯汤加' : 'Ashtanga'}
                 </Link>
-                <Link href="/courses/special" className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/special-courses') ? 'text-red-800 font-bold bg-gray-100' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setShowMobileMenu(false)}>
+                <Link href="/courses/special" className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/courses/special') ? 'text-red-800 font-bold bg-gray-100' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setShowMobileMenu(false)}>
                   {language === 'zh' ? '特别课程' : 'Special Courses'}
                 </Link>
                 <Link href="/knowledge" className={`px-3 py-2 text-xs rounded-lg ${isCurrent('/knowledge') ? 'text-red-800 font-bold bg-gray-100' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setShowMobileMenu(false)}>
