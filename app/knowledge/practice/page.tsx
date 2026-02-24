@@ -8,12 +8,12 @@ import Footer from '../../components/Footer';
 
 const practiceData = {
   en: {
-    title: "Methods of Āsana Practice",
+    title: "Methods of āsana Practice",
     subtitle: "体式练习方法",
     intro: "A comprehensive guide to Ashtanga Yoga asana practice methods, covering philosophical foundations, practice principles, and progression through series.",
     sections: {
       essence: {
-        title: "Essence of Āsana",
+        title: "Essence of āsana",
         content: "The Classical View of Postures"
       },
       principles: {
@@ -22,15 +22,15 @@ const practiceData = {
       },
       primary: {
         title: "Primary Series",
-        content: "Yoga Chikitsā - Yoga Therapy"
+        content: "yoga chikitsā - Yoga Therapy"
       },
       intermediate: {
         title: "Intermediate Series",
-        content: "Nāḍī Śodhana - Nerve Purification"
+        content: "nāḍī śodhana - Nerve Purification"
       },
       advanced: {
         title: "Advanced Series",
-        content: "Sthira Bhāga - Divine Stability"
+        content: "sthira bhāga - Divine Stability"
       }
     },
     essence: {
@@ -38,24 +38,24 @@ const practiceData = {
         {
           devanagari: "स्थिरसुखमासनम्",
           sanskrit: "sthira-sukham āsanam",
-          meaning: "Āsana should be steady and comfortable",
-          source: "Yoga Sūtra 2.46"
+          meaning: "āsana should be steady and comfortable",
+          source: "yoga sūtra 2.46"
         },
         {
           devanagari: "हठस्य प्रथमाङ्गत्वाद् आसनं पूर्वम् उच्यते।कुर्यात् तद् आसनं स्थैर्यम् आरोग्यं चाङ्गलाघवम्॥",
           sanskrit: "haṭhasya prathama-aṅgatvād-āsanaṁ pūrvam-ucyate。kuryāt-tad-āsanaṃ sthairyam-ārogyaṃ ca-aṅga-lāghvam॥",
-          meaning: "Āsana is said to be the first limb of Hatha Yoga; practice of āsana brings steadiness, health and lightness of body",
-          source: "Haṭha Pradīpikā 1.17"
+          meaning: "āsana is said to be the first limb of Hatha Yoga; practice of āsana brings steadiness, health and lightness of body",
+          source: "haṭha pradīpikā 1.17"
         },
         {
           devanagari: "आसने स्थिरतां प्राप्य प्राणायामं समभ्यसेत्",
           sanskrit: "āsane sthiratāṃ prāpya prāṇāyāmaṃ samabhyaset",
           meaning: "After attaining stability in āsana, one should practice prāṇāyāma",
-          source: "Haṭha Pradīpikā 2.1"
+          source: "haṭha pradīpikā 2.1"
         }
       ],
       content: [
-        "Āsana should be maintained with 'steadiness (sthira) and comfort (sukha)' — this is the fundamental principle from Patañjali's Yoga Sūtra.",
+        "āsana should be maintained with 'steadiness (sthira) and comfort (sukha)' — this is the fundamental principle from patañjali's yoga sūtra.",
         "Through relaxation of effort (prayatna-śaithilya), this state is achieved, reducing disturbances from external dualities.",
         "In classical yoga, discussions about āsana primarily refer to seated postures. The main purpose is to enable the body to remain still for extended periods, preparing for prāṇāyāma and dhyāna.",
         "Modern yoga's various complex postures are largely later developments. The essence of āsana practice lies not in external difficulty but in cultivating bodily stability and endurance."
@@ -75,10 +75,10 @@ const practiceData = {
     principles: {
       sutras: [
         {
-          devanagari: "प्रयत्नशैथिल्यानन्तसमापत्तिभ्याम्",
-          sanskrit: "prayatna-śaithilya-ananta-samāpattibhyām",
-          meaning: "Through relaxation of effort and absorption into the infinite",
-          source: "Yoga Sūtra 2.47"
+          devanagari: "तत्र स्थितौ यत्नः अभ्यासः",
+          sanskrit: "tatra sthitau yatnaḥ abhyāsaḥ",
+          meaning: "Practice is the sustained effort to maintain steadines",
+          source: "yoga sūtra 1.13"
         }
       ],
       content: [
@@ -86,7 +86,7 @@ const practiceData = {
         
         "The methodology emphasizes a graduated approach, wherein practitioners work through groups of postures rather than perfecting individual āsanas in isolation. This sequential progression allows the body to open gradually, reducing the risk of injury while building the necessary strength and flexibility for more advanced practice. Each series is designed as an integrated whole, with postures complementing and preparing the body for subsequent ones.",
         
-        "Central to the practice is the concept of tristhāna, which encompasses posture, breathing, and focused attention. Nasal breathing is maintained throughout, with both inhalation and exhalation conducted through the nose to regulate internal heat and energy flow. The auditory quality of the breath naturally engages subtle energetic locks, integrating rather than isolating these mechanisms. Visual focus points, including the nose tip, third eye area, navel, or specific hand and foot positions, serve to stabilize attention and direct awareness inward.",
+        "Central to the practice is the concept of tristhāna, which encompasses posture, breathing, and focused attention. Nasal breathing is maintained throughout, with both inhalation and exhalation conducted through the nose to regulate internal heat and energy flow. The auditory quality of the breath naturally engages subtle energetic locks, integrating rather than isolating these mechanisms. Visual focus points, including the nose tip (nāsāgra), eyebrow center (bhrūmadhya), navel (nābhicakra), fingertips (hastāgra), thumb tips (aṅguṣṭhāgra), toe tips (pādāgra), sides (pārśva), upward (ūrdhva), inward (antara), and downward (adhaḥ), serve to stabilize attention and direct awareness inward. These ten dr̥ṣṭis are employed according to the specific requirements of each posture.",
         
         "Practice follows a structured sequence beginning with Sūrya Namaskāra, progressing through standing postures, seated postures, inversions, and concluding with restorative positions. This systematic approach ensures comprehensive engagement of all bodily systems. Traditional practice schedules typically involve six days of practice with one rest day, with additional consideration given to natural cycles that may warrant modified practice intensity.",
         
@@ -95,10 +95,10 @@ const practiceData = {
         "Guidance from experienced practitioners is essential for navigating this complex system, particularly in understanding alignment principles and making appropriate modifications. While textual resources provide valuable context, direct experiential transmission remains central to the tradition's pedagogical approach. Practitioners are encouraged to cultivate sensitivity to their body's responses, adjusting intensity and duration according to individual capacity and changing circumstances."
       ]
     },
-    primary: {
-      sutras: [],
-      content: []
-    },
+      primary: {
+        sutras: [],
+        content: []
+      },
     intermediate: {
       sutras: [],
       content: []
@@ -110,7 +110,7 @@ const practiceData = {
   },
   zh: {
     title: "体式练习方法",
-    subtitle: "Methods of Āsana Practice",
+    subtitle: "Methods of āsana Practice",
     intro: "阿斯汤加瑜伽体式练习方法综合指南，涵盖哲学基础、练习原则及系列进阶。",
     sections: {
       essence: {
@@ -176,10 +176,10 @@ const practiceData = {
     principles: {
       sutras: [
         {
-          devanagari: "प्रयत्नशैथिल्यानन्तसमापत्तिभ्याम्",
-          sanskrit: "prayatna-śaithilya-ananta-samāpattibhyām",
-          meaning: "通过放松努力及与无限的相应",
-          source: "《瑜伽经》2.47"
+          devanagari: "तत्र स्थितौ यत्नः अभ्यासः",
+          sanskrit: "tatra sthitau yatnaḥ abhyāsaḥ",
+          meaning: "修行为保持身心稳定所付出的持续努力",
+          source: "《瑜伽经》1.13"
         }
       ],
       content: [
@@ -187,7 +187,7 @@ const practiceData = {
         
         "该方法论强调渐进式的练习方式，练习者以体式组为单位逐步推进，而非孤立地完善单个体式。这种序列式的进展使身体能够逐步打开，在减少受伤风险的同时，为更高级的练习建立必要的力量和柔韧性。每个系列都被设计为一个有机整体，体式之间相互补充，为后续练习做好准备。",
         
-        "实践的核心是tristhāna（三处专注）概念，涵盖体式、呼吸和专注力。全程保持鼻呼吸，吸气和呼气均通过鼻子进行，以调节内在热量和能量流动。呼吸的声音品质自然地调动精微的能量锁，将这些机制整合而非孤立运用。视觉焦点，包括鼻尖、第三眼区域、肚脐或特定的手脚位置，用以稳定注意力并将觉知导向内在。",
+        "实践的核心是tristhāna（三处专注）概念，涵盖体式、呼吸和专注力。全程保持鼻呼吸，吸气和呼气均通过鼻子进行，以调节内在热量和能量流动。呼吸的声音品质自然地调动精微的能量锁，将这些机制整合而非孤立运用。视觉焦点，包括鼻尖（nāsāgra）、眉心（bhrūmadhya）、肚脐（nābhicakra）、手指尖（hastāgra）、拇指尖（aṅguṣṭhāgra）、脚趾尖（pādāgra）、侧边（pārśva）、向上（ūrdhva）、内在（antara）和向下（adhaḥ），用以稳定注意力并将觉知导向内在。这十种凝视点根据每个体式的具体要求而运用。",
         
         "练习遵循结构化的序列，从拜日式开始，逐步进行站立体式、坐立体式、倒立体式，最后以恢复性姿势结束。这种系统化的方法确保全面调动所有身体系统。传统的练习安排通常是六天练习配合一天休息，同时考虑自然周期可能需要的练习强度调整。",
         
@@ -196,10 +196,10 @@ const practiceData = {
         "有经验的练习者指导对于驾驭这一复杂系统至关重要，特别是在理解对齐原则和进行适当调整方面。虽然文本资源提供了有价值的背景信息，但直接的体验性传授仍然是传统教学法的核心。鼓励练习者培养对身体反应的敏感性，根据个人能力和变化的环境调整练习强度和时长。"
       ]
     },
-    primary: {
-      sutras: [],
-      content: []
-    },
+      primary: {
+        sutras: [],
+        content: []
+      },
     intermediate: {
       sutras: [],
       content: []
@@ -267,7 +267,7 @@ export default function PracticeMethodsPage() {
               </div>
               
               {/* 矛盾解释部分 */}
-              <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+              <div className="mt-6 p-2">
                 <h3 className="text-sm font-medium text-gray-800 mb-3">
                   {practiceContent.essence.explanation.title}
                 </h3>
@@ -302,7 +302,7 @@ export default function PracticeMethodsPage() {
               
               {/* 经文引用 */}
               {practiceContent.principles.sutras.length > 0 && (
-                <div className="mb-6 p-3 bg-gray-50 rounded-lg">
+                <div className="mb-6">
                   {practiceContent.principles.sutras.map((sutra, index) => (
                     <div key={index} className="text-xs text-gray-600 leading-tight">
                       <div className="font-sans mb-1">{sutra.devanagari}</div>
@@ -325,10 +325,9 @@ export default function PracticeMethodsPage() {
             </div>
           )}
 
-          {/* 其他标签页暂时留空 */}
           {activeSection === 'primary' && (
             <div>
-              <h2 className="text-sm md:text-base font-medium text-gray-800 mb-1.5">
+              <h2 className="text-sm md:text-base font-medium text-gray-800 mb-3">
                 {practiceContent.sections.primary.content}
               </h2>
               <p className="text-xs text-gray-500">

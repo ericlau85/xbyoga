@@ -205,7 +205,7 @@ export default function AboutPage() {
               </div>
             </div>
           </section>
-
+          
           {/* 行动号召 */}
           <div className="pt-8 border-t border-gray-200">
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

@@ -60,28 +60,28 @@ export default function PranayamaPage() {
             devanagari: "प्राणायाम",
             sanskrit: "prāṇāyāma",
             translation: "Extension and control of life energy.",
-            explanation: "Prāṇa (life force) + āyāma (extension, control). The conscious regulation of breath through interruption (vicchedaḥ), prolongation (dīrgha), and refinement (sūkṣma) of breathing patterns."
+            explanation: "prāṇa (life force) + āyāma (extension, control). The conscious regulation of breath through interruption (vicchedaḥ), prolongation (dīrgha), and refinement (sūkṣma) of breathing patterns."
           },
           {
             title: "Patañjali's Definition",
             devanagari: "तस्मिन् सति श्वासप्रश्वासयोर्गतिविच्छेदः प्राणायामः",
             sanskrit: "tasmin sati śvāsa-praśvāsyor gati-vicchedaḥ prāṇāyāmaḥ",
             translation: "When posture is steady, the conscious interruption of the natural flow of inhalation and exhalation is prāṇāyāma.",
-            explanation: "Yoga Sūtra 2.49. Prāṇāyāma begins only after āsana is stabilized. It involves conscious intervention in the automatic breathing process."
+            explanation: "yoga sūtra 2.49. Prāṇāyāma begins only after āsana is stabilized. It involves conscious intervention in the automatic breathing process."
           },
           {
             title: "The Three Modulations",
             devanagari: "बाह्याभ्यन्तरस्तम्भवृत्तिः देशकालसंख्याभिः परिदृष्टो दीर्घसूक्ष्मः",
             sanskrit: "bāhyābhyantarastambhavṛttiḥ deśakālasaṃkhyābhiḥ paridṛṣṭo dīrghasūkṣmaḥ",
             translation: "Prāṇāyāma has external (exhalation), internal (inhalation), and suspended (retention) movements. Regulated by place, time, and count, they become prolonged and subtle.",
-            explanation: "Yoga Sūtra 2.50. The three components are regulated progressively through spatial awareness (deśa), timing (kāla), and numerical count (saṃkhyā)."
+            explanation: "yoga sūtra 2.50. The three components are regulated progressively through spatial awareness (deśa), timing (kāla), and numerical count (saṃkhyā)."
           },
           {
             title: "The Four Components",
             devanagari: "छेदनं पूरकं कुम्भकं रेचकं प्राणायामः",
             sanskrit: "chhedanaṃ pūrakaṃ kumbhakaṃ recakaṃ prāṇāyāmaḥ",
             translation: "Purification, inhalation, retention, and exhalation constitute prāṇāyāma.",
-            explanation: "Haṭha Yoga Pradīpikā 2.1. The complete process includes preparatory cleansing, followed by the three main phases of breath control."
+            explanation: "haṭha pradīpikā 2.1. The complete process includes preparatory cleansing, followed by the three main phases of breath control."
           }
         ],
         energy: [
@@ -90,49 +90,49 @@ export default function PranayamaPage() {
             devanagari: "प्राण",
             sanskrit: "prāṇa",
             translation: "The cosmic and individual life energy.",
-            explanation: "Prāṇa exists at cosmic level (mahā-prāṇa) and individual level (prāṇa-vāyu). Its movement forms are called vāyu. 'prāṇo hi bhūtānām āyuḥ' - Prāṇa is the life span of all beings (Taittirīya Upaniṣad 2.1)."
+            explanation: "prāṇa exists at cosmic level (mahā-prāṇa) and individual level (prāṇa-vāyu). Its movement forms are called vāyu. 'prāṇo hi bhūtānām āyuḥ' - prāṇa is the life span of all beings (taittirīya upaniṣad 2.1)."
           },
           {
-            title: "Prāṇa in the Body",
+            title: "prāṇa in the Body",
             devanagari: "प्राणः कण्ठे तिष्ठति",
             sanskrit: "prāṇaḥ kaṇṭhe tiṣṭhati",
-            translation: "Prāṇa resides in the throat, governing the respiratory cycle.",
-            explanation: "Haṭha Yoga Pradīpikā 2.4. This indicates the throat as the primary seat of prāṇa in the physical body, from where it governs all respiratory functions."
+            translation: "prāṇa resides in the throat, governing the respiratory cycle.",
+            explanation: "haṭha pradīpikā 2.4. This indicates the throat as the primary seat of prāṇa in the physical body, from where it governs all respiratory functions."
           },
           {
             title: "The Five Vital Winds",
             devanagari: "पञ्च वायु",
             sanskrit: "pañca vāyu",
             translation: "The five primary movements of prāṇa.",
-            explanation: "Prāṇa-vāyu (inward), Apāna-vāyu (downward), Samāna-vāyu (balancing), Udāna-vāyu (upward), Vyāna-vāyu (pervasive). These operate through five neural centers in the subtle body: medulla, cervical, thoracic, lumbar, and sacral plexuses."
+            explanation: "prāṇa-vāyu (inward), apāna-vāyu (downward), samāna-vāyu (balancing), udāna-vāyu (upward), vyāna-vāyu (pervasive). These operate through five neural centers in the subtle body: medulla, cervical, thoracic, lumbar, and sacral plexuses."
           },
           {
-            title: "Prāṇa and Apāna",
+            title: "prāṇa and apāna",
             devanagari: "प्राणोऽपानसमानश्च उदानव्यान एव च।नागः कूर्मश्च कृकरो देवदत्तो धनञ्जयः॥",
             sanskrit: "prāṇo'pāna-samānaśca udāna-vyāna eva ca।nāgaḥ kūrmaśca kṛkaro devadatto dhanañjayaḥ॥",
-            translation: "Prāṇa, Apāna, Samāna, Udāna, Vyāna, and Nāga, Kūrma, Kṛkara, Devadatta, Dhanañjaya—these ten winds are the foundation of life's functions.",
-            explanation: "Haṭha Yoga Pradīpikā 2.4-5. The five main vāyus and five upa-vāyus (subsidiary winds) constitute the complete system of vital energy movement in the body."
+            translation: "prāṇa, apāna, samāna, udāna, vyāna, and nāga, kūrma, kṛkara, devadatta, dhanañjaya—these ten winds are the foundation of life's functions.",
+            explanation: "haṭha pradīpikā 2.4-5. The five main vāyus and five upa-vāyus (subsidiary winds) constitute the complete system of vital energy movement in the body."
           },
           {
             title: "The Subtle Nervous System",
             devanagari: "नाडीचक्रे",
             sanskrit: "nāḍīcakre",
             translation: "The network of energy channels.",
-            explanation: "Prāṇa flows through 72,000 nāḍīs (energy channels). The three main channels are: Iḍā (left/lunar), Piṅgalā (right/solar), and Suṣumṇā (central). Purification of these channels is prerequisite for prāṇāyāma."
+            explanation: "prāṇa flows through 72,000 nāḍīs (energy channels). The three main channels are: iḍā (left/lunar), piṅgalā (right/solar), and suṣumṇā (central). Purification of these channels is prerequisite for prāṇāyāma."
           },
           {
             title: "Breath and Mind Relationship",
             devanagari: "चले वायौ चलं चित्तं निश्चले निश्चलं भवेत्।",
             sanskrit: "cale vāte calaṃ cittaṃ niścale niścalaṃ bhavet",
             translation: "When the breath moves, the mind moves; when the breath is still, the mind becomes still.",
-            explanation: "Haṭha Yoga Pradīpikā 2.2. This establishes the fundamental principle of prāṇāyāma: by controlling breath (vāyu), one can control the mind (citta). The yogi attains stability by restraining the breath."
+            explanation: "haṭha pradīpikā 2.2. This establishes the fundamental principle of prāṇāyāma: by controlling breath (vāyu), one can control the mind (citta). The yogi attains stability by restraining the breath."
           },
           {
             title: "Life and Death",
             devanagari: "शरीरे यावान् प्राणो वायुस्तावज्जीवितमुच्यते।",
             sanskrit: "śarīre yāvān prāṇo vāyus tāvaj jīvitam ucyate",
             translation: "As long as prāṇa as breath exists in the body, it is called life.",
-            explanation: "Haṭha Yoga Pradīpikā 2:3. The presence of prāṇa equals life; its departure equals death. Therefore, one should practice prāṇāyāma to master this vital energy."
+            explanation: "haṭha pradīpikā 2:3. The presence of prāṇa equals life; its departure equals death. Therefore, one should practice prāṇāyāma to master this vital energy."
           }
         ],
         techniques: [
@@ -141,14 +141,14 @@ export default function PranayamaPage() {
             devanagari: "बाह्याभ्यन्तरस्तम्भवृत्तिः",
             sanskrit: "bāhyābhyantara-stambha-vṛttiḥ",
             translation: "External, internal, and suspended movements.",
-            explanation: "Yoga Sūtra 2.50. These three states of breath—exhalation (bāhya), inhalation (ābhyantara), and retention (stambha)—are regulated through place (deśa), time (kāla), and count (saṃkhyā), becoming prolonged and subtle."
+            explanation: "yoga sūtra 2.50. These three states of breath—exhalation (bāhya), inhalation (ābhyantara), and retention (stambha)—are regulated through place (deśa), time (kāla), and count (saṃkhyā), becoming prolonged and subtle."
           },
           {
             title: "Complete Yogic Breath",
             devanagari: "पूर्णश्वासः समस्ताङ्गैः",
             sanskrit: "pūrṇa-śvāsaḥ samastāṅgaiḥ",
             translation: "Full breath with all limbs.",
-            explanation: "Śiva Saṃhitā 3.92. Three-part breathing engaging clavicular (jāṭhara-ucchvāsa), thoracic (uras-śvāsa), and abdominal (udara-śvāsa) regions. The foundation for all prāṇāyāma, activating prāṇa, balancing samāna, and guiding apāna."
+            explanation: "śiva saṃhitā 3.92. Three-part breathing engaging clavicular (jāṭhara-ucchvāsa), thoracic (uras-śvāsa), and abdominal (udara-śvāsa) regions. The foundation for all prāṇāyāma, activating prāṇa, balancing samāna, and guiding apāna."
           },
           {
             title: "Internal Retention",
@@ -169,7 +169,7 @@ export default function PranayamaPage() {
             devanagari: "केवलं कुम्भकं",
             sanskrit: "kevalaṃ kumbhakaṃ",
             translation: "Automatic breath cessation.",
-            explanation: "Not a technique but a state achieved through mastery. 'kevalaṃ kumbhakaṃ yogī sahajāvasthāṃ labhate' - The yogi attains the natural state through spontaneous retention (Gheraṇḍa Saṃhitā 5.46). Beyond time, space, and count."
+            explanation: "Not a technique but a state achieved through mastery. 'kevalaṃ kumbhakaṃ yogī sahajāvasthāṃ labhate' - The yogi attains the natural state through spontaneous retention (gheraṇḍa saṃhitā 5.46). Beyond time, space, and count."
           },
           {
             title: "Throat Lock",
@@ -197,7 +197,7 @@ export default function PranayamaPage() {
             devanagari: "जालन्धरं उड्डियानं मूलबन्धं च तिष्ठति",
             sanskrit: "jālandharaṃ uḍḍīyānaṃ mūla-bandhaṃ ca kārayet",
             translation: "One should practice throat lock, abdominal lock, and root lock.",
-            explanation: "Haṭha Yoga Pradīpikā 3.6. The combined practice of traya-bandha (three locks) during retention creates internal pressure balance, prevents energy dissipation, and directs prāṇa into suṣumṇā. Each lock corresponds to a major energy gateway in the body."
+            explanation: "haṭha pradīpikā 3.6. The combined practice of traya-bandha (three locks) during retention creates internal pressure balance, prevents energy dissipation, and directs prāṇa into suṣumṇā. Each lock corresponds to a major energy gateway in the body."
           }
         ],
         practices: [
@@ -213,7 +213,7 @@ export default function PranayamaPage() {
             devanagari: "कपालभाति",
             sanskrit: "kapālabhāti",
             translation: "Skull illuminating.",
-            explanation: "Active purification technique. Short, forceful exhalations with passive inhalations. Cleanses frontal sinuses, energizes brain, removes excess kapha.\n\nBasic Method:\n1. Siddhāsana or Padmāsana\n2. Deep inhale, then begin rapid, forceful exhalations through both nostrils (15-20 times)\n3. Exhalation: active abdominal contraction toward spine\n4. Inhalation: passive, natural rebound\n5. After one round: deep inhale, slow exhale, rest 1-2 minutes\nBegin with 3 rounds of 15-20 breaths\n\nContraindications: Hypertension, heart conditions, hernia, glaucoma, epilepsy, pregnancy.\nNote: Advanced variations (with retention, alternate nostril) taught in class."
+            explanation: "Active purification technique. Short, forceful exhalations with passive inhalations. Cleanses frontal sinuses, energizes brain, removes excess kapha.\n\nBasic Method:\n1. siddhāsana or padmāsana\n2. Deep inhale, then begin rapid, forceful exhalations through both nostrils (15-20 times)\n3. Exhalation: active abdominal contraction toward spine\n4. Inhalation: passive, natural rebound\n5. After one round: deep inhale, slow exhale, rest 1-2 minutes\nBegin with 3 rounds of 15-20 breaths\n\nContraindications: Hypertension, heart conditions, hernia, glaucoma, epilepsy, pregnancy.\nNote: Advanced variations (with retention, alternate nostril) taught in class."
           },
           {
             title: "Victorious Breath",
@@ -227,7 +227,7 @@ export default function PranayamaPage() {
             devanagari: "शीतली",
             sanskrit: "śītalī",
             translation: "Cooling breath.",
-            explanation: "Inhale through rolled tongue, exhale through nose. Strong cooling effect, reduces pitta, alleviates heat-related conditions.\n\nMethod:\n1. Comfortable seated posture\n2. Protrude tongue, roll sides upward to form tube\n3. Inhale slowly through tongue tube (feel cooling sensation)\n4. Withdraw tongue, close mouth\n5. Optional: natural external retention\n6. Exhale slowly through nostrils\nBegin with 10 rounds, increase to 30 gradually\n\nBest practiced in morning or after āsana, in cool environment. Contraindicated: cold conditions, respiratory issues, excessive kapha.\nNote: Sītkārī (hissing breath) is a variation taught as complementary practice in class."
+            explanation: "Inhale through rolled tongue, exhale through nose. Strong cooling effect, reduces pitta, alleviates heat-related conditions.\n\nMethod:\n1. Comfortable seated posture\n2. Protrude tongue, roll sides upward to form tube\n3. Inhale slowly through tongue tube (feel cooling sensation)\n4. Withdraw tongue, close mouth\n5. Optional: natural external retention\n6. Exhale slowly through nostrils\nBegin with 10 rounds, increase to 30 gradually\n\nBest practiced in morning or after āsana, in cool environment. Contraindicated: cold conditions, respiratory issues, excessive kapha.\nNote: sītkārī (hissing breath) is a variation taught as complementary practice in class."
           },
           {
             title: "Bee Breath",
@@ -248,7 +248,7 @@ export default function PranayamaPage() {
             devanagari: "केवल कुम्भक",
             sanskrit: "kevala kumbhaka",
             translation: "Automatic breath suspension.",
-            explanation: "Not a practice but a state of accomplishment. 'bāhyābhyantara-viṣayākṣepī caturthaḥ' - The fourth (state) transcends external and internal perceptions (Yoga Sūtra 2.51).\n\nCharacteristics:\n1. Breath stops spontaneously without effort\n2. No distinction between inhalation and exhalation\n3. Beyond time, space, and count regulation\n4. Accompanies deep samādhi states\n5. Prāṇa flows freely in suṣumṇā\n\n'kevalaṃ kumbhakaṃ yogī sahajāvasthāṃ labhate' - Through spontaneous retention, the yogi attains the natural state (GS 5.46).\n\nImportant: This cannot be practiced or forced. It emerges naturally after mastering all previous techniques under proper guidance. Classroom instruction focuses on the preparatory stages leading to this state."
+            explanation: "Not a practice but a state of accomplishment. 'bāhyābhyantara-viṣayākṣepī caturthaḥ' - The fourth (state) transcends external and internal perceptions (yoga sūtra 2.51).\n\nCharacteristics:\n1. Breath stops spontaneously without effort\n2. No distinction between inhalation and exhalation\n3. Beyond time, space, and count regulation\n4. Accompanies deep samādhi states\n5. prāṇa flows freely in suṣumṇā\n\n'kevalaṃ kumbhakaṃ yogī sahajāvasthāṃ labhate' - Through spontaneous retention, the yogi attains the natural state (GS 5.46).\n\nImportant: This cannot be practiced or forced. It emerges naturally after mastering all previous techniques under proper guidance. Classroom instruction focuses on the preparatory stages leading to this state."
           }
         ],
         safety: [
@@ -257,42 +257,42 @@ export default function PranayamaPage() {
             devanagari: "न शुद्धे नाडीचक्रे प्राणः क्षेत्रं प्रविशति",
             sanskrit: "na śuddhe nāḍīcakre prāṇaḥ kṣetraṃ praviśati",
             translation: "If channels are not purified, prāṇa cannot enter.",
-            explanation: "Haṭha Yoga Pradīpikā 2.4-5: 'If the channels are not purified, prāṇa cannot enter the central channel, there is no accomplishment, nor connection with suṣumṇā. Without nāḍī purification, all Haṭha accomplishments fail to manifest.' THREE MONTHS of nāḍī śodhana is mandatory before advanced practices."
+            explanation: "haṭha pradīpikā 2.4-5: 'If the channels are not purified, prāṇa cannot enter the central channel, there is no accomplishment, nor connection with suṣumṇā. Without nāḍī purification, all Haṭha accomplishments fail to manifest.' THREE MONTHS of nāḍī śodhana is mandatory before advanced practices."
           },
           {
             title: "Progressive Ratio System",
             devanagari: "मात्रया सम्यगाढ्यश्च",
             sanskrit: "mātrayā samyag āḍhyaś ca",
             translation: "First master with standard measure.",
-            explanation: "Haṭha Yoga Pradīpikā 2.11: 'Prāṇāyāma should first be thoroughly practiced with standard units (mātrā), then progressed. One who practices with proper units surely attains accomplishment.'\n\nProgression Sequence:\n1. 1:1 inhalation:exhalation (master completely)\n2. 1:1:1 inhalation:retention:exhalation (beginner retention)\n3. 1:2:1 advanced ratio\n4. 1:4:2 highest ratio (for experienced only)\n\nNEVER skip steps. Each stage requires weeks or months of stable practice."
+            explanation: "haṭha pradīpikā 2.11: 'prāṇāyāma should first be thoroughly practiced with standard units (mātrā), then progressed. One who practices with proper units surely attains accomplishment.'\n\nProgression Sequence:\n1. 1:1 inhalation:exhalation (master completely)\n2. 1:1:1 inhalation:retention:exhalation (beginner retention)\n3. 1:2:1 advanced ratio\n4. 1:4:2 highest ratio (for experienced only)\n\nNEVER skip steps. Each stage requires weeks or months of stable practice."
           },
           {
             title: "Optimal Practice Conditions",
             devanagari: "प्राणायामं तु कर्तव्यं प्रातःकाले विशेषतः",
             sanskrit: "prāṇāyāmaṃ tu kartavyaṃ prātaḥ-kāle viśeṣataḥ",
-            translation: "Prāṇāyāma should be practiced especially at dawn.",
-            explanation: "Gheraṇḍa Saṃhitā 5.8. Best time: Brahma-muhūrta (1.5 hours before sunrise). Atmospheric prāṇa is purest, mind is calm, stomach is empty. Secondary: midnight or sunset. Avoid: midday, immediately after meals, when tired or emotionally disturbed."
+            translation: "prāṇāyāma should be practiced especially at dawn.",
+            explanation: "gheraṇḍa saṃhitā 5.8. Best time: brahma-muhūrta (1.5 hours before sunrise). Atmospheric prāṇa is purest, mind is calm, stomach is empty. Secondary: midnight or sunset. Avoid: midday, immediately after meals, when tired or emotionally disturbed."
           },
           {
             title: "Postural Foundation",
             devanagari: "आसनं प्राणसंरोधः",
             sanskrit: "āsanaṃ prāṇa-saṃrodhaḥ",
             translation: "Posture is for controlling prāṇa.",
-            explanation: "Haṭha Pradīpikā 1.56. Master Siddhāsana first: 'siddhāsanaṃ bhaved yasya siddhiḥ siddhāsanasyaca' - For one who has mastered siddhāsana, accomplishment comes from the posture itself (HP 1.35).\n\nRequirements:\n1. Pelvic neutral (pubis-ischial tuberosity three-point balance)\n2. Spine extended (C7-S1 physiological curves)\n3. Shoulders relaxed\n4. Chin parallel to floor\nWithout proper posture, energy cannot flow correctly."
+            explanation: "haṭha pradīpikā 1.56. Master Siddhāsana first: 'siddhāsanaṃ bhaved yasya siddhiḥ siddhāsanasyaca' - For one who has mastered siddhāsana, accomplishment comes from the posture itself (HP 1.35).\n\nRequirements:\n1. Pelvic neutral (pubis-ischial tuberosity three-point balance)\n2. Spine extended (C7-S1 physiological curves)\n3. Shoulders relaxed\n4. Chin parallel to floor\nWithout proper posture, energy cannot flow correctly."
           },
           {
             title: "Energy Imbalance Warning",
             devanagari: "प्राणापानयोर्युद्धं वैघ्नं",
             sanskrit: "prāṇāpānayor yuddhaṃ vaighnaṃ",
             translation: "Conflict of prāṇa and apāna causes obstruction.",
-            explanation: "Śiva Saṃhitā 2.13: 'The conflict between prāṇa and apāna is considered an obstruction by yoga knowers; this disturbs samāna and destroys the order of the five vāyus.'\n\nSymptoms of Imbalance:\n1. Irregular breathing patterns\n2. Anxiety or agitation during practice\n3. Physical discomfort or pain\n4. Energy 'leakage' sensations\n5. Emotional instability\n\nSolution: Return to nāḍī śodhana, reduce intensity, seek guidance."
+            explanation: "śiva saṃhitā 2.13: 'The conflict between prāṇa and apāna is considered an obstruction by yoga knowers; this disturbs samāna and destroys the order of the five vāyus.'\n\nSymptoms of Imbalance:\n1. Irregular breathing patterns\n2. Anxiety or agitation during practice\n3. Physical discomfort or pain\n4. Energy 'leakage' sensations\n5. Emotional instability\n\nSolution: Return to nāḍī śodhana, reduce intensity, seek guidance."
           },
           {
             title: "Forced Practice Danger",
             devanagari: "यदि चित्तं न शाम्येत प्राणायामात् प्रयत्नतः",
             sanskrit: "yadi cittaṃ na śāmyet prāṇāyāmāt prayatnataḥ",
             translation: "If mind is not calmed by forced prāṇāyāma.",
-            explanation: "Haṭha Yoga Pradīpikā 2.15-16: 'If the mind is not calmed by strenuous prāṇāyāma practice, it will cause obstruction in the channels. Therefore, one should practice with careful attention. Just as lions, elephants, and tigers are gradually tamed with patience, so should breath be controlled with caution; otherwise it destroys the practitioner.'\n\nKEY PRINCIPLE: Force creates resistance. Gentle persistence yields results."
+            explanation: "haṭha pradīpikā 2.15-16: 'If the mind is not calmed by strenuous prāṇāyāma practice, it will cause obstruction in the channels. Therefore, one should practice with careful attention. Just as lions, elephants, and tigers are gradually tamed with patience, so should breath be controlled with caution; otherwise it destroys the practitioner.'\n\nKEY PRINCIPLE: Force creates resistance. Gentle persistence yields results."
           },
           {
             title: "Major Contraindications",
@@ -306,7 +306,7 @@ export default function PranayamaPage() {
             devanagari: "लघु आहार",
             sanskrit: "laghu āhāra",
             translation: "Light nourishment.",
-            explanation: "Practice on empty stomach: minimum 3-4 hours after meal, 1 hour after light snack. Sattvic diet enhances practice: fresh fruits, vegetables, whole grains, nuts, dairy. Avoid: heavy, oily, spicy, processed foods, meat, alcohol.\n\nImportant: 'prāṇo vai annam' - Prāṇa is indeed the essence of food (Taittirīya Upaniṣad 2.2). The quality of food directly affects the quality of prāṇa available for practice."
+            explanation: "Practice on empty stomach: minimum 3-4 hours after meal, 1 hour after light snack. Sattvic diet enhances practice: fresh fruits, vegetables, whole grains, nuts, dairy. Avoid: heavy, oily, spicy, processed foods, meat, alcohol.\n\nImportant: 'prāṇo vai annam' - prāṇa is indeed the essence of food (Taittirīya Upaniṣad 2.2). The quality of food directly affects the quality of prāṇa available for practice."
           }
         ]
       }
@@ -357,7 +357,7 @@ export default function PranayamaPage() {
             devanagari: "प्राणायाम",
             sanskrit: "prāṇāyāma",
             translation: "生命能量的扩展与控制。",
-            explanation: "Prāṇa（生命能量）+ āyāma（扩展、控制）。通过有意识地中断（vicchedaḥ）、延长（dīrgha）与精微化（sūkṣma）呼吸模式来调控呼吸的技术。"
+            explanation: "prāṇa（生命能量）+ āyāma（扩展、控制）。通过有意识地中断（vicchedaḥ）、延长（dīrgha）与精微化（sūkṣma）呼吸模式来调控呼吸的技术。"
           },
           {
             title: "帕坦伽利定义",
