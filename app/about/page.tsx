@@ -130,7 +130,7 @@ export default function AboutPage() {
                   <p className="text-gray-600 text-sm leading-relaxed">
                     {language === 'zh'
                       ? '阿斯汤加的序列是固定的，但每次练习都是全新的。真正的转变不来自偶然的突破，而来自日复一日的重复中积累的微小觉察。'
-                      : 'Ashtanga sequences are fixed, yet each practice is entirely new. True transformation comes not from occasional breakthroughs, but from tiny awarenesses accumulated through day-to-day repetition.'
+                      : 'Ashtanga sequences are fixed, yet each practice is entirely new. True transformation comes not from occasional breakthroughs, but from tiny insights accumulated through day-to-day repetition.'
                     }
                   </p>
                 </div>
@@ -205,6 +205,55 @@ export default function AboutPage() {
               </div>
             </div>
           </section>
+          
+          {/* 一起练习的人 */}
+                    <section className="mb-12 pt-8 border-t border-gray-200">
+                      <div className="mb-6">
+                        <h3 className="text-lg font-normal text-gray-900 uppercase tracking-wide mb-1">
+                          {language === 'zh' ? '一起练习的人' : 'Fellow Practitioners'}
+                        </h3>
+                        <div className="w-16 h-0.5 bg-gray-800 opacity-30"></div>
+                      </div>
+                      
+                      <div className="space-y-4 text-gray-700 leading-relaxed text-sm md:text-base">
+                        <p>
+                          {language === 'zh'
+                            ? '她们中，有的人练习时间比我更久，'
+                            : 'Some have practiced longer than I have,'}
+                        </p>
+                        <p>
+                          {language === 'zh'
+                            ? '有的人体式比我做得更深入，'
+                            : 'Some go deeper in their asanas,'}
+                        </p>
+                        <p>
+                          {language === 'zh'
+                            ? '但依然每天清晨，准时出现在屏幕前。'
+                            : 'Yet every morning, they appear on screen, right on time.'}
+                        </p>
+                        
+                        <div className="pt-2"></div>
+                        
+                        <p>
+                          {language === 'zh'
+                            ? '她们来，不是因为需要我教什么，'
+                            : 'They come not because they need me to teach,'}
+                        </p>
+                        <p>
+                          {language === 'zh'
+                            ? '而是因为愿意和我一起练习。'
+                            : 'But because they choose to practice together.'}
+                        </p>
+                        
+                        <div className="pt-4 border-t border-gray-100 mt-4"></div>
+                        
+                        <p className="text-gray-800 font-medium">
+                          {language === 'zh'
+                            ? '这是我的荣幸。谢谢你们。'
+                            : 'This is my honor. Thank you.'}
+                        </p>
+                      </div>
+                    </section>
           
           {/* 行动号召 */}
           <div className="pt-8 border-t border-gray-200">
